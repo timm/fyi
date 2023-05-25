@@ -6,7 +6,7 @@ description: "Web site"
 permalink: /
 ---
 
-<center><img width=450 src="/assets/img/timm-main.png"></center>
+![](/assets/img/timm-main.png)
 
 # ML 4 SE 4 Good
 {: .fs-9 }
@@ -35,7 +35,7 @@ Here's an idea: maybe someone should look into that...
    <Li id="dim"> <b>Feb'22</b>: For ICSE'23 journal first. Reports on <a href="https://arxiv.org/pdf/2208.01595.pdf">vulnerabilities</a>; <a href="https://arxiv.org/pdf/2110.01109.pdf">Fair-Mask</a>; <a href="https://arxiv.org/pdf/2201.10592.pdf">labeling cost</a></li>
    <li id="">    <b>Feb'22</b>: To appear, Expert Systems with Applications: <a href="https://arxiv.org/pdf/2109.14569.pdf">Redesigning Cloud Applications</a></li>
    <li id="dim"> <b>Feb'22</b>: To appear, IEEE Software: <a href="https://arxiv.org/pdf/2301.10407.pdf">Avoiding Malicious Explanations</a></li>
-   <li id="">    <b><a href="#priornews">Other  news</a></b></li></li>
+   <li id="">    <b><a href="#priornews">Other  news</a></b></li>
 </ul>
 
 
