@@ -6,7 +6,7 @@ description: "Web site"
 permalink: /
 ---
 
-![](/assets/img/timm-main.png)
+<img width=400 src="/assets/img/timm-main.png">
 
 # ML 4 SE 4 Good
 {: .fs-9 }
