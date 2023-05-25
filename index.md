@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tim Menzies
+title: Home
 nav_order: 1
 description: "Web site"
 permalink: /
