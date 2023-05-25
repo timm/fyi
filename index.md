@@ -6,16 +6,16 @@ description: "Web site"
 permalink: /
 ---
 
-<img align=right src="/assets/img/ml4se4good.png">
+<img align=right src="/assets/img/se4ml4good.png">
 
-# ML 4 SE 4 Good
+# SE 4 ML 4 Good
 {: .fs-9 }
 
 It's an ML world. 
-But is our software using ML, as it should?   
+But is that software being  used, as it should?   
 Is it optimized? Unbiased? Explainable? 
 
-Here's an idea: maybe someone should look into that...
+Here's an idea: maybe  we should look into that...
 
 [For students](students.md){: .btn .btn-primary }
  &nbsp;  [For industry](industry.md){: .btn .btn-blue }
