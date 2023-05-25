@@ -6,10 +6,11 @@ description: "Web site"
 permalink: /
 ---
 
+<img src="/assets/img/head.png">
+
 # se 4 ml 4 good
 
-<img src="/assets/img/head.png"><br>
-<b>Prof. Tim Menzies</b><br>cs, phd, ncstate, se, ai, ml, prog.langyages
+<b>Prof. Tim Menzies</b><br>cs, phd, ncstate, se, ai, ml, prog.languages
 
 It's an ML world.  But is that software being  used, as it should? Is it optimized? Unbiased? Explainable? 
 Here's an idea: maybe  we should look into that...
