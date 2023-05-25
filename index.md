@@ -12,7 +12,7 @@ permalink: /
 
 <b>Prof. Tim Menzies</b><br>cs, phd, ncstate, se, ai, ml, prog.languages
 
-It's an ML world.  But is that software being  used, as it should? Is it optimized? Unbiased? Explainable? 
+> It's an ML world.  But is that software being  used, as it should? Is it optimized? Unbiased? Explainable? 
 Here's an idea: maybe  we should look into that...
 
 <br clear=all>
