@@ -6,14 +6,14 @@ description: "Web site"
 permalink: /
 ---
 
-<img width=400 src="/assets/img/timm-main.png">
+<img align=right src="/assets/img/ml4se4good.png">
 
 # ML 4 SE 4 Good
 {: .fs-9 }
 
-
-It's an ML world. But are we using it right? 
-Is our ML Optimized? Unbiased? Explainable? 
+It's an ML world. 
+But is our software using ML, as it should?   
+Is it optimized? Unbiased? Explainable? 
 
 Here's an idea: maybe someone should look into that...
 
