@@ -6,14 +6,15 @@ description: "Web site"
 permalink: /
 ---
 
-<img align=right src="/assets/img/head.png">
+<img align=right width=250 src="/assets/img/head.png">
 
 # se 4 ml 4 good
 
 <b>Prof. Tim Menzies</b><br>cs, phd, ncstate, se, ai, ml, prog.languages
 
 > It's an ML world.  But is that software being  used, as it should? Is it optimized? Unbiased? Explainable? 
-Here's an idea: maybe  we should look into that...
+
+> Here's an idea: maybe  we should look into that...
 
 <br clear=all>
 
