@@ -6,7 +6,7 @@ description: "Web site"
 permalink: /
 ---
 
-<img src="/assets/img/head.png">
+<img align=right src="/assets/img/head.png">
 
 # se 4 ml 4 good
 
@@ -14,6 +14,8 @@ permalink: /
 
 It's an ML world.  But is that software being  used, as it should? Is it optimized? Unbiased? Explainable? 
 Here's an idea: maybe  we should look into that...
+
+<br clear=all>
 
 [For students](students.md){: .btn .btn-primary }
  &nbsp;  [For industry](industry.md){: .btn .btn-blue }
