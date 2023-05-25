@@ -17,11 +17,13 @@ Here's an idea: maybe  we should look into that...
 
 <br clear=all>
 
+<center>
+
 [For students](students.md){: .btn .btn-primary }
  &nbsp;  [For industry](industry.md){: .btn .btn-blue }
  &nbsp;  [For researchers](research.md){: .btn .btn-green }
 
----
+</center><hr>
 
 <h3>News</h3>
 <ul>
