@@ -2,7 +2,7 @@ title: "Tim Menzies"
 description: Home page, Tim Menzies
 remote_theme: just-the-docs/just-the-docs
 xlogo: "/img/logo.png"
-favicon_ico: "/assets/img/favicon.ico"
+favicon_ico: "/assets/img/favicon.png"
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub."
 gh_edit_repository: "https://github.com/timm/fyi" # the github URL for your repo
