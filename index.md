@@ -11,7 +11,7 @@ permalink: /
 
 <img align=right width=250 src="/assets/img/head.png">
 
-<b>Prof. Tim Menzies</b><br>cs, phd, ncstate, se, ai, ml, prog.languages
+<b>Tim Menzies</b><br>IEEE Fellow, prof, cs, phd, ncstate, se, ai, ml, prog.languages
 
 > It's an ML world.  But is that software being  used, as it should? Is it optimized? Unbiased? Explainable? 
 
