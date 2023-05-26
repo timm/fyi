@@ -1,10 +1,12 @@
-body { 
-  font-family:   "PT Sans", Calibri, Tahoma, Sans-Serif;
+body {
+ xbackground-color: #EEE;
+  font-family: "Dejavu Sans";
   padding: 10px;
   line-height: 20px;
+  max-width: 1000px;
 }
 h1 { font-weight: bold; color: #CC0000;}
 h2 { font-weight: bold; color: #CC0000;}
 xb { color: #CC0000;}
 
-a { font-weight: bold; color: #CC0000; }
+a { text-decoration: underline; font-weight: bold; color: #CC0000; }
