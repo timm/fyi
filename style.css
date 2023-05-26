@@ -3,7 +3,8 @@ body {
   padding: 10px;
   line-height: 20px;
 }
-h1 {color: #CC0000;}
+h1 { font-weight: bold; color: #CC0000;}
+h2 { font-weight: bold; color: #CC0000;}
 xb { color: #CC0000;}
 
 a { font-weight: bold; color: #CC0000; }
