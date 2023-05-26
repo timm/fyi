@@ -19,9 +19,9 @@ permalink: /
 
 <br clear=all>
 
-[For students](students.md){: .btn .btn-primary }
- &nbsp;  [For industry](industry.md){: .btn .btn-blue }
- &nbsp;  [For researchers](research.md){: .btn .btn-green }
+| [For students](students.md){: .btn .btn-primary } | [For industry](industry.md){: .btn .btn-blue } |  [For researchers](research.md){: .btn .btn-green } |
+|---------------------------------------------------|------------------------------------------------|-----------------------------------------------------|
+| asd | asdas | asdasd| 
 
 ----
 
