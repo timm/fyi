@@ -26,9 +26,9 @@ lead researcher on projects for NSF, NIJ, DoD, NASA, USDA (total funding of
 **associate editor of TSE**  (IEEE Transactions on Software Engineering) and other leading SE journals. 
 For more, see his web site https://timm.fyi.
 
-{: .warning }
+{: .highlight }
 > I seek talented graduate students to find and fix (as much as we can) the
-short-comings in real-world ML. [students.md](Is that you?)
+short-comings in real-world ML. [Is that you?]((Is that you?)
 
 <br clear=all>
 
@@ -41,8 +41,8 @@ short-comings in real-world ML. [students.md](Is that you?)
     </thead> 
     <tbody> 
       <tr> 
-       <td>Wanted: talented I've graduated 18 Ph.D. and 32 masters students (by research). Together, we explore
-software analytics, optimizations, ethics, </td> <td>asdas</td> <td>asdasd</td> </tr> 
+       <td>Want to accelerate your SE career? In research? In industry?
+ </td> <td>Want to innvoate on time? On budget?</td> <td> My papers <br>My Projects</td> </tr> 
     </tbody> 
    </table>
 
