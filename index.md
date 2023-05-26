@@ -19,9 +19,20 @@ permalink: /
 
 <br clear=all>
 
-| [For students](students.md){: .btn .btn-primary } | [For industry](industry.md){: .btn .btn-blue } |  [For researchers](research.md){: .btn .btn-green } |
-|---------------------------------------------------|------------------------------------------------|-----------------------------------------------------|
-| asd | asdas | asdasd| 
+<div class="table-wrapper">
+  <table> 
+    <thead> 
+      <tr> <th><a href="students.md" class="btn btn-primary">For students</a></th> 
+      <th> <a href="industry.md" class="btn btn-blue">For industry</a></th> 
+      <th> <a href="research.md" class="btn btn-green">For researchers</a></th> 
+      </tr> 
+    </thead> 
+    <tbody> 
+      <tr> 
+       <td>asd</td> <td>asdas</td> <td>asdasd</td> </tr> 
+    </tbody> 
+   </table>
+</div>
 
 ----
 
