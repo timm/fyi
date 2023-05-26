@@ -11,11 +11,24 @@ permalink: /
 
 <img align=right width=250 src="/assets/img/head.png">
 
-<b>Tim Menzies</b><br>IEEE Fellow, prof, cs, phd, ncstate, se, ai, ml, prog.languages
-
 > It's an ML world.  But is that software being  used, as it should? Is it optimized? Unbiased? Explainable? 
 
 > Maybe  someone should look into that...
+
+Tim Menzies (**IEEE Fellow**, Ph.D., UNSW, 1995) is a **full Professor** in CS at North Carolina State
+where he explores how SE can improve optimization, ethics, and explainable AI.
+He is the director of the RAISE lab (real world AI for SE) and the author of over **280 publications**
+ (refereed) with 20,000+ citations and an h-index of 69.  
+He has graduated **20 Ph.D. students**, and has been a 
+lead researcher on projects for NSF, NIJ, DoD, NASA, USDA (total funding of 
+**$13+ million**) as well as joint research work with private companies. Prof. Menzies is the 
+**editor-in-chief** of the Automated Software Engineering journal and 
+**associate editor of TSE**  (IEEE Transactions on Software Engineering) and other leading SE journals. 
+For more, see his web site https://timm.fyi.
+
+{: .warning }
+> I seek talented graduate students to find and fix (as much as we can) the
+short-comings in real-world ML. [students.md](Is that you?)
 
 <br clear=all>
 
@@ -28,7 +41,8 @@ permalink: /
     </thead> 
     <tbody> 
       <tr> 
-       <td>asd</td> <td>asdas</td> <td>asdasd</td> </tr> 
+       <td>Wanted: talented I've graduated 18 Ph.D. and 32 masters students (by research). Together, we explore
+software analytics, optimizations, ethics, </td> <td>asdas</td> <td>asdasd</td> </tr> 
     </tbody> 
    </table>
 
