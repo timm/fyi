@@ -19,7 +19,6 @@ permalink: /
 
 <br clear=all>
 
-<div class="table-wrapper">
   <table> 
     <thead> 
       <tr> <th><a href="students.md" class="btn btn-primary">For students</a></th> 
@@ -32,7 +31,6 @@ permalink: /
        <td>asd</td> <td>asdas</td> <td>asdasd</td> </tr> 
     </tbody> 
    </table>
-</div>
 
 ----
 
