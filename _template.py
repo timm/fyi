@@ -1,7 +1,7 @@
 import _nav
 
 def content(title="",author="",description="",css="style.css",
-           favicon="favicon.png",
+           favicon="favicon.ico",
            header="",nav=_nav.content(),main="",
            footer=""):
   return f"""<!doctype html>
@@ -11,7 +11,7 @@ def content(title="",author="",description="",css="style.css",
     <title>{title}</title>
     <meta name="description" content="{description}">
     <meta name="author" content="{author}">
-    <link rel="shortcut icon" href="{favicon}">
+    <link rel="icon" type="image/x-icon" href="{favicon}">
     <link rel="stylesheet" href="normalize.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>

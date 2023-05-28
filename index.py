@@ -238,10 +238,10 @@ As to funding, I do not guarantee that my supervised students get funding from m
  I've done this with many companies. For example:
  <ul>
               <li>
-                <a href="https://pdfs.semanticscholar.org/ae7d/96ee5c7838343a7cf176d008cf3eaaeba1ef.pdf">Microsoft</a>;
+                <a href="https://thomas-zimmermann.com/publications/files/kocaganeli-icse-2013.pdf">Microsoft</a>;
                 <li> <a href="https://www.sbir.gov/sbirsearch/detail/4945">Grammatech</a>;
                   <li><a href="http://www.slideshare.net/timmenzies/172529main-ken-andtimsoftwareassuranceresearchatwestvirginia?qid=4ddfaa48-dea3-4397-800b-74170c2722da&amp;v=&amp;b=&amp;from_search=4">NASA</a>;
-                    <li><a href="https://goo.gl/XtT1OI"> CSIRO</a>
+                    <li><a href="https://www.researchgate.net/profile/Tim-Menzies/publication/2278548_An_Expert_System_for_Raising_Pigs/links/09e4150c30f02cc14d000000/An-Expert-System-for-Raising-Pigs.pdf">CSIRO</a>
                     <li>LexisNexis: e.g. <a href= "http://www.slideshare.net/slideshow/embed_code/key/f8etbZ448ukfOs">1</a>,<a 
                                        href="pdf/Best_Practice_SE_text_mining.pdf">2</a>,<a 
                                        href="pdf/LNPoster2018GREEN.pdf">3</a>,<a 
