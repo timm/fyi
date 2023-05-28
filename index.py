@@ -25,7 +25,8 @@ But is that software being  used, as it should?<br>
 Is it optimized? Fair? Unbiased? Explainable?<br>
 Shouldn't more people be checking that? Improving that?</p></em>
 
-<p style="background-color: yellow;">I seek <b>talented</b> graduate students to find and fix (as much as we can) the
+<p style="background-color: yellow;">I seek <b>talented</b> graduate students and
+<b>industrial partners</b> to find and fix (as much as we can) the
 <b>short-comings in real-world AI/ML</b>. </p>
 
 
