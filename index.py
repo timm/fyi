@@ -292,7 +292,7 @@ href="https://scholar.google.com/citations?view_op=search_authors&hl=en&authuser
                 &nbsp;&nbsp;<img height="50" src=
                                     "assets/img/grammatech-squarelogo.png" align=middle>
                 <img height="50" style="padding-bottom: 10px;"  align=middle src="assets/img/ibm.png">&nbsp;<img 
-                                                                             height="50" src="img/ln.png" align=massets/iddle>  <img 
+                                                                             height="50" src="assets/img/ln.png" align=massets/iddle>  <img 
                                                                                          width="50" src="assets/img/nara.png" align=middle>
                                                                              <img height=
                                                                              "50" src=
