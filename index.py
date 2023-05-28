@@ -17,8 +17,7 @@ function openCity(cityName) {
 """ + f"""
 
 <img align=right style="padding-top: 15px;" width=166 src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
-<h1>Tim Menzies:
-<span style="color:#CC0000;">
+<h1> <span style="color:#CC0000;">
 se 4 ai 4 good</span></h1>
 <p><b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)<br>
 <b>Editor-in-chief</b> Automated SE Journal<br>
