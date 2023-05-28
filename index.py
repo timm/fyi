@@ -43,13 +43,13 @@ For more, see his web site https://timm.fyi. </p>
 
 <div class="w3-bar w3-black" style="padding:30px;"> 
 <center>
-  <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:lightgreen;" onclick="openCity('News')"><h4>News</h4></button>
-  &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:yellow;" onclick="openCity('For Students')"><h4>For Students</h4></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:lightblue; " onclick="openCity('For Industry')"><h4>For Industry</h4></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:orange;" onclick="openCity('For Researchers')"><h4>For Researachers</h4></button>
+  &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
+  <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:lightgreen;" onclick="openCity('News')"><h4>News</h4></button>
 </center>
 </div>
 
