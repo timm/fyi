@@ -9,6 +9,6 @@ def content(name="Tim Menzies",email="timm@ieeee.org"):
 | <a href="mailto:{name}">{email}</a>
 <br>
 <b>Editor-in-chief</b>, Automated SE journal<br>
-IEEE Fellow, prof, cs, usa (se, ai, re, analytics, optimization)</p>
+<b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)</p>
 <hr>
 """
