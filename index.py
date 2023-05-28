@@ -16,12 +16,14 @@ function openCity(cityName) {
 </script>
 """ + f"""
 
+<img align=right xstyle="padding-right: 10px;" height="80" src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
 <h1>Tim Menzies:
 <span style="color:#CC0000;">
 se 4 ai 4 good</span></h1>
-<p><b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)</p>
-<img style="background-color: #FFF;" align=right width=200 src="assets/img/head.png">
+<p><b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)<br>
+<a href="mailto:timm@ieee.org">timm@ieee.org</a>; rm 3001, EE2</p>
 <hr>
+<img style="background-color: #FFF;" align=right width=200 src="assets/img/head.png">
 <em><p> It's an AI world. 
 But is that software being  used, as it should?<br>
 Is it optimized? Fair? Unbiased? Explainable?<br>
