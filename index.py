@@ -22,11 +22,13 @@ se 4 ai 4 good</span></h1>
 <img style="background-color: #FFF;" align=right width=200 src="assets/img/head.png">
 <em><p> It's an AI world. 
 But is that software being  used, as it should?<br>Is it optimized? Fair? Unbiased? Explainable?<br>
-Maybe we should look into that...</p></em>
+How do we check that? Repair that?</p></em>
 
 <p style="background-color: yellow;">I seek <b>talented</b> graduate students to find and fix (as much as we can) the
-<b>short-comings in real-world AI/ML</b>. 
-<a href="students.html">Is that you?</a></p>
+<b>short-comings in real-world AI/ML</b>. </p>
+
+
+
 <p>
 Tim Menzies (<b>IEEE Fellow</b>, Ph.D., UNSW, 1995) is a <b>full Professor</b> in CS at North Carolina State
 where he explores how SE can improve optimization, ethics, and explainable AI.
@@ -41,35 +43,27 @@ Prof. Menzies is the
 <b>associate editor of TSE</b>  (IEEE Transactions on Software Engineering) and other leading SE journals. 
 For more, see his web site https://timm.fyi. </p>
 
-<div class="w3-bar w3-black" style="padding:30px;"> 
+<ul>
+            <li id="">    <b>May'23</b>: <a href="https://docs.google.com/presentation/d/e/2PACX-1vRhfOl_TEueVDE8ZPReYmK1fCWgsWhQiErQePDweLNISrq6yAiufMsMsA_JUZ0ziqwREVqwUNOX92JN/pub?start=false&loop=false&delayms=30003">ROSE festival</a> runs at ICSE'23.
+            <li id="">    <b>May'23</b>: Invited to FSE'24 to program committee
+            <li id="dim"> <b>May'23</b>: ICSE'23 talk <a href="http://tiny.cc/choice23">Future of SE</a>
+            <li id="">    <b>Apr'23</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
+            <li id="">    <b>Mar'23</b>: New gift from DivePlan: studies on surrogate data ($50K)
+            <li> <button class="w3-bar-item w3-button" style="border:0px solid #CCC;  " onclick="openCity('News')"><font color="#CCOOOO"><b><u>More news</u></b></font></button>
+          </ul>
+
+<div class="w3-bar w3-black" style="padding:20px;"> 
 <center>
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:yellow;" onclick="openCity('For Students')"><h4>For Students</h4></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:lightblue; " onclick="openCity('For Industry')"><h4>For Industry</h4></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:orange;" onclick="openCity('For Researchers')"><h4>For Researchers</h4></button>
-  &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
-  <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:lightgreen;" onclick="openCity('News')"><h4>News</h4></button>
 </center>
 </div>
-
-<div id="News" class="w3-container city" style="display:block">
+<div id="News" class="w3-container city" style="display:none">
 <hr>
-<h3>News</h3>
-          <ul>
-            <li id="">    <b>May'23</b>: <a href="https://docs.google.com/presentation/d/e/2PACX-1vRhfOl_TEueVDE8ZPReYmK1fCWgsWhQiErQePDweLNISrq6yAiufMsMsA_JUZ0ziqwREVqwUNOX92JN/pub?start=false&loop=false&delayms=30003">ROSE festival</a> runs at ICSE'23.
-            <li id="">    <b>May'23</b>: Invited to FSE'24 to program committee
-            <li id="dim"> <b>May'23</b>: ICSE'23 talk <a href="http://tiny.cc/choice23">Future of SE</a>
-            <li id="">    <b>Apr'23</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
-            <li id="dim"> <b>Apr'23</b>: Andre Motta passes his oral prelim
-            <li id="">    <b>Mar'23</b>: New gift from DivePlan: studies on surrogate data ($50K)
-		        <li id="dim"> <b>Mar'23</b>: ICSE'23 accepts our <a href="https://conf.researchr.org/track/icse-2023/rose-festival">ROSE'23 proposal</a> (open science in SE).
-            <Li id="">    <b>Mar'23</b>: Invited to PC of ICSE'24 NIER track
-            <Li id="dim"> <b>Feb'23</b>: Invited to the review board for 2024 IEEE Fellow applications.
-            <Li id="">    <b>Feb'23</b>: Invited to ESEM'23 program committee.
-          </ul>
-
-<h5>Older News</h5>
+          <h5>News Archive</h5>
  <p> <b>Papers:</b> <ul>
             <Li id="dim"> <b>Feb'23</b>: For ICSE'23 journal first. Reports on <a href="https://arxiv.org/pdf/2208.01595.pdf">vulnerabilities</a>; <a href="https://arxiv.org/pdf/2110.01109.pdf">Fair-Mask</a>; <a href="https://arxiv.org/pdf/2201.10592.pdf">labeling cost</a>
             <li id="">    <b>Feb'23</b>: To appear, Expert Systems with Applications: <a href="https://arxiv.org/pdf/2109.14569.pdf">Redesigning Cloud Applications</a>
@@ -105,6 +99,10 @@ For more, see his web site https://timm.fyi. </p>
               <li id="dim"> <b>Oct'22 </b>: new Grant, Learning Analytical Sciences: $170K. SSL for DL</li>
               <li>...
             </ul> <b>Service:</b><ul>
+		        <li id="dim"> <b>Mar'23</b>: ICSE'23 accepts our <a href="https://conf.researchr.org/track/icse-2023/rose-festival">ROSE'23 proposal</a> (open science in SE).
+            <Li id="">    <b>Mar'23</b>: Invited to PC of ICSE'24 NIER track
+            <Li id="dim"> <b>Feb'23</b>: Invited to the review board for 2024 IEEE Fellow applications.
+            <Li id="">    <b>Feb'23</b>: Invited to ESEM'23 program committee.
 		        <li id="dim"> <b>Dec'22</b>: Journal of Systems and Softwares accept special issue proposal for FAIRWARE'23 papers</i>
             <li id=""> <b>Dec'22</b>: invited to IJCAI'23 program committee;</li>
               <li id="dim"> <b>Nov'22</b>: invited, PC member, EASE'23</li>
@@ -128,7 +126,7 @@ For more, see his web site https://timm.fyi. </p>
 
 </div>
 
-<div id="For Students" class="w3-container city" style="display:none">
+<div id="For Students" class="w3-container city" style="display:block">
 <hr>
   </a><h3>For Students</h3>
   <table>
