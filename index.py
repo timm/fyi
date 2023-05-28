@@ -21,8 +21,8 @@ function openCity(cityName) {
 se 4 ai 4 good</span></h1>
 <img style="background-color: #FFF;" align=right width=200 src="assets/img/head.png">
 <em><p> It's an AI world. 
-But is that software being  used, as it should?<br>Is it optimized? Unbiased? Explainable?<br>
-Maybe  someone should look into that...</p></em>
+But is that software being  used, as it should?<br>Is it optimized? Fair? Unbiased? Explainable?<br>
+Maybe we should look into that...</p></em>
 
 <p style="background-color: yellow;">I seek <b>talented</b> graduate students to find and fix (as much as we can) the
 <b>short-comings in real-world AI/ML</b>. 
@@ -47,7 +47,7 @@ For more, see his web site https://timm.fyi. </p>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:lightblue; " onclick="openCity('For Industry')"><h4>For Industry</h4></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
-  <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:orange;" onclick="openCity('For Researchers')"><h4>For Researachers</h4></button>
+  <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:orange;" onclick="openCity('For Researchers')"><h4>For Researchers</h4></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:lightgreen;" onclick="openCity('News')"><h4>News</h4></button>
 </center>
