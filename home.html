@@ -7,8 +7,10 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" href="normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Dejavu Sans' rel='stylesheet'>
+    <xlink href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -18,11 +20,13 @@
     <![endif]-->
   </head>
   <body>
+   <div id=wrap>
     <header></header>
     <nav>
 <img align=right height="60" src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
-<p>Tim Menzies:  <a href="home.html">home</a> 
-| <a href="https://arxiv.org/search/?searchtype=all&query=tim+menzies&size=200&order=-announced_date_first">pre-prints</a>
+<p>
+Tim Menzies: 
+<a href="https://arxiv.org/search/?searchtype=all&query=tim+menzies&size=200&order=-announced_date_first">pre-prints</a>
 | <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC&hl=en&authuser=1">papers</a>
 | <a href="https://www.youtube.com/playlist?list=PLOgGLL2KRJ7x1qbFQjzDn1tCjCHAw6pGo">videos</a>
 | <a href="mailto:Tim Menzies">timm@ieeee.org</a>
@@ -32,10 +36,22 @@ IEEE Fellow, prof, cs, usa (se, ai, re, analytics, optimization)</p>
 <hr>
 </nav>
     <main>
+<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(cityName).style.display = "block";  
+}
+</script>
 
-<h1>Tim Menzies
-(se 4 ai 4 good)</h1>
-<img style="background-color: white;" align=right width=220 src="assets/img/head.png">
+
+<h1>Tim Menzies:
+<span style="color:#CC0000;">
+se 4 ai 4 good</span></h1>
+<img style="background-color: #FFF;" align=right width=200 src="assets/img/head.png">
 <em><p> It's an AI world. 
 But is that software being  used, as it should?<br>Is it optimized? Unbiased? Explainable?<br>
 Maybe  someone should look into that...</p></em>
@@ -46,191 +62,53 @@ Maybe  someone should look into that...</p></em>
 <p>
 Tim Menzies (<b>IEEE Fellow</b>, Ph.D., UNSW, 1995) is a <b>full Professor</b> in CS at North Carolina State
 where he explores how SE can improve optimization, ethics, and explainable AI.
-He is the director of the RAISE lab (real world AI for SE) and the author of over <b>280 publications</b>
+He is the director of the RAISE lab (real world AI for SE) and the author of over
+<b>280 publications</b>
  (refereed) with 20,000+ citations and an h-index of 69.  
 He has graduated <b>18 Ph.D. students</b>, and has been a 
 lead researcher on projects for NSF, NIJ, DoD, NASA, USDA (total funding of 
-<b>$13+ million</b>) as well as joint research work with private companies. Prof. Menzies is the 
+<b>$13+ million</b>) as well as joint research work with private companies.
+Prof. Menzies is the 
 <b>editor-in-chief</b> of the Automated Software Engineering journal and 
 <b>associate editor of TSE</b>  (IEEE Transactions on Software Engineering) and other leading SE journals. 
 For more, see his web site https://timm.fyi. </p>
 
-<table cellpadding="3px" border=1 bordercolor=#CCC ><tr>
-<td swidth="33%" style="background-color: yellow; color: black;text-align: center; font-weight: bold;">        For students</td>
-<td swidth="33%" style="background-color: lightblue; color: black;text-align: center; font-weight: bold;"> For indusry</td>
-<td swidth="33%" style="background-color: orange; color: black;text-align: center; font-weight: bold;">        For researchers</td>
-</tr>
-<tr><td valign=top> 
-       <a href="#students">Ask me how to </a>
-      accelerate your SE career (in research and/or industry). For example, by exploring:
-      <ul>
-       <lI>Optimizing AL/ML systems. 
-       <li>Dramatically reducing ML's cost.
-       <li>Making AI explainable.
-       <li>Measuring and mitigating ML discrimination.
-       </ul>
+<div class="w3-bar w3-black" style="padding:30px;"> 
+<center>
+  <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:lightgreen;" onclick="openCity('News')">News</button>
+  &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
+  <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:yellow;" onclick="openCity('For Students')">For Students</button>
+  &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
+  <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:lightblue; " onclick="openCity('For Industry')">For Industry</button>
+  &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
+  <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:orange;" onclick="openCity('For Researchers')">For Researachers</button>
+</center>
+</div>
 
-       See also my work on  learning significant patterns from software project data:
-       <ul><li>Defect prediction
-             <li>Effort estimation
-             <li>Configuration (including cloud config)
-             <li>Static code analysis false alarms
-             <li>Technical debt
-              <li>Reduce cost of testing
-       </ul>
-<dt> Current Ph.D.</dt>
-              <dd>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Xueqi(Sherry) Yang" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-cherry.png"></a>
-<a href="https://www.linkedin.com/in/xiao-ling-339a15189/"><img align=middle alt="Xiao Ling" src="assets/img/head.png" width=35 height=35></a>
-                <a href="http://ai4se.net/people/kewenPeng"><img alt="Kewen Peng" width="35" height="35" align=middle src="assets/img/who/KewenPeng.jpeg"></a>
-                <a href="https://www.suvodeepmajumder.us"><img alt="Suvodeep Najumder" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/duvodeep.png"></a>
-                <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Andre Motta" width="35" height="35" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
-                <a href="https://yrahul3910.github.io/whyrahul/"><img alt="Andre Motta" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a>
-              </dd>
-              <dt>Graduated Ph.D.</dt>
-              <dd>
-                <a href="http://documentslide.com/documents/zhihao-scott-chen.html"><img alt="Scott Chen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/scottchen.png"></a>
-                <a href="http://www.messiah.edu/info/21665/our_faculty/2753/department_faculty/4"><img alt="David Owen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/davidowen.png"></a>
-                <a href="http://nandeshwar.info/"><img alt="Ashutosh Nandeshwar" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ashutosh.png"></a>
-                <a href="http://www.kocaguneli.com/"><img alt="Ekrem Kocaguneli" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ekrem.png"></a>
-                <a href="http://www.birzeit.edu/en/faculty-staff/abdel-salam-sayyad"><img alt="Abdel Salem Sayyad" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/abdel.png"></a>
-                <a href="http://www.fayolapeters.com/about/"><img alt="Fayola Peters" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/fayola.png"></a>
-                <a href="https://www.linkedin.com/in/joseph-krall-53125470/"><img alt="Joe Krall" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/joekrall.png"></a>
-                <a href="http://greggay.com/"><img alt="Greg Gay" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/greg.png"></a>
-                <a href="http://ai4se.net/people/2014/09/30/Wei-Fu/"><img alt="Wei Fu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/wei.jpg"></a>
-                <a href="http://ai4se.net/people/2014/10/15/Vivek-Nair/"><img alt="Vivek Nair" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/vivek.jpg"></a>
-                <a href="http://ai4se.net/people/2015/09/01/Amritanshu-Agrawal/"><img alt="Amritanshu Agrawal" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/amrit.jpg"></a>
-                <a href="http://ai4se.net/people/2015/08/15/Jianfeng-Chen/"><img alt="Jianfeng Chen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/chen.jpg"></a>
-                <a href="http://ai4se.net/people/2014/10/04/Rahul-Krishna/"><img alt="Rahul Krishna" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/rahlk.jpg"></a>
-                <a href="http://ai4se.net/people/2015/08/30/Zhe-Yu/"><img alt="Zhe Yu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/Zhe.jpg"></a>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Joymallya Chakraborty" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-joy.png"></a>
-                <a href="https://rshu.github.io"><img alt="Rui Shu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-riu.png"></a>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Shrikanth Chandrasekaran" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-shrikamtj.png"></a>
-                <a href="http://ai4se.net/people/2017/09/01/Tianpei-Xia/"><img alt="Tianpei Xia" width="35" height="35" align=middle src="assets/img/who/Patrick.png"></a>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Huy Tu" width="35" height="35" align=middle src="assets/img/who/huy.jpeg"></a>
-              </dd>
-            </dl>
-
- </td><td valign=top>
-       <b>Ask me how</b>
- to innovate on time, on budget. 
- I've done this with many companies. For example:
- <ul>
-              <li>
-                <a href="https://pdfs.semanticscholar.org/ae7d/96ee5c7838343a7cf176d008cf3eaaeba1ef.pdf">Microsoft</a>;
-                <li> <a href="https://www.sbir.gov/sbirsearch/detail/4945">Grammatech</a>;
-                  <li><a href="http://www.slideshare.net/timmenzies/172529main-ken-andtimsoftwareassuranceresearchatwestvirginia?qid=4ddfaa48-dea3-4397-800b-74170c2722da&amp;v=&amp;b=&amp;from_search=4">NASA</a>;
-                    <li><a href="https://goo.gl/XtT1OI"> CSIRO</a>
-                    <li>LexisNexis: e.g. <a href= "http://www.slideshare.net/slideshow/embed_code/key/f8etbZ448ukfOs">1</a>,<a 
-                                       href="pdf/Best_Practice_SE_text_mining.pdf">2</a>,<a 
-                                       href="pdf/LNPoster2018GREEN.pdf">3</a>,<a 
-                                       href="https://arxiv.org/pdf/1905.07019.pdf">4</a>.<a 
-                                       href="https://arxiv.org/pdf/1905.06390.pdf">5</a>;<br>
-                                     <li>         IBM: e.g. <a href= "https://github.com/timm/16/blob/master/matt.pdf">1</a>,<a 
-                                                         href= "https://arxiv.org/pdf/1711.03933.pdf">2</a>,<a 
-                                                         href="https://arxiv.org/pdf/1710.09055.pdf">3</a>,<a 
-                                                         href="https://arxiv.org/pdf/1710.08736.pdf">4</a>;
-            </ul>
-
-</td><td valign=top>
-<p><b>Paper awards</b>:<br>distinguished at FSE'21, ICSE'19; most influential from ICSME'19;
-<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7htTUTgmLtUC&citation_for_view=7htTUTgmLtUC:u5HHmVD_uO8C">top-20 most cites/year</a>;
-<p><b>Current/past AE</b>:<br>TSE, TOSEM, EMSE, CACM, IST, ASEj
-<p><b>Co-general chair</b>:<br>ICMSE'16; RAISE'19, PROMISE'05..'12
-<p><b>co-PC chair</b>:<br>ASE'12, NEIR'15, SSBSE'17, PROMISE'20
-<p><b>PC member (since 2018)</b>:<br>FSE*2, ICSE*4 SANER'23, IJCAI*2, AAAI*2,  ICML'22, MSR*2, ESEM*3, ASE*2...
-<p><b>Other</b>:<br>
-NASA  SE chair: 2002-2004;<br>
-IEEE Technical Council SE. 2022, 2021;<br>
-NSF panelist: 13 times (2003-2020)
-</td></tr></table>
-
-<h2>News</h2>
+<div id="News" class="w3-container city" style="display:block">
+<hr>
+<h3>News</h3>
           <ul>
-            <li id="">    <b>Apr'22</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
-            <li id="dim"> <b>Apr'22</b>: Andre Motta passes his oral prelim
-            <li id="">    <b>Mar'22</b>: New gift from DivePlan: studies on surrogate data ($50K)
-		        <li id="dim"> <b>Mar'22</b>: ICSE'23 accepts our <a href="https://conf.researchr.org/track/icse-2023/rose-festival">ROSE'23 proposal</a> (open science in SE).
-            <Li id="">    <b>Mar'22</b>: Invited to PC of ICSE'24 NIER track
-            <Li id="dim"> <b>Feb'22</b>: Invited to the review board for 2024 IEEE Fellow applications.
-            <Li id="">    <b>Feb'22</b>: Invited to ESEM'23 program committee.
-            <Li id="dim"> <b>Feb'22</b>: For ICSE'23 journal first. Reports on <a href="https://arxiv.org/pdf/2208.01595.pdf">vulnerabilities</a>; <a href="https://arxiv.org/pdf/2110.01109.pdf">Fair-Mask</a>; <a href="https://arxiv.org/pdf/2201.10592.pdf">labeling cost</a>
-            <li id="">    <b>Feb'22</b>: To appear, Expert Systems with Applications: <a href="https://arxiv.org/pdf/2109.14569.pdf">Redesigning Cloud Applications</a>
-            <li id="dim"> <b>Feb'22</b>: To appear, IEEE Software: <a href="https://arxiv.org/pdf/2301.10407.pdf">Avoiding Malicious Explanations</a>
-          <li id=""><b><a href="#priornews">Other  news</a></b></li>
+            <li id="">    <b>May'23</b>: Incited to FSE'24 to program committee
+            <li id="dim"> <b>May'23</b>: ICSE'23 talk <a href="http://tiny.cc/choice23">Future of SE</a>
+            <li id="">    <b>Apr'23</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
+            <li id="dim"> <b>Apr'23</b>: Andre Motta passes his oral prelim
+            <li id="">    <b>Mar'23</b>: New gift from DivePlan: studies on surrogate data ($50K)
+		        <li id="dim"> <b>Mar'23</b>: ICSE'23 accepts our <a href="https://conf.researchr.org/track/icse-2023/rose-festival">ROSE'23 proposal</a> (open science in SE).
+            <Li id="">    <b>Mar'23</b>: Invited to PC of ICSE'24 NIER track
+            <Li id="dim"> <b>Feb'23</b>: Invited to the review board for 2024 IEEE Fellow applications.
+            <Li id="">    <b>Feb'23</b>: Invited to ESEM'23 program committee.
           </ul>
 
-<hr>
-<a name=students><h2>For Students</h2></a>
-<h3>Information</h3>
-            <ul>
-              <li> <a href="https://www.youtube.com/watch?v=LRoI-Rw4GBY">Why NC State?</a> </li>
-              <li> <a href="http://ai4se.net/projects">My projects</a> </li>
-              <li> <a href="http://ai4se.net">My lab</a> </li>
-              <li> <a href="https://docs.google.com/spreadsheets/d/1oWGEfEdt4aXZ_chBLTzw2RkKhGTKIKReetkcb8Zo2F4/edit"> My students</a> </li>
-              <li> <a href="http://tiny.cc/tim17phd">How 2 b a grad student?</a> </li>
-            </ul>
-
-<h3>Thinking About Graduate Studies?</h3>
-<p>(Prospective students: please be aware that I have a new research direction. Please review those <a href="#home">notes</a> before applying.)</p>
-
-<p><img src="http://collegeinformations.com/wp-content/uploads/2012/06/Graduate-Studies.jpg" align=right width=200></p>
-
-
-<p><em>
-Please forgive this form letter as a reply but, as you might imagine, I get many such enquiries.</p>
-
-<p>To start the application process, please go to <a href="http://www.ncsu.edu/grad/programs/how-to-apply/index.php">this site</a>.</p>
-
-<p>To help you out, I list below some answers to frequently asked questions.</p>
-
-<p>If the following does not answers your questions then please feel free to email me and I will do my best to reply to your queries.</p>
-
-<p>Best wishes, <br/>
-Tim Menzies</em></p>
-
-<h3>About Applying</h3>
-
-<p>American universities accept new graduate students for start-of-study in mid-August and mid-January.</p>
-
-<p>The application process for those dates starts months in advance. You should be planning your application at least one year before your desired start date.
-I have no authority to accept students but, once they are accepted, I can supervise graduate students. So please review our admissions procedures at our departmental Web site.</p>
-
-<p>That said, during the admissions review process, all faculty are sent a sheet listing the candidate students and I am allowed to "nudge" a handful of names. So if you elect to enroll here then please ping me so I can watch for your application in the system.</p>
-
-<h3>Tips for writing to Professors</h3>
-
-<p>When writing to a CS prof in the USA, here is some advice on how to attract their attention.</p>
-
-<p>Do not send a form letter-- we get enough of those.</p>
-
-<p>To prove that you are not sending a form letter, best to make some reference to their current research, perhaps even to one of their recent papers (and how your prior work or interests match up).</p>
-
-<p>Demonstrate that you have done a little homework before sending and email about the department. E.g.</p>
-
-<ul>
-    <li>read over the department's recruitment policies and say things like "I am targeting an application for your next round of applications for (say) January 2016 which I will submit to <insert correct email name or web page reference here>".</li>
-</ul>
-
-<h3>Working with me</h3>
-
-<p>As to me supervising you, I do not take on students until they have completed one of my grad subjects. This lets us check each other out before we commit too much to each other.</p>
-
-<p>As to funding, I do not guarantee that my supervised students get funding from me. Funding comes and goes depending on the whims of the funding agencies and my policy is to fund my long-term Ph.D. students before anyone else.</p>
-
-<ul>
-    <li>That said, for your information, over the last decade, 75% of my students were fully funded.</li>
-</ul>
-
-<hr>
-
-
-<a name=priornews><h2>Other news</h2></a>
+<h5>Old News</h5>
  <p> <b>Papers:</b> <ul>
-            <li id="">    <b>Jan'22</b>: To appear, IEEE Software: <a href="pdf/ethicalMindset.pdf">Engineering Ethical Mindset</a>
-            <li id="dim"> <b>Jan'22</b>: Accepted to TOSEM: <a href="https://arxiv.org/pdf/2110.13029.pdf">Fair Enough: Searching for Sufficient Measures of Fairness</a>
-		        <li id="">    <b>Jan'22</b>: Accepted to EMSE: <a href="https://arxiv.org/pdf/2106.02716.pdf">Enhancing the Interpretability of Model-based Optimizations</a>
-            <li id="dim"> <b>Jan'22</b>: Accepted to TOSEM:  <a href="https://arxiv.org/pdf/2105.11082.pdf">Assessing Early Bird Heuristic</a>
+            <Li id="dim"> <b>Feb'23</b>: For ICSE'23 journal first. Reports on <a href="https://arxiv.org/pdf/2208.01595.pdf">vulnerabilities</a>; <a href="https://arxiv.org/pdf/2110.01109.pdf">Fair-Mask</a>; <a href="https://arxiv.org/pdf/2201.10592.pdf">labeling cost</a>
+            <li id="">    <b>Feb'23</b>: To appear, Expert Systems with Applications: <a href="https://arxiv.org/pdf/2109.14569.pdf">Redesigning Cloud Applications</a>
+            <li id="dim"> <b>Feb'23</b>: To appear, IEEE Software: <a href="https://arxiv.org/pdf/2301.10407.pdf">Avoiding Malicious Explanations</a>
+            <li id="">    <b>Jan'23</b>: To appear, IEEE Software: <a href="pdf/ethicalMindset.pdf">Engineering Ethical Mindset</a>
+            <li id="dim"> <b>Jan'23</b>: Accepted to TOSEM: <a href="https://arxiv.org/pdf/2110.13029.pdf">Fair Enough: Searching for Sufficient Measures of Fairness</a>
+		        <li id="">    <b>Jan'23</b>: Accepted to EMSE: <a href="https://arxiv.org/pdf/2106.02716.pdf">Enhancing the Interpretability of Model-based Optimizations</a>
+            <li id="dim"> <b>Jan'23</b>: Accepted to TOSEM:  <a href="https://arxiv.org/pdf/2105.11082.pdf">Assessing Early Bird Heuristic</a>
             <li id="">    <b>Dec'22</b>: Accepted to IEEE TSE: <a href="pdf/tseStaticCode22.pdf">How to Find Actionable Static Analysis Warnings</a></li>
             <li id="dim"> <b>Dec'22</b>: 2022 papers = <a href="https://dblp.org/pid/m/TimMenzies.html">TSE*8 + EMSE*6 + TOSEM*2 + MSR*3 + other*3</a> </li>
             <li id="">    <b>Oct'22</b>: new TSE journal paper:  <a href="https://arxiv.org/pdf/2110.01109.pdf">FairMask</a>:v.fast multi-attribute fairness</li>
@@ -269,7 +147,7 @@ I have no authority to accept students but, once they are accepted, I can superv
             </ul>
             <b>Other:</b>
             <ul>
-            <li id="dim"> <b>Jan'22</b>: Video for CACM article <a href="https://vimeo.com/783003055">Reuse is Rampant</a>
+            <li id="dim"> <b>Jan'23</b>: Video for CACM article <a href="https://vimeo.com/783003055">Reuse is Rampant</a>
 		        <li id=""> <b>Dec'22</b>: my latest grad, the talented <a href="https://raw.githubusercontent.com/timm/timm.github.io/master/img/xia.png">Dr Tianpei (Patrick) Xia</a> (with proud parents)</li>
             <li id="dim"> <b>Dec'22</b>: departmental newsletter on my SE subject: <a href="https://www.csc.ncsu.edu/news/2498">Making the Pitch!</a></li>
             <li id=""> <b>Dec'22</b>: 2022 funding = $220K (new) + $2.5M (on-going);</li>
@@ -279,8 +157,207 @@ I have no authority to accept students but, once they are accepted, I can superv
             <li>...
             </ul></p>
 
+</div>
 
-</main>
+<div id="For Students" class="w3-container city" style="display:none">
+<hr>
+  </a><h3>For Students</h3>
+  <table>
+<tr>
+
+<td valign=top width=30%>
+<p>
+             <b>My graduated Ph.D. students:</b><br>
+                <a href="http://documentslide.com/documents/zhihao-scott-chen.html"><img alt="Scott Chen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/scottchen.png"></a>
+                <a href="http://www.messiah.edu/info/21665/our_faculty/2753/department_faculty/4"><img alt="David Owen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/davidowen.png"></a>
+                <a href="http://nandeshwar.info/"><img alt="Ashutosh Nandeshwar" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ashutosh.png"></a>
+                <a href="http://www.kocaguneli.com/"><img alt="Ekrem Kocaguneli" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ekrem.png"></a>
+                <a href="http://www.birzeit.edu/en/faculty-staff/abdel-salam-sayyad"><img alt="Abdel Salem Sayyad" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/abdel.png"></a>
+                <a href="http://www.fayolapeters.com/about/"><img alt="Fayola Peters" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/fayola.png"></a>
+                <a href="https://www.linkedin.com/in/joseph-krall-53125470/"><img alt="Joe Krall" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/joekrall.png"></a>
+                <a href="http://greggay.com/"><img alt="Greg Gay" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/greg.png"></a>
+                <a href="http://ai4se.net/people/2014/09/30/Wei-Fu/"><img alt="Wei Fu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/wei.jpg"></a>
+                <a href="http://ai4se.net/people/2014/10/15/Vivek-Nair/"><img alt="Vivek Nair" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/vivek.jpg"></a>
+                <a href="http://ai4se.net/people/2015/09/01/Amritanshu-Agrawal/"><img alt="Amritanshu Agrawal" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/amrit.jpg"></a>
+                <a href="http://ai4se.net/people/2015/08/15/Jianfeng-Chen/"><img alt="Jianfeng Chen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/chen.jpg"></a>
+                <a href="http://ai4se.net/people/2014/10/04/Rahul-Krishna/"><img alt="Rahul Krishna" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/rahlk.jpg"></a>
+                <a href="http://ai4se.net/people/2015/08/30/Zhe-Yu/"><img alt="Zhe Yu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/Zhe.jpg"></a>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Joymallya Chakraborty" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-joy.png"></a>
+                <a href="https://rshu.github.io"><img alt="Rui Shu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-riu.png"></a>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Shrikanth Chandrasekaran" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-shrikamtj.png"></a>
+                <a href="http://ai4se.net/people/2017/09/01/Tianpei-Xia/"><img alt="Tianpei Xia" width="35" height="35" align=middle src="assets/img/who/Patrick.png"></a>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Huy Tu" width="35" height="35" align=middle src="assets/img/who/huy.jpeg"></a>
+</p>
+<p>
+      <b> My current Ph.D. students:</b></br>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Xueqi(Sherry) Yang" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-cherry.png"></a>
+<a href="https://www.linkedin.com/in/xiao-ling-339a15189/"><img align=middle alt="Xiao Ling" src="assets/img/head.png" width=35 height=35></a>
+                <a href="http://ai4se.net/people/kewenPeng"><img alt="Kewen Peng" width="35" height="35" align=middle src="assets/img/who/KewenPeng.jpeg"></a>
+                <a href="https://www.suvodeepmajumder.us"><img alt="Suvodeep Najumder" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/duvodeep.png"></a>
+                <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Andre Motta" width="35" height="35" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
+                <a href="https://yrahul3910.github.io/whyrahul/"><img alt="Andre Motta" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a>
+            </p>
+
+</td>
+<td width=30px></td>
+<td valign=top >
+ <p><a href="#students">Ask me how to </a> </b>
+      accelerate your SE career (in research and/or industry). For example, by exploring:
+      <ul>
+       <lI>Optimizing AL/ML systems. 
+       <li>Dramatically reducing ML's cost.
+       <li>Making AI explainable.
+       <li>Measuring and mitigating ML discrimination.
+       </ul>
+
+       See also my work on  learning significant patterns from software project data:
+       <ul><li>Defect prediction
+             <li>Effort estimation
+             <li>Configuration (including cloud config)
+             <li>Static code analysis false alarms
+             <li>Technical debt
+              <li>Reduce cost of testing
+       </ul>
+</td>
+
+</tr>
+</table>
+<hr>
+<b>Thinking about graduate studies at NC State?</b>
+            <ul>
+              <li> <a href="https://www.youtube.com/watch?v=LRoI-Rw4GBY">Why NC State?</a> </li>
+              <li> <a href="http://ai4se.net">My lab</a> </li>
+              <li> <a href="https://docs.google.com/spreadsheets/d/1oWGEfEdt4aXZ_chBLTzw2RkKhGTKIKReetkcb8Zo2F4/edit"> My students</a> </li>
+              <li> <a href="http://tiny.cc/tim17phd">How 2 b a grad student?</a> </li>
+<li> <a href="http://www.ncsu.edu/grad/programs/how-to-apply/index.php">Apply here</a>.
+To help you out, I list below some answers to frequently asked questions.
+If the following does not answers your questions then please feel free to email me and I will do my best to reply to your queries.</p>
+            </ul>
+
+<p><img src="http://collegeinformations.com/wp-content/uploads/2012/06/Graduate-Studies.jpg" align=right width=200></p>
+
+
+<p><b>Applying:</b> American universities accept new graduate students for start-of-study in mid-August and mid-January.
+The application process for those dates starts months in advance. You should be planning your application at least one year before your desired start date.
+I have no authority to accept students but, once they are accepted, I can supervise graduate students. So please review our admissions procedures at our departmental Web site.
+That said, during the admissions review process, all faculty are sent a sheet listing the candidate students and I am allowed to "nudge" a handful of names. So if you elect to enroll here then please ping me so I can watch for your application in the system.</p>
+
+<p><b> Tips for writing to Professors:</b>
+When writing to a CS prof in the USA, here is some advice on how to attract their attention.</p>
+<b>Do not send a form letter</b>-- we get enough of those.
+To prove that you are not sending a form letter, best to make some reference to their current research, perhaps even to one of their recent papers (and how your prior work or interests match up).
+Demonstrate that you have done a little homework before sending and email about the department. E.g.</p>
+
+<ul>
+    <li>read over the department's recruitment policies and say things like "I am targeting an application for your next round of applications for (say) January 2016 which I will submit to <insert correct email name or web page reference here>".</li>
+</ul>
+
+<p><b>Working with me</b>:
+As to me supervising you, I do not take on students until they have completed one of my grad subjects. This lets us check each other out before we commit too much to each other.
+As to funding, I do not guarantee that my supervised students get funding from me. Funding comes and goes depending on the whims of the funding agencies and my policy is to fund my long-term Ph.D. students before anyone else.</p>
+
+<ul>
+    <li>That said, for your information, over the last decade, 75% of my students were fully funded.</li>
+</ul>
+</div>
+
+<div id="For Industry" class="w3-container city" style="display:none">
+<hr>
+  <h3>For Industry</h3>
+ <b>Ask me how</b>
+ to innovate on time, on budget. 
+ I've done this with many companies. For example:
+ <ul>
+              <li>
+                <a href="https://pdfs.semanticscholar.org/ae7d/96ee5c7838343a7cf176d008cf3eaaeba1ef.pdf">Microsoft</a>;
+                <li> <a href="https://www.sbir.gov/sbirsearch/detail/4945">Grammatech</a>;
+                  <li><a href="http://www.slideshare.net/timmenzies/172529main-ken-andtimsoftwareassuranceresearchatwestvirginia?qid=4ddfaa48-dea3-4397-800b-74170c2722da&amp;v=&amp;b=&amp;from_search=4">NASA</a>;
+                    <li><a href="https://goo.gl/XtT1OI"> CSIRO</a>
+                    <li>LexisNexis: e.g. <a href= "http://www.slideshare.net/slideshow/embed_code/key/f8etbZ448ukfOs">1</a>,<a 
+                                       href="pdf/Best_Practice_SE_text_mining.pdf">2</a>,<a 
+                                       href="pdf/LNPoster2018GREEN.pdf">3</a>,<a 
+                                       href="https://arxiv.org/pdf/1905.07019.pdf">4</a>.<a 
+                                       href="https://arxiv.org/pdf/1905.06390.pdf">5</a>;<br>
+                                     <li>         IBM: e.g. <a href= "https://github.com/timm/16/blob/master/matt.pdf">1</a>,<a 
+                                                         href= "https://arxiv.org/pdf/1711.03933.pdf">2</a>,<a 
+                                                         href="https://arxiv.org/pdf/1710.09055.pdf">3</a>,<a 
+                                                         href="https://arxiv.org/pdf/1710.08736.pdf">4</a>;
+            </ul>
+
+</div>
+
+<div id="For Researchers" class="w3-container city" style="display:none">
+<hr>
+  <h3>For Researchers</h3>
+
+ <dl>
+              <dt>My awards</dt><dd> <ul><li>IEEE Fellow, 2018
+                <li>Author of one of SE's 20-most cited papers <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7htTUTgmLtUC&citation_for_view=7htTUTgmLtUC:u5HHmVD_uO8C">(cites/year)</a>;<br>
+                  <li>Distinguished paper award, FSE'21
+                    <li>Distinguished paper award, ICSE'19
+                      <li>Most influential paper award, ICSME'19
+                        <li>2017 Inaugural  MSR Foundational Contribution Award
+                          <li>Locally, Google Scholar ranks me as the
+<a 
+href="https://scholar.google.com/citations?hl=en&authuser=1&view_op=search_authors&mauthors=North+Carolina+State+University++computer+science&btnG=">
+  second-most</a> cited author in CS at NCSU.
+<li>Internationally, Google Scholar ranks me:<ul>
+                  <li>
+first for <a 
+href="https://scholar.google.com/citations?view_op=search_authors&hl=en&authuser=1&mauthors=label:search_based_software_engineering">search-based SE</a> 
+and <a
+href="https://scholar.google.com/citations?view_op=search_authors&hl=en&authuser=1&mauthors=label:defect_prediction">defect prediction</a>;
+<li>
+second for <a
+href="https://scholar.google.com/citations?view_op=search_authors&hl=en&authuser=1&mauthors=label:software_cost_estimation">effort estimation</a>;
+<li>
+  and 
+third for <a
+href="https://scholar.google.com/citations?view_op=search_authors&hl=en&authuser=1&mauthors=label:expert_systems">expert systems</a> and
+<a 
+  href="https://scholar.google.com/citations?view_op=search_authors&hl=en&authuser=1&mauthors=label:software_analytics">software analytics</a>.</ul></ul>
+
+<dt>My publications</dt><dd id="dim"> H-index: 67 (Oct'22).</dd>
+              <dt>My grad&nbsp;students</dt><dd> Ph.D.: 6 current. 18 past.<br>Masters (by research): 32 </dd>
+              <dt>My papers</dt><dd id=dim>108 journal + 137 conference + 86 other </dd>
+              <dt>My funding</dt><dd> Total= <a href= "https://docs.google.com/spreadsheets/d/1Y5YrD3WkZlee7LLXLN5m9vvMPL2qBU-vruHpRr77dqg/edit"> $13.3 million</a> (total). From many sources, e.g.:
+                &nbsp;&nbsp;<img height="50" src=
+                                    "assets/img/grammatech-squarelogo.png" align=middle>
+                <img height="50" style="padding-bottom: 10px;"  align=middle src="assets/img/ibm.png">&nbsp;<img 
+                                                                             height="50" src="img/ln.png" align=massets/iddle>  <img 
+                                                                                         width="50" src="assets/img/nara.png" align=middle>
+                                                                             <img height=
+                                                                             "50" src=
+                                                                                     "https://pbs.twimg.com/profile_images/67630775/button_meatball_normal.png" align=middle>
+                                                                             &nbsp;&nbsp;&nbsp;<img height="50" src=
+                                                                                                                   "http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png" align=middle> </dd>
+              </dd><dt>My journal works</dt><dd id=dim>
+                editor-in-chief: Automated Software Engineering journal<br>
+                assoc. ed.: TSE, CACM, IEEE Software<br>
+                editorial board: JSS. SQJ<br>
+                advisory board: EMSE<br>
+                prior: assoc. ed. IST, TOSEM, ASEJ, Big Data Research, IET Software
+              </dd><dt>My conference work</dt><dd>
+                co-general chair: ICMSE'16; RAISE'19, PROMISE'05..'12<br>
+                co-PC chair: ASE'12, NEIR'15, SSBSE'17, PROMISE'20<br>
+                artifacts co-chair:ASE'21, ICSE'20, ASE'20, FSE'18, FSE'16<br>
+                program committees: ICSE'23, SANER'23, ICSE'22, IJCAI'22, AAAI'22, ICML'22, MSR'22, ESEM'22, 
+                IJCAI'21. AAAI'21,  ICSE'21, MSR'21, 
+                ASE'20, ICSE'20, ESEM'20, FSE'19, ASE'19, MSR'19, SSBSE, PROMISE,...
+              </dd>
+              <dt>My professional work</dt><dd id="dim">
+                Roving member, IEEE Technical Council on SE. 2022, 2021</dd>
+              <dt>My government work </dt><dd>
+                NASA software research chair: 2002-2004<br>
+                NSF panelist: 13 times (2003-2020)</dd>
+            </dl>
+
+
+</div>
+
+
+ </main>
     <footer></footer>
+   </div>
   </body>
 </html>

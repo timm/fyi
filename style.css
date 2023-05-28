@@ -1,12 +1,27 @@
-body {
- xbackground-color: #EEE;
-  font-family: "Dejavu Sans";
-  padding: 10px;
-  line-height: 20px;
-  max-width: 1000px;
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,900);
+@import url(http://fonts.googleapis.com/css?family=Spectral:400,1100);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+
+xb {
+   font-weight: 900;
 }
-h1 { font-weight: bold; color: #CC0000;}
-h2 { font-weight: bold; color: #CC0000;}
-xb { color: #CC0000;}
+nav { font-size: small; padding-top: 10px;}
+body {
+  font-family: Lato;
+  font-size: small;
+  padding: 20px;
+  line-height: 18px;
+}
+#wrap {
+  max-width: 800px;
+  margin:0 auto;
+}
+
+h1,h2,h3,h4,h5 { font-weight: bold; }
+h4 { margin: 5px; font-size: 1.05rem; }
+
 
 a { text-decoration: underline; font-weight: bold; color: #CC0000; }
+
+<!--- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_treeview
+--->
