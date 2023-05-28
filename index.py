@@ -16,7 +16,7 @@ function openCity(cityName) {
 </script>
 """ + f"""
 
-<img align=right  width=125 src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
+<img align=right  width=100 src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
 <p>Tim Menzies, <b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)<br>
 <b>Editor-in-chief</b> Automated SE Journal<br>
 <a href="mailto:timm@ieee.org">timm@ieee.org</a>; rm 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/">map</a>)</p>
@@ -49,14 +49,15 @@ Prof. Menzies is the
 <b>associate editor of TSE</b>  (IEEE Transactions on Software Engineering) and other leading SE journals. 
 For more, see his web site https://timm.fyi. </p>
 
+<p><b>News:</b>
 <ul>
             <li id="">    <b>May'23</b>: <a href="https://docs.google.com/presentation/d/e/2PACX-1vRhfOl_TEueVDE8ZPReYmK1fCWgsWhQiErQePDweLNISrq6yAiufMsMsA_JUZ0ziqwREVqwUNOX92JN/pub?start=false&loop=false&delayms=30003">ROSE festival</a> runs at ICSE'23.
             <li id="">    <b>May'23</b>: Invited to FSE'24 to program committee
             <li id="dim"> <b>May'23</b>: ICSE'23 talk <a href="http://tiny.cc/choice23">Future of SE</a>
             <li id="">    <b>Apr'23</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
             <li> <button class="w3-bar-item w3-button" style="border:0px solid #CCC;  " onclick="openCity('News')"><font color="#CCOOOO"><b><u>More news</u></b></font></button>
-          </ul>
-
+          </ul></p>
+<hr>
 <div class="w3-bar w3-black" style="padding:20px;"> 
 <center>
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:yellow;" onclick="openCity('For Students')"><h4>For Students</h4></button>

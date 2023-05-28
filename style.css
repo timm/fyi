@@ -8,7 +8,8 @@ body {
   background-color: #D3D3D3;
 }
 
-
+xnav {height: 30px; background-color: orange; }
+xnav a { color: black;} 
 main {
   margin: 15px;
 }
