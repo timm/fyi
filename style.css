@@ -1,25 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
 @import url(https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css);
 
-xb {
-   font-weight: 900;
-}
 body {
   font-family: Lato;
-  xfont-size: small;
   padding: 20px;
-  line-height: 21px;
 }
 #wrap {
   max-width: 800px;
   margin:0 auto;
 }
-
 h1,h2,h3,h4,h5 { font-weight: bold; }
 h4 { margin: 5px; font-size: 1.05rem; }
 
-
 a { text-decoration: underline; font-weight: bold; color: #CC0000; }
-
-<!--- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_treeview
---->
