@@ -57,7 +57,7 @@ For more, see his web site https://timm.fyi. </p>
 <hr>
 <h3>News</h3>
           <ul>
-            <li id="">    <b>May'23</b>: Incited to FSE'24 to program committee
+            <li id="">    <b>May'23</b>: Invited to FSE'24 to program committee
             <li id="dim"> <b>May'23</b>: ICSE'23 talk <a href="http://tiny.cc/choice23">Future of SE</a>
             <li id="">    <b>Apr'23</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
             <li id="dim"> <b>Apr'23</b>: Andre Motta passes his oral prelim
