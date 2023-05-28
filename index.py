@@ -258,14 +258,19 @@ As to funding, I do not guarantee that my supervised students get funding from m
 <div id="For Researchers" class="w3-container city" style="display:none">
 <hr>
   <h3>For Researchers</h3>
-<p>Faults in SE means faults in AI.
-SE teams often race to deliver AI-based solutions without first
-checking for bias, optimality, explainability, etc. The good news is decades of work in SE
+<P>Here is what I believe:
+<ul>
+<li>Faults in SE means faults in AI.
+<li>SE teams often race to deliver AI-based solutions without first
+checking for bias, optimality, explainability, acceptability to stakeholders etc.
+<li>The good news is decades of work in SE
 (in configuration management and multi-stakeholder reasoning and other work)
 means that we can address those problems.
+<li>
 The bad news is that those methods are rarely applied in SE (since they can be cumbersome), 
 so how can we expect them to be used in AI?
-By finding and fixing faults in those methods, we will not only help SE but also AI software as well.
+<li>By finding and fixing faults in those SE methods, we will not only help SE but also AI software as well.
+</ul>
  <dl>
               <dt>My awards</dt><dd> <ul><li>IEEE Fellow, 2018
                 <li>Author of one of SE's 20-most cited papers <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7htTUTgmLtUC&citation_for_view=7htTUTgmLtUC:u5HHmVD_uO8C">(cites/year)</a>;<br>
