@@ -264,12 +264,14 @@ As to funding, I do not guarantee that my supervised students get funding from m
 <li>SE teams often race to deliver AI-based solutions without first
 checking for bias, optimality, explainability, acceptability to stakeholders etc.
 <li>The good news is decades of work in SE
-(in configuration management and multi-stakeholder reasoning and other work)
+(e.g. in configuration management and multi-stakeholder reasoning and other work)
 means that we can address those problems.
 <li>
 The bad news is that those methods are rarely applied in SE (since they can be cumbersome), 
 so how can we expect them to be used in AI?
-<li>By finding and fixing faults in those SE methods, we will not only help SE but also AI software as well.
+<li>Recent results from SE analytics offers  orders of magnitude improvements in those methods. So
+now is the time to
+find and fix  those faults (in SE methods), thereby dramatically improving AI software as well.
 </ul>
  <dl>
               <dt>My awards</dt><dd> <ul><li>IEEE Fellow, 2018

@@ -7,10 +7,15 @@ def content(name="Tim Menzies",email="timm@ieeee.org"):
 | <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC&hl=en&authuser=1">papers</a>
 | <a href="https://www.youtube.com/playlist?list=PLOgGLL2KRJ7x1qbFQjzDn1tCjCHAw6pGo">videos</a>
 | <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC&hl=en&authuser=1"><i class="ai ai-google-scholar ai-lg"></i></a>
+ &nbsp; 
 <a href="https://dblp.org/pid/m/TimMenzies.html"><i class="ai ai-dblp ai-lg"></i></a>
+ &nbsp; 
 <a href="https://arxiv.org/search/?query=tim+menzies&searchtype=all&source=header"><i class="ai ai-arxiv ai-lg"></i></a>
+ &nbsp; 
 <a href="https://www.goodreads.com/review/list/1469588-tim-menzies?ref=nav_mybooks"><i class="fab fa-goodreads "></i></a>
+ &nbsp; 
 <a href="https://www.facebook.com/tim.menzies"><i class="fab fa-facebook "></i></a>
+ &nbsp; 
 <a href="https://twitter.com/timmenzies?lang=en"><i class="fab fa-twitter "></i></a>
 <br>
 <b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)
