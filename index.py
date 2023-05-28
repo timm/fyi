@@ -16,22 +16,22 @@ function openCity(cityName) {
 </script>
 """ + f"""
 
-<img align=right style="padding-top: 15px;" width=166 src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
-<h1> <span style="color:#CC0000;">
-se 4 ai 4 good</span></h1>
-<p><b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)<br>
+<img align=right  width=125 src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
+<p>Tim Menzies, <b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)<br>
 <b>Editor-in-chief</b> Automated SE Journal<br>
 <a href="mailto:timm@ieee.org">timm@ieee.org</a>; rm 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/">map</a>)</p>
 <hr>
-<img align=right style="background-color: #FFF; margin-left:20px; margin-bottom:20px;"  width=166 src="assets/img/head.png">
-<em><p> It's an AI world. 
-But is that software being  used, as it should?<br>
-Is it optimized? Fair? Unbiased? Explainable?<br>
+<h2> Tim Menzies: <span style="color:#CC0000;"> se 4 ai 4 good</span></h2>
+<em><p> It's an AI/ML world. 
+But is that software being  used, as it should?
+Is it optimized? Fair? Unbiased? Explainable?
 Shouldn't more people be checking that? Improving that?</p></em>
 
-<p style="background-color: yellow;">I seek <b>talented</b> graduate students and
-<b>industrial partners</b> to find and fix (as much as we can) the
-<b>short-comings in real-world AI/ML</b>. </p>
+<img align=left style="background-color: #FFF; margin-right:20px; margin-bottom:20px;"  
+width=200 src="assets/img/head.png">
+<p style="text-align:center; background-color: yellow;">I seek <b>talented</b> grad students &amp;
+<b>industrial partners</b> to find + fix the
+<b>problems in real-world AI/ML</b>. </p>
 
 
 
