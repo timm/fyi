@@ -1,6 +1,6 @@
 def content(name="Tim Menzies",email="timm@ieeee.org"):
   return f"""
-<p style="text-align:right;">
+<p style="margin-right: 10px; text-align:right;">
 <a href="https://dblp.org/pid/m/TimMenzies.html"><i class="ai ai-dblp ai-lg"></i></a>
  &nbsp; 
 <a href="https://www.goodreads.com/review/list/1469588-tim-menzies?ref=nav_mybooks"><i class="fab fa-goodreads "></i></a>
