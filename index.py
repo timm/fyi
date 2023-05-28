@@ -19,7 +19,9 @@ function openCity(cityName) {
 <h1>Tim Menzies:
 <span style="color:#CC0000;">
 se 4 ai 4 good</span></h1>
+<p><b>IEEE Fellow</b>, prof, cs, usa (se, ai, re, analytics, optimization)</p>
 <img style="background-color: #FFF;" align=right width=200 src="assets/img/head.png">
+<hr>
 <em><p> It's an AI world. 
 But is that software being  used, as it should?<br>
 Is it optimized? Fair? Unbiased? Explainable?<br>
