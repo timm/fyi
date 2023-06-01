@@ -1,9 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+@import url(https://fonts.googleapis.com/css?family=Bookman:400,600);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,800);
 @import url(https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css);
 
 body {
-  xont-size:small;
-  font-family: Lato;
+  xfont-size:small;
+  font-family: Roboto;
   padding: 20px;
   background-color: #D3D3D3;
 }

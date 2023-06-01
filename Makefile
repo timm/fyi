@@ -1,4 +1,4 @@
-PYs=$(shell ls [a-z]*.py)
+PYs=$(wildcard [a-z]*.py)
 HTMLs=$(PYs:.py=.html)
 
 all: $(HTMLs) 
