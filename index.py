@@ -64,7 +64,6 @@ Prof. Menzies is the
 For more, see his web site https://timm.fyi. 
 </td>
           </tr></table>
-<hr>
 <div class="w3-bar w3-black" xstyle="padding:20px;"> 
 <center>
   <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:yellow;" onclick="openCity('For Students')"><h4>For Students</h4></button>
