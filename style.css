@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,900);
-@import url(https://fonts.googleapis.com/css?family=Bookman:400,600);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
 @import url(https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css);
 
@@ -17,7 +15,7 @@ main {
 }
 #wrap {
 background-color: white; 
-  padding-top:10px;
+  xpadding-top:10px;
   max-width: 800px;
   xborder: 1px black solid;
   margin:0 auto;

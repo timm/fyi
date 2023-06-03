@@ -16,15 +16,30 @@ function openCity(cityName) {
 </script>
 """ + f"""
 
-<img align=right  xstyle="padding-top: 10px;" width=140 src="https://brand.ncsu.edu/img/logo/brick2x2.jpg">
-<p>Tim Menzies, <b>IEEE Fellow</b>, prof, cs, usa<br>
-<b>Editor-in-chief</b>, Automated SE Journal<br>
+<img style="padding-bottom:8px;" width="100%" src="assets/img/timm2.png">
+<p style="text-align:left;">
 <i class="fa-solid fa-envelope"></i> <a href="mailto:timm@ieee.org">timm@ieee.org</a>  
-<i class="fa-solid fa-phone"> </i> +1-304-376-2859<br>
-rm 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/">map</a>)
-</p>
+<i class="fa-solid fa-phone"> </i> +1-304-376-2859
+<i class="fa-solid fa-map"> </i> 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/">map</a>)
+<span style="float:right;">
 
-<img style="padding-bottom: 10px;" width="100%" src="assets/img/timm2.png">
+<a href="https://dblp.org/pid/m/TimMenzies.html"><i class="ai ai-dblp ai-lg"></i></a>
+ &nbsp; 
+<a href="https://www.goodreads.com/review/list/1469588-tim-menzies?ref=nav_mybooks"><i class="fab fa-goodreads "></i></a>
+ &nbsp; 
+<a href="https://www.facebook.com/tim.menzies"><i class="fab fa-facebook "></i></a>
+ &nbsp; 
+<a href="https://twitter.com/timmenzies?lang=en"><i class="fab fa-twitter "></i></a>
+| <a href="https://arxiv.org/search/?searchtype=all&query=tim+menzies&size=200&order=-announced_date_first">pre-prints
+<i class="ai ai-arxiv ai-lg"></i></a>
+| <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC&hl=en&authuser=1">papers
+<i class="ai ai-google-scholar ai-lg"></i></a>
+| <a href="https://www.youtube.com/playlist?list=PLOgGLL2KRJ7x1qbFQjzDn1tCjCHAw6pGo">videos
+<i class="fab fa-youtube "></i></a> 
+
+
+                    </span>
+                    </p><hr>
 <center>
 <p> It's an AI/ML world. 
 But is that software being  used, as it should?<br>
@@ -52,7 +67,7 @@ Shouldn't more people be checking that? Improving that?</p>
           </ul>
           </td>
 <td width=50% valign=top>
-Tim Menzies (<b>IEEE Fellow</b>, Ph.D., UNSW, 1995) is a <b>full Professor</b> in CS at North Carolina State
+Tim Menzies (<b>IEEE Fellow</b>, Ph.D., UNSW, 1995) is a <b>full Professor</b> in Computer Science at North Carolina State
 where he explores how SE can improve optimization, ethics, and explainable AI.
 He is the director of the RAISE lab (real world AI for SE) and the author of over
 <b>280 publications</b>
