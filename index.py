@@ -86,13 +86,16 @@ Prof. Menzies is the
 For more, see his web site https://timm.fyi. 
 </td>
           </tr></table>
+
+          <hr>
+
 <div class="w3-bar w3-black" xstyle="padding:20px;"> 
 <center>
-  <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:yellow;" onclick="openCity('For Students')"><h4>For Students</h4></button>
+  <button class="w3-bar-item w3-button" style="border:1px solid #CCC; border-radius: 8px; solid #CCC; background-color:yellow; padding-top:12px;" onclick="openCity('For Students')"><h3>For Students</h3></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
-  <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:lightblue; " onclick="openCity('For Industry')"><h4>For Industry</h4></button>
+  <button class="w3-bar-item w3-button" style="padding-top:12px; border:1px solid #CCC;  border-radius: 8px; background-color:lightblue; " onclick="openCity('For Industry')"><h3>For Industry</h3></button>
   &nbsp;&nbsp;<b> </b>&nbsp;&nbsp;
-  <button class="w3-bar-item w3-button" style="border:1px solid #CCC;  border-radius: 8px; background-color:orange;" onclick="openCity('For Researchers')"><h4>For Researchers</h4></button>
+  <button class="w3-bar-item w3-button" style="padding-top:12px; border:1px solid #CCC;  border-radius: 8px; background-color:orange;" onclick="openCity('For Researchers')"><h3>For Researchers</h3></button>
 </center>
 </div>
 
