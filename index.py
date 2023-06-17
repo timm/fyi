@@ -30,7 +30,7 @@ function openCity(cityName) {
 
 <i class="fa-solid fa-envelope fa-xl"></i> <a href="mailto:timm@ieee.org">timm@ieee.org</a>  
  &nbsp;|&nbsp; <i class="fa-solid fa-phone fa-xl"> </i> +1-304-376-2859
- &nbsp;|&nbsp; <i class="fa-solid fa-map fa-xl"> </i> rm 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/">map</a>)
+ &nbsp;|&nbsp; <i class="fa-solid fa-map fa-xl"> </i> rm 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/CSCMapDirections.pdf">map</a>)
 
                     </span>
                     </p>
