@@ -26,11 +26,11 @@ function openCity(cityName) {
 <i class="ai ai-arxiv ai-lg"></i></a>
  &nbsp;|&nbsp; 
 <a href="https://dblp.org/pid/m/TimMenzies.html">dblp <i class="ai ai-dblp ai-lg"></i></a>
-<span style="float:right;">
+<span style="float:right; margin-bottom: 0px; padding-bottom:0px;">
 
-<i class="fa-solid fa-envelope"></i> <a href="mailto:timm@ieee.org">timm@ieee.org</a>  
- &nbsp;|&nbsp; <i class="fa-solid fa-phone"> </i> +1-304-376-2859
- &nbsp;|&nbsp; <i class="fa-solid fa-map"> </i> rm 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/">map</a>)
+<i class="fa-solid fa-envelope fa-xl"></i> <a href="mailto:timm@ieee.org">timm@ieee.org</a>  
+ &nbsp;|&nbsp; <i class="fa-solid fa-phone fa-xl"> </i> +1-304-376-2859
+ &nbsp;|&nbsp; <i class="fa-solid fa-map fa-xl"> </i> rm 3304, EB2 (<a href="https://www.csc.ncsu.edu/department/map/CSCMapDirections.pdf">map</a>)
 
                     </span>
                     </p>
@@ -41,17 +41,19 @@ But is that software being  used, as it should?<br>
 Is it optimized? Fair? Unbiased? Explainable?<br>
 Shouldn't more people be checking that? Improving that?</p>
 <font color=#CC0000><p> So I seek <b>talented</b> grad students &amp;
-<b>industrial partners</b><br>to find + fix the
-<b>problems in real-world AI/ML</b>. </p></font>
+<b>industrial partners</b> to find + fix the
+<b>problems in real-world AI/ML</b>. <br><b>Is that you?</b>  Maybe "yes" if  <b>you want to be a leader in AI</b> (and not just another follower). </p></font>
  <a href="https://www.youtube.com/playlist?list=PLOgGLL2KRJ7x1qbFQjzDn1tCjCHAw6pGo">videos
-<i class="fab fa-youtube "></i></a> 
+<i class="fab fa-youtube fa-lg"></i></a> 
 |
  &nbsp; 
-<a href="https://www.goodreads.com/review/list/1469588-tim-menzies?ref=nav_mybooks"><i class="fab fa-goodreads "></i></a>
+<a href="https://www.goodreads.com/review/list/1469588-tim-menzies?ref=nav_mybooks"><i class="fab fa-goodreads fa-lg"></i></a>
  &nbsp; 
-<a href="https://www.facebook.com/tim.menzies"><i class="fab fa-facebook "></i></a>
+<a href="https://www.facebook.com/tim.menzies"><i class="fab fa-facebook fa-lg"></i></a>
  &nbsp; 
-<a href="https://twitter.com/timmenzies?lang=en"><i class="fab fa-twitter "></i></a>
+<a href="https://twitter.com/timmenzies?lang=en"><i class="fab fa-twitter fa-lg"></i></a>
+ &nbsp; 
+<a href="https://www.linkedin.com/in/tim-menzies-444183"><i class="fab fa-linkedin fa-lg"></i></a>
 </center>
 <hr>
 <table xcellpadding=10px ><tr>
