@@ -244,7 +244,7 @@ To help you out, I list below some answers to frequently asked questions.
 If the following does not answers your questions then please feel free to email me and I will do my best to reply to your queries.</p>
             </ul>
 
-<p><img src="http://collegeinformations.com/wp-content/uploads/2012/06/Graduate-Studies.jpg" align=right width=200></p>
+<p><img src="https://collegeinformations.com/wp-content/uploads/2012/06/Graduate-Studies.jpg" align=right width=200></p>
 
 
 <p><b>Applying:</b> American universities accept new graduate students for start-of-study in mid-August and mid-January.
@@ -358,7 +358,7 @@ href="https://scholar.google.com/citations?view_op=search_authors&hl=en&authuser
                                                                              "50" src=
                                                                                      "https://pbs.twimg.com/profile_images/67630775/button_meatball_normal.png" align=middle>
                                                                              &nbsp;&nbsp;&nbsp;<img height="50" src=
-                                                                                                                   "http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png" align=middle> </dd>
+                                                                                                                   "https://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png" align=middle> </dd>
               </dd><dt>My journal works</dt><dd id=dim>
                 editor-in-chief: Automated Software Engineering journal<br>
                 assoc. ed.: TSE, CACM, IEEE Software<br>
