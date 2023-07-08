@@ -61,8 +61,9 @@ Shouldn't more people be checking that? Improving that?</p>
 
 <b>News:</b>
 <ul>
-            <li id="">    <b>June'23</b>: My journal (<a href="https://www.springer.com/journal/10515">AUSE</a>)'s impact 
-            <a href="assets/img/ause23.png">DOUBLES</a> to 3.4.
+            <li id="">    <b>July'23</b>: Invited to AAAI'24 special track 'AI for Social Impact'
+            <li id="">    <b>July'23</b>: Invited to MSR'24 program committee
+            <li id="">    <b>June'23</b>: My journal (<a href="https://www.springer.com/journal/10515">AUSE</a>)'s impact <a href="assets/img/ause23.png">DOUBLES</a> to 3.4.
             <li id="">    <b>June'23</b>: ASE'23 journal first acceptance:  
             <a href="https://arxiv.org/pdf/2006.07240.pdf">Predicting Health for Open Source</a> (from EMSE'22)
             <li id="">    <b>June'23</b>: ASE'23 journal first acceptance: <a href="https://arxiv.org/pdf/2205.10504.pdf">How to Find Actionable Static Analysis Warnings</a> (from TSE'22)
@@ -70,8 +71,6 @@ Shouldn't more people be checking that? Improving that?</p>
             <li id="">    <b>May'23</b>: Invited to FSE'24 program committee
             <li id="dim"> <b>May'23</b>: ICSE'23 talk <a href="http://tiny.cc/choice23">Future of SE</a>
             <li id="">    <b>Apr'23</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
-            <li id="">    <b>Mar'23</b>: New gift from DivePlane: studies on surrogate data ($50K)
-            <li id="">    <b>Feb'23</b>: To appear, Expert Systems with Applications: <a href="https://arxiv.org/pdf/2109.14569.pdf">Redesigning Cloud Applications</a>
                     <li> <button class="w3-bar-w3-round item w3-button" style="background-color:#CC0000;"
             border:0px solid #CC0000;  " onclick="openCity('News')"><font color="white"><b><u>More news</u></b></font></button>
           </ul>
@@ -109,6 +108,7 @@ For more, see his web site https://timm.fyi.
 <hr>
           <h5>News Archive</h5>
  <p> <b>Papers:</b> <ul>
+            <li id="">    <b>Feb'23</b>: To appear, Expert Systems with Applications: <a href="https://arxiv.org/pdf/2109.14569.pdf">Redesigning Cloud Applications</a>
               <li id="dim"> <b>Jan'23</b>: Accepted to TOSEM:  <a href="https://arxiv.org/pdf/2105.11082.pdf">Assessing Early Bird Heuristic</a>
             <li id="dim"> <b>Jan'23</b>: Accepted to TOSEM: <a href="https://arxiv.org/pdf/2110.13029.pdf">Fair Enough: Searching for Sufficient Measures of Fairness</a>
   <Li id="dim"> <b>Feb'23</b>: For ICSE'23 journal first. Reports on <a href="https://arxiv.org/pdf/2208.01595.pdf">vulnerabilities</a>; <a href="https://arxiv.org/pdf/2110.01109.pdf">Fair-Mask</a>; <a href="https://arxiv.org/pdf/2201.10592.pdf">labeling cost</a>
@@ -136,6 +136,7 @@ For more, see his web site https://timm.fyi.
             </ul>
             <b>Grants:</b>
             <ul>
+            <li id="">    <b>Mar'23</b>: New gift from DivePlane: studies on surrogate data ($50K)
               <li id=""> <b>Oct'22 </b>: new Grant, Learning Analytical Sciences: $170K. SSL for DL</li>
               <li id="dim"> <b>Oct'22 </b>: ICSE accepts our workshop proposal for FAIRWARE'23</li>
               <li id=""> <b>Sept'22</b>: gift from Meta: $50K. Much appreciated.</li>
