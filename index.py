@@ -270,6 +270,77 @@ As to funding, I do not guarantee that my supervised students get funding from m
 <ul>
     <li>That said, for your information, over the last decade, 75% of my students were fully funded.</li>
 </ul>
+<hr>
+<a a name=fall2023><h4>Fall 2023 Indepdent Study Topics</h4></a>
+<p> For fall 2023, I will be running teams of ugrad, masters, PhDs working on the following topics.
+<p> Please note that:
+<ul>
+<li>
+Indepdent study is an <em>unpaid</em> position where you work for the ideas (and for the grade), not cash.
+<li> Depedending on your dedicataion and success on these topics, this work would be suitable for publciation and  a top-tiered refereed event.
+<li> Also, for Ph.D. sutdents:
+<Ul>
+<li> This work would be suitable for a Ph.D. topic.
+<li> In 2024, this work might be able to fund a few of you as a GRA (depending on the random number generator called "funding bodies").
+</ul>
+</ul>
+<table>
+<tr><td width="40%">
+Team1:<br><b>The best data is fake data?</b></td><td width="45%">Team2:<br><b>Is (Human and AI) greater than (Human or AI)?</b></td></tr>
+<tr><td align=center>
+
+<img src="assets/img/synth.png" height=300 xalign=center></td>
+
+</td>
+<td width="40%">
+
+<img src="assets/img/help.png" height=300 xalign=center></td>
+
+
+</td></tr>
+<tr><td valign=top>
+Why wait for data? Why not synthesis it? 
+Many fields have been fumblding and bumbling around with synthetic data generation, for decades.
+But a new generation of synthesis algirithms suggest that all that prior work could be blown away by much better and much faster algoriths
+(e.g. GAN is really slow and new methods are far faster).
+By exploring those new algorithms we could:
+<ul>
+<li> making the data needed to stress test a system;
+<li> changing existing biases in data, thereby (e.g.) removing data discrimination;
+<li> create all the data needed to  satisfy the needs of  data hungry machine learning algorithms.
+<li> impute missing information in existing data;
+<li> enable data sharing, without incurring the wrath of legislative bodies (in this way, organizations can share insights, thereby assisting in scientific reasoning).
+<li> When most people work with the synthetic , not the real data, then this increases data security;
+<li> Synthetic data can exploit current trends in data, thereby supporting forecasting.
+</ul>
+<p>
+Interested? Then please read 
+<a href="https://dl.acm.org/doi/pdf/10.1145/3085504.3091117">more</a> and
+<a href="https://arxiv.org/pdf/2203.11410.pdf">some more</a>.
+<p>
+<td valign=top>
+To forge an effective partnership, humans and artificial intelligence (AI) need to understand each
+another’s strengths and limitations. For example, AI tools  work better when
+taking advice from one person but have issues dealing with advice from large teams. Therefore, we
+propose a system to extend current AI tools  with particle-swarm optimization and generative transformer models
+to handle teams; specifically:
+<ul>
+<li> debates and disagreements between team members;
+<li> team members
+with an established track record of offering good/bad advice; and <li> team members that (consciously or
+unconsciously) offer advice that leads to discriminatory models.<br>
+</ul>
+<p>Interested? Then please read 
+<a href="assets/pdf/NSF22_advice.pdf">more</a> and
+<a href="https://react-lm.github.io/">some more</a>. 
+</td></tr></table>
+
+
+
+
+
+</ul>
+
 </div>
 
 <div id="For Industry" class="w3-container city" style="display:none">
