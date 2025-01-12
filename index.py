@@ -36,10 +36,7 @@ function openCity(cityName) {
                     </p>
 <img style="xpadding-bottom:8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);" width="100%" src="assets/img/timm2.png">
 <center>
-<p style="padding-top: 18px;"> It's an AI/ML world. 
-But is that software being  used, as it should?<br>
-Is it optimized? Fair? Unbiased? Explainable?<br>
-Shouldn't more people be checking that? Improving that?</p>
+<p>&nbsp;</p>
 <font color=#CC0000><p> So I seek <b>talented</b> grad students &amp;
 <b>industrial partners</b> to find + fix the
 <b>problems in real-world AI/ML</b>. <br><b>Is that you?</b>  Maybe "yes" if  <b>you want to be a leader in AI</b> (and not just another follower). </p></font>
@@ -61,28 +58,25 @@ Shouldn't more people be checking that? Improving that?</p>
 
 <b>News:</b>
 <ul>
-            <li id="">    <b>July'23</b>: Invited to AAAI'24 special track 'AI for Social Impact'
-            <li id="">    <b>July'23</b>: Invited to MSR'24 program committee
-            <li id="">    <b>June'23</b>: My journal (<a href="https://www.springer.com/journal/10515">AUSE</a>)'s impact <a href="assets/img/ause23.png">DOUBLES</a> to 3.4.
-            <li id="">    <b>June'23</b>: ASE'23 journal first acceptance:  
-            <a href="https://arxiv.org/pdf/2006.07240.pdf">Predicting Health for Open Source</a> (from EMSE'22)
-            <li id="">    <b>June'23</b>: ASE'23 journal first acceptance: <a href="https://arxiv.org/pdf/2205.10504.pdf">How to Find Actionable Static Analysis Warnings</a> (from TSE'22)
-            <li id="">    <b>May'23</b>: <a href="https://docs.google.com/presentation/d/e/2PACX-1vRhfOl_TEueVDE8ZPReYmK1fCWgsWhQiErQePDweLNISrq6yAiufMsMsA_JUZ0ziqwREVqwUNOX92JN/pub?start=false&loop=false&delayms=30003">ROSE festival</a> runs at ICSE'23.
-            <li id="">    <b>May'23</b>: Invited to FSE'24 program committee
-            <li id="dim"> <b>May'23</b>: ICSE'23 talk <a href="http://tiny.cc/choice23">Future of SE</a>
-            <li id="">    <b>Apr'23</b>: IEEE TSE acceepts <a href="https://arxiv.org/pdf/2112.01598.pdf">What Not to Test (for Cyber-Physical Systems)</a>
-                    <li> <button class="w3-bar-w3-round item w3-button" style="background-color:#CC0000;"
-            border:0px solid #CC0000;  " onclick="openCity('News')"><font color="white"><b><u>More news</u></b></font></button>
-          </ul>
+    <li id="">    <b>Jan'25</b>: Elected ACM Fellow
+    <li id="">    <b>Sept'24</b>: Elected ASE Fellow
+    <li id="">    <b>July'24</b> Paper, TSE <a href="https://arxiv.org/pdf/2107.08310">How to Achieve Equalized Odds</a>
+    <li id="">    <b>Nov '24</b> Paper, IEEE Software <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10705752">AI Over-Hype</a>
+    <li id="">    <b>Oct '24</b> Paper, EMSE <a href="https://arxiv.org/pdf/2211.05920"> "Co-training" for SSL</a>
+    <li id="">    <b>Nov '24</b> Paper, IEEE ACCESS <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10438420">Data Synthesis</a>
+            <!-- li> <button class="w3-bar-w3-round item w3-button" style="background-color:#CC0000;"
+    border:0px solid #CC0000;  " onclick="openCity('News')"><font color="white"><b><u>More news</u></b></font></button --->
+  </ul>
           </td>
           <td>&nbsp;</td>
 <td width=43% valign=top>
-Tim Menzies (<b>IEEE Fellow</b>, Ph.D., UNSW, 1995) is a <b>full Professor</b> in Computer Science at North Carolina State
-where he explores how SE can improve optimization, ethics, and explainable AI.
-He is the director of the RAISE lab (real world AI for SE) and the author of over
-<b>280 publications</b>
- (refereed) with 20,000+ citations and an h-index of 69.  
-He has graduated <b>18 Ph.D. students</b>, and has been a 
+Tim Menzies (<b>ACM Fellow</b>, <b>IEEE Fellow</b>, <b>ASE Fellow</b>, Ph.D., UNSW, 1995) is a <b>full Professor</b> in Computer Science at North Carolina State
+where he explores how 
+to make best dcisions using the least amount of data.
+He is the director of the Irrational Research lab (mad scientists r'us) and the author of over
+<b>300 publications</b>
+ (refereed) with 24,000 citations and an h-index of 74.  
+He has graduated <b>22 Ph.D. students</b>, and has been a 
 lead researcher on projects for NSF, NIJ, DoD, NASA, USDA (total funding of 
 <b>$13+ million</b>) as well as joint research work with private companies.
 Prof. Menzies is the 
@@ -92,7 +86,9 @@ For more, see his web site https://timm.fyi.
 </td>
           </tr></table>
 
-          <hr>
+<!----
+
+<hr>
 
 <div class="w3-bar w3-black" xstyle="padding:20px;"> 
 <center>
@@ -335,7 +331,7 @@ unconsciously) offer advice that leads to discriminatory models.<br>
 <a href="https://react-lm.github.io/">some more</a>. 
 </td></tr></table>
 
-
+---->
 
 
 
