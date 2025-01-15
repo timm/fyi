@@ -99,7 +99,7 @@ Currently:
 <lul>
 <li><b>Editor-in-chief:</b> Automated Software Engienering journal
 <li><b>Editorial Board:</b> Communications of the ACM (opinions)
-<li><b>Associate Editor</b>:: TSE, IEEE Software (SE+ethics) 
+<li><b>Associate Editor:</b> IEEE Trans SE, IEEE Software (SE+ethics) 
 <li><b>Track co-chair:</b> ESEM'25 (doctoral symposium)
 <li><b>Program committees:</b> ICSE'26, ICSE'25, FSE'25, SANER'25, ESEM'25, CAIN'25, AAAI(ethics)'25
 </p>
