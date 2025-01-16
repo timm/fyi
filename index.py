@@ -86,7 +86,7 @@ He is the director of the Irrational Research lab (mad scientists r'us) and the 
  (refereed) with 24,000 citations and an h-index of 74.  
 He has graduated <b>22 Ph.D. students</b>, and has been a 
 lead researcher on projects for NSF, NIJ, DoD, NASA, USDA (total funding of 
-<b>$13+ million</b>) as well as joint research work with private companies.
+<b>$19+ million</b>) as well as joint research work with private companies.
 Prof. Menzies is the 
 <b>editor-in-chief</b> of the Automated Software Engineering journal and 
 <b>associate editor of TSE</b>  (IEEE Transactions on Software Engineering) and other leading SE journals. 
@@ -95,13 +95,14 @@ For more, see his web site https://timm.fyi.
           </tr></table>
 <hr>
 <p>
-Currently:
-<lul>
-<li><b>Editor-in-chief:</b> Automated Software Engineering journal
-<li><b>Editorial Board:</b> Communications of the ACM (opinions)
-<li><b>Associate Editor:</b> IEEE Trans SE, IEEE Software (SE+ethics) 
-<li><b>Track co-chair:</b> ESEM'25 (doctoral symposium)
-<li><b>Program committees:</b> ICSE'26, ICSE'25, FSE'25, SANER'25, ESEM'25, CAIN'25, AAAI(ethics)'25
+<img align=right width=300 src="assets/img/total.png">
+<b>Current</b>
+<ul>
+<li><em>Editor-in-chief:</em> Automated Software Engineering journal
+<li><em>Editorial Board:</em> Communications of the ACM (opinions)
+<li><em>Associate Editor:</em> IEEE Trans SE, IEEE Software (SE+ethics) 
+<li><em>Track co-chair:</em> ESEM'25 (doctoral symposium)
+<li><em>Program committees:</em> ICSE'26, ICSE'25, FSE'25, SANER'25, ESEM'25, CAIN'25, AAAI(ethics)'25
 </p>
 <!----
 
