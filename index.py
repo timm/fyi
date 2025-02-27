@@ -99,7 +99,6 @@ Prof. Menzies is the
 For more, see his web site https://timm.fyi. 
 </td>
           </tr></table>
-<hr>
 <img align=right width=300 src="assets/img/total.png">
 Currently:
 <ul>
@@ -114,7 +113,6 @@ Currently:
 
 </ul>
 <br  clear=all>
-<hr>
 <table align=center> 
 <tr><td>
              <b>Graduated<br>Ph.D.s:</b></td>
