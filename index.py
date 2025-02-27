@@ -57,6 +57,8 @@ function openCity(cityName) {
 
 <b>News:</b>
 <ul>
+ <li id="">  <b>Feb'25</b>: TSE'25: <a href="https://arxiv.org/pdf/2401.09622">
+                 Is optimization different for SE?</a> (yes)
  <li id="">  <b>Feb'25</b>: Invited, ASE'25 PC
  <li id="">  <b>Feb'25</b>: TSE'25: <a href="https://ieeexplore.ieee.org/abstract/document/10869331">Defect Prediction retrospective</a> [<a href="https://arxiv.org/pdf/2501.15662">PDF</a>]
  <li id="">  <b>Jan'25</b>: New paper: <a href="https://arxiv.org/pdf/2501.00125">LLMs, active learning, warm starts</a>
@@ -102,12 +104,52 @@ For more, see his web site https://timm.fyi.
 <hr>
 Currently:
 <ul>
+<li><b>Teaching:</b> Graduate <a href="http://github.com/txt/se25">Intro to SE</a>
 <li><b>Editor-in-chief:</b> Automated Software Engineering journal
 <li><b>Editorial Board:</b> Communications of the ACM (opinions)
 <li><b>Associate Editor:</b> IEEE Trans SE, IEEE Software (SE+ethics) 
 <li><b>Track co-chair:</b> ESEM'25 (doctoral symposium)
 <li><b>Program committees:</b> ICSE'26, ICSE'25, FSE'25, ASE'25, SANER'25, ESEM'25, CAIN'25, AAAI(ethics)'25
+<li><b>Current Ph.D.s:</b>
+          <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Andre Motta" width="35" height="35" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
+
+</ul>
 </p>
+<br  clear=all>
+<hr>
+
+<table> 
+<tr><td align=center>
+             <b>Graduated Ph.D.s:</b></td>
+             <td>
+                <a href="http://documentslide.com/documents/zhihao-scott-chen.html"><img alt="Scott Chen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/scottchen.png"></a>
+                <a href="http://www.messiah.edu/info/21665/our_faculty/2753/department_faculty/4"><img alt="David Owen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/davidowen.png"></a>
+                <a href="http://nandeshwar.info/"><img alt="Ashutosh Nandeshwar" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ashutosh.png"></a>
+                <a href="http://www.kocaguneli.com/"><img alt="Ekrem Kocaguneli" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ekrem.png"></a>
+                <a href="http://www.birzeit.edu/en/faculty-staff/abdel-salam-sayyad"><img alt="Abdel Salem Sayyad" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/abdel.png"></a>
+                <a href="http://www.fayolapeters.com/about/"><img alt="Fayola Peters" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/fayola.png"></a>
+                <a href="https://www.linkedin.com/in/joseph-krall-53125470/"><img alt="Joe Krall" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/joekrall.png"></a>
+                <a href="http://greggay.com/"><img alt="Greg Gay" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/greg.png"></a>
+                <a href="http://ai4se.net/people/2014/09/30/Wei-Fu/"><img alt="Wei Fu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/wei.jpg"></a>
+                <a href="http://ai4se.net/people/2014/10/15/Vivek-Nair/"><img alt="Vivek Nair" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/vivek.jpg"></a>
+                <a href="http://ai4se.net/people/2015/09/01/Amritanshu-Agrawal/"><img alt="Amritanshu Agrawal" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/amrit.jpg"></a>
+                <a href="http://ai4se.net/people/2015/08/15/Jianfeng-Chen/"><img alt="Jianfeng Chen" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/chen.jpg"></a>
+                <a href="http://ai4se.net/people/2014/10/04/Rahul-Krishna/"><img alt="Rahul Krishna" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/rahlk.jpg"></a>
+                <a href="http://ai4se.net/people/2015/08/30/Zhe-Yu/"><img alt="Zhe Yu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/Zhe.jpg"></a>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Joymallya Chakraborty" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-joy.png"></a>
+                <a href="https://rshu.github.io"><img alt="Rui Shu" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-riu.png"></a>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Shrikanth Chandrasekaran" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-shrikamtj.png"></a>
+                <a href="http://ai4se.net/people/2017/09/01/Tianpei-Xia/"><img alt="Tianpei Xia" width="35" height="35" align=middle src="assets/img/who/Patrick.png"></a>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Huy Tu" width="35" height="35" align=middle src="assets/img/who/huy.jpeg"></a>
+                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img alt="Xueqi(Sherry) Yang" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-cherry.png"></a>
+<a href="https://www.linkedin.com/in/xiao-ling-339a15189/"><img align=middle alt="Xiao Ling" src="assets/img/who/xiaoling.png" width=35 height=35></a>
+                <a href="http://ai4se.net/people/kewenPeng"><img alt="Kewen Peng" width="35" height="35" align=middle src="assets/img/who/KewenPeng.jpeg"></a>
+                <a href="https://www.suvodeepmajumder.us"><img alt="Suvodeep Najumder" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/duvodeep.png"></a>
+                <a href="https://yrahul3910.github.io/whyrahul/"><img alt="Andre Motta" width="35" height="35" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a>
+</td></tr>
+ </table>
+
+
 <!----
 
 <hr>
