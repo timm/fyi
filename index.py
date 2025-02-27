@@ -55,7 +55,7 @@ function openCity(cityName) {
 <table xcellpadding=10px ><tr>
 <td width=50% valign=top>
 
-<b>News:</b>
+News:>
 <ul>
  <li id="">  <b>Feb'25</b>: TSE'25: <a href="https://arxiv.org/pdf/2401.09622">
                  Is optimization different for SE?</a> (yes)
@@ -99,6 +99,7 @@ Prof. Menzies is the
 For more, see his web site https://timm.fyi. 
 </td>
           </tr></table>
+<hr>
 <img align=right width=300 src="assets/img/total.png">
 Currently:
 <ul>
@@ -113,6 +114,7 @@ Currently:
 
 </ul>
 <br  clear=all>
+<hr>
 <table align=center> 
 <tr><td>
              <b>Graduated<br>Ph.D.s:</b></td>
