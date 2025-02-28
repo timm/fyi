@@ -36,9 +36,10 @@ function openCity(cityName) {
                     </p>
                     <img src="assets/img/timm2.png" width=800>
    <center>
-<font color=#CC0000><p> So I seek <b>talented</b> grad students &amp;
+<p><font color=#CC0000><p> So I seek <b>talented</b> grad students &amp;
 <b>industrial partners</b> to find + fix the
-<b>problems in real-world AI/ML</b>. <br><b>Is that you?</b>  Maybe "yes" if  <b>you want to be a leader in AI</b> (and not just another follower). </p></font>
+<b>problems in real-world AI/ML</b>. <br><b>Is that you?</b>  Maybe "yes" if  <b>you want to be a leader in AI</b> (and not just another follower). </font><br>
+<a href="https://calendar.app.google/GwzbUmsiCSvGQ27dA"><img src="assets/img/appoint.png" width=150></a><br>
  <a href="https://www.youtube.com/playlist?list=PLOgGLL2KRJ7x1qbFQjzDn1tCjCHAw6pGo">videos
 <i class="fab fa-youtube fa-lg"></i></a> 
 |
