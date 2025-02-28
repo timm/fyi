@@ -116,6 +116,7 @@ Currently:
 <center>
 <p>Current Ph.D.s :</p>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Andre Motta" width="52" height="52" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
+          <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Katerina Vilkomir" width="52" height="52" align=middle src="assets/img/who/katerina.png"></a>
           </p><p>
           Graduated :
              <p>
