@@ -113,15 +113,15 @@ For more, see his web site https://timm.fyi.
 </ul>
 <br clear=all>
 <center>
-<table width="100%">>
+<table width="100%">
 <tr><td>
-<b>Current Ph.D.s :</td><td><b>Graduated : </td></tr>
-<tr><td valign=top>
+<b>Current Ph.D.s :</td><td>&nbsp;&nbsp;</td><td><b>Graduated Ph.Ds.: </td></tr>
+<tr><td valign=top >
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Andre Motta" width="45" height="45" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Katerina Vilkomir" width="45" height="45" align=middle src="assets/img/who/katerina.png"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Kishan Ganguly" width="45" height="45" align=middle src="assets/img/who/kishan.png"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Amirali Rayegan" width="45" height="45" align=middle src="assets/img/who/amirali.png"></a>
-          </td><td>
+          </td><td></td><td align=right>
                 <a href="http://documentslide.com/documents/zhihao-scott-chen.html"><img alt="Scott Chen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/scottchen.png"></a>
                 <a href="http://www.messiah.edu/info/21665/our_faculty/2753/department_faculty/4"><img alt="David Owen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/davidowen.png"></a>
                 <a href="http://nandeshwar.info/"><img alt="Ashutosh Nandeshwar" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ashutosh.png"></a>
