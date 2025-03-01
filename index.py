@@ -148,7 +148,7 @@ For more, see his web site https://timm.fyi.
                 <a href="https://yrahul3910.github.io/whyrahul/"><img alt="Andre Motta" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a></p>
 </td></tr></table>
                 <p >
-🎓 <mark>Much thanks and good luck to all! Couldn't have done it without you.👏<br>Can't wait to see what you'll do next!<mark> 🚀
+🎓 <mark>Much thanks and good luck to y'all!.👏 Can't wait to see what you do next!<mark> 🚀
 
                 </p>
 <!----
