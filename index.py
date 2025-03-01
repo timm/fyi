@@ -113,7 +113,7 @@ For more, see his web site https://timm.fyi.
 </ul>
 <br clear=all>
 <center>
-<table>
+<table width="100%">>
 <tr><td>
 <b>Current Ph.D.s :</td><td><b>Graduated : </td></tr>
 <tr><td valign=top>
