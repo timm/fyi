@@ -116,12 +116,12 @@ For more, see his web site https://timm.fyi.
 <table width="100%">
 <tr><td>
 <b>Current Ph.D.s :</td><td>&nbsp;&nbsp;</td><td><b>Graduated Ph.Ds.: </td></tr>
-<tr><td valign=top >
+<tr><td valign=top ><p>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Andre Motta" width="45" height="45" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Katerina Vilkomir" width="45" height="45" align=middle src="assets/img/who/katerina.png"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Kishan Ganguly" width="45" height="45" align=middle src="assets/img/who/kishan.png"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Amirali Rayegan" width="45" height="45" align=middle src="assets/img/who/amirali.png"></a>
-          </td><td></td><td align=right>
+          </td><td></td><td align=right><p>
                 <a href="http://documentslide.com/documents/zhihao-scott-chen.html"><img alt="Scott Chen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/scottchen.png"></a>
                 <a href="http://www.messiah.edu/info/21665/our_faculty/2753/department_faculty/4"><img alt="David Owen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/davidowen.png"></a>
                 <a href="http://nandeshwar.info/"><img alt="Ashutosh Nandeshwar" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ashutosh.png"></a>
@@ -145,8 +145,12 @@ For more, see his web site https://timm.fyi.
 <a href="https://www.linkedin.com/in/xiao-ling-339a15189/"><img align=middle alt="Xiao Ling" src="assets/img/who/xiaoling.png" width=45 height=45></a>
                 <a href="http://ai4se.net/people/kewenPeng"><img alt="Kewen Peng" width="45" height="45" align=middle src="assets/img/who/KewenPeng.jpeg"></a>
                 <a href="https://www.suvodeepmajumder.us"><img alt="Suvodeep Najumder" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/duvodeep.png"></a>
-                <a href="https://yrahul3910.github.io/whyrahul/"><img alt="Andre Motta" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a>
+                <a href="https://yrahul3910.github.io/whyrahul/"><img alt="Andre Motta" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a></p>
 </td></tr></table>
+                <p >
+🎓 <mark>Much thanks and good luck to all! Couldn't have done it without you.👏<br>Can't wait to see what you'll do next!<mark> 🚀
+
+                </p>
 <!----
 
 <hr>
