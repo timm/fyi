@@ -115,7 +115,7 @@ For more, see his web site https://timm.fyi.
 <center>
 <table width="100%">
 <tr><td>
-<b>Current Ph.D.s :</td><td>&nbsp;&nbsp;</td><td><b>🎓 Graduated Ph.D.s.: </td></tr>
+<b>Current Ph.D.s :</td><td>&nbsp;&nbsp;</td><td><b>🎓 Graduated Ph.D.s : </td></tr>
 <tr><td valign=top ><p>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Andre Motta" width="45" height="45" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img alt="Katerina Vilkomir" width="45" height="45" align=middle src="assets/img/who/katerina.png"></a>
