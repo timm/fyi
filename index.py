@@ -57,6 +57,12 @@ function openCity(cityName) {
 <td width=50% valign=top>
 
 <ul>
+   <li id=""> <b>Aug'25</b>: Letter, CACM, <a href="assets/pdf/cacm25.pdf">Case for Compact AI</a>
+  <li id=""> <b>July'25</b>:    PC invites: AAAI social impact'26, CAIN'26
+  <li id=""> <b>July'25</b>: Invited, keynote, Future Advanced Test, Paris
+  <li id=""> <b>June'25</b>: Invited, keynote, ESEM'25, Hawaii
+  <li id=""> <b>June'25</b>: Invited, keynote, Airbnb dev conference
+  <li id=""> <b>May'25</b>:    PC invites: FSE'26, ICSE Nier'26
  <li id="">  <b>Apr'25</b>: Andre Motta <a href="https://www.facebook.com/tim.menzies/posts/pfbid0f1QZVfdQADJPpJrWf7cBg4W3p7t4qy1cNLhWiBJmciNXpK4BEw6vbv3u5VtgbnFvl">completes</a> his Ph.D. 
  <li id="">  <b>Mar'25</b>: I am featured in <a href="https://www.acm.org/articles/people-of-acm/2025/tim-menzies">"People of ACM"</a>
  <li id="">  <b>Mar'25</b>: Invited to keynote  <a href="https://conf.researchr.org/home/esem-2025">ESEM'25</a>
@@ -75,10 +81,10 @@ function openCity(cityName) {
  <li id="">  <b>Oct'24</b> Paper, EMSE <a href="https://arxiv.org/pdf/2211.05920"> "Co-training" for SSL</a>
  <li id="">  <b>Sept '24</b> Tutorial, Models'24 <a href="http://tiny.cc/ models24">Understandable Models</a>
  <li id="">  <b>Sept'24</b>: Elected ASE Fellow
- <li id="">  <b>Sept'24</b>: Rahul Yedida completes his Ph.D.
+ <!---li id="">  <b>Sept'24</b>: Rahul Yedida completes his Ph.D.
  <li id="">  <b>July'24</b> Paper, TSE <a href="https://arxiv.org/pdf/2107.08310">How to Achieve Equalized Odds</a>
  <li id="">  <b>June'24</b>: Kewen Peng completes his Ph.D.
- <li id="">  <b>June'24</b>: Xiao Ling completes his Ph.D. 
+ <li id="">  <b>June'24</b>: Xiao Ling completes his Ph.D. </li --->
          <!-- li> <button class="w3-bar-w3-round item w3-button" style="background-color:#CC0000;"
     border:0px solid #CC0000;  " onclick="openCity('News')"><font color="white"><b><u>More news</u></b></font></button --->
   </ul>
