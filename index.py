@@ -57,9 +57,14 @@ function openCity(cityName) {
 <td width=50% valign=top>
 
 <ul>
+   <li id=""> <b>Aug'25</b>: Letter, CACM, <a href="assets/pdf/cacm25.pdf">Case for Compact AI</a>
+  <li id=""> <b>July'25</b>:    PC invites: AAAI social impact'26, CAIN'26
+  <li id=""> <b>July'25</b>: Invited, keynote, Future Advanced Test, Paris
+  <li id=""> <b>June'25</b>: Invited, keynote, ESEM'25, Hawaii
+  <li id=""> <b>June'25</b>: Invited, keynote, Airbnb dev conference
+  <li id=""> <b>May'25</b>:    PC invites: FSE'26, ICSE Nier'26
  <li id="">  <b>Apr'25</b>: Andre Motta <a href="https://www.facebook.com/tim.menzies/posts/pfbid0f1QZVfdQADJPpJrWf7cBg4W3p7t4qy1cNLhWiBJmciNXpK4BEw6vbv3u5VtgbnFvl">completes</a> his Ph.D. 
  <li id="">  <b>Mar'25</b>: I am featured in <a href="https://www.acm.org/articles/people-of-acm/2025/tim-menzies">"People of ACM"</a>
- <li id="">  <b>Mar'25</b>: Invited to keynote  <a href="https://conf.researchr.org/home/esem-2025">ESEM'25</a>
  <li id="">  <b>Feb'25</b>: TSE'25: <a href="https://arxiv.org/pdf/2401.09622"> Is optimization different for SE?</a> (yes)
  <li id="">  <b>Feb'25</b>: Invited, ASE'25 PC
  <li id="">  <b>Feb'25</b>: TSE'25: <a href="https://ieeexplore.ieee.org/abstract/document/10869331">Defect Prediction retrospective</a> [<a href="https://arxiv.org/pdf/2501.15662">PDF</a>]
@@ -75,10 +80,10 @@ function openCity(cityName) {
  <li id="">  <b>Oct'24</b> Paper, EMSE <a href="https://arxiv.org/pdf/2211.05920"> "Co-training" for SSL</a>
  <li id="">  <b>Sept '24</b> Tutorial, Models'24 <a href="http://tiny.cc/ models24">Understandable Models</a>
  <li id="">  <b>Sept'24</b>: Elected ASE Fellow
- <li id="">  <b>Sept'24</b>: Rahul Yedida completes his Ph.D.
+ <!---li id="">  <b>Sept'24</b>: Rahul Yedida completes his Ph.D.
  <li id="">  <b>July'24</b> Paper, TSE <a href="https://arxiv.org/pdf/2107.08310">How to Achieve Equalized Odds</a>
  <li id="">  <b>June'24</b>: Kewen Peng completes his Ph.D.
- <li id="">  <b>June'24</b>: Xiao Ling completes his Ph.D. 
+ <li id="">  <b>June'24</b>: Xiao Ling completes his Ph.D. </li --->
          <!-- li> <button class="w3-bar-w3-round item w3-button" style="background-color:#CC0000;"
     border:0px solid #CC0000;  " onclick="openCity('News')"><font color="white"><b><u>More news</u></b></font></button --->
   </ul>
@@ -121,12 +126,14 @@ For more information, visit timm.fyi.
 <center>
 <table width="100%">
 <tr><td>
-Current Ph.D.s :</td><td>&nbsp;&nbsp;</td><td>🎓 My graduated Ph.D.s: </td></tr>
-<tr><td valign=top ><p>
+Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></tr>
+<tr><td valign=top width=110><p>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Katerina Vilkomir" width="45" height="45" align=middle src="assets/img/who/katerina.png"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Kishan Ganguly" width="45" height="45" align=middle src="assets/img/who/kishan.png"></a>
           <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Amirali Rayegan" width="45" height="45" align=middle src="assets/img/who/amirali.png"></a>
-          </td><td></td><td align=right><p>
+          <a href="https://srina1h.github.io"><img style="margin-bottom: 3px;"  alt="Srinath Srinivasan" width="45" height="45" align=middle src="assets/img/who/srinanth.png"></a>
+
+          </td><td></td><td align=right valign=top><p>
                 <a href="http://documentslide.com/documents/zhihao-scott-chen.html"><img style="margin-bottom: 3px;"  alt="Scott Chen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/scottchen.png"></a>
                 <a href="http://www.messiah.edu/info/21665/our_faculty/2753/department_faculty/4"><img style="margin-bottom: 3px;"  alt="David Owen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/davidowen.png"></a>
                 <a href="http://nandeshwar.info/"><img style="margin-bottom: 3px;"  alt="Ashutosh Nandeshwar" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ashutosh.png"></a>
@@ -152,10 +159,10 @@ Current Ph.D.s :</td><td>&nbsp;&nbsp;</td><td>🎓 My graduated Ph.D.s: </td></t
                 <a href="https://www.suvodeepmajumder.us"><img style="margin-bottom: 3px;"  alt="Suvodeep Najumder" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/duvodeep.png"></a>
                 <a href="https://yrahul3910.github.io/whyrahul/"><img style="margin-bottom: 3px;"  alt="Rahul Yehida" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a>
                 <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Andre Motta" width="45" height="45" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
-                </P>
+                <br>
+                <mark>Much thanks and good luck to y'all!. 👏<br>Can't wait to see what you do next!</mark> 🚀</p>
 </td></tr></table>
                 <p >
-<mark>Much thanks and good luck to y'all!. 👏  Can't wait to see what you do next!</mark> 🚀
 
                 </p>
 <!----
