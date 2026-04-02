@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!--- tidy -m -i -w 85 ==indent-spaces 2 index.html =-->
-
 <html lang="en">
 <head>
   <meta name="generator" content=
@@ -10,8 +8,8 @@
 
   <title>Tim Menzies</title>
   <link rel="stylesheet" href=
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type=
-  "text/css">
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" type=
+"text/css">
   <style type="text/css">
 :root {
         --bg-color: #eee; 
@@ -187,23 +185,6 @@
         margin-bottom: 4px;
     }
 
-    .item-links a {
-        font-size: 12px;
-        margin-right: 10px;
-        border: 1px solid var(--border-color);
-        padding: 2px 8px;
-        border-radius: 4px;
-        color: var(--text-color);
-        display: inline-block;
-        margin-top: 2px;
-    }
-    
-    .item-links a:hover {
-        border-color: var(--accent-color);
-        color: var(--accent-color);
-        background-color: rgba(204,0,0,0.05);
-    }
-
     ul.bullet-list {
         padding-left: 20px;
         margin-top: 0;
@@ -211,7 +192,7 @@
     }
     
     ul.bullet-list li {
-        margin-bottom: 4px;
+        margin-bottom: 8px; /* Slightly increased for readability between papers */
     }
 
     ul.bullet-list strong { color: #000000; }
@@ -269,48 +250,10 @@
             margin: 25px auto 0 auto;
         }
     }
-    /* Swatch & Badge Styles */
-    .swatch {
-        display: inline-flex;
-        align-items: center;
-        padding: 4px 10px;
-        border-radius: 6px;
-        color: #ffffff;
-        font-size: 12px;
-        font-weight: bold;
-        line-height: 1;
-    }
-    
-    .swatch i {
-        font-size: 16px;
-        margin-right: 6px;
-    }
 
-    /* Updated Theme Colors */
-    .swatch-compact { background-color: #0277bd; } /* Blue */
-    .swatch-se { background-color: #00796b; }      /* Teal (Replaced Red) */
-    .swatch-trust { background-color: #f57c00; }   /* Orange */
-
-    /* New container to align swatches and links on the same line */
-    .item-footer {
-        display: flex;
-        align-items: center;
-        gap: 12px; /* Space between swatch and link */
-        margin-top: 8px;
-    }
-
-    /* Remove the top margin from links since flexbox handles alignment */
-    .item-footer .item-links a {
-        margin: 0; 
-    }
-
-    .item-links a i {
-        margin-left: 5px;
-        font-size: 0.85em;
-    }
   #xfunding {
   padding: 40px 0;
-  text-align: center; /* Optional: centers the heading/text */
+  text-align: center; 
   }
 
   .logo-grid {
@@ -318,16 +261,16 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 12px 22px;              /* tighter vertical + horizontal */
-  margin: 6px auto 0 auto;     /* minimal space above */
-  line-height: 0;              /* kills hidden inline spacing */
+  gap: 12px 22px;              
+  margin: 6px auto 0 auto;     
+  line-height: 0;              
   }
 
   .logo-grid img {
-  display: block;              /* removes baseline whitespace */
+  display: block;              
 
   /* bounding box */
-  height: 42px;                /* slightly smaller overall */
+  height: 42px;                
   width: auto;
   max-width: 140px;
 
@@ -366,22 +309,21 @@
       </div>
 
       <h1>Tim Menzies</h1>prof, phd, cs, se, ai<br>
-      ACM/IEEE/ASE fellow<br>
-      Ed, ASE journal
+      ACM/IEEE/ASE fellow<br> Ed, ASE journal
       <hr>
 
       <ul class="nav-menu">
         <li><a href="#funding" style="color:var(--text-color);">Funding</a></li>
-
         <li><a href="#news" style="color:var(--text-color);">News</a></li>
-
-        <li><a href="#research" style="color:var(--text-color);">Research</a></li>
-
-        <li><a href="#publications" style="color:var(--text-color);">Latest
-        Papers</a></li>
-
+        <li><a href="#research" style="color:var(--text-color);">Current Research</a></li>
         <li><a href="#students" style="color:var(--text-color);">Students</a></li>
+        <li style="line-height: 1.8;"> 
+		<a href="https://scholar.google.com/citations?user=7htTUTgmLtUC"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a><br>
+		<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies"><i class="fa-solid fa-file-lines"></i> Pre-prints</a><br>
+          <a href="https://dblp.org/pid/m/TimMenzies.html"><i class="fa-solid fa-database"></i> DBLP</a>
+        </li>
       </ul>
+
       <hr>
       <a href="mailto:timm@ieee.org">timm@ieee.org</a><br>
       <a href="http://timm.fyi">http://timm.fyi</a><br>
@@ -395,14 +337,7 @@
 
     <div class="content">
       <div id="about" class="section">
-        <div class="social-links">
-          <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">[google
-          scholar]</a> <a href=
-          "https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">[pre-prints]</a>
-          <a href="https://dblp.org/pid/m/TimMenzies.html">[dblp]</a>
-        </div>
-
-        <p><strong>Prof. Tim Menzies</strong> is a Full Professor of Computer
+            <p><strong>Prof. Tim Menzies</strong> is a Full Professor of Computer
         Science at <strong>NC State University</strong> and the director of the
         <strong>Irrational Research Lab</strong>. His work focuses on
         <strong>software engineering for AI</strong>, specifically building
@@ -419,7 +354,7 @@
         <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE
         TSE</strong>. For more information, visit <strong>timm.fyi</strong>.</p>
       </div>
-
+  
       <div id="funding" class="section">
         <h2>Funding</h2>
 
@@ -437,8 +372,7 @@
           "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class=
           "logo-small" alt="IBM">
 
-          <div class="logo-break"></div><!-- ðxÆ forces new row -->
-          <img src=
+          <div class="logo-break"></div><img src=
           "https://upload.wikimedia.org/wikipedia/commons/7/7e/NSF_logo.png" alt=
           "NSF"> <img src=
           "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt=
@@ -452,273 +386,104 @@
         <ul class="bullet-list">
           <li><strong>Mar'26:</strong> Invited, Co-chair, Future of SE track, ICSE
           2028</li>
-
           <li><strong>Mar'26:</strong> Invited, PC Member, ICSE'27 NIER</li>
-
           <li><strong>Feb'26:</strong> Invited, IEEE Fellows Review Committee</li>
-
           <li><strong>Jan'26:</strong> Invited Keynote, VerifAI, France</li>
-
           <li><strong>Jan'26:</strong> Invited Keynote, SSBSE'26</li>
-
           <li><strong>Dec'25:</strong> Invited, Area Chair: ASE'26, ICSE'26</li>
-
           <li><strong>Oct'15:</strong> Invited, PC Member: ISSTA'26, FSE'26, ICSE
           NIER'26, CAIN'26</li>
-
           <li><strong>Sep'25:</strong> Invited Talk, Valencia SE Group</li>
-
           <li><strong>Aug'25:</strong> New letter, CACM, The Case for Compact
           AI</li>
-
           <li><strong>Aug'25:</strong> Invited Keynote, Airbnb Dev Conference, San
           Francisco</li>
-
           <li><strong>July'25:</strong> PC Invites: AAAI Social Impact'26,
           CAIN'26</li>
-
           <li><strong>July'25:</strong> Invited Keynote, Future Advanced Testing
           Workshop, Paris</li>
-
           <li><strong>June'25:</strong> Invited Keynote, ESEM'25, Hawaii</li>
-
           <li><strong>May'25:</strong> Co-chair, EMSE 2025 Doctoral Symposium</li>
-
           <li><strong>Apr'25:</strong> Andre Motta completes his Ph.D.</li>
-          <!--== li><strong>Mar'25:</strong> Featured in "People of ACM"</li>
-          <li><strong>Feb'25:</strong> Invited, ASE'25 PC</li>
-          <li><strong>Jan'25:</strong> Elected ACM Fellow</li>
-          <li><strong>Jan'25:</strong> New grant: $310K for Better Fuzzing (with L3Harris)</li =-->
         </ul>
       </div>
 
       <div id="research" class="section">
-        <h2>Research</h2>
+        <h2>Current Research</h2>
 
         <div class="item-card">
           <h3>AI, for Less</h3>
-
           <p>I strongly advocate for <strong>"AI, for Less"</strong>. My research
           demonstrates that you do not always need massive computational power;
           <strong>simpler, optimized models</strong> can yield exceptional results
           while remaining fair, transparent, and trustworthy. We emphasize
           <strong>reproducibility and simplicity</strong> over "black box" deep
-          learning. <span class="swatch swatch-compact">AI, for Less</span></p>
+          learning.</p>
+          
+          <ul class="bullet-list">
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank" class="item-title">How Low Can You Go? The Data-Light SE Challenge</a>
+              <div class="item-meta">Ganguly, K.K., &amp; Menzies, T. &#8226; Foundation of SE (FSE'26), 2026</div>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software's+Sparsity+of+Influence%22+Menzies" target="_blank" class="item-title">From Verification to Herding: Exploiting Sparsity</a>
+              <div class="item-meta">Menzies, T., &amp; Ganguly, K.K. &#8226; VERIFAI-2026 Workshop, 2026</div>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies" target="_blank" class="item-title">The Case for Compact AI</a>
+              <div class="item-meta">Menzies, T. &#8226; Communications of the ACM 68 (8), 2025</div>
+            </li>
+          </ul>
         </div>
 
         <div class="item-card">
           <h3>AI for SE &amp; SE for AI</h3>
-
           <p>AI software is still software, so faults in SE mean faults in AI. SE
           teams often race to deliver AI-based solutions without first checking for
           <strong>bias, optimality, or explainability</strong>. I apply decades of
           Software Engineering wisdom to address these problems in AI, utilizing
-          analytics for defect prediction and effort estimation. <span class=
-          "swatch swatch-se">AI &amp; SE</span></p>
+          analytics for defect prediction and effort estimation.</p>
+          
+          <ul class="bullet-list">
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank" class="item-title">From Brittle to Robust: Improving LLM Annotations</a>
+              <div class="item-meta">Senthilkumar, L., &amp; Menzies, T. &#8226; Empirical Software Eng., 2026</div>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank" class="item-title">Beyond the Prompt: Assessing Domain Knowledge</a>
+              <div class="item-meta">Srinivasan, S., &amp; Menzies, T. &#8226; Mining Software Repositories, 2026</div>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank" class="item-title">SE Journals in 2036: Looking Back at the Future</a>
+              <div class="item-meta">Menzies, T., Avgeriou, P., et al. &#8226; ICSE Future of SE, 2026</div>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies" target="_blank" class="item-title">Can LLMs Improve SE Active Learning via Warm-Starts?</a>
+              <div class="item-meta">Senthilkumar, L., &amp; Menzies, T. &#8226; ACM Transactions on SE, 2026</div>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank" class="item-title">MOOT: a Repository of Many MOO Tasks</a>
+              <div class="item-meta">Menzies, T., Chen, T., et al. &#8226; Mining Software Repositories, 2026</div>
+            </li>
+          </ul>
         </div>
 
         <div class="item-card">
           <h3>Trust, Causality &amp; Ethics</h3>
-
           <p>Ensuring AI systems in high-stakes environments are explainable, fair,
           and free from bias. We use causal graphs and rigorous optimization to
-          ensure AI can be trusted by end-users and institutions. <span class=
-          "swatch swatch-trust">Trust &amp; Ethics</span></p>
-        </div>
-      </div>
-
-      <div id="publications" class="section">
-        <h2>Latest Papers</h2>
-
-        <div class="item-card">
-          <span class="item-title">How Low Can You Go? The Data-Light SE
-          Challenge</span>
-
-          <div class="item-meta">
-            Ganguly, K.K., &amp; Menzies, T. &#8226; Foundation of SE (FSE'26), 2026
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-compact">AI, for Less</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">From Verification to Herding: Exploiting
-          Sparsity</span>
-
-          <div class="item-meta">
-            Menzies, T., &amp; Ganguly, K.K. &#8226; VERIFAI-2026 Workshop, 2026
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-compact">AI, for Less</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software's+Sparsity+of+Influence%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">From Brittle to Robust: Improving LLM
-          Annotations</span>
-
-          <div class="item-meta">
-            Senthilkumar, L., &amp; Menzies, T. &#8226; Empirical Software Eng.,
-            2026
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-se">AI &amp; SE</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">Beyond the Prompt: Assessing Domain
-          Knowledge</span>
-
-          <div class="item-meta">
-            Srinivasan, S., &amp; Menzies, T. &#8226; Mining Software Repositories,
-            2026
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-se">AI &amp; SE</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">SE Journals in 2036: Looking Back at the
-          Future</span>
-
-          <div class="item-meta">
-            Menzies, T., Avgeriou, P., et al. &#8226; ICSE Future of SE, 2026
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-se">AI &amp; SE</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">Can LLMs Improve SE Active Learning via
-          Warm-Starts?</span>
-
-          <div class="item-meta">
-            Senthilkumar, L., &amp; Menzies, T. &#8226; ACM Transactions on SE, 2026
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-se">AI &amp; SE</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">MOOT: a Repository of Many MOO Tasks</span>
-
-          <div class="item-meta">
-            Menzies, T., Chen, T., et al. &#8226; Mining Software Repositories, 2026
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-se">AI &amp; SE</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">The Case for AI, for Less</span>
-
-          <div class="item-meta">
-            Menzies, T. &#8226; Communications of the ACM 68 (8), 2025
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-compact">AI, for Less</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">AI in State Courts: Navigating Innovation &amp;
-          Ethics</span>
-
-          <div class="item-meta">
-            Johnson, B., &amp; Menzies, T. &#8226; IEEE Software 42 (4), 2025
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-trust">Trust &amp; Ethics</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">Shaky Structures: The Wobbly World of Causal
-          Graphs</span>
-
-          <div class="item-meta">
-            Hulse, J., Eisty, N.U., &amp; Menzies, T. &#8226; Empirical Software
-            Eng., 2025
-          </div>
-
-          <div class="item-footer">
-            <span class="swatch swatch-trust">Trust &amp; Ethics</span>
-
-            <div class="item-links">
-              <a href=
-              "https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies"
-              target="_blank">Google Scholar </a>
-            </div>
-          </div>
+          ensure AI can be trusted by end-users and institutions.</p>
+          
+          <ul class="bullet-list">
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank" class="item-title">AI in State Courts: Navigating Innovation &amp; Ethics</a>
+              <div class="item-meta">Johnson, B., &amp; Menzies, T. &#8226; IEEE Software 42 (4), 2025</div>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies" target="_blank" class="item-title">Shaky Structures: The Wobbly World of Causal Graphs</a>
+              <div class="item-meta">Hulse, J., Eisty, N.U., &amp; Menzies, T. &#8226; Empirical Software Eng., 2025</div>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -738,9 +503,7 @@
           <thead>
             <tr>
               <th>Year</th>
-
               <th>Name</th>
-
               <th>Location</th>
             </tr>
           </thead>
@@ -748,25 +511,17 @@
           <tbody>
             <tr>
               <td>2028</td>
-
               <td>Srinath Srinivasan</td>
-
               <td>NC State</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;">2027</td>
-
               <td style="border-bottom: none;">Kishan Ganguly</td>
-
               <td style="border-bottom: none;">NC State</td>
             </tr>
-
             <tr>
               <td></td>
-
               <td>Amirali Rayegan</td>
-
               <td>NC State</td>
             </tr>
           </tbody>
@@ -778,9 +533,7 @@
           <thead>
             <tr>
               <th>Year</th>
-
               <th>Name</th>
-
               <th>Where Now</th>
             </tr>
           </thead>
@@ -788,194 +541,123 @@
           <tbody>
             <tr>
               <td style="border-bottom: none;">2024</td>
-
               <td style="border-bottom: none;">Andre Lutosa</td>
-
               <td style="border-bottom: none;">Red Hat</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Kewen Peng</td>
-
               <td style="border-bottom: none;">Meta</td>
             </tr>
-
             <tr>
               <td></td>
-
               <td>Rahul Yedida</td>
-
               <td>Lexis Nexis</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;">2023</td>
-
               <td style="border-bottom: none;">Sherry (Xueqi) Yang</td>
-
               <td style="border-bottom: none;">Oracle</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Xiao Ling</td>
-
               <td style="border-bottom: none;">Meta</td>
             </tr>
-
             <tr>
               <td></td>
-
               <td>Suvodeep Majumder</td>
-
               <td>AWS</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;">2021</td>
-
               <td style="border-bottom: none;">Rui Shu</td>
-
               <td style="border-bottom: none;">Hong Kong</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Shrikanth Chandrasekaran</td>
-
               <td style="border-bottom: none;">Oracle</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Tianpei (Patrick) Xia</td>
-
               <td style="border-bottom: none;">NewsBreak</td>
             </tr>
-
             <tr>
               <td></td>
-
               <td>Huy Tu</td>
-
               <td>LinkedIn</td>
             </tr>
-
             <tr>
               <td>2020</td>
-
               <td>Joymallya Chakraborty</td>
-
               <td>Amazon</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;">2019</td>
-
               <td style="border-bottom: none;">Zhe Yu</td>
-
               <td style="border-bottom: none;">Rochester Institute of
               Technology</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Rahul Krishna</td>
-
               <td style="border-bottom: none;">IBM Research</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Jianfeng Chen</td>
-
               <td style="border-bottom: none;">Meta</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Amritanshu Agrawal</td>
-
               <td style="border-bottom: none;">TikTok</td>
             </tr>
-
             <tr>
               <td></td>
-
               <td>Vivek Nair</td>
-
               <td>Meta</td>
             </tr>
-
             <tr>
               <td>2018</td>
-
               <td>Wei Fu</td>
-
               <td>Meta</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;">2014</td>
-
               <td style="border-bottom: none;">Abdel Salam Sayyad</td>
-
               <td style="border-bottom: none;">Birzeit University</td>
             </tr>
-
             <tr>
               <td style="border-bottom: none;"></td>
-
               <td style="border-bottom: none;">Fayola Peters</td>
-
               <td style="border-bottom: none;">Johnson &amp; Johnson</td>
             </tr>
-
             <tr>
               <td></td>
-
               <td>Joe Krall</td>
-
               <td>Cloudvirga</td>
             </tr>
-
             <tr>
               <td>2012</td>
-
               <td>Ekrem Kocaguneli</td>
-
               <td>Pinterest</td>
             </tr>
-
             <tr>
               <td>2011</td>
-
               <td>Ashutosh Nandeshwar</td>
-
               <td>CCS Fundraising</td>
             </tr>
-
             <tr>
               <td>2007</td>
-
               <td>David Owen</td>
-
               <td>Messiah College</td>
             </tr>
-
             <tr>
               <td>2004</td>
-
               <td>Scott Chen</td>
-
               <td>Masimo.com</td>
             </tr>
           </tbody>
