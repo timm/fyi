@@ -1,0 +1,15 @@
+Looking at your page, you've got the core sections covered well — bio, funding, news, research themes, papers, and students. Here are some things worth considering:
+
+**Teaching.** You run CSC 491/591 and have extensive course materials. A short section with course names, semesters, and maybe links to public slides or repos would signal to prospective students what working with you actually looks like.
+
+**Software/Tools.** You build a lot of open-source tools — ezr, peeks, MOOT, the PROMISE repository. A small section linking to your key repos would be high-value, especially since "simple ain't stupid" is a core identity. These are tangible artifacts people can try.
+
+**Talks/Keynotes.** You have an impressive list of invited keynotes (Airbnb, ESEM, SSBSE, VerifAI, Paris testing workshop). Right now these are buried in the News bullet list. A dedicated section — even just a compact table of title, venue, year — would make the speaking record more visible.
+
+**Service/Editorial.** You're EiC of the ASE journal, were an IEEE TSE associate editor for 16 years, sit on the IEEE Fellows Review Committee, and area-chair for top venues. That's mentioned in passing in the bio but deserves its own brief section, especially for tenure/promotion letters and award nominations where people scan for this.
+
+**Awards/Honors.** ACM Fellow, IEEE Fellow, ASE Fellow — these are listed in the sidebar tagline but a one-liner section with years would add weight. "People of ACM" is commented out in your HTML too.
+
+**A "philosophy" or "prospective students" blurb.** You have the recruiting pitch at the top of the Students section, but some faculty give it more room — what you expect, what makes your lab different, what a typical week looks like. Given your strong opinions about compact AI and YAGNI, even two sentences of lab culture would self-select the right applicants.
+
+The lowest-hanging fruit is probably **Teaching** and **Software** — they're things you already have and would just need links.

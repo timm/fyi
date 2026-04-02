@@ -308,54 +308,7 @@
         margin-left: 5px;
         font-size: 0.85em;
     }
-#xfunding {
-  padding: 40px 0;
-  text-align: center; /* Optional: centers the heading/text */
-}
-
-.logo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px 22px;              /* tighter vertical + horizontal */
-  margin: 6px auto 0 auto;     /* minimal space above */
-  line-height: 0;              /* kills hidden inline spacing */
-}
-
-.logo-grid img {
-  display: block;              /* removes baseline whitespace */
-  
-  /* bounding box */
-  height: 42px;                /* slightly smaller overall */
-  width: auto;
-  max-width: 140px;
-
-  object-fit: contain;
-
-  /* subtle visual consistency */
-  filter: grayscale(20%) contrast(90%);
-  transition: filter 0.25s ease, transform 0.15s ease;
-}
-
-/* hover polish */
-.logo-grid img:hover {
-  filter: grayscale(0%) contrast(100%);
-  transform: scale(1.05);
-}
-
-/* smaller logos */
-.logo-grid img.logo-small {
-  height: 34px;
-  max-width: 110px;
-}
-
-/* optical tuning */
-.logo-grid img[alt="Meta"] { height: 30px; }
-.logo-grid img[alt="IBM"] { height: 34px; }
-.logo-grid img[alt="NSF"] { height: 50px; }
-.logo-break { flex-basis: 100%; height: 0; }
-    </style>
+  </style>
 </head>
 
 <body>
@@ -371,7 +324,6 @@
       <hr>
 
       <ul class="nav-menu">
-        <li><a href="#funding" style="color:var(--text-color);">Funding</a></li>
         <li><a href="#news" style="color:var(--text-color);">News</a></li>
 
         <li><a href="#research" style="color:var(--text-color);">Research</a></li>
@@ -393,57 +345,37 @@
     </div>
 
     <div class="content">
+      <div id="about" class="section">
+        <div class="social-links">
+          <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">google
+          scholar</a> | <a href=
+          "https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">pre-prints</a>
+          | <a href="https://dblp.org/pid/m/TimMenzies.html">dblp</a>
+        </div>
 
-	    <div id="about" class="section">
-  <div class="social-links">
-    <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">google scholar</a> | 
-    <a href="https://arxiv.org/search/?searchtype=all&query=tim+menzies">pre-prints</a> | 
-    <a href="https://dblp.org/pid/m/TimMenzies.html">dblp</a>
-  </div>
-  <p>
-    <strong>Prof. Tim Menzies</strong> is a Full Professor of Computer Science at 
-    <strong>NC State University</strong> and the director of the 
-    <strong>Irrational Research Lab</strong>. His work focuses on 
-    <strong>software engineering for AI</strong>, specifically building 
-    <strong>data-driven, explainable, and intelligent software systems</strong>. 
-    As an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the 
-    <strong>PROMISE repository</strong>, he helped establish modern empirical 
-    software engineering by demonstrating that <strong>small, interpretable AI 
-    models</strong> can often outperform larger, complex ones.
-  </p>
+        <p><strong>Prof. Tim Menzies</strong> is a Full Professor of Computer
+        Science at <strong>NC State University</strong> and the director of the
+        <strong>Irrational Research Lab</strong>. His work focuses on
+        <strong>software engineering for AI</strong>, specifically building
+        <strong>data-driven, explainable, and intelligent software systems</strong>.
+        As an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the
+        <strong>PROMISE repository</strong>, he helped establish modern empirical
+        software engineering by demonstrating that <strong>small, interpretable AI
+        models</strong> can often outperform larger, complex ones.</p>
 
-  <p>
-    Dr. Menzies has published over <strong>300 papers</strong> with more than 
-    <strong>24,000 citations</strong> and has advised <strong>24 Ph.D. 
-    students</strong>. He serves as the <strong>Editor-in-Chief</strong> of the 
-    <strong>Automated Software Engineering</strong> journal and, from 
-    <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE 
-    TSE</strong>. For more information, visit <strong>timm.fyi</strong>.
-  </p>
-</div>
-
-<div id="funding" class="section">
-  <h2>Funding</h2>
-  <p>
-    My research is supported by <strong>$19M</strong> in competitive grants from 
-    both government and industry. Recent highlights include over 
-    <strong>$2.5M from the NSF</strong> and <strong>$1M from the NSA</strong> to 
-    advance the science of trustworthy and compact AI.
-  </p>
-  
-  <div class="logo-grid">
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" class="logo-small" alt="Meta">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"  alt="Microsoft">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="logo-small" alt="IBM">
-
-    <div class="logo-break"></div>  <!-- 👈 forces new row -->
-	  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/NSF_logo.png" alt="NSF">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA">
-    <img src="nsa.png" alt="NSA">
-    <img src="ln.png" alt="LexisNexis">
-  </div>
-</div>
+        <p>His research, which aims to create <strong>intelligent, fair,
+        transparent, and trustworthy AI tools</strong>, has earned over <strong>$19
+        million in funding</strong> from agencies like <strong>NSF, DARPA, and
+        NASA</strong>, as well as industry leaders including <strong>Meta,
+        Microsoft, and IBM</strong>. Dr. Menzies has published over <strong>300
+        papers</strong> with more than <strong>24,000 citations</strong> and has
+        advised <strong>24 Ph.D. students</strong>. He also serves as the
+        <strong>Editor-in-Chief</strong> of the <strong>Automated Software
+        Engineering</strong> journal and, from
+        <strong>2010&#226;&#8364;&#8220;2026</strong>, as an <strong>Associate
+        Editor for IEEE TSE</strong>. For more information, visit
+        <strong>timm.fyi</strong>.</p>
+      </div>
 
       <div id="news" class="section">
         <h2>News</h2>
@@ -495,14 +427,14 @@
         <h2>Research</h2>
 
         <div class="item-card">
-          <h3>AI, for Less</h3>
+          <h3>Minimalist &amp; Compact AI</h3>
 
-          <p>I strongly advocate for <strong>"AI, for Less"</strong>. My research
+          <p>I strongly advocate for <strong>"Compact AI"</strong>. My research
           demonstrates that you do not always need massive computational power;
           <strong>simpler, optimized models</strong> can yield exceptional results
           while remaining fair, transparent, and trustworthy. We emphasize
           <strong>reproducibility and simplicity</strong> over "black box" deep
-          learning. <span class="swatch swatch-compact">AI, for Less</span></p>
+          learning. <span class="swatch swatch-compact">Compact AI</span></p>
         </div>
 
         <div class="item-card">
@@ -527,219 +459,199 @@
       </div>
 
       <div id="publications" class="section">
-  <h2>Latest Papers</h2>
+        <h2>Latest Papers</h2>
 
-  <div class="item-card">
-    <span class="item-title">How Low Can You Go? The Data-Light SE
-    Challenge</span>
+        <div class="item-card">
+          <span class="item-title">How Low Can You Go? The Data-Light SE
+          Challenge</span>
 
-    <div class="item-meta">
-      Ganguly, K.K., &amp; Menzies, T. &#8226; Foundation of SE (FSE'26), 2026
-    </div>
+          <div class="item-meta">
+            Ganguly, K.K., &amp; Menzies, T. &#8226; Foundation of SE (FSE'26), 2026
+          </div>
 
-    <div class="item-footer">
-      <span class="swatch swatch-compact">
-        <i class="fa-solid fa-microchip"></i> AI, for Less
-      </span>
+          <div class="item-footer">
+            <span class="swatch swatch-compact">Compact AI</span>
 
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">From Brittle to Robust: Improving LLM
+          Annotations</span>
+
+          <div class="item-meta">
+            Senthilkumar, L., &amp; Menzies, T. &#8226; Empirical Software Eng.,
+            2026
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">From Verification to Herding: Exploiting
+          Sparsity</span>
+
+          <div class="item-meta">
+            Menzies, T., &amp; Ganguly, K.K. &#8226; VERIFAI-2026 Workshop, 2026
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-compact">Compact AI</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software's+Sparsity+of+Influence%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">Beyond the Prompt: Assessing Domain
+          Knowledge</span>
+
+          <div class="item-meta">
+            Srinivasan, S., &amp; Menzies, T. &#8226; Mining Software Repositories,
+            2026
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">SE Journals in 2036: Looking Back at the
+          Future</span>
+
+          <div class="item-meta">
+            Menzies, T., Avgeriou, P., et al. &#8226; ICSE Future of SE, 2026
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">Can LLMs Improve SE Active Learning via
+          Warm-Starts?</span>
+
+          <div class="item-meta">
+            Senthilkumar, L., &amp; Menzies, T. &#8226; ACM Transactions on SE, 2026
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">MOOT: a Repository of Many MOO Tasks</span>
+
+          <div class="item-meta">
+            Menzies, T., Chen, T., et al. &#8226; Mining Software Repositories, 2026
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">The Case for Compact AI</span>
+
+          <div class="item-meta">
+            Menzies, T. &#8226; Communications of the ACM 68 (8), 2025
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-compact">Compact AI</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">AI in State Courts: Navigating Innovation &amp;
+          Ethics</span>
+
+          <div class="item-meta">
+            Johnson, B., &amp; Menzies, T. &#8226; IEEE Software 42 (4), 2025
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-trust">Trust &amp; Ethics</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">Shaky Structures: The Wobbly World of Causal
+          Graphs</span>
+
+          <div class="item-meta">
+            Hulse, J., Eisty, N.U., &amp; Menzies, T. &#8226; Empirical Software
+            Eng., 2025
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-trust">Trust &amp; Ethics</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-    <div class="item-card">
-    <span class="item-title">From Verification to Herding: Exploiting
-    Sparsity</span>
-
-    <div class="item-meta">
-      Menzies, T., &amp; Ganguly, K.K. &#8226; VERIFAI-2026 Workshop, 2026
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-compact">
-        <i class="fa-solid fa-microchip"></i> AI, for Less
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software's+Sparsity+of+Influence%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-card">
-    <span class="item-title">From Brittle to Robust: Improving LLM
-    Annotations</span>
-
-    <div class="item-meta">
-      Senthilkumar, L., &amp; Menzies, T. &#8226; Empirical Software Eng., 2026
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-se">
-        <i class="fa-solid fa-gears"></i> AI &amp; SE
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="item-card">
-    <span class="item-title">Beyond the Prompt: Assessing Domain
-    Knowledge</span>
-
-    <div class="item-meta">
-      Srinivasan, S., &amp; Menzies, T. &#8226; Mining Software Repositories,
-      2026
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-se">
-        <i class="fa-solid fa-gears"></i> AI &amp; SE
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-card">
-    <span class="item-title">SE Journals in 2036: Looking Back at the
-    Future</span>
-
-    <div class="item-meta">
-      Menzies, T., Avgeriou, P., et al. &#8226; ICSE Future of SE, 2026
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-se">
-        <i class="fa-solid fa-gears"></i> AI &amp; SE
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-card">
-    <span class="item-title">Can LLMs Improve SE Active Learning via
-    Warm-Starts?</span>
-
-    <div class="item-meta">
-      Senthilkumar, L., &amp; Menzies, T. &#8226; ACM Transactions on SE, 2026
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-se">
-        <i class="fa-solid fa-gears"></i> AI &amp; SE
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-card">
-    <span class="item-title">MOOT: a Repository of Many MOO Tasks</span>
-
-    <div class="item-meta">
-      Menzies, T., Chen, T., et al. &#8226; Mining Software Repositories, 2026
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-se">
-        <i class="fa-solid fa-gears"></i> AI &amp; SE
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-card">
-    <span class="item-title">The Case for AI, for Less</span>
-
-    <div class="item-meta">
-      Menzies, T. &#8226; Communications of the ACM 68 (8), 2025
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-compact">
-        <i class="fa-solid fa-microchip"></i> AI, for Less
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-card">
-    <span class="item-title">AI in State Courts: Navigating Innovation &amp;
-    Ethics</span>
-
-    <div class="item-meta">
-      Johnson, B., &amp; Menzies, T. &#8226; IEEE Software 42 (4), 2025
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-trust">
-        <i class="fa-solid fa-scale-balanced"></i> Trust &amp; Ethics
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item-card">
-    <span class="item-title">Shaky Structures: The Wobbly World of Causal
-    Graphs</span>
-
-    <div class="item-meta">
-      Hulse, J., Eisty, N.U., &amp; Menzies, T. &#8226; Empirical Software
-      Eng., 2025
-    </div>
-
-    <div class="item-footer">
-      <span class="swatch swatch-trust">
-        <i class="fa-solid fa-scale-balanced"></i> Trust &amp; Ethics
-      </span>
-
-      <div class="item-links">
-        <a href="https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies" target="_blank">
-          Google Scholar <i class="fa-solid fa-up-right-from-square"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
 
       <div id="students" class="section">
         <h2>Students &amp; Alumni</h2>
