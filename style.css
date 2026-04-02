@@ -2,11 +2,16 @@
 
 /* 1. CORE VARIABLES */
 :root { --pico-font-family: 'Inter', sans-serif; --pico-font-size: 88%;
-  --pico-line-height: 1.25; --pico-table-row-stripped-background-color: transparent; }
+        --pico-line-height: 1.25; --pico-table-row-stripped-background-color: transparent; }
 
-/* 2. GLOBAL CONTAINER (950PX CAP & FORCED 20PX GUTTERS) */
-.container { max-width: 950px !important; width: calc(100% - 40px) !important;
-  margin: 20px !important; padding: 0 !important; }
+
+/* 2. GLOBAL CONTAINER (950PX CAP & CENTERED) */
+.container { 
+  max-width: 950px !important; 
+  width: calc(100% - 40px) !important;
+  margin: 2rem auto !important; /* Changed from '20px' to '2rem auto' */
+  padding: 0 !important; 
+}
 
 /* 3. BODY & BACKGROUND */
 body { background: #fafafa !important; color: #333; margin: 0; padding-top: 1px; }
