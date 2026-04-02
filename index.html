@@ -1,365 +1,313 @@
 <!DOCTYPE html>
-<!---  tidy -m -indent --indent-spaces 2 -wrap 90 index.html --->
+<!--- tidy -m -i -w 85 ==indent-spaces 2 index.html =-->
+
 <html lang="en">
 <head>
   <meta name="generator" content=
-  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 4474), see www.w3.org">
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 11418), see www.w3.org">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Tim Menzies</title>
+  <link rel="stylesheet" href=
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type=
+  "text/css">
   <style type="text/css">
-  /* Base terminal/typewriter theme */
-        :root {
-            --bg-color: #0d1117; 
-            --text-color: #c9d1d9; 
-            --accent-color: #58a6ff; 
-            --border-color: #30363d;
-        }
+:root {
+        --bg-color: #eee; 
+        --text-color: #222222; 
+        --accent-color: #cc0000; 
+        --border-color: #bcbcbc; 
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            line-height: 1.3;
-            display: flex;
-            justify-content: center;
-        }
+    * {
+        box-sizing: border-box; 
+    }
 
-        /* Layout Container */
-        .container {
-            display: flex;
-            max-width: 1000px;
-            width: 100%;
-            margin-top: 50px;
-            padding: 0 20px;
-        }
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 14px; 
+        margin: 0;
+        padding: 0; 
+        line-height: 1.4;
+        display: flex;
+        justify-content: center;
+    }
 
-        /* Left Sidebar (Pic, Title & Navigation) */
-        .sidebar {
-            flex: 0 0 250px;
-            position: sticky;
-            top: 50px;
-            height: fit-content;
-            padding-right: 30px;
-        }
+    .container {
+        display: flex;
+        max-width: 950px; 
+        width: 100%;
+        margin-top: 25px; 
+        padding: 0 15px; 
+    }
 
-        .nav-menu li {
-    margin-bottom: 4px; /* Changed from 12px */
-  }
+    .sidebar {
+        flex: 0 0 220px; 
+        position: sticky;
+        top: 25px; 
+        height: fit-content;
+        padding-right: 30px;
+    }
 
-  /* Main Body Bullet List Spacing */
-  ul.bullet-list li {
-    margin-bottom: 2px; /* Changed from 8px */
-  }
+    .nav-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-        .sidebar hr {
-    border: none; /* Removes the harsh default 3D styling */
-    border-top: 1px solid rgba(255, 255, 255, 0.15) ; /* Uses your subtle dark gray */
-    margin: 15px 0; /* Gives the text some breathing room */
-  }
+    .nav-menu li {
+        margin-bottom: 6px;
+    }
 
-        /* Round Profile Picture Trick with Padding */
-        .profile-pic {
-            margin-bottom: 20px;
-        }
-  .profile-pic img {
-    width: 100%;         /* Replaces width: 150px */
-    aspect-ratio: 1 / 1; /* Replaces height: 150px */
+    .nav-menu a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .nav-menu a:hover, .nav-menu a:focus {
+        color: var(--accent-color);
+        text-decoration: underline;
+    }
+
+    .sidebar hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 15px 0;
+    }
+
+    .sidebar a {
+        font-weight: bold;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 13.5px;
+    }
     
-    /* Keep all your existing properties below: */
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--accent-color);
-    padding: 8px; 
-    box-sizing: border-box; 
-    box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
-  }
+    .sidebar a:hover {
+        text-decoration: underline;
+    }
 
+    .profile-pic img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--accent-color);
+        padding: 0; 
+        box-shadow: 0 0 10px rgba(204, 0, 0, 0.1);
+        margin-bottom: 15px;
+    }
 
-        .sidebar h1 {
-            font-size: 24px;
-            margin-top: 0;
-            margin-bottom: 5px;
-            color: #ffffff;
-            font-weight: bold;
-            letter-spacing: -0.5px;
-        }
+    .sidebar h1 {
+        font-size: 22px; 
+        margin-top: 0;
+        margin-bottom: 5px;
+        color: #000000;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+    }
 
-        .vim-hint {
-            font-size: 12px;
-            color: #8b949e;
-            margin-bottom: 30px;
-        }
+    /* Fixed Logo CSS */
+    .university-logo {
+        width: 100%;       /* Forces it to fill the column width */
+        height: auto;      /* Keeps the aspect ratio correct */
+        margin-top: 30px;
+        display: block;
+    }
 
-        .nav-menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    .content {
+        flex: 1;
+        padding-left: 35px; 
+        border-left: 1px solid var(--border-color);
+    }
 
-        .nav-menu li {
-            margin-bottom: 12px;
-        }
+    .section {
+        margin-bottom: 40px;
+    }
 
-        .nav-menu a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 16px;
-        }
+    h2 {
+        font-size: 18px; 
+        color: #000000;
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 6px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
 
-<<<<<<< HEAD
-        .nav-menu a:hover, .nav-menu a:focus {
-            color: var(--accent-color);
-            text-decoration: underline;
-        }
-=======
-<ul>
-   <li id=""> <b>Aug'25</b>: Letter, CACM, <a href="assets/pdf/cacm25.pdf">Case for Compact AI</a>
-  <li id=""> <b>July'25</b>:    PC invites: AAAI social impact'26, CAIN'26
-  <li id=""> <b>July'25</b>: Invited, keynote, Future Advanced Test, Paris
-  <li id=""> <b>June'25</b>: Invited, keynote, ESEM'25, Hawaii
-  <li id=""> <b>June'25</b>: Invited, keynote, Airbnb dev conference
-  <li id=""> <b>May'25</b>:    PC invites: FSE'26, ICSE Nier'26
- <li id="">  <b>Apr'25</b>: Andre Motta <a href="https://www.facebook.com/tim.menzies/posts/pfbid0f1QZVfdQADJPpJrWf7cBg4W3p7t4qy1cNLhWiBJmciNXpK4BEw6vbv3u5VtgbnFvl">completes</a> his Ph.D. 
- <li id="">  <b>Mar'25</b>: I am featured in <a href="https://www.acm.org/articles/people-of-acm/2025/tim-menzies">"People of ACM"</a>
- <li id="">  <b>Feb'25</b>: TSE'25: <a href="https://arxiv.org/pdf/2401.09622"> Is optimization different for SE?</a> (yes)
- <li id="">  <b>Feb'25</b>: Invited, ASE'25 PC
- <li id="">  <b>Feb'25</b>: TSE'25: <a href="https://ieeexplore.ieee.org/abstract/document/10869331">Defect Prediction retrospective</a> [<a href="https://arxiv.org/pdf/2501.15662">PDF</a>]
- <li id="">  <b>Jan'25</b>: New paper: <a href="https://arxiv.org/pdf/2501.00125">LLMs, active learning, warm starts</a>
- <li id="">  <b>Jan'25</b>: Invited ICSE'26 PC (area chair)
- <li id="">  <b>Jan'25</b>: Elected ACM Fellow
- <li id="">  <b>Jan'25</b>: New grant, $310K Better fuzzing, with L3harris
- <li id="">  <b>Dec'24</b>: Podcast, <a href="https://newbooksnetwork.com/diversify-your-publishing-portfolio-an-interview-with-tim-menzies">Diversify Publishing</a>
- <li id="">  <b>Nov'24</b> Paper, IEEE Software <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10705752">AI Over-Hype</a>
- <li id="">  <b>Nov'24</b> Paper, IEEE ACCESS <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10438420">Data Synthesis</a>
- <li id="">  <b>Nov'24</b>: Xueqi  Yang completes her Ph.D.
- <li id="">  <b>Oct'24</b> Tutorial, ASE'24 <a href="http://tiny.cc/ models24">Understandable Models</a>
- <li id="">  <b>Oct'24</b> Paper, EMSE <a href="https://arxiv.org/pdf/2211.05920"> "Co-training" for SSL</a>
- <li id="">  <b>Sept '24</b> Tutorial, Models'24 <a href="http://tiny.cc/ models24">Understandable Models</a>
- <li id="">  <b>Sept'24</b>: Elected ASE Fellow
- <!---li id="">  <b>Sept'24</b>: Rahul Yedida completes his Ph.D.
- <li id="">  <b>July'24</b> Paper, TSE <a href="https://arxiv.org/pdf/2107.08310">How to Achieve Equalized Odds</a>
- <li id="">  <b>June'24</b>: Kewen Peng completes his Ph.D.
- <li id="">  <b>June'24</b>: Xiao Ling completes his Ph.D. </li --->
-         <!-- li> <button class="w3-bar-w3-round item w3-button" style="background-color:#CC0000;"
-    border:0px solid #CC0000;  " onclick="openCity('News')"><font color="white"><b><u>More news</u></b></font></button --->
-  </ul>
-          </td>
-          <td>&nbsp;</td>
-<td width=50% valign=top>
-<p>
-Tim Menzies (Ph.D. UNSW 1995,  ACM Fellow, IEEE Fellow, ASE Fellow)  is a globally recognized leader in software engineering research, best known for his pioneering work in data-driven, explainable, and minimal AI for software systems. Over the past two decades, his contributions have redefined defect prediction, effort estimation, and multi-objective optimization, emphasizing transparency and reproducibility. 
-<p>
->>>>>>> 90ba535c3274b4e15905913a31ee5ebab7505040
+    h3 {
+        font-size: 15px;
+        color: var(--accent-color);
+        margin-bottom: 6px;
+        margin-top: 15px;
+        font-weight: bold;
+    }
 
-        /* Main Content Area */
-        .content {
-            flex: 1;
-            padding-left: 40px;
-            border-left: 1px solid var(--border-color);
-        }
+    p {
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
 
-        .section {
-            margin-bottom: 60px;
-        }
+    a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
 
-<<<<<<< HEAD
-        h2 {
-            font-size: 20px;
-            color: #ffffff;
-            border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 8px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-=======
-</ul>
-<br clear=all>
-<center>
-<table width="100%">
-<tr><td>
-Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></tr>
-<tr><td valign=top width=110><p>
-          <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Katerina Vilkomir" width="45" height="45" align=middle src="assets/img/who/katerina.png"></a>
-          <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Kishan Ganguly" width="45" height="45" align=middle src="assets/img/who/kishan.png"></a>
-          <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Amirali Rayegan" width="45" height="45" align=middle src="assets/img/who/amirali.png"></a>
-          <a href="https://srina1h.github.io"><img style="margin-bottom: 3px;"  alt="Srinath Srinivasan" width="45" height="45" align=middle src="assets/img/who/srinanth.png"></a>
+    a:hover {
+        text-decoration: underline;
+    }
 
-          </td><td></td><td align=right valign=top><p>
-                <a href="http://documentslide.com/documents/zhihao-scott-chen.html"><img style="margin-bottom: 3px;"  alt="Scott Chen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/scottchen.png"></a>
-                <a href="http://www.messiah.edu/info/21665/our_faculty/2753/department_faculty/4"><img style="margin-bottom: 3px;"  alt="David Owen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/davidowen.png"></a>
-                <a href="http://nandeshwar.info/"><img style="margin-bottom: 3px;"  alt="Ashutosh Nandeshwar" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ashutosh.png"></a>
-                <a href="http://www.kocaguneli.com/"><img style="margin-bottom: 3px;"  alt="Ekrem Kocaguneli" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/ekrem.png"></a>
-                <a href="http://www.birzeit.edu/en/faculty-staff/abdel-salam-sayyad"><img style="margin-bottom: 3px;"  alt="Abdel Salem Sayyad" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/abdel.png"></a>
-                <a href="http://www.fayolapeters.com/about/"><img style="margin-bottom: 3px;"  alt="Fayola Peters" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/fayola.png"></a>
-                <a href="https://www.linkedin.com/in/joseph-krall-53125470/"><img style="margin-bottom: 3px;"  alt="Joe Krall" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/joekrall.png"></a>
-                <a href="http://greggay.com/"><img style="margin-bottom: 3px;"  alt="Greg Gay" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/who/greg.png"></a>
-                <a href="http://ai4se.net/people/2014/09/30/Wei-Fu/"><img style="margin-bottom: 3px;"  alt="Wei Fu" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/wei.jpg"></a>
-                <a href="http://ai4se.net/people/2014/10/15/Vivek-Nair/"><img style="margin-bottom: 3px;"  alt="Vivek Nair" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/vivek.jpg"></a>
-                <a href="http://ai4se.net/people/2015/09/01/Amritanshu-Agrawal/"><img style="margin-bottom: 3px;"  alt="Amritanshu Agrawal" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/amrit.jpg"></a>
-                <a href="http://ai4se.net/people/2015/08/15/Jianfeng-Chen/"><img style="margin-bottom: 3px;"  alt="Jianfeng Chen" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/chen.jpg"></a>
-                <a href="http://ai4se.net/people/2014/10/04/Rahul-Krishna/"><img style="margin-bottom: 3px;"  alt="Rahul Krishna" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/rahlk.jpg"></a>
-                <a href="http://ai4se.net/people/2015/08/30/Zhe-Yu/"><img style="margin-bottom: 3px;"  alt="Zhe Yu" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/Zhe.jpg"></a>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img style="margin-bottom: 3px;"  alt="Joymallya Chakraborty" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-joy.png"></a>
-                <a href="https://rshu.github.io"><img style="margin-bottom: 3px;"  alt="Rui Shu" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-riu.png"></a>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img style="margin-bottom: 3px;"  alt="Shrikanth Chandrasekaran" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-shrikamtj.png"></a>
-                <a href="http://ai4se.net/people/2017/09/01/Tianpei-Xia/"><img style="margin-bottom: 3px;"  alt="Tianpei Xia" width="45" height="45" align=middle src="assets/img/who/Patrick.png"></a>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img style="margin-bottom: 3px;"  alt="Huy Tu" width="45" height="45" align=middle src="assets/img/who/huy.jpeg"></a>
-                <a href="http://ai4se.net/people/2017/09/02/Huy-Tu/"><img style="margin-bottom: 3px;"  alt="Xueqi(Sherry) Yang" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/img-cherry.png"></a>
-<a href="https://www.linkedin.com/in/xiao-ling-339a15189/"><img style="margin-bottom: 3px;"  align=middle alt="Xiao Ling" src="assets/img/who/xiaoling.png" width=45 height=45></a>
-                <a href="http://ai4se.net/people/kewenPeng"><img style="margin-bottom: 3px;"  alt="Kewen Peng" width="45" height="45" align=middle src="assets/img/who/KewenPeng.jpeg"></a>
-                <a href="https://www.suvodeepmajumder.us"><img style="margin-bottom: 3px;"  alt="Suvodeep Najumder" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img/duvodeep.png"></a>
-                <a href="https://yrahul3910.github.io/whyrahul/"><img style="margin-bottom: 3px;"  alt="Rahul Yehida" width="45" height="45" align=middle src="https://raw.githubusercontent.com/timm/timm.github.io/master/img//rahulYedida.png"></a>
-                <a href="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"><img style="margin-bottom: 3px;"  alt="Andre Motta" width="45" height="45" align=middle src="https://avatars0.githubusercontent.com/u/30708955?s=460&amp;v=4"></a>
-                <br>
-                <mark>Much thanks and good luck to y'all!. 👏<br>Can't wait to see what you do next!</mark> 🚀</p>
-</td></tr></table>
-                <p >
->>>>>>> 90ba535c3274b4e15905913a31ee5ebab7505040
+    .social-links {
+        text-align: left; 
+        margin-bottom: 15px; 
+        font-weight: bold;
+        color: var(--accent-color);
+        font-size: 13.5px;
+    }
+    
+    .social-links a { margin-right: 10px; }
 
-        h3 {
-            font-size: 16px;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+    .item-card { margin-bottom: 20px; }
 
-        p {
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
+    .item-title {
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 2px;
+        display: block;
+        font-size: 14.5px;
+    }
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
+    .item-meta {
+        color: #555555;
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .item-links a {
+        font-size: 12px;
+        margin-right: 10px;
+        border: 1px solid var(--border-color);
+        padding: 2px 8px;
+        border-radius: 4px;
+        color: var(--text-color);
+        display: inline-block;
+        margin-top: 2px;
+    }
+    
+    .item-links a:hover {
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+        background-color: rgba(204,0,0,0.05);
+    }
 
-        /* Centered links row at the top of content */
-        .social-links {
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: bold;
-            color: #8b949e; /* Mutes the pipe "|" separators */
-        }
-        
-        .social-links a {
-            margin: 0 10px;
-        }
+    ul.bullet-list {
+        padding-left: 20px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    ul.bullet-list li {
+        margin-bottom: 4px;
+    }
 
-        /* Publication & Project Cards */
-        .item-card {
-            margin-bottom: 30px;
-        }
+    ul.bullet-list strong { color: #000000; }
 
-        .item-title {
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 5px;
-            display: block;
-        }
+    .student-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px; 
+        font-size: 13.5px; 
+    }
 
-        .item-meta {
-            color: #8b949e;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
+    .student-table th, .student-table td {
+        padding: 5px 8px; 
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+    }
 
-        .item-links a {
-            font-size: 14px;
-            margin-right: 15px;
-            border: 1px solid var(--border-color);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-        
-        .item-links a:hover {
-            border-color: var(--accent-color);
-            text-decoration: none;
-        }
+    .student-table th {
+        color: #000000;
+        font-weight: bold;
+        background-color: rgba(0,0,0,0.04); 
+    }
 
-        ul.bullet-list {
-            padding-left: 20px;
-            color: #8b949e;
-        }
-        
-        ul.bullet-list li {
-            margin-bottom: 8px;
-        }
+    .student-table tr:hover {
+        background-color: rgba(204, 0, 0, 0.04);
+    }
 
-        /* Highlights dates in the news list */
-        ul.bullet-list strong {
-            color: #ffffff;
+    @media (max-width: 768px) {
+        .container { 
+            flex-direction: column; 
+            margin-top: 15px; 
+            padding: 0 15px; 
         }
+        .sidebar { 
+            flex: none; 
+            position: relative; 
+            top: 0; 
+            padding-right: 0; 
+            margin-bottom: 30px; 
+            text-align: center; 
+        }
+        .content { 
+            padding-left: 0; 
+            border-left: none; 
+        }
+        .nav-menu { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+        }
+        .profile-pic img { max-width: 160px; }
+        .university-logo {
+            max-width: 220px; /* Constrains it on mobile screens only */
+            margin: 25px auto 0 auto;
+        }
+    }
+    /* Swatch & Badge Styles */
+    .swatch {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 6px;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1;
+    }
+    
+    .swatch i {
+        font-size: 16px;
+        margin-right: 6px;
+    }
 
-        /* Student Table Styling */
-        .student-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-            font-size: 15px;
-        }
+    /* Updated Theme Colors */
+    .swatch-compact { background-color: #0277bd; } /* Blue */
+    .swatch-se { background-color: #00796b; }      /* Teal (Replaced Red) */
+    .swatch-trust { background-color: #f57c00; }   /* Orange */
 
-        .student-table th, .student-table td {
-            padding: 8px 10px;
-            text-align: left;
-            border-bottom: 1px dashed var(--border-color);
-        }
+    /* New container to align swatches and links on the same line */
+    .item-footer {
+        display: flex;
+        align-items: center;
+        gap: 12px; /* Space between swatch and link */
+        margin-top: 8px;
+    }
 
-        .student-table th {
-            color: #ffffff;
-            font-weight: bold;
-            padding-bottom: 12px;
-        }
+    /* Remove the top margin from links since flexbox handles alignment */
+    .item-footer .item-links a {
+        margin: 0; 
+    }
 
-        .student-table td.year-col {
-            color: #8b949e; /* Fades the year slightly */
-            width: 60px;
-        }
-
-        .student-table tr:hover {
-            background-color: rgba(255, 255, 255, 0.05); /* Subtle highlight on hover */
-        }
-        G
-        /* Responsive Layout for Mobile */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                margin-top: 20px;
-            }
-            .sidebar {
-                flex: none;
-                position: relative;
-                top: 0;
-                padding-right: 0;
-                margin-bottom: 40px;
-                text-align: center;
-            }
-            .profile-pic img {
-                width: 120px;
-                height: 120px;
-            }
-            .content {
-                padding-left: 0;
-                border-left: none;
-            }
-            .nav-menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            .nav-menu li {
-                margin-bottom: 0;
-            }
-        }
+    .item-links a i {
+        margin-left: 5px;
+        font-size: 0.85em;
+    }
   </style>
 </head>
 
@@ -374,83 +322,60 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
       ACM/IEEE/ASE fellow<br>
       Ed, ASE journal
       <hr>
+
+      <ul class="nav-menu">
+        <li><a href="#news" style="color:var(--text-color);">News</a></li>
+
+        <li><a href="#research" style="color:var(--text-color);">Research
+        Interests</a></li>
+
+        <li><a href="#publications" style="color:var(--text-color);">Recent
+        Publications</a></li>
+
+        <li><a href="#students" style="color:var(--text-color);">Students</a></li>
+      </ul>
+      <hr>
       <a href="mailto:timm@ieee.org">timm@ieee.org</a><br>
       <a href="http://timm.fyi">http://timm.fyi</a><br>
       +1-304-376-2859<br>
       rm 3304, EB2<br>
       Com. Sci., EB22, 890 Oval Dr, Raleigh, NC 27606<br>
-      <hr>
-
-      <ul class="nav-menu">
-        <li><a href="#research">Research Interests</a></li>
-
-        <li><a href="#news">News</a></li>
-
-        <li><a href="#publications">Recent Publications</a></li>
-
-        <li><a href="#students">Students</a></li>
-      </ul>
+      <img src=
+      "https://brand.ncsu.edu/wp-content/uploads/sites/25/2025/05/ncstate-brick-4x1-red.png"
+      alt="NC State University" class="university-logo">
     </div>
 
     <div class="content">
       <div id="about" class="section">
         <div class="social-links">
-          <a href=
-          "https://scholar.google.com/citations?user=7htTUTgmLtUC&amp;hl=en&amp;authuser=1">
-          google scholar</a> | <a href=
-          "https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies&amp;size=200&amp;order=-announced_date_first">
-          pre-prints</a> | <a href="https://dblp.org/pid/m/TimMenzies.html">dblp</a>
+          <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">google
+          scholar</a> | <a href=
+          "https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">pre-prints</a>
+          | <a href="https://dblp.org/pid/m/TimMenzies.html">dblp</a>
         </div>
 
-        <p><strong>Prof. Tim Menzies</strong> is a Full Professor of Computer Science at
-        <strong>NC State University</strong> and the director of the <strong>Irrational
-        Research Lab</strong>. His work focuses on <strong>software engineering for
-        AI</strong>, specifically building <strong>data-driven</strong>,
-        <strong>explainable</strong>, and <strong>intelligent software systems</strong>.
-        As an <strong>ACM</strong>, <strong>IEEE</strong>, and <strong>ASE
-        Fellow</strong>, and co-creator of the <strong>PROMISE repository</strong>, he
-        helped establish modern empirical software engineering by demonstrating that
-        <strong>small, interpretable AI models</strong> can often outperform larger,
-        complex ones.</p>
+        <p><strong>Prof. Tim Menzies</strong> is a Full Professor of Computer
+        Science at <strong>NC State University</strong> and the director of the
+        <strong>Irrational Research Lab</strong>. His work focuses on
+        <strong>software engineering for AI</strong>, specifically building
+        <strong>data-driven, explainable, and intelligent software systems</strong>.
+        As an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the
+        <strong>PROMISE repository</strong>, he helped establish modern empirical
+        software engineering by demonstrating that <strong>small, interpretable AI
+        models</strong> can often outperform larger, complex ones.</p>
 
-        <p>His research, which aims to create <strong>intelligent</strong>,
-        <strong>fair</strong>, <strong>transparent</strong>, and <strong>trustworthy AI
-        tools</strong>, has earned over <strong>$19 million in funding</strong> from
-        agencies like <strong>NSF</strong>, <strong>DARPA</strong>, and
-        <strong>NASA</strong>, as well as industry leaders including
-        <strong>Meta</strong>, <strong>Microsoft</strong>, and <strong>IBM</strong>. Dr.
-        Menzies has published over <strong>300 papers</strong> with more than
-        <strong>24,000 citations</strong> and has advised <strong>24 Ph.D.
-        students</strong>. He also serves as the <strong>Editor-in-Chief</strong> of the
-        <strong>Automated Software Engineering</strong> journal and, from
-        <strong>2010&#226;&#8364;&#8220;2026</strong>, as an <strong>Associate Editor for
-        IEEE TSE</strong>. For more information, visit <strong>timm.fyi</strong>.</p>
-      </div>
-
-      <div id="research" class="section">
-        <h2>Research Interests</h2>
-
-        <div class="item-card">
-          <h3>Minimalist &amp; Compact AI</h3>
-
-          <p>I strongly advocate for <strong>"Compact AI"</strong>. My research
-          demonstrates that you do not always need massive computational power;
-          <strong>simpler, optimized models</strong> can yield exceptional results while
-          remaining fair, transparent, and trustworthy. We emphasize
-          <strong>reproducibility and simplicity</strong> over "black box" deep
-          learning.</p>
-        </div>
-
-        <div class="item-card">
-          <h3>AI for SE &amp; SE for AI</h3>
-
-          <p>AI software is still software, so faults in SE mean faults in AI. SE teams
-          often race to deliver AI-based solutions without first checking for
-          <strong>bias</strong>, <strong>optimality</strong>, or
-          <strong>explainability</strong>. I apply decades of Software Engineering wisdom
-          to address these problems in AI, utilizing analytics for defect prediction and
-          effort estimation.</p>
-        </div>
+        <p>His research, which aims to create <strong>intelligent, fair,
+        transparent, and trustworthy AI tools</strong>, has earned over <strong>$19
+        million in funding</strong> from agencies like <strong>NSF, DARPA, and
+        NASA</strong>, as well as industry leaders including <strong>Meta,
+        Microsoft, and IBM</strong>. Dr. Menzies has published over <strong>300
+        papers</strong> with more than <strong>24,000 citations</strong> and has
+        advised <strong>24 Ph.D. students</strong>. He also serves as the
+        <strong>Editor-in-Chief</strong> of the <strong>Automated Software
+        Engineering</strong> journal and, from
+        <strong>2010&#226;&#8364;&#8220;2026</strong>, as an <strong>Associate
+        Editor for IEEE TSE</strong>. For more information, visit
+        <strong>timm.fyi</strong>.</p>
       </div>
 
       <div id="news" class="section">
@@ -462,7 +387,7 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
 
           <li><strong>Mar'26:</strong> Invited, PC Member, ICSE'27 NIER</li>
 
-          <li><strong>Feb,26:</strong> Invited, IEEE Fellows Review Committee</li>
+          <li><strong>Feb'26:</strong> Invited, IEEE Fellows Review Committee</li>
 
           <li><strong>Jan'26:</strong> Invited Keynote, VerifAI, France</li>
 
@@ -475,12 +400,14 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
 
           <li><strong>Sep'25:</strong> Invited Talk, Valencia SE Group</li>
 
-          <li><strong>Aug'25:</strong> New letter, CACM, The Case for Compact AI</li>
+          <li><strong>Aug'25:</strong> New letter, CACM, The Case for Compact
+          AI</li>
 
           <li><strong>Aug'25:</strong> Invited Keynote, Airbnb Dev Conference, San
           Francisco</li>
 
-          <li><strong>July'25:</strong> PC Invites: AAAI Social Impact'26, CAIN'26</li>
+          <li><strong>July'25:</strong> PC Invites: AAAI Social Impact'26,
+          CAIN'26</li>
 
           <li><strong>July'25:</strong> Invited Keynote, Future Advanced Testing
           Workshop, Paris</li>
@@ -490,129 +417,182 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
           <li><strong>May'25:</strong> Co-chair, EMSE 2025 Doctoral Symposium</li>
 
           <li><strong>Apr'25:</strong> Andre Motta completes his Ph.D.</li>
-
-          <li><strong>Mar'25:</strong> Featured in "People of ACM"</li>
-
+          <!--== li><strong>Mar'25:</strong> Featured in "People of ACM"</li>
           <li><strong>Feb'25:</strong> Invited, ASE'25 PC</li>
-
           <li><strong>Jan'25:</strong> Elected ACM Fellow</li>
-
-          <li><strong>Jan'25:</strong> New grant: $310K for Better Fuzzing (with
-          L3Harris)</li>
+          <li><strong>Jan'25:</strong> New grant: $310K for Better Fuzzing (with L3Harris)</li =-->
         </ul>
+      </div>
+
+      <div id="research" class="section">
+        <h2>Research Interests</h2>
+
+        <div class="item-card">
+          <h3>Minimalist &amp; Compact AI</h3>
+
+          <p>I strongly advocate for <strong>"Compact AI"</strong>. My research
+          demonstrates that you do not always need massive computational power;
+          <strong>simpler, optimized models</strong> can yield exceptional results
+          while remaining fair, transparent, and trustworthy. We emphasize
+          <strong>reproducibility and simplicity</strong> over "black box" deep
+          learning. <span class="swatch swatch-compact">Compact AI</span></p>
+        </div>
+
+        <div class="item-card">
+          <h3>AI for SE &amp; SE for AI</h3>
+
+          <p>AI software is still software, so faults in SE mean faults in AI. SE
+          teams often race to deliver AI-based solutions without first checking for
+          <strong>bias, optimality, or explainability</strong>. I apply decades of
+          Software Engineering wisdom to address these problems in AI, utilizing
+          analytics for defect prediction and effort estimation. <span class=
+          "swatch swatch-se">AI &amp; SE</span></p>
+        </div>
+
+        <div class="item-card">
+          <h3>Trust, Causality &amp; Ethics</h3>
+
+          <p>Ensuring AI systems in high-stakes environments are explainable, fair,
+          and free from bias. We use causal graphs and rigorous optimization to
+          ensure AI can be trusted by end-users and institutions. <span class=
+          "swatch swatch-trust">Trust &amp; Ethics</span></p>
+        </div>
       </div>
 
       <div id="publications" class="section">
         <h2>Recent Publications</h2>
 
         <div class="item-card">
-          <span class="item-title">How Low Can You Go? The Data-Light SE Challenge</span>
+          <span class="item-title">How Low Can You Go? The Data-Light SE
+          Challenge</span>
 
           <div class="item-meta">
-            Ganguly, K.K., &amp; Menzies, T. &#226;&#8364;&#162; Foundation of Software
-            Engineering (FSE'26), 2026
+            Ganguly, K.K., &amp; Menzies, T. &#8226; Foundation of SE (FSE'26), 2026
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=How+Low+Can+You+Go%3F+The+Data-Light+SE+Challenge"
-            target="_blank">Google Scholar</a>
+          <div class="item-footer">
+            <span class="swatch swatch-compact">Compact AI</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
 
         <div class="item-card">
-          <span class="item-title">From Brittle to Robust: Improving LLM Annotations for
-          SE Optimization</span>
+          <span class="item-title">From Brittle to Robust: Improving LLM
+          Annotations</span>
 
           <div class="item-meta">
-            Senthilkumar, L., &amp; Menzies, T. &#226;&#8364;&#162; Empirical Software
-            Engineering, 2026
-          </div>
-
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=From+Brittle+to+Robust%3A+Improving+LLM+Annotations+for+SE+Optimization"
-            target="_blank">Google Scholar</a>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <span class="item-title">From Verification to Herding: Exploiting Software's
-          Sparsity of Influence</span>
-
-          <div class="item-meta">
-            Menzies, T., &amp; Ganguly, K.K. &#226;&#8364;&#162; VERIFAI-2026 Workshop,
+            Senthilkumar, L., &amp; Menzies, T. &#8226; Empirical Software Eng.,
             2026
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=From+Verification+to+Herding%3A+Exploiting+Software%27s+Sparsity+of+Influence"
-            target="_blank">Google Scholar</a>
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
 
         <div class="item-card">
-          <span class="item-title">Beyond the Prompt: Assessing Domain Knowledge
-          Strategies for High-Dimensional LLM Optimization in Software Engineering</span>
+          <span class="item-title">From Verification to Herding: Exploiting
+          Sparsity</span>
 
           <div class="item-meta">
-            Srinivasan, S., &amp; Menzies, T. &#226;&#8364;&#162; Mining Software
-            Repositories (Registered Reports), 2026
+            Menzies, T., &amp; Ganguly, K.K. &#8226; VERIFAI-2026 Workshop, 2026
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=Beyond+the+Prompt%3A+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering"
-            target="_blank">Google Scholar</a>
+          <div class="item-footer">
+            <span class="swatch swatch-compact">Compact AI</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software's+Sparsity+of+Influence%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
 
         <div class="item-card">
-          <span class="item-title">SE Journals in 2036: Looking Back at the Future We
-          Need to Have</span>
+          <span class="item-title">Beyond the Prompt: Assessing Domain
+          Knowledge</span>
 
           <div class="item-meta">
-            Menzies, T., Avgeriou, P., Feldt, R., Pezz&#195;&#168;, M., Roychoudhury, A.,
-            Staron, M., et al. &#226;&#8364;&#162; Proceedings, ICSE Future of SE, 2026
+            Srinivasan, S., &amp; Menzies, T. &#8226; Mining Software Repositories,
+            2026
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=SE+Journals+in+2036%3A+Looking+Back+at+the+Future+We+Need+to+Have"
-            target="_blank">Google Scholar</a>
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
 
         <div class="item-card">
-          <span class="item-title">Can Large Language Models Improve SE Active Learning
-          via Warm-Starts?</span>
+          <span class="item-title">SE Journals in 2036: Looking Back at the
+          Future</span>
 
           <div class="item-meta">
-            Senthilkumar, L., &amp; Menzies, T. &#226;&#8364;&#162; ACM Transactions on
-            SE Methodologies, 2026
+            Menzies, T., Avgeriou, P., et al. &#8226; ICSE Future of SE, 2026
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F"
-            target="_blank">Google Scholar</a>
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
 
         <div class="item-card">
-          <span class="item-title">MOOT: a Repository of Many Multi-Objective
-          Optimization Tasks</span>
+          <span class="item-title">Can LLMs Improve SE Active Learning via
+          Warm-Starts?</span>
 
           <div class="item-meta">
-            Menzies, T., Chen, T., Ye, Y., Ganguly, K.K., Rayegan, A., Srinivasan, S., et
-            al. &#226;&#8364;&#162; Mining Software Repositories, 2026
+            Senthilkumar, L., &amp; Menzies, T. &#8226; ACM Transactions on SE, 2026
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=MOOT%3A+a+Repository+of+Many+Multi-Objective+Optimization+Tasks"
-            target="_blank">Google Scholar</a>
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">MOOT: a Repository of Many MOO Tasks</span>
+
+          <div class="item-meta">
+            Menzies, T., Chen, T., et al. &#8226; Mining Software Repositories, 2026
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-se">AI &amp; SE</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
 
@@ -620,44 +600,56 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
           <span class="item-title">The Case for Compact AI</span>
 
           <div class="item-meta">
-            Menzies, T. &#226;&#8364;&#162; Communications of the ACM 68 (8), 2025
+            Menzies, T. &#8226; Communications of the ACM 68 (8), 2025
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=The+case+for+compact+ai+Menzies"
-            target="_blank">Google Scholar</a>
-          </div>
-        </div>
+          <div class="item-footer">
+            <span class="swatch swatch-compact">Compact AI</span>
 
-        <div class="item-card">
-          <span class="item-title">AI in State Courts: Navigating Innovation and Ethics
-          With Andrea Miller</span>
-
-          <div class="item-meta">
-            Johnson, B., &amp; Menzies, T. &#226;&#8364;&#162; IEEE Software 42 (4), 2025
-          </div>
-
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=AI+in+State+Courts%3A+Navigating+Innovation+and+Ethics+With+Andrea+Miller"
-            target="_blank">Google Scholar</a>
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
 
         <div class="item-card">
-          <span class="item-title">Shaky Structures: The Wobbly World of Causal Graphs in
-          Software Analytics</span>
+          <span class="item-title">AI in State Courts: Navigating Innovation &amp;
+          Ethics</span>
 
           <div class="item-meta">
-            Hulse, J., Eisty, N.U., &amp; Menzies, T. &#226;&#8364;&#162; Empirical
-            Software Engineering, 2025
+            Johnson, B., &amp; Menzies, T. &#8226; IEEE Software 42 (4), 2025
           </div>
 
-          <div class="item-links">
-            <a href=
-            "https://scholar.google.com/scholar?q=Shaky+Structures%3A+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics"
-            target="_blank">Google Scholar</a>
+          <div class="item-footer">
+            <span class="swatch swatch-trust">Trust &amp; Ethics</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <span class="item-title">Shaky Structures: The Wobbly World of Causal
+          Graphs</span>
+
+          <div class="item-meta">
+            Hulse, J., Eisty, N.U., &amp; Menzies, T. &#8226; Empirical Software
+            Eng., 2025
+          </div>
+
+          <div class="item-footer">
+            <span class="swatch swatch-trust">Trust &amp; Ethics</span>
+
+            <div class="item-links">
+              <a href=
+              "https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies"
+              target="_blank">Google Scholar </a>
+            </div>
           </div>
         </div>
       </div>
@@ -669,15 +661,15 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
         problems in real-world AI/ML. If you want to be a leader in AI (and not just
         another follower), we should talk.</p>
 
-        <p>I have advised 24 Ph.D. students. Below is a list of my current students and
-        alumni:</p>
+        <p>I have advised 24 Ph.D. students. Below is a list of my current students
+        and alumni:</p>
 
         <h3>Current Ph.D. Students</h3>
 
         <table class="student-table">
           <thead>
             <tr>
-              <th class="year-col">Year</th>
+              <th>Year</th>
 
               <th>Name</th>
 
@@ -687,7 +679,7 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
 
           <tbody>
             <tr>
-              <td class="year-col">2028</td>
+              <td>2028</td>
 
               <td>Srinath Srinivasan</td>
 
@@ -695,15 +687,15 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
             </tr>
 
             <tr>
-              <td class="year-col">2027</td>
+              <td style="border-bottom: none;">2027</td>
 
-              <td>Kishan Ganguly</td>
+              <td style="border-bottom: none;">Kishan Ganguly</td>
 
-              <td>NC State</td>
+              <td style="border-bottom: none;">NC State</td>
             </tr>
 
             <tr>
-              <td class="year-col">2027</td>
+              <td></td>
 
               <td>Amirali Rayegan</td>
 
@@ -717,7 +709,7 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
         <table class="student-table">
           <thead>
             <tr>
-              <th class="year-col">Year</th>
+              <th>Year</th>
 
               <th>Name</th>
 
@@ -727,210 +719,194 @@ Ph.D.s (current):</td><td>&nbsp;&nbsp;</td><td>Ph.D.s (graduated 🎓): </td></t
 
           <tbody>
             <tr>
-              <td class="year-col">2024</td>
+              <td style="border-bottom: none;">2024</td>
 
-              <td>Andre Lutosa</td>
+              <td style="border-bottom: none;">Andre Lutosa</td>
 
-              <td>Red Hat</td>
+              <td style="border-bottom: none;">Red Hat</td>
             </tr>
 
             <tr>
-              <td class="year-col">2024</td>
+              <td style="border-bottom: none;"></td>
 
-              <td><a href="https://www.linkedin.com/in/kewen-peng-63093b200/" target=
-              "_blank">Kewen Peng</a></td>
+              <td style="border-bottom: none;">Kewen Peng</td>
 
-              <td>Meta</td>
+              <td style="border-bottom: none;">Meta</td>
             </tr>
 
             <tr>
-              <td class="year-col">2024</td>
+              <td></td>
 
-              <td><a href="https://ryedida.me/" target="_blank">Rahul Yedida</a></td>
+              <td>Rahul Yedida</td>
 
               <td>Lexis Nexis</td>
             </tr>
 
             <tr>
-              <td class="year-col">2023</td>
+              <td style="border-bottom: none;">2023</td>
 
-              <td><a href="https://www.linkedin.com/in/xueqi-yang-0b6ba7169/" target=
-              "_blank">Sherry (Xueqi) Yang</a></td>
+              <td style="border-bottom: none;">Sherry (Xueqi) Yang</td>
 
-              <td>Oracle</td>
+              <td style="border-bottom: none;">Oracle</td>
             </tr>
 
             <tr>
-              <td class="year-col">2023</td>
+              <td style="border-bottom: none;"></td>
 
-              <td><a href="https://www.linkedin.com/in/xiao-ling-339a15189/" target=
-              "_blank">Xiao Ling</a></td>
+              <td style="border-bottom: none;">Xiao Ling</td>
 
-              <td>Meta</td>
+              <td style="border-bottom: none;">Meta</td>
             </tr>
 
             <tr>
-              <td class="year-col">2023</td>
+              <td></td>
 
-              <td><a href="https://www.linkedin.com/in/suvodeep-majumder" target=
-              "_blank">Suvodeep Majumder</a></td>
+              <td>Suvodeep Majumder</td>
 
               <td>AWS</td>
             </tr>
 
             <tr>
-              <td class="year-col">2021</td>
+              <td style="border-bottom: none;">2021</td>
 
-              <td>Rui Shu</td>
+              <td style="border-bottom: none;">Rui Shu</td>
 
-              <td>Hong Kong</td>
+              <td style="border-bottom: none;">Hong Kong</td>
             </tr>
 
             <tr>
-              <td class="year-col">2021</td>
+              <td style="border-bottom: none;"></td>
 
-              <td><a href="https://snaraya7.github.io/" target="_blank">Shrikanth
-              Chandrasekaran</a></td>
+              <td style="border-bottom: none;">Shrikanth Chandrasekaran</td>
 
-              <td>Oracle</td>
+              <td style="border-bottom: none;">Oracle</td>
             </tr>
 
             <tr>
-              <td class="year-col">2021</td>
+              <td style="border-bottom: none;"></td>
 
-              <td><a href="https://xiatianpei.com/" target="_blank">Tianpei (Patrick)
-              Xia</a></td>
+              <td style="border-bottom: none;">Tianpei (Patrick) Xia</td>
 
-              <td>NewsBreak</td>
+              <td style="border-bottom: none;">NewsBreak</td>
             </tr>
 
             <tr>
-              <td class="year-col">2021</td>
+              <td></td>
 
-              <td><a href="https://kentu.us/" target="_blank">Huy Tu</a></td>
+              <td>Huy Tu</td>
 
               <td>LinkedIn</td>
             </tr>
 
             <tr>
-              <td class="year-col">2020</td>
+              <td>2020</td>
 
-              <td><a href="https://joymallyac.github.io/" target="_blank">Joymallya
-              Chakraborty</a></td>
+              <td>Joymallya Chakraborty</td>
 
               <td>Amazon</td>
             </tr>
 
             <tr>
-              <td class="year-col">2019</td>
+              <td style="border-bottom: none;">2019</td>
 
-              <td><a href="https://zhe-yu.github.io/" target="_blank">Zhe Yu</a></td>
+              <td style="border-bottom: none;">Zhe Yu</td>
 
-              <td>Rochester Institute of Technology</td>
+              <td style="border-bottom: none;">Rochester Institute of
+              Technology</td>
             </tr>
 
             <tr>
-              <td class="year-col">2019</td>
+              <td style="border-bottom: none;"></td>
 
-              <td><a href="http://rkrsn.us/" target="_blank">Rahul Krishna</a></td>
+              <td style="border-bottom: none;">Rahul Krishna</td>
 
-              <td>IBM Research</td>
+              <td style="border-bottom: none;">IBM Research</td>
             </tr>
 
             <tr>
-              <td class="year-col">2019</td>
+              <td style="border-bottom: none;"></td>
 
-              <td><a href="https://jianfeng.us/" target="_blank">Jianfeng Chen</a></td>
+              <td style="border-bottom: none;">Jianfeng Chen</td>
+
+              <td style="border-bottom: none;">Meta</td>
+            </tr>
+
+            <tr>
+              <td style="border-bottom: none;"></td>
+
+              <td style="border-bottom: none;">Amritanshu Agrawal</td>
+
+              <td style="border-bottom: none;">TikTok</td>
+            </tr>
+
+            <tr>
+              <td></td>
+
+              <td>Vivek Nair</td>
 
               <td>Meta</td>
             </tr>
 
             <tr>
-              <td class="year-col">2019</td>
+              <td>2018</td>
 
-              <td><a href="https://www.linkedin.com/in/agrawalamritanshu/" target=
-              "_blank">Amritanshu Agrawal</a></td>
-
-              <td>TikTok</td>
-            </tr>
-
-            <tr>
-              <td class="year-col">2019</td>
-
-              <td><a href="https://www.linkedin.com/in/vivekaxl/" target="_blank">Vivek
-              Nair</a></td>
+              <td>Wei Fu</td>
 
               <td>Meta</td>
             </tr>
 
             <tr>
-              <td class="year-col">2018</td>
+              <td style="border-bottom: none;">2014</td>
 
-              <td><a href="http://fuwei.us/" target="_blank">Wei Fu</a></td>
+              <td style="border-bottom: none;">Abdel Salam Sayyad</td>
 
-              <td>Meta</td>
+              <td style="border-bottom: none;">Birzeit University</td>
             </tr>
 
             <tr>
-              <td class="year-col">2014</td>
+              <td style="border-bottom: none;"></td>
 
-              <td><a href="https://www.birzeit.edu/en/faculty-staff/abdel-salam-sayyad"
-              target="_blank">Abdel Salam Sayyad</a></td>
+              <td style="border-bottom: none;">Fayola Peters</td>
 
-              <td>Birzeit University</td>
+              <td style="border-bottom: none;">Johnson &amp; Johnson</td>
             </tr>
 
             <tr>
-              <td class="year-col">2014</td>
+              <td></td>
 
-              <td><a href="https://ie.linkedin.com/in/fayolapeters" target=
-              "_blank">Fayola Peters</a></td>
-
-              <td>Johnson &amp; Johnson</td>
-            </tr>
-
-            <tr>
-              <td class="year-col">2014</td>
-
-              <td><a href="https://www.linkedin.com/in/joseph-krall/" target="_blank">Joe
-              Krall</a></td>
+              <td>Joe Krall</td>
 
               <td>Cloudvirga</td>
             </tr>
 
             <tr>
-              <td class="year-col">2012</td>
+              <td>2012</td>
 
-              <td><a href="http://www.kocaguneli.com/" target="_blank">Ekrem
-              Kocaguneli</a></td>
+              <td>Ekrem Kocaguneli</td>
 
               <td>Pinterest</td>
             </tr>
 
             <tr>
-              <td class="year-col">2011</td>
+              <td>2011</td>
 
-              <td><a href="https://www.ccsfundraising.com/people/ashutosh-r-nandeshwar/"
-              target="_blank">Ashutosh Nandeshwar</a></td>
+              <td>Ashutosh Nandeshwar</td>
 
               <td>CCS Fundraising</td>
             </tr>
 
             <tr>
-              <td class="year-col">2007</td>
+              <td>2007</td>
 
-              <td><a href=
-              "https://www.messiah.edu/a/academics/facultydir/faculty_profile.php/?directoryID=9&amp;entryID=567"
-              target="_blank">David Owen</a></td>
+              <td>David Owen</td>
 
               <td>Messiah College</td>
             </tr>
 
             <tr>
-              <td class="year-col">2004</td>
+              <td>2004</td>
 
-              <td><a href="https://www.linkedin.com/in/chenscott/" target="_blank">Scott
-              Chen</a></td>
+              <td>Scott Chen</td>
 
               <td>Masimo.com</td>
             </tr>
