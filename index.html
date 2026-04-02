@@ -5,300 +5,11 @@
   "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 11418), see www.w3.org">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Tim Menzies</title>
   <link rel="stylesheet" href=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" type=
 "text/css">
-  <style type="text/css">
-:root {
-        --bg-color: #eee; 
-        --text-color: #222222; 
-        --accent-color: #cc0000; 
-        --border-color: #bcbcbc; 
-    }
-
-    * {
-        box-sizing: border-box; 
-    }
-
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        font-size: 14px; 
-        margin: 0;
-        padding: 0; 
-        line-height: 1.4;
-        display: flex;
-        justify-content: center;
-    }
-
-    .container {
-        display: flex;
-        max-width: 950px; 
-        width: 100%;
-        margin-top: 25px; 
-        padding: 0 15px; 
-    }
-
-    .sidebar {
-        flex: 0 0 220px; 
-        position: sticky;
-        top: 25px; 
-        height: fit-content;
-        padding-right: 30px;
-    }
-
-    .nav-menu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .nav-menu li {
-        margin-bottom: 6px;
-    }
-
-    .nav-menu a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    .nav-menu a:hover, .nav-menu a:focus {
-        color: var(--accent-color);
-        text-decoration: underline;
-    }
-
-    .sidebar hr {
-        border: none;
-        border-top: 1px solid var(--border-color);
-        margin: 15px 0;
-    }
-
-    .sidebar a {
-        font-weight: bold;
-        color: var(--accent-color);
-        text-decoration: none;
-        font-size: 13.5px;
-    }
-    
-    .sidebar a:hover {
-        text-decoration: underline;
-    }
-
-    .profile-pic img {
-        width: 100%;
-        xaspect-ratio: 1 / 1;
-        border-radius: 20%;
-        xobject-fit: cover;
-        xborder: 2px solid var(--accent-color);
-        xpadding: 0; 
-        xbox-shadow: 0 0 10px rgba(204, 0, 0, 0.1);
-        xmargin-bottom: 15px;
-    }
-
-    .sidebar h1 {
-        font-size: 22px; 
-        margin-top: 0;
-        margin-bottom: 5px;
-        color: #000000;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-    }
-
-    /* Fixed Logo CSS */
-    .university-logo {
-        width: 100%;       /* Forces it to fill the column width */
-        height: auto;      /* Keeps the aspect ratio correct */
-        margin-top: 30px;
-        display: block;
-    }
-
-    .content {
-        flex: 1;
-        padding-left: 35px; 
-        border-left: 1px solid var(--border-color);
-    }
-
-    .section {
-        margin-bottom: 40px;
-    }
-
-    h2 {
-        font-size: 18px; 
-        color: #000000;
-        border-bottom: 1px dashed var(--border-color);
-        padding-bottom: 6px;
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-
-    h3 {
-        font-size: 15px;
-        color: var(--accent-color);
-        margin-bottom: 6px;
-        margin-top: 15px;
-        font-weight: bold;
-    }
-
-    p {
-        margin-top: 0;
-        margin-bottom: 12px;
-    }
-
-    a {
-        color: var(--accent-color);
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .social-links {
-        text-align: center; 
-        margin-bottom: 15px; 
-        font-weight: bold;
-        color: var(--accent-color);
-        font-size: 13.5px;
-    }
-    
-    .social-links a { margin-right: 10px; }
-
-    .item-card { margin-bottom: 20px; }
-
-    .item-title {
-        font-weight: bold;
-        color: #000000;
-        margin-bottom: 2px;
-        display: block;
-        font-size: 14.5px;
-    }
-
-    .item-meta {
-        color: #555555;
-        font-size: 13px;
-        margin-bottom: 4px;
-    }
-
-    ul.bullet-list {
-        padding-left: 20px;
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-    
-    ul.bullet-list li {
-        margin-bottom: 8px; /* Slightly increased for readability between papers */
-    }
-
-    ul.bullet-list strong { color: #000000; }
-
-    .student-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px; 
-        font-size: 13.5px; 
-    }
-
-    .student-table th, .student-table td {
-        padding: 5px 8px; 
-        text-align: left;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .student-table th {
-        color: #000000;
-        font-weight: bold;
-        background-color: rgba(0,0,0,0.04); 
-    }
-
-    .student-table tr:hover {
-        background-color: rgba(204, 0, 0, 0.04);
-    }
-
-    @media (max-width: 768px) {
-        .container { 
-            flex-direction: column; 
-            margin-top: 15px; 
-            padding: 0 15px; 
-        }
-        .sidebar { 
-            flex: none; 
-            position: relative; 
-            top: 0; 
-            padding-right: 0; 
-            margin-bottom: 30px; 
-            text-align: center; 
-        }
-        .content { 
-            padding-left: 0; 
-            border-left: none; 
-        }
-        .nav-menu { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 15px; 
-        }
-        .profile-pic img { max-width: 160px; }
-        .university-logo {
-            max-width: 220px; /* Constrains it on mobile screens only */
-            margin: 25px auto 0 auto;
-        }
-    }
-
-  #xfunding {
-  padding: 40px 0;
-  text-align: center; 
-  }
-
-  .logo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px 22px;              
-  margin: 6px auto 0 auto;     
-  line-height: 0;              
-  }
-
-  .logo-grid img {
-  display: block;              
-
-  /* bounding box */
-  height: 42px;                
-  width: auto;
-  max-width: 140px;
-
-  object-fit: contain;
-
-  /* subtle visual consistency */
-  filter: grayscale(20%) contrast(90%);
-  transition: filter 0.25s ease, transform 0.15s ease;
-  }
-
-  /* hover polish */
-  .logo-grid img:hover {
-  filter: grayscale(0%) contrast(100%);
-  transform: scale(1.05);
-  }
-
-  /* smaller logos */
-  .logo-grid img.logo-small {
-  height: 34px;
-  max-width: 110px;
-  }
-
-  /* optical tuning */
-  .logo-grid img[alt="Meta"] { height: 30px; }
-  .logo-grid img[alt="IBM"] { height: 34px; }
-  .logo-grid img[alt="NSF"] { height: 50px; }
-  .logo-break { flex-basis: 100%; height: 0; }
-  </style>
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
@@ -309,27 +20,27 @@
       </div>
 
       <h1>Tim Menzies</h1>prof, phd, cs, se, ai<br>
-      ACM/IEEE/ASE fellow<br> Ed, ASE journal
+      ACM/IEEE/ASE fellow<br> EIC of ASE journal
       <hr>
 
       <ul class="nav-menu">
-        <li><a href="#funding" style="color:var(--text-color);">Funding</a></li>
         <li><a href="#news" style="color:var(--text-color);">News</a></li>
         <li><a href="#research" style="color:var(--text-color);">Current Research</a></li>
         <li><a href="#students" style="color:var(--text-color);">Students</a></li>
+      </ul>
+      <ul class="nav-menu">
         <li style="line-height: 1.8;"> 
 		<a href="https://scholar.google.com/citations?user=7htTUTgmLtUC"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a><br>
 		<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies"><i class="fa-solid fa-file-lines"></i> Pre-prints</a><br>
           <a href="https://dblp.org/pid/m/TimMenzies.html"><i class="fa-solid fa-database"></i> DBLP</a>
         </li>
       </ul>
-
       <hr>
       <a href="mailto:timm@ieee.org">timm@ieee.org</a><br>
       <a href="http://timm.fyi">http://timm.fyi</a><br>
       +1-304-376-2859<br>
       rm 3304, EB2<br>
-      Com. Sci., EB2, 890 Oval Dr, Raleigh, NC 27606<br>
+      Com. Sci., EB2, 890 Oval Dr, Raleigh, NC 27606, USA<br>&nbsp;<br>
       <img src=
       "https://brand.ncsu.edu/wp-content/uploads/sites/25/2025/05/ncstate-brick-4x1-red.png"
       alt="NC State University" class="university-logo">
@@ -348,42 +59,35 @@
         models</strong> can often outperform larger, complex ones.</p>
 
         <p>Dr. Menzies has published over <strong>300 papers</strong> with more than
-        <strong>24,000 citations</strong> and has advised <strong>24 Ph.D.
-        students</strong>. He serves as the <strong>Editor-in-Chief</strong> of the
+	<strong>24,000 citations</strong> and has advised <a href="#students"><strong>24 Ph.D.
+			students</strong></a>. He serves as the <strong>Editor-in-Chief</strong> of the
         <strong>Automated Software Engineering</strong> journal and, from
         <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE
-        TSE</strong>. For more information, visit <strong>timm.fyi</strong>.</p>
-      </div>
+		TSE</strong>. </p>
   
-      <div id="funding" class="section">
-        <h2>Funding</h2>
 
-        <p>Research is supported by <strong>$19M</strong> in competitive grants from
+        <p>His research is supported by <strong>$19M</strong> in competitive grants from
         both government and industry. Recent highlights include over <strong>$2.5M
         from the NSF</strong> and <strong>$1M from the NSA</strong> to advance the
-        science of trustworthy and compact AI.</p>
+        science of trustworthy and compact AI.
+For more information, visit <strong>timm.fyi</strong>.</p>
 
         <div class="logo-grid">
-          <img src=
-          "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
-          class="logo-small" alt="Meta"> <img src=
-          "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
-          alt="Microsoft"> <img src=
-          "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class=
-          "logo-small" alt="IBM">
-
-          <div class="logo-break"></div><img src=
+                   <img src=
           "https://upload.wikimedia.org/wikipedia/commons/7/7e/NSF_logo.png" alt=
           "NSF"> <img src=
           "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt=
-          "NASA"> <img src="nsa.png" alt="NSA"> <img src="ln.png" alt="LexisNexis">
+          "NASA">
+ <img src="nsa.png" alt="NSA"> <img src="ln.png" alt="LexisNexis">
+	  <img src= "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" class="logo-small" alt="Meta"> 
+	  <img src= "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft">
         </div>
       </div>
 
       <div id="news" class="section">
         <h2>News</h2>
 
-        <ul class="bullet-list">
+        <ul class="bullet-list" style="line-hieght: 10px;">
           <li><strong>Mar'26:</strong> Invited, Co-chair, Future of SE track, ICSE
           2028</li>
           <li><strong>Mar'26:</strong> Invited, PC Member, ICSE'27 NIER</li>
@@ -422,16 +126,25 @@
           
           <ul class="bullet-list">
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank" class="item-title">How Low Can You Go? The Data-Light SE Challenge</a>
-              <div class="item-meta">Ganguly, K.K., &amp; Menzies, T. &#8226; Foundation of SE (FSE'26), 2026</div>
+              <div class="item-title">
+                How Low Can You Go? The Data-Light SE Challenge 
+                <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Ganguly, K.K., &amp; Menzies, T. &#8226; <strong>Foundation of SE (FSE'26)</strong>, 2026</div>
             </li>
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software's+Sparsity+of+Influence%22+Menzies" target="_blank" class="item-title">From Verification to Herding: Exploiting Sparsity</a>
-              <div class="item-meta">Menzies, T., &amp; Ganguly, K.K. &#8226; VERIFAI-2026 Workshop, 2026</div>
+              <div class="item-title">
+                From Verification to Herding: Exploiting Sparsity 
+                <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software's+Sparsity+of+Influence%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Menzies, T., &amp; Ganguly, K.K. &#8226; <strong>VERIFAI-2026 Workshop</strong>, 2026</div>
             </li>
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies" target="_blank" class="item-title">The Case for Compact AI</a>
-              <div class="item-meta">Menzies, T. &#8226; Communications of the ACM 68 (8), 2025</div>
+              <div class="item-title">
+                The Case for Compact AI 
+                <a href="https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Menzies, T. &#8226; <strong>Communications of the ACM 68 (8)</strong>, 2025</div>
             </li>
           </ul>
         </div>
@@ -446,42 +159,63 @@
           
           <ul class="bullet-list">
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank" class="item-title">From Brittle to Robust: Improving LLM Annotations</a>
-              <div class="item-meta">Senthilkumar, L., &amp; Menzies, T. &#8226; Empirical Software Eng., 2026</div>
+              <div class="item-title">
+                From Brittle to Robust: Improving LLM Annotations 
+                <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Senthilkumar, L., &amp; Menzies, T. &#8226; <strong>Empirical Software Eng.</strong>, 2026</div>
             </li>
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank" class="item-title">Beyond the Prompt: Assessing Domain Knowledge</a>
-              <div class="item-meta">Srinivasan, S., &amp; Menzies, T. &#8226; Mining Software Repositories, 2026</div>
+              <div class="item-title">
+                Beyond the Prompt: Assessing Domain Knowledge 
+                <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Srinivasan, S., &amp; Menzies, T. &#8226; <strong>Mining Software Repositories</strong>, 2026</div>
             </li>
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank" class="item-title">SE Journals in 2036: Looking Back at the Future</a>
-              <div class="item-meta">Menzies, T., Avgeriou, P., et al. &#8226; ICSE Future of SE, 2026</div>
+              <div class="item-title">
+                SE Journals in 2036: Looking Back at the Future 
+                <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Menzies, T., Avgeriou, P., et al. &#8226; <strong>ICSE Future of SE</strong>, 2026</div>
             </li>
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies" target="_blank" class="item-title">Can LLMs Improve SE Active Learning via Warm-Starts?</a>
-              <div class="item-meta">Senthilkumar, L., &amp; Menzies, T. &#8226; ACM Transactions on SE, 2026</div>
+              <div class="item-title">
+                Can LLMs Improve SE Active Learning via Warm-Starts? 
+                <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Senthilkumar, L., &amp; Menzies, T. &#8226; <strong>ACM Transactions on SE</strong>, 2026</div>
             </li>
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank" class="item-title">MOOT: a Repository of Many MOO Tasks</a>
-              <div class="item-meta">Menzies, T., Chen, T., et al. &#8226; Mining Software Repositories, 2026</div>
+              <div class="item-title">
+                MOOT: a Repository of Many MOO Tasks 
+                <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Menzies, T., Chen, T., et al. &#8226; <strong>Mining Software Repositories</strong>, 2026</div>
             </li>
           </ul>
         </div>
 
         <div class="item-card">
-          <h3>Trust, Causality &amp; Ethics</h3>
-          <p>Ensuring AI systems in high-stakes environments are explainable, fair,
-          and free from bias. We use causal graphs and rigorous optimization to
+          <h3>Trust, Causality</h3>
+          <p>Ensuring AI systems in high-stakes environments are explainable, and
+	  trustable. We use causal graphs and rigorous optimization to
           ensure AI can be trusted by end-users and institutions.</p>
           
           <ul class="bullet-list">
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank" class="item-title">AI in State Courts: Navigating Innovation &amp; Ethics</a>
-              <div class="item-meta">Johnson, B., &amp; Menzies, T. &#8226; IEEE Software 42 (4), 2025</div>
+              <div class="item-title">
+                AI in State Courts: Navigating Innovation &amp; Ethics 
+                <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Johnson, B., &amp; Menzies, T. &#8226; <strong>IEEE Software 42 (4)</strong>, 2025</div>
             </li>
             <li>
-              <a href="https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies" target="_blank" class="item-title">Shaky Structures: The Wobbly World of Causal Graphs</a>
-              <div class="item-meta">Hulse, J., Eisty, N.U., &amp; Menzies, T. &#8226; Empirical Software Eng., 2025</div>
+              <div class="item-title">
+                Shaky Structures: The Wobbly World of Causal Graphs 
+                <a href="https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies" target="_blank" class="pdf-link">[pdf]</a>
+              </div>
+              <div class="item-meta">Hulse, J., Eisty, N.U., &amp; Menzies, T. &#8226; <strong>Empirical Software Eng.</strong>, 2025</div>
             </li>
           </ul>
         </div>
