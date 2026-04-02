@@ -1,3 +1,6 @@
+less space ebtween li
+get rid of funding header
+
 Looking at your page, you've got the core sections covered well — bio, funding, news, research themes, papers, and students. Here are some things worth considering:
 
 **Teaching.** You run CSC 491/591 and have extensive course materials. A short section with course names, semesters, and maybe links to public slides or repos would signal to prospective students what working with you actually looks like.
