@@ -1,29 +1,17 @@
 <!doctype html>
 <!-- npx prettier --write index.html -->
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tim Menzies | AI &amp; Software Engineering</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-    /* 1. CORE THEME */
-    :root { --pico-font-family: "Inter", sans-serif; --pico-font-size: 88%;
-      --pico-line-height: 1.25; }
-    body { background: #fafafa !important; color: #333; margin: 0; }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Menzies | AI &amp; Software Engineering</title>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    /* 1. background */
+  body { font-family: "Inter", system-ui, sans-serif; font-size: 88%;
+         line-height: 1.25; background: #fafafa; color: #333; margin: 0; }
 
     /* 2. LAYOUT & SPACING */
     .container { max-width: 800px !important; margin: 0 auto !important; 
@@ -43,7 +31,7 @@
     .link-bars { display: flex; flex-direction: column; gap: 0.1rem;
       font-size: 0.9rem; margin: 0.5rem 0; }
     .link-row { display: flex; justify-content: center; flex-wrap: wrap;
-      gap: 0 1.2rem; }
+             gap: 0 0.4rem; }
     .link-row i { color: #888; margin-right: 0.2rem; }
     .link-row span.sep { color: #ccc; }
 
