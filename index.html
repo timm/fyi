@@ -61,14 +61,42 @@
     .paper-list li { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.3rem; }
 
     /* 7. TABLES */
-    table td { padding: 4px 0 !important; border-bottom: 1px solid #eee !important;
-      font-size: 0.9rem; }
+  table.striped {
+  margin:.8rem auto;
+  width:auto;
+  background:#fbfbfb;
+  border:1px solid #e6e6e6;
+}
+
+table.striped thead { background:#eef3f7; }
+
+table.striped th, table.striped td { padding:6px 10px; }
+
+table.striped th { border-bottom:1px solid #ddd; }
+
+table.striped tbody tr:nth-child(even) { background:#f2f2f2; }
 
     /* 8. MOBILE ADJUSTMENTS */
     @media (max-width: 600px) {
       .header-top { flex-direction: column; gap: 0.5rem; }
       .link-row { font-size: 0.8rem; gap: 0 1rem; }
     }
+
+    /* 9. article highlight */
+    article { background:#eef3f7; padding:.4rem .8rem; }
+
+article h2, article h3 {
+  border-left:2px solid rgba(204,0,0,.5);
+  padding-left:.4rem; }
+
+article+article { margin-top:.8rem; border-top:1px solid #e6e6e6; }
+  .tagline {
+     margin: .4rem 0 .8rem 0;
+  font-style: italic;
+  color: #444;
+  border-left: 2px solid rgba(204,0,0,.4);
+  padding-left: .6rem; }
+
     </style>
   </head>
   <body>
@@ -150,41 +178,41 @@
       </header>
 
       <section id="about">
+<p class="tagline">
+  "More of more is mess. But more of less is insightful."
+</p>
         <p>
-          <strong>Prof. Tim Menzies</strong> (UNSW, Com.Sci., 1995) is a Full
-          Professor of Computer Science at
-          <strong>NC State University</strong> and the director of the
-          <strong>Irrational Research Lab</strong>. His work focuses on
-          <strong>software engineering for AI</strong>, specifically building
-          <strong
-            >data-driven, explainable, and intelligent software systems</strong
-          >. As an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of
-          the
-          <a href="https://arxiv.org/pdf/2501.15662"
-            ><strong>PROMISE repository</strong></a
-          >, he helped establish modern empirical software engineering by
-          demonstrating that <strong>small, interpretable AI models</strong> can
-          often outperform larger, complex ones.
-        </p>
+  I earned my Ph.D. in Computer Science from <strong>UNSW</strong> (1995) and am
+  now a Full Professor at <strong>NC State University</strong>, where I direct the
+  <strong>Irrational Research Lab</strong>. My work focuses on
+  <strong>software engineering for AI</strong>, specifically building
+  <strong>data-driven, explainable, and intelligent software systems</strong>.
+  I am an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the
+  <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>,
+  helping establish modern empirical software engineering by showing that
+  <strong>small, interpretable AI models</strong> can often outperform larger,
+  more complex ones.
+</p>
 
-        <p>
-          Dr. Menzies has published over <strong>300 papers</strong> with more
-          than <strong>24,000 citations</strong> (h-index=74) and has advised
-          <a href="#students"><strong>24 Ph.D. students</strong></a
-          >. He serves as the <strong>Editor-in-Chief</strong> of the
-          <strong>Automated Software Engineering</strong> journal and, from
-          <strong>2010 to 2026</strong>, as an
-          <strong>Associate Editor for IEEE TSE</strong>.
-        </p>
+<p>
+  I have published over <strong>300 papers</strong> with more than
+  <strong>24,000 citations</strong> (h-index=74) and have advised
+  <a href="#students"><strong>24 Ph.D. students</strong></a>.
+  I serve as the <strong>Editor-in-Chief</strong> of the
+  <strong>Automated Software Engineering</strong> journal and, from
+  <strong>2010 to 2026</strong>, as an
+  <strong>Associate Editor for IEEE TSE</strong>.
+</p>
 
-        <p>
-          His research is supported by <strong>$19M</strong> in competitive
-          grants from both government (NASA) and industry (LexisNexis, Microsoft, Meta). Recent highlights include
-          over <strong>$2.5M from the NSF</strong> and
-          <strong>$1M from the NSA</strong> to advance the science of
-          trustworthy and compact AI. For more information, visit
-          <strong>timm.fyi</strong>.
-        </p>
+<p>
+  My research is supported by <strong>$19M</strong> in competitive
+  grants from government (<strong>NASA</strong>) and industry
+  (<strong>LexisNexis, Microsoft, Meta</strong>). Recent highlights include
+  over <strong>$2.5M from the NSF</strong> and
+  <strong>$1M from the NSA</strong> to advance the science of
+  trustworthy and compact AI. For more information, visit
+  <strong>timm.fyi</strong>.
+</p>
 
         <div class="logo-grid">
           <img
@@ -209,20 +237,23 @@
       </section>
 
       <section id="news">
-        <h2>News</h2>
+        <h2>Service</h2>
         <ul>
-          <li> <strong>Apr'26:</strong> Invited, PC member, FSE'27</li>
-          <li> <strong>Mar'26:</strong> Invited, Co-chair, Future of SE track, ICSE 2028 </li>
-          <li><strong>Mar'26:</strong> Invited, PC Member, ICSE'27 NIER</li>
-          <li> <strong>Mar'26:</strong> Invited, ICSE'26 panel: future of SE</li>
+          <li> <strong>Apr'26:</strong> PC member, FSE'27</li>
+          <li> <strong>Mar'26:</strong> Co-chair, Future of SE track, ICSE 2028 </li>
+          <li><strong>Mar'26:</strong> PC Member, ICSE'27 NIER</li>
+          <li> <strong>Mar'26:</strong> ICSE'26 panel: future of SE</li>
           <li>
-            <strong>Feb'26:</strong> Invited, IEEE Fellows Review Committee
+            <strong>Feb'26:</strong> IEEE Fellows Review Committee
           </li>
-          <li><strong>Jan'26:</strong> Invited Keynote, VerifAI, France</li>
-          <li><strong>Jan'26:</strong> Invited Keynote, SSBSE'26</li>
-          <li><strong>Dec'25:</strong> Invited, Area Chair: ASE'26, ICSE'26</li>
+          <li><strong>Jan'26:</strong> Keynote, VerifAI, France</li>
+          <li><strong>Jan'26:</strong> Keynote, SSBSE'26</li>
+        </ul>
+        <ul>
+          <li><strong>Dec'25:</strong> ASE'26, ICSE'26,  area chair.</li>
+          <li><strong>Nov'25:</strong> Reappointed, Editor-in-chief, Autoamted SE journal</li>
           <li>
-            <strong>Oct'15:</strong> Invited, PC Member: ISSTA'26, FSE'26, ICSE
+            <strong>Oct'15:</strong> PC Member: ISSTA'26, FSE'26, ICSE
             NIER'26, CAIN'26
           </li>
           <li><strong>Sep'25:</strong> Invited Talk, Valencia SE Group</li>
@@ -230,17 +261,17 @@
             <strong>Aug'25:</strong> New letter, CACM, The Case for Compact AI
           </li>
           <li>
-            <strong>Aug'25:</strong> Invited Keynote, Airbnb Dev Conference, San
+            <strong>Aug'25:</strong> Keynote, Airbnb Dev Conference, San
             Francisco
           </li>
           <li>
-            <strong>July'25:</strong> PC Invites: AAAI Social Impact'26, CAIN'26
+            <strong>July'25:</strong> PC member: AAAI Social Impact'26, CAIN'26
           </li>
           <li>
-            <strong>July'25:</strong> Invited Keynote, Future Advanced Testing
+            <strong>July'25:</strong> Keynote, Future Advanced Testing
             Workshop, Paris
           </li>
-          <li><strong>June'25:</strong> Invited Keynote, ESEM'25, Hawaii</li>
+          <li><strong>June'25:</strong> Keynote, ESEM'25, Hawaii</li>
           <li>
             <strong>May'25:</strong> Co-chair, EMSE 2025 Doctoral Symposium
           </li>
