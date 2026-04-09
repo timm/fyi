@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Menzies | AI &amp; Software Engineering</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style type="text/tailwindcss">
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+    @layer base {
+      body  { @apply bg-[#fafafa] text-[#333] font-['Inter'] text-[88%] leading-snug; }
+      h2    { @apply text-2xl font-bold border-b border-dashed border-gray-300 mt-5 pb-1 text-[#111] tracking-tighter; }
+      h3    { @apply text-lg font-bold text-[#111] tracking-tight mt-3; }
+      a     { @apply text-[#c00] font-semibold decoration-[#cc000066] underline underline-offset-2; }
+      table { @apply mx-auto my-2 border-collapse border border-gray-200 bg-[#fbfbfb] text-sm; }
+      th,td { @apply p-2 px-3 text-left border-gray-200; }
+      thead { @apply bg-[#eef3f7] border-b border-gray-300; }
+      tbody tr:nth-child(even) { @apply bg-[#f2f2f2]; }
+      article { @apply bg-[#eef3f7] p-4 border-l-2 border-[#c00] mt-2 mb-4; }
+    }
+  </style>
+</head>
+<body class="p-4"><main class="max-w-[720px] mx-auto">
+
+  <header class="text-center border-b border-dashed border-gray-300 pb-4 mb-6">
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-2">
+      <img src="timm.png" alt="Tim Menzies" class="w-[120px] rounded-[20%]" />
+      <div class="text-center sm:text-left">
+        <h1 class="text-4xl font-extrabold m-0 text-[#111]">Tim Menzies</h1>
+        <div class="text-gray-600 text-[0.95rem] mt-1">prof, phd, cs, se, ai <br /> ACM/IEEE/ASE fellow <br /> EIC of ASE journal</div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-1 text-[0.9rem] my-2">
+      <div class="flex flex-wrap justify-center gap-x-2">
+        <span><i class="fa-solid fa-flask text-gray-500"></i> <a href="#research">Research</a></span><span class="text-gray-300">&bull;</span>
+        <span><i class="fa-solid fa-graduation-cap text-gray-500"></i> <a href="#students">Students</a></span><span class="text-gray-300">&bull;</span>
+        <span><i class="fa-brands fa-google-scholar text-blue-600"></i> <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Scholar</a></span><span class="text-gray-300">&bull;</span>
+        <span><i class="fa-solid fa-file-lines text-red-500"></i> <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">Pre-prints</a></span><span class="text-gray-300">&bull;</span>
+        <span><i class="fa-solid fa-database text-orange-500"></i> <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a></span>
+      </div>
+      <div class="flex flex-wrap justify-center gap-x-2">
+        <span><i class="fa-solid fa-envelope text-gray-500"></i> <a href="mailto:timm@ieee.org">timm@ieee.org</a></span><span class="text-gray-300">&bull;</span>
+        <span><i class="fa-solid fa-globe text-gray-500"></i> <a href="http://timm.fyi">timm.fyi</a></span><span class="text-gray-300">&bull;</span>
+        <span><i class="fa-solid fa-phone text-gray-500"></i> +1-304-376-2859</span>
+      </div>
+    </div>
+    <p class="text-[0.85rem] text-gray-500">rm 3304, EB2 &bull; Com. Sci., EB2, 890 Oval Dr, Raleigh, NC 27606, USA</p>
+    <img src="https://brand.ncsu.edu/wp-content/uploads/sites/25/2025/05/ncstate-brick-4x1-red.png" class="w-40 mx-auto mt-2" alt="NC State" />
+  </header>
+
+  <section id="about" class="space-y-4">
+    <p style="font-style:italic;border-left:2px solid rgba(204,0,0,.4);padding-left:.6rem;color:#444">AI, with less. Mess to insight. Days to seconds. Bucks to pennies.</p>
+    <p>I earned my Ph.D. in Computer Science from <strong>UNSW</strong> (1995) and am now a Full Professor at <strong>NC State University</strong>, where I direct the <strong>Irrational Research Lab</strong>. My work focuses on <strong>software engineering for AI</strong>, specifically building <strong>data-driven, explainable, and intelligent software systems</strong>. I am an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>, helping establish modern empirical software engineering by showing that <strong>small, interpretable AI models</strong> can often outperform larger, more complex ones.</p>
+    <p>I have published over <strong>300 papers</strong> with more than <strong>24,000 citations</strong> (h-index=74) and have advised <a href="#students"><strong>24 Ph.D. students</strong></a>. I serve as the <strong>Editor-in-Chief</strong> of the <strong>Automated Software Engineering</strong> journal and, from <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE TSE</strong>.</p>
+    <p>My research is supported by <strong>$19M</strong> in competitive grants from government (<strong>NASA</strong>) and industry (<strong>LexisNexis, Microsoft, Meta</strong>). Recent highlights include over <strong>$2.5M from the NSF</strong> and <strong>$1M from the NSA</strong> to advance the science of trustworthy and compact AI. For more information, visit <strong>timm.fyi</strong>.</p>
+    <div class="flex flex-wrap justify-center items-center gap-6 py-4">
+      <img class="h-9" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/NSF_logo.png" alt="NSF" />
+      <img class="h-9" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA" />
+      <img class="h-9" src="nsa.png" alt="NSA" />
+      <img class="h-9" src="ln.png" alt="LexisNexis" />
+      <img class="h-[20px]" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" />
+      <img class="h-[20px]" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" />
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>Service</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 text-sm pt-2">
+      <ul class="list-disc ml-4 space-y-0.5">
+        <li><strong>Apr'26:</strong> PC member, FSE'27</li>
+        <li><strong>Mar'26:</strong> Co-chair, Future of SE track, ICSE 2028</li>
+        <li><strong>Mar'26:</strong> PC Member, ICSE'27 NIER</li>
+        <li><strong>Mar'26:</strong> ICSE'26 panel: future of SE</li>
+        <li><strong>Feb'26:</strong> IEEE Fellows Review Committee</li>
+        <li><strong>Jan'26:</strong> Keynote, VerifAI, France</li>
+        <li><strong>Jan'26:</strong> Keynote, SSBSE'26</li>
+      </ul>
+      <ul class="list-disc ml-4 space-y-0.5">
+        <li><strong>Dec'25:</strong> ASE'26, ICSE'26, area chair</li>
+        <li><strong>Nov'25:</strong> Reappointed EIC, Automated SE journal</li>
+        <li><strong>Oct'15:</strong> PC Member: ISSTA'26, FSE'26, ICSE NIER'26, CAIN'26</li>
+        <li><strong>Sep'25:</strong> Invited Talk, Valencia SE Group</li>
+        <li><strong>Aug'25:</strong> New letter, CACM, The Case for Compact AI</li>
+        <li><strong>Aug'25:</strong> Keynote, Airbnb Dev Conference, San Francisco</li>
+        <li><strong>July'25:</strong> PC member: AAAI Social Impact'26, CAIN'26</li>
+        <li><strong>July'25:</strong> Keynote, Future Advanced Testing Workshop, Paris</li>
+        <li><strong>June'25:</strong> Keynote, ESEM'25, Hawaii</li>
+        <li><strong>May'25:</strong> Co-chair, EMSE 2025 Doctoral Symposium</li>
+        <li><strong>Apr'25:</strong> Andre Motta completes his Ph.D.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="research" class="mt-4">
+    <h2>Research</h2>
+    <article>
+      <h3>AI, for Less</h3>
+      <p class="text-sm my-2">I strongly advocate for <strong>"AI, for Less"</strong>. My research demonstrates that you do not always need massive computational power; <strong>simpler, optimized models</strong> can yield exceptional results while remaining fair, transparent, and trustworthy. We emphasize <strong>reproducibility and simplicity</strong> over "black box" deep learning.</p>
+      <ul class="text-[0.9rem] list-none space-y-1">
+        <li>How Low Can You Go? The Data-Light SE Challenge <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">[pdf]</a> (FSE'26, 2026)</li>
+        <li>From Verification to Herding: Exploiting Sparsity <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies" target="_blank">[pdf]</a> (VERIFAI-2026, 2026)</li>
+        <li>The Case for Compact AI <a href="https://scholar.google.com/scholar?q=%22The+Case+for+Compact+AI%22+Menzies" target="_blank">[pdf]</a> (Communications of the ACM 68 (8), 2025)</li>
+      </ul>
+    </article>
+    <article>
+      <h3>AI for SE &amp; SE for AI</h3>
+      <p class="text-sm my-2">AI software is still software, so faults in SE mean faults in AI. SE teams often race to deliver AI-based solutions without first checking for <strong>bias, optimality, or explainability</strong>. I apply decades of Software Engineering wisdom to address these problems in AI, utilizing analytics for defect prediction and effort estimation.</p>
+      <ul class="text-[0.9rem] list-none space-y-1">
+        <li>From Brittle to Robust: Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a> (Empirical Software Eng., 2026)</li>
+        <li>Beyond the Prompt: Assessing Domain Knowledge <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">[pdf]</a> (Mining Software Repositories, 2026)</li>
+        <li>SE Journals in 2036: Looking Back at the Future <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">[pdf]</a> (ICSE Future of SE, 2026)</li>
+        <li>Can LLMs Improve SE Active Learning via Warm-Starts? <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts?%22+Menzies" target="_blank">[pdf]</a> (ACM Transactions on SE, 2026)</li>
+        <li>MOOT: a Repository of Many MOO Tasks <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a> (Mining Software Repositories, 2026)</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Trust, Causality</h3>
+      <p class="text-sm my-2">Ensuring AI systems in high-stakes environments are explainable, and trustable. We use causal graphs and rigorous optimization to ensure AI can be trusted by end-users and institutions.</p>
+      <ul class="text-[0.9rem] list-none space-y-1">
+        <li>AI in State Courts: Navigating Innovation &amp; Ethics <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">[pdf]</a> (IEEE Software 42 (4), 2025)</li>
+        <li>Shaky Structures: The Wobbly World of Causal Graphs <a href="https://scholar.google.com/scholar?q=%22Shaky+Structures:+The+Wobbly+World+of+Causal+Graphs+in+Software+Analytics%22+Menzies" target="_blank">[pdf]</a> (Empirical Software Eng., 2025)</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="students">
+    <h2>Teaching</h2>
+    <p>I have advised 24 Ph.D. students.</p>
+    <div class="flex flex-col sm:flex-row gap-4 items-start">
+      <table class="w-full sm:w-1/3">
+        <thead><tr><th colspan="2">Current Students</th></tr></thead>
+        <tbody>
+          <tr><td>2028</td><td>Srinath Srinivasan</td></tr>
+          <tr><td>2027</td><td>Kishan Ganguly</td></tr>
+          <tr><td>-</td><td>Amirali Rayegan</td></tr>
+        </tbody>
+      </table>
+      <table class="w-full sm:w-2/3">
+        <thead><tr><th>Year</th><th>Name</th><th>Where Now</th></tr></thead>
+        <tbody>
+          <tr><td>2024</td><td>Andre Lutosa</td><td>Red Hat</td></tr>
+          <tr><td></td><td>Kewen Peng</td><td>Meta</td></tr>
+          <tr><td></td><td>Rahul Yedida</td><td>Lexis Nexis</td></tr>
+          <tr><td>2023</td><td>Sherry (Xueqi) Yang</td><td>Oracle</td></tr>
+          <tr><td></td><td>Xiao Ling</td><td>Meta</td></tr>
+          <tr><td></td><td>Suvodeep Majumder</td><td>AWS</td></tr>
+          <tr><td>2021</td><td>Rui Shu</td><td>Hong Kong</td></tr>
+          <tr><td></td><td>Shrikanth Chandrasekaran</td><td>Oracle</td></tr>
+          <tr><td></td><td>Tianpei (Patrick) Xia</td><td>NewsBreak</td></tr>
+          <tr><td></td><td>Huy Tu</td><td>LinkedIn</td></tr>
+          <tr><td>2020</td><td>Joymallya Chakraborty</td><td>Amazon</td></tr>
+          <tr><td>2019</td><td>Zhe Yu</td><td>Rochester Institute of Technology</td></tr>
+          <tr><td></td><td>Rahul Krishna</td><td>IBM Research</td></tr>
+          <tr><td></td><td>Jianfeng Chen</td><td>Meta</td></tr>
+          <tr><td></td><td>Amritanshu Agrawal</td><td>TikTok</td></tr>
+          <tr><td></td><td>Vivek Nair</td><td>Meta</td></tr>
+          <tr><td>2018</td><td>Wei Fu</td><td>Meta</td></tr>
+          <tr><td>2014</td><td>Abdel Salam Sayyad</td><td>Birzeit University</td></tr>
+          <tr><td></td><td>Fayola Peters</td><td>Johnson &amp; Johnson</td></tr>
+          <tr><td></td><td>Joe Krall</td><td>Cloudvirga</td></tr>
+          <tr><td>2012</td><td>Ekrem Kocaguneli</td><td>Pinterest</td></tr>
+          <tr><td>2011</td><td>Ashutosh Nandeshwar</td><td>CCS Fundraising</td></tr>
+          <tr><td>2007</td><td>David Owen</td><td>Messiah College</td></tr>
+          <tr><td>2004</td><td>Scott Chen</td><td>Masimo.com</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="text-center mx-auto max-w-[500px] border-t border-dashed border-gray-300 pt-6 mt-10 mb-10">
+    <p class="mb-4">I seek <strong>research students &amp; industrial partners</strong> excited to find + fix problems in real-world AI/ML. Want to lead? <a href="mailto:timm@ieee.org">Email me</a> or join the research/reading group I run each semester.</p>
+    <i class="fa-solid fa-bolt-lightning text-2xl text-[#c00]"></i>
+  </footer>
+
+</main></body></html>
+
