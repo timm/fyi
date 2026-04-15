@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Being Promoted, Not Replaced</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0f0e0c;
+    --card:     #161512;
+    --border:   #2e2b25;
+    --text:     #ddd5c0;
+    --muted:    #7a7060;
+    --accent:   #c8a96e;
+    --danger:   #c0614a;
+    --code-bg:  #1e1c18;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.75;
+    min-height: 100vh;
+    padding: 3rem 1rem 6rem;
+  }
+
+  /* ── floating centred card ── */
+  .card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3.5rem 4rem;
+    box-shadow: 0 8px 48px rgba(0,0,0,.55);
+    animation: rise .6s ease both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── header ── */
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #f0e8d5;
+    margin-bottom: .4rem;
+  }
+
+  .subtitle {
+    font-style: italic;
+    color: var(--muted);
+    font-size: .95rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── sections ── */
+  section {
+    margin-bottom: 2.6rem;
+    animation: rise .6s ease both;
+  }
+  section:nth-child(2) { animation-delay: .08s; }
+  section:nth-child(3) { animation-delay: .16s; }
+  section:nth-child(4) { animation-delay: .24s; }
+  section:nth-child(5) { animation-delay: .32s; }
+  section:nth-child(6) { animation-delay: .40s; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: .9rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+
+  h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  p { margin-bottom: .9rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── callout box ── */
+  .callout {
+    background: var(--code-bg);
+    border-left: 3px solid var(--accent);
+    padding: .9rem 1.2rem;
+    margin: 1.2rem 0;
+    font-size: .95rem;
+  }
+
+  .callout.danger {
+    border-color: var(--danger);
+  }
+
+  /* ── inline code / cite ── */
+  cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .78rem;
+    color: var(--muted);
+    font-style: normal;
+    background: var(--code-bg);
+    padding: .1em .35em;
+    border-radius: 2px;
+  }
+
+  strong {
+    color: #f0e8d5;
+    font-weight: 400;
+  }
+
+  em { color: var(--accent); font-style: italic; }
+
+  /* ── bottom line ── */
+  .punchline {
+    margin-top: 2.8rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .punchline p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #f0e8d5;
+    margin-bottom: .5rem;
+  }
+
+  .punchline .tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .78rem;
+    color: var(--accent);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  /* ── footer ── */
+  footer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    color: var(--muted);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  footer span::before {
+    content: '— ';
+    color: var(--border);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="kicker">5-minute talk · SE audience</div>
+  <h1>You're Being Promoted,<br>Not Replaced</h1>
+  <p class="subtitle">The Sutton Highway vs. The Higher Way</p>
+
+  <section>
+    <h2>The Sutton Highway</h2>
+    <p>Rich Sutton, 2019. <em>The Bitter Lesson.</em> Sixty years of evidence: brute-force compute beats human-engineered knowledge. Chess heuristics? Scale won. Edge detectors? Scale won. Phoneme models? Scale won.</p>
+    <p>His conclusion: stop baking your intelligence into the system. Just scale.</p>
+    <div class="callout danger">
+      So now your manager wants: <strong>Inception → LLM → Code.</strong><br>
+      One invisible leap. Ship it.
+    </div>
+    <p>Here's the problem.</p>
+  </section>
+
+  <section>
+    <h2>SE Isn't Chess</h2>
+    <p>Every one of Sutton's examples shares a quiet assumption: <strong>you can assess the "What" the moment it's created.</strong> Move 47 — good or bad? Instant feedback.</p>
+    <p>Reliability? Measured eighteen months into prod. Maintainability? Ask whoever inherits the LLM-slop in 2027. Understandability? Good luck explaining it to the regulator at 2am.</p>
+    <p><cite>Brooks 1976</cite> knew this. The V-diagram isn't just testing — it's epistemology. After project <em>i</em>, you carry domain knowledge into project <em>i+1</em>. The code is not the artifact. <strong>What you learned building it</strong> is the artifact.</p>
+    <p><cite>Swartout 1983</cite>, XPLAIN system. Blunt finding: jump straight to code and you lose the <em>Why.</em> The domain principles that drove the refinement — gone. The system can't justify itself. Forty years later, trillion parameters, same problem.</p>
+  </section>
+
+  <section>
+    <h2>The MSR'26 Hangover</h2>
+    <p>This isn't theory. Look at the posters. Pattern after pattern:</p>
+    <div class="callout danger">
+      <strong>Productivity spike. Then collapse.</strong><br>
+      Dev time up. Code quality down. Technical debt accumulating<br>in a latent space nobody can read.
+    </div>
+    <p>The sugar high Sutton's highway promises — followed by a maintenance crisis that lands, as always, on <em>you.</em></p>
+    <p>Predicted outcome. Not a bug.</p>
+  </section>
+
+  <section>
+    <h2>The Higher Way</h2>
+    <p>Not rejection of AI. <em>Elevation</em> of the engineer.</p>
+    <div class="callout">
+      <strong>Inception → Domain Models → Code</strong>
+    </div>
+    <p>Domain models are the intermediaries. Markdown skill files. DSLs that describe the <em>why</em> in fifty lines instead of fifty thousand. Post-conditions from specs. Fuzzing mutators carried forward from prior projects. Symbolic. Browsable. A human can challenge them.</p>
+    <p><cite>Lethbridge</cite>: compact symbolic models actively <em>improve</em> LLM performance — less hallucination, tighter reasoning. <cite>Pugh</cite>: these models are where you define experiments. Does X beat Y? Now you have a testbed instead of a prayer.</p>
+  </section>
+
+  <div class="punchline">
+    <p>The Bitter Lesson is for games.<br>The Higher Way is for Software Engineering.</p>
+    <p style="font-size:1rem; font-style:normal; color:var(--text); margin-top:1rem;">
+      The LLM is a fast typist.<br>
+      You're the one who knows <strong>what's worth typing.</strong>
+    </p>
+    <div class="tagline" style="margin-top:1.2rem;">That's not replacement. That's a promotion.</div>
+  </div>
+
+  <footer>
+    <span>Sutton 2019</span>
+    <span>Brooks 1976</span>
+    <span>Swartout 1983</span>
+    <span>MSR'26</span>
+    <span>Lethbridge</span>
+    <span>Pugh</span>
+  </footer>
+
+</div>
+</body>
+</html>
