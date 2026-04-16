@@ -1,89 +1,238 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 
-/* 1. CORE VARIABLES */
-:root { --pico-font-family: 'Inter', sans-serif; --pico-font-size: 88%;
-        --pico-line-height: 1.25; --pico-table-row-stripped-background-color: transparent; }
-
-
-/* 2. GLOBAL CONTAINER (950PX CAP & CENTERED) */
-.container { 
-  max-width: 950px !important; 
-  width: calc(100% - 40px) !important;
-  margin: 2rem auto !important; /* Changed from '20px' to '2rem auto' */
-  padding: 0 !important; 
+/* 1. BODY */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 88%;
+  line-height: 1.25;
+  background: #fafafa;
+  color: #333;
+  margin: 0;
 }
 
-/* 3. BODY & BACKGROUND */
-body { background: #fafafa !important; color: #333; margin: 0; padding-top: 1px; }
+.banner {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+}
 
-/* 4. HEADINGS */
-h1, h2, h3 { color: #111 !important; font-weight: 700 !important; 
-  letter-spacing: -.02em; }
+/* 2. LAYOUT */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
-/* 5. DASHED SECTION BREAKS */
-h2, aside h2 { border-bottom: 1px dashed #ccc !important; padding-bottom: 5px;
-  margin-bottom: 15px; }
+/* 3. HEADER */
+header.profile-header {
+  text-align: center;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.profile-pic img {
+  border-radius: 20%;
+  width: 120px;
+  height: auto;
+}
+.header-info h2 {
+  margin: 0 0 0.1rem 0;
+  border-bottom: none !important;
+  font-size: 2.2rem;
+}
+.header-titles {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: -0.2rem;
+}
+.link-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin: 0.5rem 0;
+}
+.link-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 0.4rem;
+}
+.link-row i       { color: #888; margin-right: 0.2rem; }
+.link-row span.sep { color: #ccc; }
+.contact-details {
+  color: #666;
+  line-height: 1.3;
+}
+.contact-details p { margin: 0; }
+.brick-logo {
+  width: 160px;
+  margin: 0.5rem auto 0;
+  display: block;
+}
 
-/* 6. SIDEBAR HEADER SIZE */
-aside h2 { font-size: 1.5rem !important; }
+/* 4. TYPOGRAPHY */
+h2, h3 {
+  color: #111 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+h2 {
+  border-bottom: 1px dashed #ccc !important;
+  padding-bottom: 5px;
+  margin-top: 2rem;
+}
+hr {
+  border: none !important;
+  border-top: 1px dashed #ccc !important;
+  margin: 1.5rem 0;
+}
+a {
+  color: #c00 !important;
+  font-weight: 600;
+  text-decoration-color: rgba(204, 0, 0, 0.4) !important;
+}
+strong { font-weight: 700; }
+em     { font-style: italic; }
 
-/* 7. HORIZONTAL RULES */
-hr { border: none !important; border-top: 1px dashed #ccc !important; 
-  margin: 1.5rem 0; }
+/* 5. ARTICLE BLOCKS */
+article {
+  background: #eef3f7;
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 0.8rem;
+}
+article h2,
+article h3 {
+  border-left: 2px solid rgba(204, 0, 0, 0.5);
+  padding-left: 0.4rem;
+}
+article + article {
+  border-top: 1px solid #e6e6e6;
+}
 
-/* 8. LINKS & BRANDING */
-a { color: #c00 !important; text-decoration-color: rgba(204,0,0,.4) !important;
-  font-weight: 600; }
+/* 6. TAGLINE */
+.tagline {
+  margin: 0.4rem 0 0.8rem 0;
+  font-style: italic;
+  color: #444;
+  border-left: 2px solid rgba(204, 0, 0, 0.4);
+  padding-left: 0.6rem;
+}
 
-/* 9. TABLES (TIGHT SPACING) */
-table tr, table td { background: 0 0 !important; padding: 2px 0 !important;
-  line-height: 1.2 !important; border-bottom: 1px solid #eee !important; }
+/* 7. CALLOUT */
+.callout {
+  background: #fff;
+  border-left: 3px solid #c00;
+  padding: 0.5rem 0.8rem;
+  margin: 0.8rem 0;
+}
+.callout.warn {
+  border-color: #c8860a;
+  background: #fffbf2;
+}
 
-/* 10. RHS LIST CONSTRAINTS */
-main section ul { max-width: 600px; }
+/* 8. CITE */
+cite {
+  font-family: monospace;
+  font-size: 0.85em;
+  color: #666;
+  background: #e8e8e8;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+  font-style: normal;
+}
 
-/* 11. TIGHT LIST SPACING */
-main section ul li { line-height: 1.15 !important; margin-bottom: 4px; }
+/* 9. KICKER */
+.kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
 
-/* 12. PROFILE IMAGE */
-.profile-pic img { border-radius: 20%; width: 200px; margin-bottom: 1rem; }
+/* 10. PAPER LIST */
+.paper-list li {
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+}
 
-/* 13. UNIVERSITY LOGO */
-.brick-logo { width: 200px; margin-top: 1rem; }
+/* 11. LOGO GRID */
+.logo-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.logo-grid img { height: 35px; }
+.logo-grid img[alt="Meta"],
+.logo-grid img[alt="Microsoft"] { height: 20px !important; }
 
-/* 14. LOGO GRID LAYOUT */
-.logo-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;
-  margin-top: 1rem; }
+/* 12. TABLES */
+table.striped {
+  margin: 0.8rem auto;
+  width: auto;
+  background: #fbfbfb;
+  border: 1px solid #e6e6e6;
+}
+table.striped thead          { background: #eef3f7; }
+table.striped th,
+table.striped td             { padding: 6px 10px; }
+table.striped th             { border-bottom: 1px solid #ddd; }
+table.striped tbody tr:nth-child(even) { background: #f2f2f2; }
 
-/* 15. BASE LOGO HEIGHT */
-.logo-grid img { height: 40px; }
+/* 13. PUNCHLINE */
+.punchline {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed #ccc;
+  text-align: center;
+  color: #111;
+  font-style: italic;
+}
+.punchline .tagline-final {
+  margin-top: 0.6rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #c00;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
 
-/* 16. SPECIFIC LOGO SIZES (META/MICROSOFT 22PX) */
-.logo-grid img[alt=Meta], .logo-grid img[alt=Microsoft] { 
-  height: 22px !important; }
+/* 14. FOOTER */
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #ccc;
+  font-size: 0.82em;
+  color: #888;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+footer span::before { content: "— "; color: #ccc; }
 
-/* 17. SIDEBAR ICON STYLING */
-.nav-menu { list-style: none; padding: 0; display: flex; 
-  flex-direction: column; gap: 6px; }
-.nav-menu a { display: flex; align-items: center; gap: 8px; }
+/* 15. CENTER BOX */
+.center-box {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
 
-/* 18. DESKTOP GRID & STICKY */
-@media (min-width: 600px) {
-  .layout { display: grid; grid-template-columns: 240px 1fr; gap: .5rem; 
-             align-items: start; margin-top: 2rem; }
-
-  aside { position: sticky; top: 2rem; height: max-content; text-align: left; }
-
-  aside nav ul { margin: 0 !important; padding: 0; align-items: flex-start; }
-
-  .logo-grid { justify-content: flex-start; } }
-
-/* 19. MOBILE CENTERING */
-@media (max-width: 599px) {
-  aside { display: flex; flex-direction: column; align-items: center; 
-          text-align: center; }
-
-  .nav-menu a { justify-content: center; }
-
-  .logo-grid { justify-content: center; } }
+/* 16. MOBILE */
+@media (max-width: 600px) {
+  .header-top  { flex-direction: column; gap: 0.5rem; }
+  .link-row    { gap: 0 1rem; }
+  .center-box  { width: 100%; }
+}
 

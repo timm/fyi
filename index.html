@@ -6,211 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tim Menzies | AI &amp; Software Engineering</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
-      /* 1. background */
-      body {
-        font-family: "Inter", system-ui, sans-serif;
-        font-size: 88%;
-        line-height: 1.25;
-        background: #fafafa;
-        color: #333;
-        margin: 0;
-      }
-
-      /* 2. LAYOUT & SPACING */
-      .container {
-        max-width: 800px !important;
-        margin: 0 auto !important;
-        padding: 1rem !important;
-      }
-
-      /* 3. CENTERED, TIGHT HEADER SECTION */
-      header.profile-header {
-        text-align: center;
-        border-bottom: 1px dashed #ccc;
-        padding-bottom: 1rem;
-        margin-bottom: 1.5rem;
-      }
-      .header-top {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
-      .profile-pic img {
-        border-radius: 20%;
-        width: 120px;
-        height: auto;
-      }
-      .header-info h2 {
-        margin: 0 0 0.1rem 0;
-        border-bottom: none !important;
-        font-size: 2.2rem;
-      }
-      .header-titles {
-        font-size: 0.95rem;
-        color: #555;
-        margin-top: -0.2rem;
-      }
-
-      /* COMPACT ICON BAR (Multi-line) */
-      .link-bars {
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
-        font-size: 0.9rem;
-        margin: 0.5rem 0;
-      }
-      .link-row {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0 0.4rem;
-      }
-      .link-row i {
-        color: #888;
-        margin-right: 0.2rem;
-      }
-      .link-row span.sep {
-        color: #ccc;
-      }
-
-      /* CONSOLIDATED CONTACT DETAILS */
-      .contact-details {
-        font-size: 0.85rem;
-        color: #666;
-        line-height: 1.3;
-      }
-      .contact-details p {
-        margin: 0;
-      }
-      .brick-logo {
-        width: 160px;
-        margin: 0.5rem auto 0;
-        display: block;
-      }
-
-      /* 4. TYPOGRAPHY & ELEMENTS */
-      h2,
-      h3 {
-        color: #111 !important;
-        font-weight: 700 !important;
-        letter-spacing: -0.02em;
-      }
-      h2 {
-        border-bottom: 1px dashed #ccc !important;
-        padding-bottom: 5px;
-        margin-top: 2rem;
-      }
-      hr {
-        border: none !important;
-        border-top: 1px dashed #ccc !important;
-        margin: 1.5rem 0;
-      }
-      a {
-        color: #c00 !important;
-        font-weight: 600;
-        text-decoration-color: rgba(204, 0, 0, 0.4) !important;
-      }
-
-      /* 5. LOGO GRID */
-      .logo-grid {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-      .logo-grid img {
-        height: 35px;
-      }
-      .logo-grid img[alt="Meta"],
-      .logo-grid img[alt="Microsoft"] {
-        height: 20px !important;
-      }
-
-      /* 6. SUCCINCT PAPERS */
-      .paper-list li {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin-bottom: 0.3rem;
-      }
-
-      /* 7. TABLES */
-      table.striped {
-        margin: 0.8rem auto;
-        width: auto;
-        background: #fbfbfb;
-        border: 1px solid #e6e6e6;
-      }
-
-      table.striped thead {
-        background: #eef3f7;
-      }
-
-      table.striped th,
-      table.striped td {
-        padding: 6px 10px;
-      }
-
-      table.striped th {
-        border-bottom: 1px solid #ddd;
-      }
-
-      table.striped tbody tr:nth-child(even) {
-        background: #f2f2f2;
-      }
-
-      /* 8. MOBILE ADJUSTMENTS */
-      @media (max-width: 600px) {
-        .header-top {
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        .link-row {
-          font-size: 0.8rem;
-          gap: 0 1rem;
-        }
-      }
-
-      /* 9. article highlight */
-      article {
-        background: #eef3f7;
-        padding: 0.4rem 0.8rem;
-      }
-
-      article h2,
-      article h3 {
-        border-left: 2px solid rgba(204, 0, 0, 0.5);
-        padding-left: 0.4rem;
-      }
-
-      article + article {
-        margin-top: 0.8rem;
-        border-top: 1px solid #e6e6e6;
-      }
-      .tagline {
-        margin: 0.4rem 0 0.8rem 0;
-        font-style: italic;
-        color: #444;
-        border-left: 2px solid rgba(204, 0, 0, 0.4);
-        padding-left: 0.6rem;
-      }
-      .center-box {
-  width: 500px;
-  margin: 0 auto;        /* centers the box horizontally */
-  text-align: left;    /* centers text inside */
-}
-
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="container">
       <header class="profile-header">
-        <div class="header-top">
+        <!-- div class="header-top">
           <div class="profile-pic">
             <img src="timm.png" alt="Tim Menzies" />
           </div>
@@ -223,9 +24,9 @@
               <br />
               EIC of ASE journal
             </div>
-          </div>
+             <-->
+        <img src="banner.png" alt="Tim Menzies" class="banner" />
         </div>
-
         <div class="link-bars">
           <div class="link-row">
             <span>
@@ -275,7 +76,6 @@
           <p>rm 3304  &bull; Com. Sci. &bull; EB2, 890 Oval Dr, &bull; Raleigh  NC 27606, USA</p>
         </div>
 
-        <img src="https://brand.ncsu.edu/wp-content/uploads/sites/25/2025/05/ncstate-brick-4x1-red.png" alt="NC State University" class="brick-logo" />
       </header>
 
       <section id="about">
@@ -358,10 +158,12 @@
       </section>
 
       <section id="news">
-        <h2>New</h2>
+        <h2>News</h2>
         <ul>
-          <li> <strong>Apr'26:</strong>New paper, JSS, 
-            <a href="https://arxiv.org/abs/2509.08667">A heuristic for explaining optimization</a></li>
+          <li> <strong>Apr'26:</strong>New blog, <a href="https://timm.fyi/higher_way.html">New AI: You're Being Promoted,
+          Not Replaced</a></li>
+          <li> <strong>Apr'26:</strong>New talk, ICSE'26, <a href="https://timm.fyi/26causal.pdf">Shaky causal structures</a></li>
+          <li> <strong>Apr'26:</strong>New paper, JSS, <a href="https://arxiv.org/abs/2509.08667">A heuristic for explaining optimization</a></li>
           <li> <strong>Apr'26:</strong> PC member, FSE'27 </li>
           <li>
             <strong>Mar'26:</strong>
