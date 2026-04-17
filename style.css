@@ -10,13 +10,14 @@ body {
   margin: 0;
 }
 
+
 .banner {
-  display: block;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto 1rem;
-border-radius: 8px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
+
 
 /* 2. LAYOUT */
 .container {
@@ -25,12 +26,58 @@ border-radius: 8px;
   padding: 1rem;
 }
 
-/* 3. HEADER */
-header.profile-header {
+.link-bars {
+  margin-top: 0.5em;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0.35em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15em 1.2em;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.link-row span i {
+  color: var(--muted);
+  margin-right: 0.2em;
+  font-size: 0.9em;
+}
+
+/* nav-style links in the header — quieter than body links */
+.link-row a {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.link-row a:hover {
+  color: var(--accent-dark);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-details {
   text-align: center;
-  border-bottom: 1px dashed #ccc;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.88em;
+  color: var(--muted);
+  margin: 0.4em 0 0;
+}
+.contact-details p { margin: 0; line-height: 1.35; }
+
+
+/* 3. HEADER */
+.profile-header {
+  margin-bottom: 0.6em;
 }
 .header-top {
   display: flex;
@@ -54,40 +101,7 @@ header.profile-header {
   color: #555;
   margin-top: -0.2rem;
 }
-.link-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  margin: 0.5rem 0;
-}
 
-
-.link-row {
-  text-align: center;
-  line-height: 1.8;
-}
-.link-row i       { color: #888; margin-right: 0.2rem; }
-.link-row span.sep { color: #ccc; }
-.contact-details {
-  color: #666;
-  line-height: 1.3;
-}
-.link-row a,
-.link-row i {
-  margin: 0 0.2rem;
-}
-
-
-.contact-details {
-  color: #666;
-  line-height: 1.3;
-}
-.contact-details p { margin: 0; }
-.brick-logo {
-  width: 160px;
-  margin: 0.5rem auto 0;
-  display: block;
-}
 
 /* 4. TYPOGRAPHY */
 h2, h3 {
