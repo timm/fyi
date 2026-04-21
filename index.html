@@ -5,28 +5,55 @@
   <title>Tim Menzies | AI & Software Engineering</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap");
+
+    :root {
+      --bg: #15181c;
+      --fg: #d8dde3;
+      --heading: #f5f7fa;
+      --accent: #ffb86c;
+      --accent-soft: rgba(255, 184, 108, 0.55);
+      --card: #21262d;
+      --card-2: #1b1f24;
+      --muted: #9aa3ad;
+      --border: #2d333b;
+    }
 
     body {
-      font-family: "Inter", system-ui, sans-serif;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
       font-size: 88%;
       line-height: 1.25;
-      background: #fafafa;
-      color: #333;
+      background: var(--bg);
+      color: var(--fg);
       padding: 20px;
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
+    h2, h3, h4 {
+      color: var(--heading);
+      text-shadow: 0 0 18px rgba(255, 184, 108, 0.22);
+    }
+
     a {
-      color: #CC0000;
+      color: var(--accent);
       text-decoration: none;
       font-weight: bold;
     }
 
+    strong { color: #ede8e2; }
+    a strong, a b { color: inherit; }
+
+    /* Keep dark-on-transparent logos visible */
+    img[alt="Meta"],
+    img[alt="LexisNexis"],
+    img[alt="NSA"] {
+      filter: invert(1) brightness(1.05);
+    }
+
     .banner {
       width: 100%;
-      max-width: 700px;
+      max-width: 600px;
       height: auto !important;
       border-radius: 10px;
       display: block;
@@ -56,7 +83,7 @@
     }
     .link-bar .side { display: inline; }
     .link-bar a {
-      color: #CC0000;
+      color: var(--accent);
       text-decoration: none;
       font-weight: 600;
       white-space: nowrap;
@@ -69,7 +96,7 @@
       vertical-align: -0.12em;
       margin-right: 4px;
     }
-    .link-bar .sep { color: #bbb; margin: 0 7px; }
+    .link-bar .sep { color: var(--border); margin: 0 7px; }
 
     @media (max-width: 520px) {
       .link-bar {
@@ -91,24 +118,25 @@
       cursor: pointer;
       padding: 6px 11px;
       margin: 0 5px 5px 0;
-      background: #eef3f7;
+      background: var(--card);
+      color: var(--fg);
       border-radius: 5px;
       font-weight: 600;
       font-size: 0.9em;
       transition: all 0.15s;
     }
-    .tab-container label:hover { background: #ddd; }
+    .tab-container label:hover { background: #2d333b; }
     .tab-container input[type="radio"]:checked + label {
-      background: #CC0000;
-      color: #fff;
+      background: var(--accent);
+      color: var(--bg);
     }
     .tab-content {
       display: none;
       width: 100%;
-      background: #eef3f7;
+      background: var(--card);
       padding: 0.6rem 0.9rem;
       border-radius: 5px;
-      border-left: 2px solid rgba(204, 0, 0, 0.5);
+      border-left: 2px solid var(--accent-soft);
       margin-top: 5px;
     }
     #tab1:checked ~ #content1,
@@ -123,37 +151,85 @@
       padding: 0;
     }
 
-    /* ---------- Recruit callout (compact, not garish) ---------- */
+    /* crossfade when switching tabs */
+    .tab-content {
+      animation: tabFade 0.28s ease-out;
+    }
+    @keyframes tabFade {
+      from { opacity: 0; transform: translateY(4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* monospace venue pill */
+    .tab-content li b {
+      font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.78em;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-right: 4px;
+      letter-spacing: 0.02em;
+    }
+    .tab-content li { margin-bottom: 3px; }
+
+    /* blinking terminal cursor */
+    .cursor {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 700;
+      margin-left: 2px;
+      animation: blink 1.05s step-end infinite;
+      text-shadow: 0 0 6px rgba(255, 184, 108, 0.6);
+    }
+    @keyframes blink {
+      0%, 50%       { opacity: 1; }
+      50.01%, 100%  { opacity: 0; }
+    }
+
+    /* ---------- Recruit callout ---------- */
     .recruit {
       display: flex;
       align-items: center;
       gap: 14px;
-      background: #fff;
-      border-left: 3px solid #CC0000;
+      background: var(--card-2);
+      border-left: 3px solid var(--accent);
       padding: 8px 12px;
       margin: 10px 0 12px;
       font-size: 0.9em;
       line-height: 1.35;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.25);
     }
     .recruit img {
       height: 56px;
       flex-shrink: 0;
     }
     .recruit p { margin: 0; }
-    .recruit strong { color: #CC0000; }
+    .recruit strong { color: var(--accent); }
 
     /* ---------- Articles ---------- */
     article {
-      background: #eef3f7;
+      background: var(--card);
       padding: 0.4rem 0.8rem;
       margin-bottom: 0.8rem;
+      border-radius: 4px;
     }
     article h2, article h3 {
-      border-left: 2px solid rgba(204, 0, 0, 0.5);
+      border-left: 2px solid var(--accent-soft);
       padding-left: 0.4rem;
     }
     article h3 { margin-bottom: 5px; }
+
+    /* ---------- Tables ---------- */
+    table.striped {
+      background: var(--card-2);
+      border: 1px solid var(--border);
+    }
+    table.striped thead { background: var(--card); }
+    table.striped th { border-bottom: 1px solid var(--border); color: var(--heading); }
+    table.striped tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
   </style>
 </head>
 <body>
@@ -167,9 +243,9 @@
       <a href="tel:+13043762859"><i class="fa-solid fa-phone"></i>+1-304-376-2859</a>
     </span>
     <span class="side">
-      <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC"><img class="glyph" src="https://cdn.simpleicons.org/googlescholar/CC0000" alt="">papers</a>
+      <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC"><img class="glyph" src="https://cdn.simpleicons.org/googlescholar/FFB86C" alt="">papers</a>
       <span class="sep">|</span>
-      <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies"><img class="glyph" src="https://cdn.simpleicons.org/arxiv/CC0000" alt="">pre-prints</a>
+      <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies"><img class="glyph" src="https://cdn.simpleicons.org/arxiv/FFB86C" alt="">pre-prints</a>
     </span>
   </div>
 
@@ -185,7 +261,9 @@
   </div>
 
   <article>
-    <p>I earned my Ph.D. in Computer Science from <strong>UNSW</strong> (1995) and am now a Full Professor at <strong>NC State University</strong>, where I direct the <strong>Irrational Research Lab</strong>. My work focuses on <strong>software engineering for AI</strong>, specifically building <strong>data-driven, explainable, and intelligent software systems</strong>. I am an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>, helping establish modern empirical software engineering by showing that <strong>small, interpretable AI models</strong> can often outperform larger, more complex ones.</p>
+    <p>I earned my Ph.D. in Computer Science from <strong>UNSW</strong> (1995) and am now a Full Professor at <strong>NC State University</strong>, where I direct the <strong>Irrational Research Lab</strong><span class="cursor">▌</span>. 
+      </p>
+      <p>My work focuses on <strong>software engineering for AI</strong>, specifically building <strong>data-driven, explainable, and intelligent software systems</strong>. I am an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>, helping establish modern empirical software engineering by showing that <strong>small, interpretable AI models</strong> can often outperform larger, more complex ones.</p>
 
       <p>I have published over <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">300 papers</a> with more than <strong>24,000 citations</strong> (h-index=74) and have advised <a href="#students"><strong>24 Ph.D. students</strong></a>. I serve as the <strong>Editor-in-Chief</strong> of the <strong>Automated Software Engineering</strong> journal and, from <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE TSE</strong>.</p>
 
@@ -238,14 +316,14 @@
       <h3>AI, for Less</h3>
       <p>I strongly advocate for <strong>"AI, for Less"</strong>. My research shows you do not always need <strong>massive computational power</strong> — simpler, optimized models can yield exceptional results while remaining transparent and trustworthy. We emphasize <strong>reproducibility and simplicity</strong> over "black box" deep learning, and show that <strong>lightweight active learning</strong>, co-training, and warm-starts can match or beat expensive alternatives.</p>
       <ul>
-        <li><b>FSE'26:</b> Data-Light SE Challenge <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>VERIFAI'26:</b> Exploiting Software Sparsity <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>TOSEM'26:</b> LLMs Warming-Up Active Learning <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>CACM'25:</b> The Case for Compact AI <a href="https://cacm.acm.org/opinion/the-case-for-compact-ai/" target="_blank">[pdf]</a></li>
-        <li><b>TOSEM'24:</b> Learning from Very Little Data</li>
-        <li><b>EMSE'24:</b> Co-Training for Defect Prediction</li>
-        <li><b>IEEE Access'24:</b> Partial Ordering for Model Reasoning</li>
-        <li><b>EMSE'22:</b> Minimizing Tech Debt Labeling Cost</li>
+        <li><b>FSE'26</b> Data-Light SE Challenge <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>VERIFAI'26</b> Exploiting Software Sparsity <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>TOSEM'26</b> LLMs Warming-Up Active Learning <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>CACM'25</b> The Case for Compact AI <a href="https://cacm.acm.org/opinion/the-case-for-compact-ai/" target="_blank">[pdf]</a></li>
+        <li><b>TOSEM'24</b> Learning from Very Little Data</li>
+        <li><b>EMSE'24</b> Co-Training for Defect Prediction</li>
+        <li><b>IEEE Access'24</b> Partial Ordering for Model Reasoning</li>
+        <li><b>EMSE'22</b> Minimizing Tech Debt Labeling Cost</li>
       </ul>
     </div>
 
@@ -253,12 +331,12 @@
       <h3>LLMs & Deep Learning</h3>
       <p>Critical assessments of where <strong>LLMs and deep learning help</strong> — and where they hurt — in software engineering tasks. We study how to <strong>prompt, warm-start, and robustify</strong> LLM-based SE pipelines, and identify when <strong>simpler baselines still win</strong>.</p>
       <ul>
-        <li><b>EMSE'26:</b> Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>MSR'26:</b> Domain Knowledge for LLM Optimization <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>IEEE Internet Comput.'23:</b> Variances in Robust DL</li>
-        <li><b>TSE'22:</b> Oversampling for DL Defect Prediction</li>
-        <li><b>MSR'22:</b> Improving DL for SE Analytics</li>
-        <li><b>MSR'22:</b> GANs for Security Class Imbalance</li>
+        <li><b>EMSE'26</b> Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>MSR'26</b> Domain Knowledge for LLM Optimization <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>IEEE Internet Comput.'23</b> Variances in Robust DL</li>
+        <li><b>TSE'22</b> Oversampling for DL Defect Prediction</li>
+        <li><b>MSR'22</b> Improving DL for SE Analytics</li>
+        <li><b>MSR'22</b> GANs for Security Class Imbalance</li>
       </ul>
     </div>
 
@@ -266,10 +344,10 @@
       <h3>Security & Vulnerability</h3>
       <p>Practical methods for <strong>vulnerability detection</strong> and cyberthreat intelligence, using <strong>active learning and adversarial ML</strong> to help teams prioritize security efforts without drowning in <strong>false positives</strong>.</p>
       <ul>
-        <li><b>KAIS'25:</b> Mining CTI Attack Patterns <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6" target="_blank">[pdf]</a></li>
-        <li><b>ICDM'24:</b> Temporal Cyberattack Patterns</li>
-        <li><b>EMSE'22:</b> Ensembles Against Evasion Attacks</li>
-        <li><b>EMSE'21:</b> Security Bug Report Classification</li>
+        <li><b>KAIS'25</b> Mining CTI Attack Patterns <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6" target="_blank">[pdf]</a></li>
+        <li><b>ICDM'24</b> Temporal Cyberattack Patterns</li>
+        <li><b>EMSE'22</b> Ensembles Against Evasion Attacks</li>
+        <li><b>EMSE'21</b> Security Bug Report Classification</li>
       </ul>
     </div>
 
@@ -277,15 +355,15 @@
       <h3>Defect Prediction & Software Analytics</h3>
       <p>Building better predictors for <strong>software quality</strong>, project health, and technical debt — using smarter sampling, <strong>transfer learning</strong>, and hyperparameter optimization rather than brute-force compute. Includes <strong>benchmark repositories</strong> for reproducible research across hundreds of SE tasks.</p>
       <ul>
-        <li><b>MSR'26:</b> Multi-Objective Optimization Repo <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>TSE'25:</b> Is HPO Different for SE? <a href="https://ieeexplore.ieee.org/document/10919477/" target="_blank">[pdf]</a></li>
-        <li><b>TSE'25:</b> Static Code Mining Retrospective <a href="https://ieeexplore.ieee.org/document/10869331/" target="_blank">[pdf]</a></li>
-        <li><b>SIGSOFT SEN'25:</b> Replications & Negative Results</li>
-        <li><b>ESA'23:</b> Expert System for Cloud SE</li>
-        <li><b>EMSE'22:</b> Process vs. Product Metrics</li>
-        <li><b>EMSE'22:</b> Predicting OSS Project Health</li>
-        <li><b>MSR'22:</b> Stabilizing Models Across Projects</li>
-        <li><b>ICSE'21:</b> Early Life Cycle Defect Prediction</li>
+        <li><b>MSR'26</b> Multi-Objective Optimization Repo <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>TSE'25</b> Is HPO Different for SE? <a href="https://ieeexplore.ieee.org/document/10919477/" target="_blank">[pdf]</a></li>
+        <li><b>TSE'25</b> Static Code Mining Retrospective <a href="https://ieeexplore.ieee.org/document/10869331/" target="_blank">[pdf]</a></li>
+        <li><b>SIGSOFT SEN'25</b> Replications & Negative Results</li>
+        <li><b>ESA'23</b> Expert System for Cloud SE</li>
+        <li><b>EMSE'22</b> Process vs. Product Metrics</li>
+        <li><b>EMSE'22</b> Predicting OSS Project Health</li>
+        <li><b>MSR'22</b> Stabilizing Models Across Projects</li>
+        <li><b>ICSE'21</b> Early Life Cycle Defect Prediction</li>
       </ul>
     </div>
 
@@ -293,23 +371,23 @@
       <h3>Accountability & Trust</h3>
       <p>AI software must meet the same <strong>correctness and auditability</strong> standards as any safety-critical system. We develop methods to verify, audit, and correct AI outputs — ensuring decisions can be <strong>inspected, reproduced, and challenged</strong> — and probe the fragility of <strong>causal reasoning</strong> in high-stakes environments.</p>
       <ul>
-        <li><b>JSS'26:</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667" target="_blank">[pdf]</a></li>
-        <li><b>IEEE SW'25:</b> AI in State Courts <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>EMSE'25:</b> Causal Graphs in SE <a href="https://link.springer.com/article/10.1007/s10664-025-10690-6" target="_blank">[pdf]</a></li>
-        <li><b>EMSE'23:</b> Interpreting Model-Based Opt.</li>
-        <li><b>TSE'24:</b> Equalized Odds via Pre-Processing</li>
-        <li><b>IEEE Access'24:</b> Scalability, Privacy, & Performance</li>
+        <li><b>JSS'26</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667" target="_blank">[pdf]</a></li>
+        <li><b>IEEE SW'25</b> AI in State Courts <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>EMSE'25</b> Causal Graphs in SE <a href="https://link.springer.com/article/10.1007/s10664-025-10690-6" target="_blank">[pdf]</a></li>
+        <li><b>EMSE'23</b> Interpreting Model-Based Opt.</li>
+        <li><b>TSE'24</b> Equalized Odds via Pre-Processing</li>
+        <li><b>IEEE Access'24</b> Scalability, Privacy, & Performance</li>
       </ul>
     </div>
 
     <div id="content6" class="tab-content">
       <h3>Other</h3>
       <ul>
-        <li><b>ICSE'26:</b> SE Journals in 2036 <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">[pdf]</a></li>
-        <li><b>TSE'24:</b> Scoping SE for AI</li>
-        <li><b>IST'24:</b> Contributions of Guenther Ruhe</li>
-        <li><b>CACM'23:</b> (Re)Use of Research Results</li>
-        <li><b>IEEE Computer'22:</b> AI and SE: Are We Ready?</li>
+        <li><b>ICSE'26</b> SE Journals in 2036 <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>TSE'24</b> Scoping SE for AI</li>
+        <li><b>IST'24</b> Contributions of Guenther Ruhe</li>
+        <li><b>CACM'23</b> (Re)Use of Research Results</li>
+        <li><b>IEEE Computer'22</b> AI and SE: Are We Ready?</li>
       </ul>
     </div>
   </div>
@@ -363,5 +441,6 @@
       </tbody>
     </table>
   </article>
+
 </body>
 </html>
