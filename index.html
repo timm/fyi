@@ -1,236 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tim Menzies | AI & Software Engineering</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap");
-
-    :root {
-      --bg: #15181c;
-      --fg: #d8dde3;
-      --heading: #f5f7fa;
-      --accent: #ffb86c;
-      --accent-soft: rgba(255, 184, 108, 0.55);
-      --card: #21262d;
-      --card-2: #1b1f24;
-      --muted: #9aa3ad;
-      --border: #2d333b;
-    }
-
-    body {
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
-      font-size: 88%;
-      line-height: 1.25;
-      background: var(--bg);
-      color: var(--fg);
-      padding: 20px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    h2, h3, h4 {
-      color: var(--heading);
-      text-shadow: 0 0 18px rgba(255, 184, 108, 0.22);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    strong { color: #ede8e2; }
-    a strong, a b { color: inherit; }
-
-    /* Keep dark-on-transparent logos visible */
-    img[alt="Meta"],
-    img[alt="LexisNexis"],
-    img[alt="NSA"] {
-      filter: invert(1) brightness(1.05);
-    }
-
-    .banner {
-      width: 100%;
-      max-width: 600px;
-      height: auto !important;
-      border-radius: 10px;
-      display: block;
-    }
-
-    .text-center { text-align: center; }
-
-    .center-table {
-      margin: 10px auto 0;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    .center-table th, .center-table td {
-      padding: 2px 5px;
-      text-align: left;
-    }
-
-    /* ---------- Link bar above the photo ---------- */
-    .link-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.92em;
-      padding: 4px 2px 8px;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .link-bar .side { display: inline; }
-    .link-bar a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .link-bar a:hover { text-decoration: underline; }
-    .link-bar i { margin-right: 4px; font-size: 0.95em; }
-    .link-bar .glyph {
-      height: 0.95em;
-      width: auto;
-      vertical-align: -0.12em;
-      margin-right: 4px;
-    }
-    .link-bar .sep { color: var(--border); margin: 0 7px; }
-
-    @media (max-width: 520px) {
-      .link-bar {
-        font-size: 0.85em;
-        justify-content: center;
-        text-align: center;
-      }
-      .link-bar .sep { margin: 0 5px; }
-    }
-
-    /* ---------- Research tabs (CSS-only radio) ---------- */
-    .tab-container {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-    .tab-container input[type="radio"] { display: none; }
-    .tab-container label {
-      cursor: pointer;
-      padding: 6px 11px;
-      margin: 0 5px 5px 0;
-      background: var(--card);
-      color: var(--fg);
-      border-radius: 5px;
-      font-weight: 600;
-      font-size: 0.9em;
-      transition: all 0.15s;
-    }
-    .tab-container label:hover { background: #2d333b; }
-    .tab-container input[type="radio"]:checked + label {
-      background: var(--accent);
-      color: var(--bg);
-    }
-    .tab-content {
-      display: none;
-      width: 100%;
-      background: var(--card);
-      padding: 0.6rem 0.9rem;
-      border-radius: 5px;
-      border-left: 2px solid var(--accent-soft);
-      margin-top: 5px;
-    }
-    #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2,
-    #tab3:checked ~ #content3,
-    #tab4:checked ~ #content4,
-    #tab5:checked ~ #content5,
-    #tab6:checked ~ #content6 { display: block; }
-    .tab-content h3 {
-      margin-top: 0;
-      border: none;
-      padding: 0;
-    }
-
-    /* crossfade when switching tabs */
-    .tab-content {
-      animation: tabFade 0.28s ease-out;
-    }
-    @keyframes tabFade {
-      from { opacity: 0; transform: translateY(4px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* monospace venue pill */
-    .tab-content li b {
-      font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-      font-size: 0.78em;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--card-2);
-      border: 1px solid var(--border);
-      padding: 1px 6px;
-      border-radius: 3px;
-      margin-right: 4px;
-      letter-spacing: 0.02em;
-    }
-    .tab-content li { margin-bottom: 3px; }
-
-    /* blinking terminal cursor */
-    .cursor {
-      display: inline-block;
-      color: var(--accent);
-      font-weight: 700;
-      margin-left: 2px;
-      animation: blink 1.05s step-end infinite;
-      text-shadow: 0 0 6px rgba(255, 184, 108, 0.6);
-    }
-    @keyframes blink {
-      0%, 50%       { opacity: 1; }
-      50.01%, 100%  { opacity: 0; }
-    }
-
-    /* ---------- Recruit callout ---------- */
-    .recruit {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: var(--card-2);
-      border-left: 3px solid var(--accent);
-      padding: 8px 12px;
-      margin: 10px 0 12px;
-      font-size: 0.9em;
-      line-height: 1.35;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.25);
-    }
-    .recruit img {
-      height: 56px;
-      flex-shrink: 0;
-    }
-    .recruit p { margin: 0; }
-    .recruit strong { color: var(--accent); }
-
-    /* ---------- Articles ---------- */
-    article {
-      background: var(--card);
-      padding: 0.4rem 0.8rem;
-      margin-bottom: 0.8rem;
-      border-radius: 4px;
-    }
-    article h2, article h3 {
-      border-left: 2px solid var(--accent-soft);
-      padding-left: 0.4rem;
-    }
-    article h3 { margin-bottom: 5px; }
-
-    /* ---------- Tables ---------- */
-    table.striped {
-      background: var(--card-2);
-      border: 1px solid var(--border);
-    }
-    table.striped thead { background: var(--card); }
-    table.striped th { border-bottom: 1px solid var(--border); color: var(--heading); }
-    table.striped tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -249,7 +24,7 @@
     </span>
   </div>
 
-  <img src="banner.png" alt="Tim Menzies; prof,phd,cs,se,ai; ACM / IEEE / ASE Fellow; EIC of ASE journal" class="banner">
+  <a href="index.html"><img src="banner.png" alt="Tim Menzies; prof,phd,cs,se,ai; ACM / IEEE / ASE Fellow; EIC of ASE journal" class="banner"></a>
 
   <div class="recruit">
     <img src="want.png" alt="we want you">
@@ -261,13 +36,13 @@
   </div>
 
   <article>
-    <p>I earned my Ph.D. in Computer Science from <strong>UNSW</strong> (1995) and am now a Full Professor at <strong>NC State University</strong>, where I direct the <strong>Irrational Research Lab</strong><span class="cursor">▌</span>. 
-      </p>
-      <p>My work focuses on <strong>software engineering for AI</strong>, specifically building <strong>data-driven, explainable, and intelligent software systems</strong>. I am an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>, helping establish modern empirical software engineering by showing that <strong>small, interpretable AI models</strong> can often outperform larger, more complex ones.</p>
+    <p>I earned my Ph.D. in Computer Science from <strong>UNSW</strong> (1995) and am now a Full Professor at <strong>NC State University</strong>, where I direct the <strong>Irrational Research Lab</strong><span class="cursor">▌</span>.</p>
 
-      <p>I have published over <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">300 papers</a> with more than <strong>24,000 citations</strong> (h-index=74) and have advised <a href="#students"><strong>24 Ph.D. students</strong></a>. I serve as the <strong>Editor-in-Chief</strong> of the <strong>Automated Software Engineering</strong> journal and, from <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE TSE</strong>.</p>
+    <p>My work focuses on <strong>software engineering for AI</strong>, specifically building <strong>data-driven, explainable, and intelligent software systems</strong>. I am an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>, helping establish modern empirical software engineering by showing that <strong>small, interpretable AI models</strong> can often outperform larger, more complex ones.</p>
 
-    <p>My research is supported by <strong>$19M</strong> in competitive grants from government (<strong>NASA</strong>) and industry (<strong>LexisNexis, Microsoft, Meta</strong>). Recent highlights include over <strong>$2.5M from the NSF</strong> and <strong>$1M from the NSA</strong> to advance the science of trustworthy and compact AI. 
+    <p>I have published over <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">300 papers</a> with more than <strong>24,000 citations</strong> (h-index=74) and have advised <a href="#students"><strong>24 Ph.D. students</strong></a>. I serve as the <strong>Editor-in-Chief</strong> of the <strong>Automated Software Engineering</strong> journal and, from <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE TSE</strong>.</p>
+
+    <p>My research is supported by <strong>$19M</strong> in competitive grants from government (<strong>NASA</strong>) and industry (<strong>LexisNexis, Microsoft, Meta</strong>). Recent highlights include over <strong>$2.5M from the NSF</strong> and <strong>$1M from the NSA</strong> to advance the science of trustworthy and compact AI.</p>
 
     <div class="text-center">
       <p class="icon-row" style="padding-left: 90px; padding-right: 90px;">

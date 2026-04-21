@@ -1,273 +1,337 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap");
 
-/* 1. BODY */
-body {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 88%;
-  line-height: 1.25;
-  background: #fafafa;
-  color: #333;
-  margin: 0;
+:root {
+  --bg: #15181c;
+  --fg: #d8dde3;
+  --heading: #f5f7fa;
+  --accent: #ffb86c;
+  --accent-soft: rgba(255, 184, 108, 0.55);
+  --card: #21262d;
+  --card-2: #1b1f24;
+  --muted: #9aa3ad;
+  --border: #2d333b;
 }
 
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 88%;
+  line-height: 1.25;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2, h3, h4 {
+  color: var(--heading);
+  text-shadow: 0 0 18px rgba(255, 184, 108, 0.22);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+strong { color: #ede8e2; }
+a strong, a b { color: inherit; }
+
+em { font-style: italic; }
+
+/* Keep dark-on-transparent logos visible */
+img[alt="Meta"],
+img[alt="LexisNexis"],
+img[alt="NSA"] {
+  filter: invert(1) brightness(1.05);
+}
 
 .banner {
   width: 100%;
-  height: auto;
-  border-radius: 6px;
+  max-width: 600px;
+  height: auto !important;
+  border-radius: 10px;
   display: block;
 }
 
+.text-center { text-align: center; }
 
-/* 2. LAYOUT */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
+.center-table {
+  margin: 10px auto 0;
+  border-collapse: collapse;
+  width: 100%;
 }
-
-.link-bars {
-  margin-top: 0.5em;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 0.35em 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.1em;
-}
-
-.link-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.15em 1.2em;
-  font-size: 0.95em;
-  line-height: 1.4;
-}
-
-.link-row span i {
-  color: var(--muted);
-  margin-right: 0.2em;
-  font-size: 0.9em;
-}
-
-/* nav-style links in the header — quieter than body links */
-.link-row a {
-  color: var(--fg);
-  text-decoration: none;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.15s, color 0.15s;
-}
-
-.link-row a:hover {
-  color: var(--accent-dark);
-  border-bottom-color: var(--accent);
-  text-decoration: none;
-}
-
-.contact-details {
-  text-align: center;
-  font-size: 0.88em;
-  color: var(--muted);
-  margin: 0.4em 0 0;
-}
-.contact-details p { margin: 0; line-height: 1.35; }
-
-
-/* 3. HEADER */
-.profile-header {
-  margin-bottom: 0.6em;
-}
-.header-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-.profile-pic img {
-  border-radius: 20%;
-  width: 120px;
-  height: auto;
-}
-.header-info h2 {
-  margin: 0 0 0.1rem 0;
-  border-bottom: none !important;
-  font-size: 2.2rem;
-}
-.header-titles {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: -0.2rem;
-}
-
-
-/* 4. TYPOGRAPHY */
-h2, h3 {
-  color: #111 !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.02em;
-}
-h2 {
-  border-bottom: 1px dashed #ccc !important;
-  padding-bottom: 5px;
-  margin-top: 2rem;
-}
-hr {
-  border: none !important;
-  border-top: 1px dashed #ccc !important;
-  margin: 1.5rem 0;
-}
-a {
-  color: #c00 !important;
-  font-weight: 600;
-  text-decoration-color: rgba(204, 0, 0, 0.4) !important;
-}
-strong { font-weight: 700; }
-em     { font-style: italic; }
-
-/* 5. ARTICLE BLOCKS */
-article {
-  background: #eef3f7;
-  padding: 0.4rem 0.8rem;
-  margin-bottom: 0.8rem;
-}
-article h2,
-article h3 {
-  border-left: 2px solid rgba(204, 0, 0, 0.5);
-  padding-left: 0.4rem;
-}
-article + article {
-  border-top: 1px solid #e6e6e6;
-}
-
-/* 6. TAGLINE */
-.tagline {
-  margin: 0.4rem 0 0.8rem 0;
-  font-style: italic;
-  color: #444;
-  border-left: 2px solid rgba(204, 0, 0, 0.4);
-  padding-left: 0.6rem;
-}
-
-/* 7. CALLOUT */
-.callout {
-  background: #fff;
-  border-left: 3px solid #c00;
-  padding: 0.5rem 0.8rem;
-  margin: 0.8rem 0;
-}
-.callout.warn {
-  border-color: #c8860a;
-  background: #fffbf2;
-}
-
-/* 8. CITE */
-cite {
-  font-family: monospace;
-  font-size: 0.85em;
-  color: #666;
-  background: #e8e8e8;
-  padding: 0.1em 0.3em;
-  border-radius: 2px;
-  font-style: normal;
-}
-
-/* 9. KICKER */
-.kicker {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 0.4rem;
-}
-
-
-/* 10. PAPER LIST */
-.paper-list li {
-  line-height: 1.4;
-  margin-bottom: 0.3rem;
-}
-
-#research .paper-list li {
-  line-height: 1.2;
-  margin-bottom: 0.15rem;
-}
-
-#research article p {
-  margin: 0.2rem 0 0.4rem 0;
-}
-
-/* 11. LOGO GRID */
-.logo-grid {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-}
-.logo-grid img { height: 35px; }
-.logo-grid img[alt="Meta"],
-.logo-grid img[alt="Microsoft"] { height: 20px !important; }
-
-/* 12. TABLES */
-table.striped {
-  margin: 0.8rem auto;
-  width: auto;
-  background: #fbfbfb;
-  border: 1px solid #e6e6e6;
-}
-table.striped thead          { background: #eef3f7; }
-table.striped th,
-table.striped td             { padding: 6px 10px; }
-table.striped th             { border-bottom: 1px solid #ddd; }
-table.striped tbody tr:nth-child(even) { background: #f2f2f2; }
-
-/* 13. PUNCHLINE */
-.punchline {
-  margin-top: 2rem;
-  padding-top: 1.2rem;
-  border-top: 1px dashed #ccc;
-  text-align: center;
-  color: #111;
-  font-style: italic;
-}
-.punchline .tagline-final {
-  margin-top: 0.6rem;
-  font-style: normal;
-  font-weight: 700;
-  color: #c00;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-size: 0.85em;
-}
-
-/* 14. FOOTER */
-footer {
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px dashed #ccc;
-  font-size: 0.82em;
-  color: #888;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-footer span::before { content: "— "; color: #ccc; }
-
-/* 15. CENTER BOX */
-.center-box {
-  width: 500px;
-  margin: 0 auto;
+.center-table th, .center-table td {
+  padding: 2px 5px;
   text-align: left;
 }
 
-/* 16. MOBILE */
-@media (max-width: 600px) {
-  .header-top  { flex-direction: column; gap: 0.5rem; }
-  .link-row    { gap: 0 1rem; }
-  .center-box  { width: 100%; }
+/* ---------- Link bar ---------- */
+.link-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92em;
+  padding: 4px 2px 8px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.link-bar .side { display: inline; }
+.link-bar a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.link-bar a:hover { text-decoration: underline; }
+.link-bar i { margin-right: 4px; font-size: 0.95em; }
+.link-bar .glyph {
+  height: 0.95em;
+  width: auto;
+  vertical-align: -0.12em;
+  margin-right: 4px;
+}
+.link-bar .sep { color: var(--border); margin: 0 7px; }
+
+@media (max-width: 520px) {
+  .link-bar {
+    font-size: 0.85em;
+    justify-content: center;
+    text-align: center;
+  }
+  .link-bar .sep { margin: 0 5px; }
 }
 
+/* ---------- Research tabs ---------- */
+.tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.tab-container input[type="radio"] { display: none; }
+.tab-container label {
+  cursor: pointer;
+  padding: 6px 11px;
+  margin: 0 5px 5px 0;
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.15s;
+}
+.tab-container label:hover { background: #2d333b; }
+.tab-container input[type="radio"]:checked + label {
+  background: var(--accent);
+  color: var(--bg);
+}
+.tab-content {
+  display: none;
+  width: 100%;
+  background: var(--card);
+  padding: 0.6rem 0.9rem;
+  border-radius: 5px;
+  border-left: 2px solid var(--accent-soft);
+  margin-top: 5px;
+  animation: tabFade 0.28s ease-out;
+}
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6 { display: block; }
+.tab-content h3 {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+}
+@keyframes tabFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Monospace venue pill */
+.tab-content li b {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 4px;
+  letter-spacing: 0.02em;
+}
+.tab-content li { margin-bottom: 3px; }
+
+/* Blinking terminal cursor */
+.cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: 2px;
+  animation: blink 1.05s step-end infinite;
+  text-shadow: 0 0 6px rgba(255, 184, 108, 0.6);
+}
+@keyframes blink {
+  0%, 50%       { opacity: 1; }
+  50.01%, 100%  { opacity: 0; }
+}
+
+/* ---------- Recruit callout ---------- */
+.recruit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-2);
+  border-left: 3px solid var(--accent);
+  padding: 8px 12px;
+  margin: 10px 0 12px;
+  font-size: 0.9em;
+  line-height: 1.35;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+.recruit img {
+  height: 56px;
+  flex-shrink: 0;
+}
+.recruit p { margin: 0; }
+.recruit strong { color: var(--accent); }
+
+/* ---------- Articles ---------- */
+article {
+  background: var(--card);
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 4px;
+}
+article h2, article h3 {
+  border-left: 2px solid var(--accent-soft);
+  padding-left: 0.4rem;
+}
+article h3 { margin-bottom: 5px; }
+article p { margin: 0.5rem 0; }
+
+/* ---------- Tables ---------- */
+table.striped {
+  background: var(--card-2);
+  border: 1px solid var(--border);
+}
+table.striped thead { background: var(--card); }
+table.striped th { border-bottom: 1px solid var(--border); color: var(--heading); }
+table.striped tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+
+/* ---------- Blog-post extras ---------- */
+.kicker {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1rem 0 0.3rem;
+}
+
+.callout {
+  background: var(--card-2);
+  border-left: 3px solid var(--accent);
+  padding: 0.55rem 0.85rem;
+  margin: 0.8rem 0;
+  border-radius: 3px;
+}
+.callout.warn {
+  border-color: #ffd166;
+  background: rgba(255, 209, 102, 0.06);
+}
+
+cite {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85em;
+  color: var(--accent);
+  background: var(--card-2);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-style: normal;
+  border: 1px solid var(--border);
+}
+
+.punchline {
+  margin-top: 2rem;
+  padding: 1.2rem 1rem;
+  border-top: 1px dashed var(--border);
+  text-align: center;
+  color: var(--fg);
+  font-style: italic;
+}
+.punchline .tagline-final {
+  margin-top: 0.8rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+
+/* ---------- IRL lab page ---------- */
+.motto {
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.05em;
+  color: var(--accent);
+  margin: 10px 0 2px;
+  text-shadow: 0 0 12px rgba(255, 184, 108, 0.35);
+}
+.sub-motto {
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+  margin: 0.6rem 0 1rem;
+}
+.person-card {
+  background: var(--card);
+  border-left: 2px solid var(--accent-soft);
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.person-card img.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--card-2);
+}
+.person-card .info { flex: 1; min-width: 0; }
+.person-card .name {
+  font-weight: 700;
+  color: var(--heading);
+}
+.person-card .role {
+  color: var(--muted);
+  font-size: 0.82em;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.02em;
+  margin-top: 1px;
+}
+.person-card .focus {
+  font-size: 0.9em;
+  margin-top: 5px;
+  line-height: 1.3;
+}

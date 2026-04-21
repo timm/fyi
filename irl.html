@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRL · Irrational Research Lab</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="link-bar">
+    <span class="side">
+      <a href="index.html" aria-label="home"><i class="fa-solid fa-house"></i></a>
+      <span class="sep">|</span>
+      <a href="mailto:timm@ieee.org"><i class="fa-solid fa-envelope"></i>timm@ieee.org</a>
+      <span class="sep">|</span>
+      <a href="tel:+13043762859"><i class="fa-solid fa-phone"></i>+1-304-376-2859</a>
+    </span>
+    <span class="side">
+      <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC"><img class="glyph" src="https://cdn.simpleicons.org/googlescholar/FFB86C" alt="">papers</a>
+      <span class="sep">|</span>
+      <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies"><img class="glyph" src="https://cdn.simpleicons.org/arxiv/FFB86C" alt="">pre-prints</a>
+    </span>
+  </div>
+
+  <a href="index.html"><img src="irl.jpeg" alt="IRL — Irrational Research Lab · Mad Scientists 'R Us · Proudly Irrational. Rigorously Empirical." class="banner"></a>
+
+  <p class="motto">Small models. Sharp answers.<span class="cursor">▌</span></p>
+
+  <div class="recruit">
+    <img src="want.png" alt="we want you">
+    <p>
+      Join our <strong>semester-long reading group</strong> — the easiest way into the lab.
+      Open to NC State students and <strong>industrial partners</strong> working on real-world
+      AI/ML systems.
+    </p>
+  </div>
+
+  <article>
+    <p>We study <strong>software engineering for AI</strong> — specifically, the uncomfortable finding that <strong>smaller, interpretable models</strong> repeatedly match or beat larger ones on real SE tasks. Rigorously empirical. Proudly irrational.</p>
+    <p>Directed by <a href="index.html"><strong>Tim Menzies</strong></a>, part of the <a href="https://csc.ncsu.edu/"><strong>Department of Computer Science</strong></a> at <strong>NC State University</strong>.</p>
+  </article>
+
+  <h2>Current Projects</h2>
+  <div class="tab-container">
+    <input type="radio" id="tab1" name="irl-tabs" checked>
+    <label for="tab1">The Front Door</label>
+    <input type="radio" id="tab2" name="irl-tabs">
+    <label for="tab2">MOOT</label>
+    <input type="radio" id="tab3" name="irl-tabs">
+    <label for="tab3">Explanation</label>
+    <input type="radio" id="tab4" name="irl-tabs">
+    <label for="tab4">Optimization</label>
+    <input type="radio" id="tab5" name="irl-tabs">
+    <label for="tab5">Agentic</label>
+
+    <div id="content1" class="tab-content">
+      <h3>The Front Door · Reading Group</h3>
+      <p>Every semester we run an open research reading group — <strong>the easiest way into the lab</strong>. Sessions mix recent SE-AI papers with live updates on active lab projects. No prerequisites beyond curiosity.</p>
+      <ul>
+        <li><b>Who</b> NC State students, industrial partners, visiting researchers</li>
+        <li><b>When</b> Weekly, each semester</li>
+        <li><b>How</b> Email <a href="mailto:timm@ieee.org">timm@ieee.org</a> to get on the list</li>
+      </ul>
+    </div>
+
+    <div id="content2" class="tab-content">
+      <h3>MOOT — Many Optimization Tasks</h3>
+      <p>A curated benchmark of <strong>120+ multi-objective optimization tasks</strong> from real software engineering and systems research. It replaces toy benchmarks with real high-dimensional problems — <strong>software configuration, cloud tuning, project health, hyperparameter optimization, process modelling</strong> — so optimization algorithms can be compared fairly and reproducibly.</p>
+      <ul>
+        <li><b>MSR'26</b> A Repository of Many Multi-Objective Optimization Tasks <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>GitHub</b> <a href="https://github.com/timm/moot" target="_blank">github.com/timm/moot</a></li>
+      </ul>
+    </div>
+
+    <div id="content3" class="tab-content">
+      <h3>Explanation — causality, stability, trust</h3>
+      <p>Lead: <strong>Amirali Rayegan</strong>. Can causal methods make software analytics more stable, interpretable, and trustworthy than correlation-based ones? We're probing where causal reasoning buys you real robustness — and where it's just fragile structure wearing a better label.</p>
+      <ul>
+        <li><b>EMSE'25</b> Causal Graphs in SE <a href="https://link.springer.com/article/10.1007/s10664-025-10690-6" target="_blank">[pdf]</a></li>
+        <li><b>JSS'26</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667" target="_blank">[pdf]</a></li>
+        <li><b>ICSE'26</b> Shaky Causal Structures talk <a href="https://timm.fyi/26causal.pdf" target="_blank">[pdf]</a></li>
+      </ul>
+    </div>
+
+    <div id="content4" class="tab-content">
+      <h3>Optimization — simple beats complex</h3>
+      <p>Lead: <strong>Kishan Kumar Ganguly</strong>. Our thesis: simple, sample-efficient optimizers routinely beat complex ones on SE problems, because SE data collapses to a few buckets (the "BINGO" effect). The payoff is optimization that's cheaper, faster, and easier to audit.</p>
+      <ul>
+        <li><b>arXiv'25</b> BINGO! Simple Optimizers Win Big if Problems Collapse to a Few Buckets <a href="https://arxiv.org/abs/2506.04509" target="_blank">[pdf]</a></li>
+        <li><b>FSE'26</b> How Low Can You Go? The Data-Light SE Challenge <a href="https://arxiv.org/abs/2512.13524" target="_blank">[pdf]</a></li>
+        <li><b>Code</b> <a href="https://github.com/KKGanguly" target="_blank">Bingo · DataCentricFuzzJS</a></li>
+      </ul>
+    </div>
+
+    <div id="content5" class="tab-content">
+      <h3>Agentic Systems — LLMs as fast typists</h3>
+      <p>Lead: <strong>Srinath Srinivasan</strong>. How far can we push lightweight, LLM-powered agents on SE tasks <em>without</em> drowning them in compute? Theme: keep the LLM the fast typist; keep the human the one who knows what's worth typing.</p>
+      <ul>
+        <li><b>TOSEM'26</b> LLMs Warming-Up Active Learning <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>EMSE'26</b> From Brittle to Robust: Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>SmartOracle</b> agentic approach to differential oracles (preprint)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>People</h2>
+
+  <article>
+    <h3><a href="https://csc.ncsu.edu/">NC State · Computer Science</a></h3>
+    <div class="people-grid">
+      <div class="person-card">
+        <img class="avatar" src="assets/img/timm-main.png" alt="">
+        <div class="info">
+          <div class="name"><a href="index.html">Tim Menzies</a></div>
+          <div class="role">Director · Full Professor</div>
+          <div class="focus">AI, for Less. Empirical SE. EIC, <em>ASE</em> journal.</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="avatar" src="https://github.com/amiiralii.png" alt="">
+        <div class="info">
+          <div class="name"><a href="https://amiiralii.github.io/">Amirali Rayegan</a></div>
+          <div class="role">Ph.D. Candidate</div>
+          <div class="focus">Causal & explainable software analytics.</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="avatar" src="https://github.com/KKGanguly.png" alt="">
+        <div class="info">
+          <div class="name"><a href="https://github.com/KKGanguly">Kishan Kumar Ganguly</a></div>
+          <div class="role">Ph.D. Student · 2027</div>
+          <div class="focus">Sample-efficient optimization for SE.</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="avatar" src="https://srina1h.github.io/images/profile.jpg" alt="">
+        <div class="info">
+          <div class="name"><a href="https://srina1h.github.io/">Srinath Srinivasan</a></div>
+          <div class="role">Ph.D. Student · 2028</div>
+          <div class="focus">Agentic LLM systems for SE.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article>
+    <h3>International Collaborators</h3>
+    <div class="people-grid">
+      <div class="person-card">
+        <div class="name"><a href="https://scholars.cityu.edu.hk/en/persons/jwkeung/" target="_blank">Prof. Jacky Keung</a></div>
+        <div class="role">City Univ. of Hong Kong</div>
+        <div class="focus">Software analytics, effort estimation, empirical SE.</div>
+      </div>
+      <div class="person-card">
+        <div class="name"><a href="https://ideas-labo.github.io/" target="_blank">Prof. Tao Chen</a></div>
+        <div class="role">Univ. of Birmingham · IDEAS Lab</div>
+        <div class="focus">Self-adaptive systems, configuration performance, search-based SE.</div>
+      </div>
+      <div class="person-card">
+        <div class="name"><a href="https://www.cse.chalmers.se/~feldt/" target="_blank">Prof. Robert Feldt</a></div>
+        <div class="role">Chalmers · EIC, <em>EMSE</em></div>
+        <div class="focus">Software testing, requirements, AI in development, behavioural SE.</div>
+      </div>
+      <div class="person-card">
+        <div class="name"><a href="https://engineering.nd.edu/faculty/jane-cleland-huang/" target="_blank">Prof. Jane Cleland-Huang</a></div>
+        <div class="role">Notre Dame · Freimann Professor, CSE Chair</div>
+        <div class="focus">Drones & CPS, safety assurance, requirements traceability.</div>
+      </div>
+    </div>
+  </article>
+
+  <div class="punchline">
+    <p>We build the small models that beat the big ones.<br>We publish the ones that don't.</p>
+    <div class="tagline-final">IRL: research, in real life.</div>
+  </div>
+
+</body>
+</html>
