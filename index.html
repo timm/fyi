@@ -4,9 +4,10 @@
   <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
   <meta charset="UTF-8">
   <title>Tim Menzies | AI & Software Engineering</title>
+  
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
-    
+
     body {
       font-family: "Inter", system-ui, sans-serif;
       font-size: 88%;
@@ -17,51 +18,124 @@
       max-width: 600px;
       margin: 0 auto; 
     }
-    
+
     a {
       color: #CC0000;
       text-decoration: none;
       font-weight: bold;
     }
-    
+
     .banner {
       width: 100%;
       max-width: 600px;
       height: auto !important;
       border-radius: 10px;
     }
-    
-    .text-center { text-align: center; }
-    
+
+    .text-center {
+      text-align: center;
+    }
+
     .center-table {
       margin: 10px auto 0;
       border-collapse: collapse;
+      width: 100%;
     }
     
-    article {
+    /* Reduced vertical padding from 5px to 2px */
+    .center-table th, .center-table td {
+      padding: 2px 5px; 
+      text-align: left;
+    }
+
+    /* Base article styles for news & teaching */
+    article:not(.tab-content) {
       background: #eef3f7;
       padding: 0.4rem 0.8rem;
       margin-bottom: 0.8rem;
     }
-    
+
     article h2, article h3 {
-      border-left: 2px solid rgba(204, 0, 0, 0.5);
       padding-left: 0.4rem;
+      border-left: 2px solid rgba(204, 0, 0, 0.5);
     }
     
-    article h3 { margin-bottom: 5px; }
+    article h3 {
+      margin-bottom: 5px; 
+    }
+
+    /* --- CSS-Only Horizontal Tabs for Research --- */
+    .tab-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    /* Hide the actual radio buttons */
+    .tab-container input[type="radio"] {
+      display: none;
+    }
+
+    /* Style the labels to look like clickable tabs */
+    .tab-container label {
+      cursor: pointer;
+      padding: 8px 12px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      background: #eef3f7;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .tab-container label:hover {
+      background: #ddd;
+    }
+
+    /* Highlight the active tab in red */
+    .tab-container input[type="radio"]:checked + label {
+      background: #CC0000;
+      color: white;
+    }
+
+    /* Style the content blocks */
+    .tab-content {
+      display: none; /* Hidden by default */
+      width: 100%;
+      background: #eef3f7;
+      padding: 1rem;
+      border-radius: 5px;
+      border-left: 2px solid rgba(204, 0, 0, 0.5);
+      margin-top: 5px;
+    }
+
+    /* The Magic: When a radio button is checked, show its matching content */
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3,
+    #tab4:checked ~ #content4,
+    #tab5:checked ~ #content5,
+    #tab6:checked ~ #content6 {
+      display: block;
+    }
+    
+    .tab-content h3 {
+      margin-top: 0;
+      border: none;
+      padding: 0;
+    }
   </style>
 </head>
 <body>
-  <img src="banner.png" alt="Tim Menzies; prof,phd,cs,se,ai; ACM / IEEE / ASE Fellow; EIC of ASE journal" class="banner">
-  <p class="text-center">
+  <img src="banner.png" alt="Tim Menzies" class="banner">
+  <p>
     <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">scholar</a> | 
     <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">pre-prints</a> | 
     <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a><br>
     rm 3304 • Com. Sci. • EB2<br>
-    890 Oval Dr • Raleigh • NC, 27606 • USA<br>
+    890 Oval Dr • Raleigh • NC, 27606, USA<br>
     1-304-376-2859<br>
-    timm@ieee.org
+    <a href="mailto:timm@ieee.org">timm@ieee.org</a>
   </p>
 
   <article>
@@ -72,16 +146,16 @@
     <p>My research is supported by <strong>$19M</strong> in competitive grants from government (<strong>NASA</strong>) and industry (<strong>LexisNexis, Microsoft, Meta</strong>). Recent highlights include over <strong>$2.5M from the NSF</strong> and <strong>$1M from the NSA</strong> to advance the science of trustworthy and compact AI. For more information, visit <strong>timm.fyi</strong>.</p>
     
     <div class="text-center">
-      <p class="icon-row" style="padding-left: 90px; padding-right: 90px;">
+      <p class="icon-row" style="padding-left: 100px; padding-right: 100px;">
         <img height="25" align="middle" alt="Microsoft"  src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg">
-          <img height="22" align="middle" alt="Meta"       style="padding:5px;" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"><br>
+        <img height="22" align="middle" alt="Meta"       style="padding:5px;" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg">
         <img height="32" align="middle" alt="LexisNexis" src="ln.png">
         <img height="40" align="middle" alt="NSF"        src="https://upload.wikimedia.org/wikipedia/commons/7/7e/NSF_logo.png">
         <img height="32" align="middle" alt="NASA"       src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg">
         <img height="32" align="middle" alt="NSA"        src="nsa.png">
         &nbsp; &nbsp;
       </p>
-      <p style="padding-left: 90px; padding-right: 90px;">
+      <p style="padding-left: 100px; padding-right: 100px;">
         I need you to help me find and fix problems in <strong>real world</strong> AI/ML systems. Are you an NCState student, or an industrial <strong>partner</strong>, interested in research? Why not join my research <strong>reading group</strong> (run each semester)?<br>
         <img src="want.png" width="100" style="margin-top:5px;" alt="we want you"> 
       </p>
@@ -105,87 +179,108 @@
     </ul>
   </article>
 
-    <h2>Research</h2>
-  <article>
-    <h3>AI, for Less</h3>
-    <p>I strongly advocate for <strong>"AI, for Less"</strong>. My research shows you do not always need <strong>massive computational power</strong> — simpler, optimized models can yield exceptional results while remaining transparent and trustworthy. We emphasize <strong>reproducibility and simplicity</strong> over "black box" deep learning, and show that <strong>lightweight active learning</strong>, co-training, and warm-starts can match or beat expensive alternatives.</p>
-    <ul>
-      <li><b>FSE'26:</b> Data-Light SE Challenge <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>VERIFAI'26:</b> Exploiting Software Sparsity <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>TOSEM'26:</b> LLMs Warming-Up Active Learning <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>CACM'25:</b> The Case for Compact AI <a href="https://cacm.acm.org/opinion/the-case-for-compact-ai/" target="_blank">[pdf]</a></li>
-      <li><b>TOSEM'24:</b> Learning from Very Little Data</li>
-      <li><b>EMSE'24:</b> Co-Training for Defect Prediction</li>
-      <li><b>IEEE Access'24:</b> Partial Ordering for Model Reasoning</li>
-      <li><b>EMSE'22:</b> Minimizing Tech Debt Labeling Cost</li>
-    </ul>
-  </article>
+  <h2>Research</h2>
+  
+  <div class="tab-container">
+    
+    <input type="radio" id="tab1" name="res-tabs" checked>
+    <label for="tab1">AI, for Less</label>
 
-  <article>
-    <h3>LLMs & Deep Learning</h3>
-    <p>Critical assessments of where <strong>LLMs and deep learning help</strong> — and where they hurt — in software engineering tasks. We study how to <strong>prompt, warm-start, and robustify</strong> LLM-based SE pipelines, and identify when <strong>simpler baselines still win</strong>.</p>
-    <ul>
-      <li><b>EMSE'26:</b> Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>MSR'26:</b> Domain Knowledge for LLM Optimization <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>IEEE Internet Comput.'23:</b> Variances in Robust DL</li>
-      <li><b>TSE'22:</b> Oversampling for DL Defect Prediction</li>
-      <li><b>MSR'22:</b> Improving DL for SE Analytics</li>
-      <li><b>MSR'22:</b> GANs for Security Class Imbalance</li>
-    </ul>
-  </article>
+    <input type="radio" id="tab2" name="res-tabs">
+    <label for="tab2">LLMs</label>
 
-  <article>
-    <h3>Security & Vulnerability</h3>
-    <p>Practical methods for <strong>vulnerability detection</strong> and cyberthreat intelligence, using <strong>active learning and adversarial ML</strong> to help teams prioritize security efforts without drowning in <strong>false positives</strong>.</p>
-    <ul>
-      <li><b>KAIS'25:</b> Mining CTI Attack Patterns <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6" target="_blank">[pdf]</a></li>
-      <li><b>ICDM'24:</b> Temporal Cyberattack Patterns</li>
-      <li><b>EMSE'22:</b> Ensembles Against Evasion Attacks</li>
-      <li><b>EMSE'21:</b> Security Bug Report Classification</li>
-    </ul>
-  </article>
+    <input type="radio" id="tab3" name="res-tabs">
+    <label for="tab3">Security</label>
 
-  <article>
-    <h3>Defect Prediction & Software Analytics</h3>
-    <p>Building better predictors for <strong>software quality</strong>, project health, and technical debt — using smarter sampling, <strong>transfer learning</strong>, and hyperparameter optimization rather than brute-force compute. Includes <strong>benchmark repositories</strong> for reproducible research across hundreds of SE tasks.</p>
-    <ul class="paper-list">
-      <li><b>MSR'26:</b> Multi-Objective Optimization Repo <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>TSE'25:</b> Is HPO Different for SE? <a href="https://ieeexplore.ieee.org/document/10919477/" target="_blank">[pdf]</a></li>
-      <li><b>TSE'25:</b> Static Code Mining Retrospective <a href="https://ieeexplore.ieee.org/document/10869331/" target="_blank">[pdf]</a></li>
-      <li><b>SIGSOFT SEN'25:</b> Replications & Negative Results</li>
-      <li><b>ESA'23:</b> Expert System for Cloud SE</li>
-      <li><b>EMSE'22:</b> Process vs. Product Metrics</li>
-      <li><b>EMSE'22:</b> Predicting OSS Project Health</li>
-      <li><b>MSR'22:</b> Stabilizing Models Across Projects</li>
-      <li><b>ICSE'21:</b> Early Life Cycle Defect Prediction</li>
-    </ul>
-  </article>
+    <input type="radio" id="tab4" name="res-tabs">
+    <label for="tab4">Analytics</label>
 
-  <article>
-    <h3>Accountability & Trust</h3>
-    <p>AI software must meet the same <strong>correctness and auditability</strong> standards as any safety-critical system. We develop methods to verify, audit, and correct AI outputs — ensuring decisions can be <strong>inspected, reproduced, and challenged</strong> — and probe the fragility of <strong>causal reasoning</strong> in high-stakes environments.</p>
-    <ul>
-      <li><b>JSS'26:</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667" target="_blank">[pdf]</a></li>
-      <li><b>IEEE SW'25:</b> AI in State Courts <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>EMSE'25:</b> Causal Graphs in SE <a href="https://link.springer.com/article/10.1007/s10664-025-10690-6" target="_blank">[pdf]</a></li>
-      <li><b>EMSE'23:</b> Interpreting Model-Based Opt.</li>
-      <li><b>TSE'24:</b> Equalized Odds via Pre-Processing</li>
-      <li><b>IEEE Access'24:</b> Scalability, Privacy, & Performance</li>
-    </ul>
-  </article>
+    <input type="radio" id="tab5" name="res-tabs">
+    <label for="tab5">Trust</label>
 
-  <article>
-    <h3>Other</h3>
-    <ul>
-      <li><b>ICSE'26:</b> SE Journals in 2036 <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">[pdf]</a></li>
-      <li><b>TSE'24:</b> Scoping SE for AI</li>
-      <li><b>IST'24:</b> Contributions of Guenther Ruhe</li>
-      <li><b>CACM'23:</b> (Re)Use of Research Results</li>
-      <li><b>IEEE Computer'22:</b> AI and SE: Are We Ready?</li>
-    </ul>
-  </article>
+    <input type="radio" id="tab6" name="res-tabs">
+    <label for="tab6">Other</label>
 
-  <h2>Teaching</h2>
+    <div id="content1" class="tab-content">
+      <h3>AI, for Less</h3>
+      <p>I strongly advocate for <strong>"AI, for Less"</strong>. My research shows you do not always need <strong>massive computational power</strong> — simpler, optimized models can yield exceptional results while remaining transparent and trustworthy. We emphasize <strong>reproducibility and simplicity</strong> over "black box" deep learning, and show that <strong>lightweight active learning</strong>, co-training, and warm-starts can match or beat expensive alternatives.</p>
+      <ul>
+        <li><b>FSE'26:</b> Data-Light SE Challenge <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>VERIFAI'26:</b> Exploiting Software Sparsity <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>TOSEM'26:</b> LLMs Warming-Up Active Learning <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>CACM'25:</b> The Case for Compact AI <a href="https://cacm.acm.org/opinion/the-case-for-compact-ai/" target="_blank">[pdf]</a></li>
+        <li><b>TOSEM'24:</b> Learning from Very Little Data</li>
+        <li><b>EMSE'24:</b> Co-Training for Defect Prediction</li>
+        <li><b>IEEE Access'24:</b> Partial Ordering for Model Reasoning</li>
+        <li><b>EMSE'22:</b> Minimizing Tech Debt Labeling Cost</li>
+      </ul>
+    </div>
+
+    <div id="content2" class="tab-content">
+      <h3>LLMs & Deep Learning</h3>
+      <p>Critical assessments of where <strong>LLMs and deep learning help</strong> — and where they hurt — in software engineering tasks. We study how to <strong>prompt, warm-start, and robustify</strong> LLM-based SE pipelines, and identify when <strong>simpler baselines still win</strong>.</p>
+      <ul>
+        <li><b>EMSE'26:</b> Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>MSR'26:</b> Domain Knowledge for LLM Opt. <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>IEEE Internet Comput.'23:</b> Variances in Robust DL</li>
+        <li><b>TSE'22:</b> Oversampling for DL Defect Prediction</li>
+        <li><b>MSR'22:</b> Improving DL for SE Analytics</li>
+        <li><b>MSR'22:</b> GANs for Security Class Imbalance</li>
+      </ul>
+    </div>
+
+    <div id="content3" class="tab-content">
+      <h3>Security & Vulnerability</h3>
+      <p>Practical methods for <strong>vulnerability detection</strong> and cyberthreat intelligence, using <strong>active learning and adversarial ML</strong> to help teams prioritize security efforts without drowning in <strong>false positives</strong>.</p>
+      <ul>
+        <li><b>KAIS'25:</b> Mining CTI Attack Patterns <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6" target="_blank">[pdf]</a></li>
+        <li><b>ICDM'24:</b> Temporal Cyberattack Patterns</li>
+        <li><b>EMSE'22:</b> Ensembles Against Evasion Attacks</li>
+        <li><b>EMSE'21:</b> Security Bug Report Classification</li>
+      </ul>
+    </div>
+
+    <div id="content4" class="tab-content">
+      <h3>Defect Prediction & Software Analytics</h3>
+      <p>Building better predictors for <strong>software quality</strong>, project health, and technical debt — using smarter sampling, <strong>transfer learning</strong>, and hyperparameter optimization rather than brute-force compute. Includes <strong>benchmark repositories</strong> for reproducible research across hundreds of SE tasks.</p>
+      <ul>
+        <li><b>MSR'26:</b> Multi-Objective Optimization Repo <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>TSE'25:</b> Is HPO Different for SE? <a href="https://ieeexplore.ieee.org/document/10919477/" target="_blank">[pdf]</a></li>
+        <li><b>TSE'25:</b> Static Code Mining Retrospective <a href="https://ieeexplore.ieee.org/document/10869331/" target="_blank">[pdf]</a></li>
+        <li><b>SIGSOFT SEN'25:</b> Replications & Negative Results</li>
+        <li><b>ESA'23:</b> Expert System for Cloud SE</li>
+        <li><b>EMSE'22:</b> Process vs. Product Metrics</li>
+        <li><b>EMSE'22:</b> Predicting OSS Project Health</li>
+        <li><b>MSR'22:</b> Stabilizing Models Across Projects</li>
+        <li><b>ICSE'21:</b> Early Life Cycle Defect Prediction</li>
+      </ul>
+    </div>
+
+    <div id="content5" class="tab-content">
+      <h3>Accountability & Trust</h3>
+      <p>AI software must meet the same <strong>correctness and auditability</strong> standards as any safety-critical system. We develop methods to verify, audit, and correct AI outputs — ensuring decisions can be <strong>inspected, reproduced, and challenged</strong> — and probe the fragility of <strong>causal reasoning</strong> in high-stakes environments.</p>
+      <ul>
+        <li><b>JSS'26:</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667" target="_blank">[pdf]</a></li>
+        <li><b>IEEE SW'25:</b> AI in State Courts <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>EMSE'25:</b> Causal Graphs in SE <a href="https://link.springer.com/article/10.1007/s10664-025-10690-6" target="_blank">[pdf]</a></li>
+        <li><b>EMSE'23:</b> Interpreting Model-Based Opt.</li>
+        <li><b>TSE'24:</b> Equalized Odds via Pre-Processing</li>
+        <li><b>IEEE Access'24:</b> Scalability, Privacy, & Performance</li>
+      </ul>
+    </div>
+
+    <div id="content6" class="tab-content">
+      <h3>Other</h3>
+      <ul>
+        <li><b>ICSE'26:</b> SE Journals in 2036 <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">[pdf]</a></li>
+        <li><b>TSE'24:</b> Scoping SE for AI</li>
+        <li><b>IST'24:</b> Contributions of Guenther Ruhe</li>
+        <li><b>CACM'23:</b> (Re)Use of Research Results</li>
+        <li><b>IEEE Computer'22:</b> AI and SE: Are We Ready?</li>
+      </ul>
+    </div>
+
+  </div> <h2>Teaching</h2>
   <article>
     <h3 id="students">Current Ph.D. Students (3)</h3>
     <table class="striped center-table">
