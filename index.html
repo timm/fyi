@@ -1,496 +1,354 @@
-<!doctype html>
-<!-- npx prettier --write index.html -->
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tim Menzies | AI &amp; Software Engineering</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="container">
-      <header class="profile-header">
-        <!-- div class="header-top">
-          <div class="profile-pic">
-            <img src="timm.png" alt="Tim Menzies" />
-          </div>
-          <div class="header-info">
-            <h2>Tim Menzies</h2>
-            <div class="header-titles">
-              prof, phd, cs, se, ai
-              <br />
-              ACM/IEEE/ASE fellow
-              <br />
-              EIC of ASE journal
-            </div>
-             <-->
-        <img src="banner.png" alt="Tim Menzies" class="banner" />
-        </div>
-        <div class="link-bars">
-          <div class="link-row">
-            <span>
-              <i class="fa-brands fa-google-scholar"></i>
-              <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Scholar</a>
-            </span>
-            <span>
-              <i class="fa-solid fa-file-lines"></i>
-              <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">Pre-prints</a>
-            </span>
-            <span>
-              <i class="fa-solid fa-database"></i>
-              <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a>
-            </span>
-                                  </div>
-        </div>
-
-        <div class="contact-details">
-          <p>rm 3304  &bull; Com. Sci. &bull; EB2, 890 Oval Dr, <br>Raleigh  NC 27606, USA</p>
-              +1-304-376-2859<br>
-
-
-<span>
-              <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:timm@ieee.org">timm@ieee.org</a>
-            </span>
-
-        </div>
-
-      </header>
-      <section id="about">
-        <p class="tagline">AI, with less. Mess to insight. Days to seconds. Bucks to pennies.
-        <p>
-          I earned my Ph.D. in Computer Science from
-          <strong>UNSW</strong>
-          (1995) and am now a Full Professor at
-          <strong>NC State University</strong>
-          , where I direct the
-          <strong>Irrational Research Lab</strong>
-          . My work focuses on
-          <strong>software engineering for AI</strong>
-          , specifically building
-          <strong>data-driven, explainable, and intelligent software systems</strong>
-          . I am an
-          <strong>ACM, IEEE, and ASE Fellow</strong>
-          , and co-creator of the
-          <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>
-          , helping establish modern empirical software engineering by showing that
-          <strong>small, interpretable AI models</strong>
-          can often outperform larger, more complex ones.
-        </p>
-
-        <p>
-          I have published over
-          <strong>300 papers</strong>
-          with more than
-          <strong>24,000 citations</strong>
-          (h-index=74) and have advised
-          <a href="#students"><strong>24 Ph.D. students</strong></a>
-          . I serve as the
-          <strong>Editor-in-Chief</strong>
-          of the
-          <strong>Automated Software Engineering</strong>
-          journal and, from
-          <strong>2010 to 2026</strong>
-          , as an
-          <strong>Associate Editor for IEEE TSE</strong>
-          .
-        </p>
-
-        <p>
-          My research is supported by
-          <strong>$19M</strong>
-          in competitive grants from government (
-          <strong>NASA</strong>
-          ) and industry (<strong>LexisNexis, Microsoft, Meta</strong>). Recent highlights include over
-          <strong>$2.5M from the NSF</strong>
-          and
-          <strong>$1M from the NSA</strong>
-          to advance the science of trustworthy and compact AI. For more information, visit
-          <strong>timm.fyi</strong>
-          .
-        </p>
-
-        <div class="logo-grid">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/NSF_logo.png" alt="NSF" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg" alt="NASA" />
-          <img src="nsa.png" alt="NSA" />
-          <img src="ln.png" alt="LexisNexis" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" />
-        </div>
-
-
-        <div class="center-box">
-          <p><hr>
-  <img src=want.png width=100 align=left style="margin-top:5px; padding-right:5px;"> to help me find and
-  fix problems in <strong>real world</strong> AI/ML systems. Are you are NCState student, or an industrial
-      <strong>partner</strong>, interested in research? Why
-  not join my
-  research <strong>reading group</strong> (run each semester)?
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+  <meta charset="UTF-8">
+  <title>Tim Menzies | AI & Software Engineering</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+    
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 88%;
+      line-height: 1.25;
+      background: #fafafa;
+      color: #333;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto; 
+    }
+    
+    a {
+      color: #CC0000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .banner {
+      width: 100%;
+      max-width: 600px;
+      height: auto !important;
+      border-radius: 10px;
+    }
+    
+    .text-center { text-align: center; }
+    
+    .center-table {
+      margin: 10px auto 0;
+      border-collapse: collapse;
+    }
+    
+    article {
+      background: #eef3f7;
+      padding: 0.4rem 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    article h2, article h3 {
+      border-left: 2px solid rgba(204, 0, 0, 0.5);
+      padding-left: 0.4rem;
+    }
+    
+    article h3 { margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+  <img src="banner.png" alt="Tim Menzies" class="banner">
+  <p>
+    <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">scholar</a> | 
+    <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">pre-prints</a> | 
+    <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a><br>
+    rm 3304 • Com. Sci. • EB2<br>
+    890 Oval Dr • Raleigh • NC, 27606 • USA<br>
+    1-304-376-2859<br>
+    <a href="mailto:timm@ieee.org">timm@ieee.org</a>
   </p>
-        </div><br clear=all>
 
+  <article>
+    <p>I earned my Ph.D. in Computer Science from <strong>UNSW</strong> (1995) and am now a Full Professor at <strong>NC State University</strong>, where I direct the <strong>Irrational Research Lab</strong>. My work focuses on <strong>software engineering for AI</strong>, specifically building <strong>data-driven, explainable, and intelligent software systems</strong>. I am an <strong>ACM, IEEE, and ASE Fellow</strong>, and co-creator of the <a href="https://arxiv.org/pdf/2501.15662"><strong>PROMISE repository</strong></a>, helping establish modern empirical software engineering by showing that <strong>small, interpretable AI models</strong> can often outperform larger, more complex ones.</p>
+    
+    <p>I have published over <strong>300 papers</strong> with more than <strong>24,000 citations</strong> (h-index=74) and have advised <a href="#students"><strong>24 Ph.D. students</strong></a>. I serve as the <strong>Editor-in-Chief</strong> of the <strong>Automated Software Engineering</strong> journal and, from <strong>2010 to 2026</strong>, as an <strong>Associate Editor for IEEE TSE</strong>.</p>
+    
+    <p>My research is supported by <strong>$19M</strong> in competitive grants from government (<strong>NASA</strong>) and industry (<strong>LexisNexis, Microsoft, Meta</strong>). Recent highlights include over <strong>$2.5M from the NSF</strong> and <strong>$1M from the NSA</strong> to advance the science of trustworthy and compact AI. For more information, visit <strong>timm.fyi</strong>.</p>
+    
+    <div class="text-center">
+      <p class="icon-row" style="padding-left: 100px; padding-right: 100px;">
+        <img height="25" align="middle" alt="Microsoft"  src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg">
+        <img height="22" align="middle" alt="Meta"       style="padding:5px;" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg">
+        <img height="32" align="middle" alt="LexisNexis" src="ln.png">
+        <img height="40" align="middle" alt="NSF"        src="https://upload.wikimedia.org/wikipedia/commons/7/7e/NSF_logo.png">
+        <img height="32" align="middle" alt="NASA"       src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg">
+        <img height="32" align="middle" alt="NSA"        src="nsa.png">
+        &nbsp; &nbsp;
+      </p>
+      <p style="padding-left: 100px; padding-right: 100px;">
+        I need you to help me find and fix problems in <strong>real world</strong> AI/ML systems. Are you an NCState student, or an industrial <strong>partner</strong>, interested in research? Why not join my research <strong>reading group</strong> (run each semester)?<br>
+        <img src="want.png" width="100" style="margin-top:5px;" alt="we want you"> 
+      </p>
+    </div>
+  </article>
 
-      </section>
+  <h2>News</h2>
+  <article>
+    <ul>
+      <li><strong>Apr'26:</strong> New talk, ICSE'26, <a href="https://timm.fyi/26smooth.pdf">Hyperparameter optimization and SE</a></li>
+      <li><strong>Apr'26:</strong> New blog, <a href="https://timm.fyi/higher_way.html">New AI: You're Being Promoted, Not Replaced</a></li>
+      <li><strong>Apr'26:</strong> New talk, ICSE'26, <a href="https://timm.fyi/26causal.pdf">Shaky causal structures</a></li>
+      <li><strong>Apr'26:</strong> New paper, JSS, <a href="https://arxiv.org/abs/2509.08667">A heuristic for explaining optimization</a></li>
+      <li><strong>Apr'26:</strong> PC member, FSE'27</li>
+      <li><strong>Mar'26:</strong> Co-chair, Future of SE track, ICSE 2028</li>
+      <li><strong>Mar'26:</strong> PC Member, ICSE'27 NIER</li>
+      <li><strong>Mar'26:</strong> ICSE'26 panel: future of SE</li>
+      <li><strong>Feb'26:</strong> IEEE Fellows Review Committee</li>
+      <li><strong>Jan'26:</strong> Keynote, VerifAI, France</li>
+      <li><strong>Jan'26:</strong> Keynote, SSBSE'26</li>
+    </ul>
+  </article>
 
-      <section id="news">
-        <h2>News</h2>
-        <ul>
-          <li> <strong>Apr'26:</strong>New blog, <a href="https://timm.fyi/higher_way.html">New AI: You're Being Promoted,
-          Not Replaced</a></li>
-          <li> <strong>Apr'26:</strong>New talk, ICSE'26, <a href="https://timm.fyi/26causal.pdf">Shaky causal structures</a></li>
-          <li> <strong>Apr'26:</strong>New paper, JSS, <a href="https://arxiv.org/abs/2509.08667">A heuristic for explaining optimization</a></li>
-          <li> <strong>Apr'26:</strong> PC member, FSE'27 </li>
-          <li>
-            <strong>Mar'26:</strong>
-            Co-chair, Future of SE track, ICSE 2028
-          </li>
-          <li>
-            <strong>Mar'26:</strong>
-            PC Member, ICSE'27 NIER
-          </li>
-          <li>
-            <strong>Mar'26:</strong>
-            ICSE'26 panel: future of SE
-          </li>
-          <li>
-            <strong>Feb'26:</strong>
-            IEEE Fellows Review Committee
-          </li>
-          <li>
-            <strong>Jan'26:</strong>
-            Keynote, VerifAI, France
-          </li>
-          <li>
-            <strong>Jan'26:</strong>
-            Keynote, SSBSE'26
-          </li>
-        </ul>
-        <!---- ul>
-          <li>
-            <strong>Dec'25:</strong>
-            ASE'26, ICSE'26, area chair.
-          </li>
-          <li>
-            <strong>Nov'25:</strong>
-            Reappointed, Editor-in-chief, Autoamted SE journal
-          </li>
-          <li>
-            <strong>Oct'15:</strong>
-            PC Member: ISSTA'26, FSE'26, ICSE NIER'26, CAIN'26
-          </li>
-          <li>
-            <strong>Sep'25:</strong>
-            Invited Talk, Valencia SE Group
-          </li>
-          <li>
-            <strong>Aug'25:</strong>
-            New letter, CACM, The Case for Compact AI
-          </li>
-          <li>
-            <strong>Aug'25:</strong>
-            Keynote, Airbnb Dev Conference, San Francisco
-          </li>
-          <li>
-            <strong>July'25:</strong>
-            PC member: AAAI Social Impact'26, CAIN'26
-          </li>
-          <li>
-            <strong>July'25:</strong>
-            Keynote, Future Advanced Testing Workshop, Paris
-          </li>
-          <li>
-            <strong>June'25:</strong>
-            Keynote, ESEM'25, Hawaii
-          </li>
-          <li>
-            <strong>May'25:</strong>
-            Co-chair, EMSE 2025 Doctoral Symposium
-          </li>
-          <li>
-            <strong>Apr'25:</strong>
-            Andre Motta completes his Ph.D.
-          </li>
-        </ul --->
-      </section>
-
-<section id="research">
-  <h2>Research</h2>
-
+    <h2>Research</h2>
   <article>
     <h3>AI, for Less</h3>
-    <p>
-      I strongly advocate for <strong>"AI, for Less"</strong>. My research shows
-      you do not always need <strong>massive computational power</strong> —
-      simpler, optimized models can yield exceptional results while remaining
-      transparent and trustworthy. We emphasize <strong>reproducibility and
-      simplicity</strong> over "black box" deep learning, and show that
-      <strong>lightweight active learning</strong>, co-training, and warm-starts
-      can match or beat expensive alternatives.
-    </p>
-    <ul class="paper-list">
-            <li>FSE'26: <em>How Low Can You Go? The Data-Light SE Challenge</em> <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>VERIFAI'26: <em>From Verification to Herding: Exploiting Sparsity</em> <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>TOSEM'26: <em>Can LLMs Warm-Start SE Active Learning?</em> <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>CACM'25: <em>The Case for Compact AI</em> <a href="https://cacm.acm.org/opinion/the-case-for-compact-ai/" target="_blank">[pdf]</a></li>
-            <li>TOSEM'24: <em>Learning from Very Little Data</em></li>
-            <li>EMSE'24: <em>When Less Is More: Co-Training for Defect Prediction</em></li>
-            <li>IEEE Access'24: <em>iSNEAK: Partial Ordering for Model-Based Reasoning</em></li>
-            <li>EMSE'22: <em>DebtFree: Minimizing Labeling Cost in Technical Debt</em></li>
+    <p>I strongly advocate for <strong>"AI, for Less"</strong>. My research shows you do not always need <strong>massive computational power</strong> — simpler, optimized models can yield exceptional results while remaining transparent and trustworthy. We emphasize <strong>reproducibility and simplicity</strong> over "black box" deep learning, and show that <strong>lightweight active learning</strong>, co-training, and warm-starts can match or beat expensive alternatives.</p>
+    <ul>
+      <li><b>FSE'26:</b> Data-Light SE Challenge <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>VERIFAI'26:</b> Exploiting Software Sparsity <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>TOSEM'26:</b> LLMs Warming-Up Active Learning <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>CACM'25:</b> The Case for Compact AI <a href="https://cacm.acm.org/opinion/the-case-for-compact-ai/" target="_blank">[pdf]</a></li>
+      <li><b>TOSEM'24:</b> Learning from Very Little Data</li>
+      <li><b>EMSE'24:</b> Co-Training for Defect Prediction</li>
+      <li><b>IEEE Access'24:</b> Partial Ordering for Model Reasoning</li>
+      <li><b>EMSE'22:</b> Minimizing Tech Debt Labeling Cost</li>
     </ul>
   </article>
 
   <article>
-    <h3>LLMs &amp; Deep Learning</h3>
-    <p>
-      Critical assessments of where <strong>LLMs and deep learning help</strong>
-      — and where they hurt — in software engineering tasks. We study how to
-      <strong>prompt, warm-start, and robustify</strong> LLM-based SE pipelines,
-      and identify when <strong>simpler baselines still win</strong>.
-    </p>
-    <ul class="paper-list">
-            <li>EMSE'26: <em>From Brittle to Robust: Improving LLM Annotations for SE Optimization</em> <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>MSR'26: <em>Beyond the Prompt: Domain Knowledge for LLM Optimization</em> <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>IEEE Internet Comput.'23: <em>A Tale of Two Cities: Variances in Robust Deep Learning</em></li>
-            <li>TSE'22: <em>Oversampling for Deep Learning Defect Prediction</em></li>
-            <li>MSR'22: <em>Improving Deep Learning for SE Analytics</em></li>
-            <li>MSR'22: <em>Dazzle: GANs for Security Class Imbalance</em></li>
+    <h3>LLMs & Deep Learning</h3>
+    <p>Critical assessments of where <strong>LLMs and deep learning help</strong> — and where they hurt — in software engineering tasks. We study how to <strong>prompt, warm-start, and robustify</strong> LLM-based SE pipelines, and identify when <strong>simpler baselines still win</strong>.</p>
+    <ul>
+      <li><b>EMSE'26:</b> Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>MSR'26:</b> Domain Knowledge for LLM Optimization <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>IEEE Internet Comput.'23:</b> Variances in Robust DL</li>
+      <li><b>TSE'22:</b> Oversampling for DL Defect Prediction</li>
+      <li><b>MSR'22:</b> Improving DL for SE Analytics</li>
+      <li><b>MSR'22:</b> GANs for Security Class Imbalance</li>
     </ul>
   </article>
 
   <article>
-    <h3>Security &amp; Vulnerability</h3>
-    <p>
-      Practical methods for <strong>vulnerability detection</strong> and
-      cyberthreat intelligence, using <strong>active learning and adversarial
-      ML</strong> to help teams prioritize security efforts without drowning
-      in <strong>false positives</strong>.
-    </p>
-    <ul class="paper-list">
-            <li>KAIS'25: <em>Mining Attack Patterns from CTI Reports</em> <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6" target="_blank">[pdf]</a></li>
-            <li>ICDM'24: <em>ChronoCTI: Temporal Cyberattack Patterns</em></li>
-            <li>EMSE'22: <em>Omni: Automated Ensemble with Unexpected Models Against Adversarial Evasion Attack</em></li>
-            <li>EMSE'21: <em>Better Security Bug Report Classification</em></li>
+    <h3>Security & Vulnerability</h3>
+    <p>Practical methods for <strong>vulnerability detection</strong> and cyberthreat intelligence, using <strong>active learning and adversarial ML</strong> to help teams prioritize security efforts without drowning in <strong>false positives</strong>.</p>
+    <ul>
+      <li><b>KAIS'25:</b> Mining CTI Attack Patterns <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6" target="_blank">[pdf]</a></li>
+      <li><b>ICDM'24:</b> Temporal Cyberattack Patterns</li>
+      <li><b>EMSE'22:</b> Ensembles Against Evasion Attacks</li>
+      <li><b>EMSE'21:</b> Security Bug Report Classification</li>
     </ul>
   </article>
 
   <article>
-    <h3>Defect Prediction &amp; Software Analytics</h3>
-    <p>
-      Building better predictors for <strong>software quality</strong>, project
-      health, and technical debt — using smarter sampling,
-      <strong>transfer learning</strong>, and hyperparameter optimization rather
-      than brute-force compute. Includes <strong>benchmark repositories</strong>
-      for reproducible research across hundreds of SE tasks.
-    </p>
+    <h3>Defect Prediction & Software Analytics</h3>
+    <p>Building better predictors for <strong>software quality</strong>, project health, and technical debt — using smarter sampling, <strong>transfer learning</strong>, and hyperparameter optimization rather than brute-force compute. Includes <strong>benchmark repositories</strong> for reproducible research across hundreds of SE tasks.</p>
     <ul class="paper-list">
-            <li>MSR'26: <em>MOOT: A Repository of Many Multi-Objective Optimization Tasks</em> <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>TSE'25: <em>Is HPO Different for SE Analytics?</em> <a href="https://ieeexplore.ieee.org/document/10919477/" target="_blank">[pdf]</a></li>
-            <li>TSE'25: <em>Retrospective: Static Code Mining for Defect Prediction</em> <a href="https://ieeexplore.ieee.org/document/10869331/" target="_blank">[pdf]</a></li>
-            <li>SIGSOFT SEN'25: <em>ASE'24 Workshop: Replications and Negative Results</em></li>
-            <li>ESA'23: <em>An Expert System for Redesigning SE for the Cloud</em></li>
-            <li>EMSE'22: <em>Revisiting Process vs. Product Metrics</em></li>
-            <li>EMSE'22: <em>Predicting Open Source Project Health</em></li>
-            <li>MSR'22: <em>Stabilizing Models Across Many Projects</em></li>
-            <li>ICSE'21: <em>Early Life Cycle Defect Prediction. Why? How?</em></li>
+      <li><b>MSR'26:</b> Multi-Objective Optimization Repo <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>TSE'25:</b> Is HPO Different for SE? <a href="https://ieeexplore.ieee.org/document/10919477/" target="_blank">[pdf]</a></li>
+      <li><b>TSE'25:</b> Static Code Mining Retrospective <a href="https://ieeexplore.ieee.org/document/10869331/" target="_blank">[pdf]</a></li>
+      <li><b>SIGSOFT SEN'25:</b> Replications & Negative Results</li>
+      <li><b>ESA'23:</b> Expert System for Cloud SE</li>
+      <li><b>EMSE'22:</b> Process vs. Product Metrics</li>
+      <li><b>EMSE'22:</b> Predicting OSS Project Health</li>
+      <li><b>MSR'22:</b> Stabilizing Models Across Projects</li>
+      <li><b>ICSE'21:</b> Early Life Cycle Defect Prediction</li>
     </ul>
   </article>
 
   <article>
-    <h3>Accountability &amp; Trust</h3>
-    <p>
-      AI software must meet the same <strong>correctness and auditability</strong>
-      standards as any safety-critical system. We develop methods to verify,
-      audit, and correct AI outputs — ensuring decisions can be
-      <strong>inspected, reproduced, and challenged</strong> — and probe the
-      fragility of <strong>causal reasoning</strong> in high-stakes environments.
-    </p>
-    <ul class="paper-list">
-            <li>JSS'26: <em>A Heuristic for Explaining Optimization</em> <a href="https://arxiv.org/abs/2509.08667" target="_blank">[pdf]</a></li>
-            <li>IEEE SW'25: <em>AI in State Courts: Navigating Innovation and Ethics</em> <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>EMSE'25: <em>Shaky Structures: Causal Graphs in SE</em> <a href="https://link.springer.com/article/10.1007/s10664-025-10690-6" target="_blank">[pdf]</a></li>
-            <li>EMSE'23: <em>VEER: Interpretability of Model-Based Optimizations</em></li>
-            <li>TSE'24: <em>FairBalance: Equalized Odds via Pre-Processing</em></li>
-            <li>IEEE Access'24: <em>Trading Off Scalability, Privacy, and Performance</em></li>
+    <h3>Accountability & Trust</h3>
+    <p>AI software must meet the same <strong>correctness and auditability</strong> standards as any safety-critical system. We develop methods to verify, audit, and correct AI outputs — ensuring decisions can be <strong>inspected, reproduced, and challenged</strong> — and probe the fragility of <strong>causal reasoning</strong> in high-stakes environments.</p>
+    <ul>
+      <li><b>JSS'26:</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667" target="_blank">[pdf]</a></li>
+      <li><b>IEEE SW'25:</b> AI in State Courts <a href="https://scholar.google.com/scholar?q=%22AI+in+State+Courts:+Navigating+Innovation+and+Ethics+With+Andrea+Miller%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>EMSE'25:</b> Causal Graphs in SE <a href="https://link.springer.com/article/10.1007/s10664-025-10690-6" target="_blank">[pdf]</a></li>
+      <li><b>EMSE'23:</b> Interpreting Model-Based Opt.</li>
+      <li><b>TSE'24:</b> Equalized Odds via Pre-Processing</li>
+      <li><b>IEEE Access'24:</b> Scalability, Privacy, & Performance</li>
     </ul>
   </article>
 
   <article>
     <h3>Other</h3>
-    <ul class="paper-list">
-            <li>ICSE'26: <em>SE Journals in 2036: Looking Back</em> <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">[pdf]</a></li>
-            <li>TSE'24: <em>Scoping SE for AI: The TSE Perspective</em></li>
-            <li>IST'24: <em>Note on the Contributions of Guenther Ruhe</em></li>
-            <li>CACM'23: <em>(Re)Use of Research Results</em></li>
-            <li>IEEE Computer'22: <em>AI and SE: Are We Ready?</em></li>
+    <ul>
+      <li><b>ICSE'26:</b> SE Journals in 2036 <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies" target="_blank">[pdf]</a></li>
+      <li><b>TSE'24:</b> Scoping SE for AI</li>
+      <li><b>IST'24:</b> Contributions of Guenther Ruhe</li>
+      <li><b>CACM'23:</b> (Re)Use of Research Results</li>
+      <li><b>IEEE Computer'22:</b> AI and SE: Are We Ready?</li>
     </ul>
   </article>
 
-</section>
-      <section id="students">
-        <h2>Teaching</h2>
-        <h3>Current Ph.D. Students (3)</h3>
-        <table class="striped">
-          <thead>
-            <tr>
-              <th scope="col">Year</th>
-              <th scope="col">Name</th>
-              <th scope="col">Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2028</td>
-              <td>Srinath Srinivasan</td>
-              <td>NC State</td>
-            </tr>
-            <tr>
-              <td>2027</td>
-              <td>Kishan Ganguly</td>
-              <td>NC State</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Amirali Rayegan</td>
-              <td>NC State</td>
-            </tr>
-          </tbody>
-        </table>
+  <h2>Teaching</h2>
+  <article>
+    <h3 id="students">Current Ph.D. Students (3)</h3>
+    <table class="striped center-table">
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">Name</th>
+          <th scope="col">Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>2028</b></td>
+          <td>Srinath Srinivasan</td>
+          <td>NC State</td>
+        </tr>
+        <tr>
+          <td><b>2027</b></td>
+          <td>Kishan Ganguly</td>
+          <td>NC State</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Amirali Rayegan</td>
+          <td>NC State</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
 
-        <h3>Completed Ph.D.s (24)</h3>
-        <table class="striped">
-          <thead>
-            <tr>
-              <th scope="col">Year</th>
-              <th scope="col">Name</th>
-              <th scope="col">Where Now</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2024</td>
-              <td>Andre Lutosa</td>
-              <td>Red Hat</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Kewen Peng</td>
-              <td>Meta</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Rahul Yedida</td>
-              <td>Lexis Nexis</td>
-            </tr>
-            <tr>
-              <td>2023</td>
-              <td>Sherry (Xueqi) Yang</td>
-              <td>Oracle</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Xiao Ling</td>
-              <td>Meta</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Suvodeep Majumder</td>
-              <td>AWS</td>
-            </tr>
-            <tr>
-              <td>2021</td>
-              <td>Rui Shu</td>
-              <td>Hong Kong</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Shrikanth Chandrasekaran</td>
-              <td>Oracle</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Tianpei (Patrick) Xia</td>
-              <td>NewsBreak</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Huy Tu</td>
-              <td>LinkedIn</td>
-            </tr>
-            <tr>
-              <td>2020</td>
-              <td>Joymallya Chakraborty</td>
-              <td>Amazon</td>
-            </tr>
-            <tr>
-              <td>2019</td>
-              <td>Zhe Yu</td>
-              <td>Rochester Institute of Technology</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Rahul Krishna</td>
-              <td>IBM Research</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Jianfeng Chen</td>
-              <td>Meta</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Amritanshu Agrawal</td>
-              <td>TikTok</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Vivek Nair</td>
-              <td>Meta</td>
-            </tr>
-            <tr>
-              <td>2018</td>
-              <td>Wei Fu</td>
-              <td>Meta</td>
-            </tr>
-            <tr>
-              <td>2014</td>
-              <td>Abdel Salam Sayyad</td>
-              <td>Birzeit University</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Fayola Peters</td>
-              <td>Johnson &amp; Johnson</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Joe Krall</td>
-              <td>Cloudvirga</td>
-            </tr>
-            <tr>
-              <td>2012</td>
-              <td>Ekrem Kocaguneli</td>
-              <td>Pinterest</td>
-            </tr>
-            <tr>
-              <td>2011</td>
-              <td>Ashutosh Nandeshwar</td>
-              <td>CCS Fundraising</td>
-            </tr>
-            <tr>
-              <td>2007</td>
-              <td>David Owen</td>
-              <td>Messiah College</td>
-            </tr>
-            <tr>
-              <td>2004</td>
-              <td>Scott Chen</td>
-              <td>Masimo.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-  </body>
+  <article>
+    <h3>Completed Ph.D.s (24)</h3>
+    <table class="striped center-table">
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">Name</th>
+          <th scope="col">Where Now</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>2024</b></td>
+          <td>Andre Lutosa</td>
+          <td>Red Hat</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Kewen Peng</td>
+          <td>Meta</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Rahul Yedida</td>
+          <td>Lexis Nexis</td>
+        </tr>
+        <tr>
+          <td><b>2023</b></td>
+          <td>Sherry (Xueqi) Yang</td>
+          <td>Oracle</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Xiao Ling</td>
+          <td>Meta</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Suvodeep Majumder</td>
+          <td>AWS</td>
+        </tr>
+        <tr>
+          <td><b>2021</b></td>
+          <td>Rui Shu</td>
+          <td>Hong Kong</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Shrikanth Chandrasekaran</td>
+          <td>Oracle</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Tianpei (Patrick) Xia</td>
+          <td>NewsBreak</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Huy Tu</td>
+          <td>LinkedIn</td>
+        </tr>
+        <tr>
+          <td><b>2020</b></td>
+          <td>Joymallya Chakraborty</td>
+          <td>Amazon</td>
+        </tr>
+        <tr>
+          <td><b>2019</b></td>
+          <td>Zhe Yu</td>
+          <td>Rochester Institute of Technology</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Rahul Krishna</td>
+          <td>IBM Research</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Jianfeng Chen</td>
+          <td>Meta</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Amritanshu Agrawal</td>
+          <td>TikTok</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Vivek Nair</td>
+          <td>Meta</td>
+        </tr>
+        <tr>
+          <td><b>2018</b></td>
+          <td>Wei Fu</td>
+          <td>Meta</td>
+        </tr>
+        <tr>
+          <td><b>2014</b></td>
+          <td>Abdel Salam Sayyad</td>
+          <td>Birzeit University</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Fayola Peters</td>
+          <td>Johnson &amp; Johnson</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Joe Krall</td>
+          <td>Cloudvirga</td>
+        </tr>
+        <tr>
+          <td><b>2012</b></td>
+          <td>Ekrem Kocaguneli</td>
+          <td>Pinterest</td>
+        </tr>
+        <tr>
+          <td><b>2011</b></td>
+          <td>Ashutosh Nandeshwar</td>
+          <td>CCS Fundraising</td>
+        </tr>
+        <tr>
+          <td><b>2007</b></td>
+          <td>David Owen</td>
+          <td>Messiah College</td>
+        </tr>
+        <tr>
+          <td><b>2004</b></td>
+          <td>Scott Chen</td>
+          <td>Masimo.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+</body>
 </html>
