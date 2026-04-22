@@ -6,6 +6,20 @@
   <title>You're Being Promoted, Not Replaced · Tim Menzies</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hdr {
+      display: flex; align-items: center; gap: 16px;
+      padding-bottom: 8px; margin-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .hdr img.pic { width: 105px; border-radius: 15%; }
+    .hdr-info h1 { font-size: 1.6rem; color: var(--heading); margin: 0;
+      text-shadow: 0 0 18px rgba(255,184,108,.22); }
+    .hdr-info .sub { font-size: .85rem; color: var(--muted); line-height: 1.35; }
+    @media (max-width: 520px) {
+      .hdr { flex-direction: column; text-align: center; gap: 8px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,7 +38,17 @@
     </span>
   </div>
 
-  <a href="index.html"><img src="banner.png" alt="Tim Menzies" class="banner"></a>
+  <div class="hdr">
+    <img src="assets/img/timm.png" alt="Tim Menzies" class="pic">
+    <div class="hdr-info">
+      <h1>Tim Menzies</h1>
+      <div class="sub">
+        prof, phd, cs, se, ai<br>
+        ACM / IEEE / ASE Fellow<br>
+        EIC of ASE journal
+      </div>
+    </div>
+  </div>
 
   <div class="kicker">Apr 2026 · 5-minute talk · SE audience</div>
   <h2 style="margin-top:0.3rem;">You're Being Promoted, Not Replaced<span class="cursor">▌</span></h2>
