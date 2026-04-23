@@ -24,7 +24,7 @@
 
 body {
   font-family: "IBM Plex Sans", system-ui, sans-serif;
-  font-size: 82%;
+  font-size: 85%;
   line-height: 1.25;
   background: var(--bg);
   color: var(--fg);
@@ -82,18 +82,22 @@ img[alt="Meta"], img[alt="LexisNexis"], img[alt="NSA"] { filter: invert(1) brigh
   padding: 8px 12px; margin: 0 0 10px; font-size: .88em; line-height: 1.35;
   border-radius: 4px;
   box-shadow: 0 0 12px rgba(255,184,108,.15);
-
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
 }
-.recruit p { margin: 0; }
+.recruit p { margin: 0; flex: 1; min-width: 0; }
 .recruit strong { color: var(--accent); }
 .recruit-title {
   font-family: "IBM Plex Mono", monospace;
   font-size: .72rem; font-weight: 600; letter-spacing: .1em;
   text-transform: uppercase; color: var(--accent);
-  margin-bottom: 4px;
   text-shadow: 0 0 10px rgba(255,184,108,.4);
+  white-space: nowrap;
 }
 .recruit-title i { margin-right: 4px; }
+.recruit-cta {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .78em; white-space: nowrap;
+}
 
 .news-pill {
   display: inline-block;
@@ -137,7 +141,8 @@ img[alt="Meta"], img[alt="LexisNexis"], img[alt="NSA"] { filter: invert(1) brigh
 }
 #t-about:checked ~ #c-about,
 #t-research:checked ~ #c-research,
-#t-teaching:checked ~ #c-teaching { display: block; }
+#t-teaching:checked ~ #c-teaching,
+#t-service:checked ~ #c-service { display: block; }
 
 .tab-content h3 { margin-top: 0; border: none; padding: 0; }
 
@@ -156,7 +161,8 @@ img[alt="Meta"], img[alt="LexisNexis"], img[alt="NSA"] { filter: invert(1) brigh
 }
 .stab-container label:hover { background: #2d333b; }
 .stab-container input[type="radio"]:checked + label {
-  background: var(--accent); color: var(--bg);
+  background: transparent; color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 .stab-content {
   display: none; width: 100%;
@@ -242,15 +248,17 @@ tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
   </div>
 </div>
 
+<div class="recruit">
+  <div class="recruit-title"><i class="fa-solid fa-rocket"></i> Join My Lab?</div>
+  <p>Want to find+fix bugs in <strong>real AI/ML</strong>? Are you NC State or industry?
+    Why not join my <strong>reading group</strong> (every semester)?</p>
+  <a class="recruit-cta" href="mailto:timm@ieee.org">email me &rarr;</a>
+</div>
+
 <!-- TWO COLUMNS: tabbed content (left) + news (right) -->
 <div class="cols">
 
 <div class="col-left">
-<div class="recruit">
-  <div class="recruit-title"><i class="fa-solid fa-rocket"></i> Join My Lab?</div>
-  <p>Help me find and fix problems in <strong>real-world AI/ML systems</strong>.
-    NC State student or industrial partner? Join my research <strong>reading group</strong> (runs each semester).</p>
-</div>
 <div class="tab-container">
   <input type="radio" id="t-about" name="main-tabs" checked>
   <label for="t-about">About</label>
@@ -258,6 +266,8 @@ tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
   <label for="t-research">Research</label>
   <input type="radio" id="t-teaching" name="main-tabs">
   <label for="t-teaching">Teaching</label>
+  <input type="radio" id="t-service" name="main-tabs">
+  <label for="t-service">Service</label>
 
   <!-- ===== ABOUT ===== -->
   <div id="c-about" class="tab-content about">
@@ -409,6 +419,26 @@ tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
     </article>
   </div>
 
+  <!-- ===== SERVICE ===== -->
+  <div id="c-service" class="tab-content">
+    <h3>2026</h3>
+    <ul>
+      <li>Reappointed EIC, ASE journal</li>
+      <li>PC member, FSE'27</li>
+      <li>Co-chair, Future of SE, ICSE'28</li>
+      <li>PC Member, ICSE'27 NIER</li>
+      <li>ICSE'26 panel: future of SE</li>
+      <li>IEEE Fellows Review Committee</li>
+    </ul>
+    <h3>2025</h3>
+    <ul>
+      <li>ASE'26, ICSE'26 area chair</li>
+      <li>PC: ISSTA'26, FSE'26, CAIN'26</li>
+      <li>Talk, Valencia SE Group</li>
+      <li>Co-chair, EMSE Doctoral Symp.</li>
+    </ul>
+  </div>
+
 </div><!-- tab-container -->
 </div><!-- col-left -->
 
@@ -439,6 +469,7 @@ tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
     <li>Keynote, VerifAI, France</li>
     <li>Keynote, SSBSE'26</li>
   </ul>
+  <!--
   <div class="news-month">2025</div>
   <ul>
     <li>CACM, <a href="https://dl.acm.org/doi/10.1145/3746057">The Case for Compact AI</a></li>
@@ -447,25 +478,8 @@ tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
     <li>Keynote, <a href="https://github.com/timm/fyi/blob/main/esem25.pdf">ESEM'25</a>, Hawaii</li>
     <li>Andre Motta completes Ph.D.</li>
   </ul>
+  -->
 
-  <hr class="col-sep">
-  <span class="news-pill">Service</span>
-  <div class="news-month">2026</div>
-  <ul>
-    <li>Reappointed EIC, ASE journal</li>
-    <li>PC member, FSE'27</li>
-    <li>Co-chair, Future of SE, ICSE'28</li>
-    <li>PC Member, ICSE'27 NIER</li>
-    <li>ICSE'26 panel: future of SE</li>
-    <li>IEEE Fellows Review Committee</li>
-  </ul>
-  <div class="news-month">2025</div>
-  <ul>
-    <li>ASE'26, ICSE'26 area chair</li>
-    <li>PC: ISSTA'26, FSE'26, CAIN'26</li>
-    <li>Talk, Valencia SE Group</li>
-    <li>Co-chair, EMSE Doctoral Symp.</li>
-  </ul>
 </div><!-- col-right -->
 
 </div><!-- cols -->
