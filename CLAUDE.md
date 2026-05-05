@@ -52,3 +52,9 @@
 - Don't add features beyond what's asked
 - Keep pages self-contained (single HTML file)
 - When adding news items, separate papers/talks (News) from committee work (Service)
+
+## Handoff Command
+When told to "hand off" or running out of context on a complex task:
+- Write `HANDOFF.md` with: what the task is, what you tried, what worked, what didn't, and what remains
+- Goal: next agent loads `HANDOFF.md` alone and has full context to finish the job
+- Delete `HANDOFF.md` when task is complete
