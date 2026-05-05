@@ -1,18 +1,21 @@
 body {
   padding: 20px;
   margin: 20px auto;
-  max-width: 650px;
+  max-width: 450px;
+  font-size: small;
   background: #1a1a1a;
   color: #d4d4d4;
+  font-family: Optima, Candara, "Gill Sans", "Gill Sans MT", Calibri,
+             "Source Sans Pro", "Trebuchet MS", sans-serif;
 }
 a { color: #d4a574; text-decoration: none; }
 a:hover { text-decoration: underline; }
 nav, h1, h2, h3, p { text-transform: lowercase; }
 h1 { margin-bottom: 0; }
-h2 { margin-top: 1.5em; border-bottom: 1px solid #444; padding-bottom: 4px; }
+h2 { margin-top: 1.5em; border-bottom: 1px solid #444; }
 h3 { margin-top: 1em; }
 table { border-collapse: collapse; width: 100%; margin: 0.5em 0; }
 th, td { padding: 3px 8px; text-align: left; }
 th { border-bottom: 1px solid #444; }
 nav { margin-bottom: 1em; display: flex; justify-content: space-between; }
-hr { border: none; border-top: 1px solid #444; }
+hr { border:none; border-top: 1px solid #444; }
