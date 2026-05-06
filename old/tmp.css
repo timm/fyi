@@ -1,0 +1,16 @@
+body {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 450px;
+  font-size: small;
+  background: #f0ede4;
+  font-family: Optima, Candara, "Gill Sans", "Gill Sans MT", Calibri,
+             "Source Sans Pro", "Trebuchet MS", sans-serif;
+}
+a { color: #a01818; text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav, h1, h2, h3, p { text-transform: lowercase; }
+.up { text-transform: uppercase; }
+h2 { border-bottom: 1px solid #222; }
+nav { margin-bottom: 1em; display: flex; justify-content: space-between; }
+hr { border: none; border-top: 1px solid #222; }
