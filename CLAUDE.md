@@ -5,7 +5,7 @@
 - No build tools, no JS frameworks — pure HTML + CSS
 - CSS-only tabs via radio buttons (no JavaScript)
 - Font Awesome icons, IBM Plex Sans / IBM Plex Mono fonts
-- Blog/sub-pages share the header style via inline `<style>` block + `style.css`
+- All pages (main + blog/sub) use `site.css` (the "99 words of css" — was `min.css` until 2026-05; old `style.css` moved to `old/`)
 
 ## Dark Theme
 - CSS variables defined in `:root` — always use them, never hardcode colors
@@ -42,7 +42,7 @@
 - Funder logos in About tab: two centered rows (MS+Meta top, LN+NSF+NASA+NSA bottom)
 
 ## Sub-Pages (e.g., higher_way.html, irl.html)
-- Same header as home page (photo + name + 3 lines) via inline `<style>` + `style.css`
+- Same header as home page (photo + name + 3 lines), same `site.css`
 - No news column on sub-pages
 - Blinking cursor span: `<span class="cursor">&#9612;</span>`
 

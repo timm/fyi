@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <meta name="description" content="Ph.D. students advised by Tim Menzies at NC State.">
 <title>Teaching | Tim Menzies</title>
-<link rel="stylesheet" href="min.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <main>
@@ -18,7 +18,8 @@
   <b><a href="teaching.html">Teaching</a></b> |
   <a href="service.html">Service</a></span>
   <span><a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">Pre-prints</a> |
-  <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Papers</a></span>
+  <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Papers</a> |
+  <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a></span>
 </nav>
 
 <div style="overflow:auto;">
@@ -36,8 +37,24 @@ style="float: right; margin: 0; border-radius: 8px;">
 
 <hr>
 
-<p>24 Ph.D. students advised + 3 in progress:</p>
+<div id="reading-group" style="max-width: 75%; margin: 1.5em auto; padding: 12px 18px; border: 1px solid #ffb86c; border-radius: 8px; background: #2a2218; text-align: center;">
+<h3 style="margin-top: 0;">join my reading group, fall 2026 ?</h3>
+<p style="margin-bottom: 0;">Weekly meetings on <em>AI for SE for AI</em>. We discuss recent papers; sometimes a discussion spawns a small research task usable for independent study.
+<a href="https://forms.gle/yQuFkgrP3Kkq68Dk6">Sign up for Fall 2026</a>.
+</p>
+</div>
 
+<hr>
+
+<h2>24 Ph.D. students, advised</h2>
+<p>+ 3 in progress.</p>
+
+<!--
+  DATA SOURCE: "Completed Ph.D.s" + "Current Ph.D. Students" tables below.
+  Recompute cumulative count per year when adding/graduating students.
+  Scale: viewBox y=2 (top, ~28 students) to y=30 (bottom, 0); height = 28 * (cum / 28).
+  Faded bars = projected (current students not yet graduated).
+-->
 <p style="text-align:center;font-size:0.9em;color:#888;margin-top:-4px">Cumulative Ph.D.s graduated<br>
 <svg viewBox="0 0 150 42" width="320" height="auto" style="max-width:100%;height:auto;display:block;margin:0 auto" aria-label="Cumulative PhDs graduated, 2004-2028">
   <title>Cumulative PhDs graduated (faded = projected)</title>
@@ -117,9 +134,9 @@ style="float: right; margin: 0; border-radius: 8px;">
 
 <hr>
 <div style="display: flex; justify-content: space-between; align-items: center; font-style:italic;">
-  <a href="https://www.csc.ncsu.edu/"><img src="960px-NC_State_University_brick_logo.svg.png" height="40" alt="NC State"></a>
+  <a href="https://www.csc.ncsu.edu/"><img src="ncsu_brick.png" height="40" alt="NC State"></a>
   <span style="text-align:right;">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
-  <a href="min.css">99 words of css</a><br>
+  <a href="site.css">99 words of css</a><br>
   <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
 </div>
 </main>

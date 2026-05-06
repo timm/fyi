@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <meta name="description" content="Research by Tim Menzies — AI for less, LLMs, security, analytics, trust.">
 <title>Research | Tim Menzies</title>
-<link rel="stylesheet" href="min.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <main>
@@ -18,7 +18,8 @@
   <a href="teaching.html">Teaching</a> |
   <a href="service.html">Service</a></span>
   <span><a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">Pre-prints</a> |
-  <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Papers</a></span>
+  <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Papers</a> |
+  <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a></span>
 </nav>
 
 <div style="overflow:auto;">
@@ -40,6 +41,11 @@ style="float: right; margin: 0; border-radius: 8px;">
 from NASA, NSF, NSA, LexisNexis, Microsoft, Meta, National
 Archives, etc:<br>
 
+<!--
+  DATA SOURCE: grants spreadsheet (linked above). Recompute cumulative totals in
+  2026 dollars (3% inflation) per year. Update bar heights when grants spreadsheet
+  changes. Scale: viewBox y=2 (top, $19.9M) to y=30 (bottom, $0M); height = 28 * (cum / 19.9).
+-->
 <p style="text-align:center;font-size:0.9em;color:#888;margin-top:-4px">Cumulative grants in 2026 dollars (3% inflation) → $19.9M total<br>
 <svg viewBox="-6 0 192 42" width="320" height="auto" style="max-width:100%;height:auto;display:block;margin:0 auto" aria-label="Cumulative grants inflation-adjusted, 1995-2026">
   <title>Cumulative grants, inflation-adjusted to 2026 dollars (3%)</title>
@@ -88,8 +94,49 @@ Archives, etc:<br>
   </g>
 </svg></p>
 
+<!--
+  DATA SOURCE: grants spreadsheet (linked above). Sum per-funder totals, divide
+  by $19.9M for percentages. Industry = Microsoft + Meta + LexisNexis combined.
+  Currently ESTIMATES — replace with real spreadsheet sums when available.
+  Bar width scale: 100px = 100% of $19.9M; e.g. NSF 40% → width=40.
+-->
+<p style="text-align:center;font-size:0.9em;color:#888;margin-top:-4px">Approximate funder breakdown<br>
+<svg viewBox="0 0 200 56" width="320" height="auto" style="max-width:100%;height:auto;display:block;margin:0 auto" aria-label="Approximate funder breakdown of $19.9M total">
+  <title>Approximate funder breakdown</title>
+  <g font-family="monospace" font-size="6" fill="#888">
+    <text x="0" y="7">NSF</text>
+    <rect x="55" y="1" width="40" height="6" fill="#ffb86c"><title>NSF: ~$8.0M (40%)</title></rect>
+    <text x="200" y="7" text-anchor="end">~$8.0M</text>
+
+    <text x="0" y="16">NASA</text>
+    <rect x="55" y="10" width="20" height="6" fill="#ffb86c"><title>NASA: ~$4.0M (20%)</title></rect>
+    <text x="200" y="16" text-anchor="end">~$4.0M</text>
+
+    <text x="0" y="25">Industry</text>
+    <rect x="55" y="19" width="20" height="6" fill="#ffb86c"><title>MS + Meta + LexisNexis: ~$4.0M (20%)</title></rect>
+    <text x="200" y="25" text-anchor="end">~$4.0M</text>
+
+    <text x="0" y="34">NSA</text>
+    <rect x="55" y="28" width="8" height="6" fill="#ffb86c"><title>NSA: ~$1.5M (8%)</title></rect>
+    <text x="200" y="34" text-anchor="end">~$1.5M</text>
+
+    <text x="0" y="43">Nat Archives</text>
+    <rect x="55" y="37" width="5" height="6" fill="#ffb86c"><title>National Archives: ~$1.0M (5%)</title></rect>
+    <text x="200" y="43" text-anchor="end">~$1.0M</text>
+
+    <text x="0" y="52">Other</text>
+    <rect x="55" y="46" width="7" height="6" fill="#ffb86c"><title>Other: ~$1.4M (7%)</title></rect>
+    <text x="200" y="52" text-anchor="end">~$1.4M</text>
+  </g>
+</svg></p>
+
 <p>300+ <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">papers</a>,
 25,000+ citations (h-index=75):</p>
+<!--
+  DATA SOURCE: Google Scholar profile (linked above). Copy "Cited by" per-year
+  bars from Scholar dashboard. Update yearly. Scale: viewBox y=2 (top, ~2200) to
+  y=30 (bottom, 0); height = 28 * (cites / 2200). Pre-1995 bars faded (pre-Scholar coverage).
+-->
 <p style="text-align:center;margin-top:-4px">
 <svg viewBox="54 0 192 42" width="320" height="auto" style="max-width:100%;height:auto;display:block;margin:0 auto" aria-label="Citations per year, 1995-2026">
   <title>Citations/year via Google Scholar</title>
@@ -147,12 +194,97 @@ Archives, etc:<br>
   </g>
 </svg></p>
 
-<h2>AI, for Less</h2>
+<!--
+  DATA SOURCE: https://dblp.org/pid/m/TimMenzies.html (use "by venue" view).
+  Sort ascending, "Other" last. Skip CoRR (arXiv preprints, often duplicates)
+  and LNCS (publisher wrapper, not a venue). Update when refreshing.
+  Last refresh data: TSE 36, IEEE Softw. 31, ICSE 24, EMSE 24, ASE conf 24, FSE 20,
+  PROMISE 19, ESEC 17, ASEJ (Autom. Softw. Eng., journal) 13, MSR 10, IST 10.
+  Note: DBLP "ASE" = ASE conference; ASEJ = Autom. Softw. Eng. journal (Tim is EIC).
+  MERGE RULE: FSE + ESEC are same merged conference (ESEC/FSE since 1999) — DBLP
+  double-tags many entries. Combine FSE+ESEC and dedupe; exclude "Documenting
+  evidence of" paper. Reported in chart as "FSE" with deduped count (~25 estimate;
+  refresh from DBLP for exact).
+  TOTAL CHECK: named venues sum + "Other" should match the Google Scholar
+  "300+ papers" total (named ~220 → Other ~80). DBLP raw total is higher (~380)
+  due to duplicates, workshop papers, etc.; Scholar number is the canonical figure
+  used elsewhere on this page.
+-->
+<p style="text-align:center;font-size:0.9em;color:#888;margin-top:-4px">Top venues, full career (per <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a>)<br>
+<svg viewBox="0 0 200 101" width="320" height="auto" style="max-width:100%;height:auto;display:block;margin:0 auto" aria-label="Top publication venues from DBLP">
+  <title>Top publication venues (DBLP)</title>
+  <g font-family="monospace" font-size="6" fill="#888">
+    <text x="0" y="7">TSE</text>
+    <rect x="55" y="1" width="100" height="6" fill="#ffb86c"><title>IEEE TSE: 36 papers</title></rect>
+    <text x="200" y="7" text-anchor="end">36</text>
+
+    <text x="0" y="16">IEEE Softw.</text>
+    <rect x="55" y="10" width="86" height="6" fill="#ffb86c"><title>IEEE Software: 31 papers</title></rect>
+    <text x="200" y="16" text-anchor="end">31</text>
+
+    <text x="0" y="25">FSE</text>
+    <rect x="55" y="19" width="69" height="6" fill="#ffb86c"><title>FSE/ESEC merged, deduped: ~25 papers</title></rect>
+    <text x="200" y="25" text-anchor="end">~25</text>
+
+    <text x="0" y="34">ICSE</text>
+    <rect x="55" y="28" width="67" height="6" fill="#ffb86c"><title>ICSE: 24 papers</title></rect>
+    <text x="200" y="34" text-anchor="end">24</text>
+
+    <text x="0" y="43">EMSE</text>
+    <rect x="55" y="37" width="67" height="6" fill="#ffb86c"><title>EMSE: 24 papers</title></rect>
+    <text x="200" y="43" text-anchor="end">24</text>
+
+    <text x="0" y="52">ASE (conf)</text>
+    <rect x="55" y="46" width="67" height="6" fill="#ffb86c"><title>ASE conference: 24 papers</title></rect>
+    <text x="200" y="52" text-anchor="end">24</text>
+
+    <text x="0" y="61">PROMISE</text>
+    <rect x="55" y="55" width="53" height="6" fill="#ffb86c"><title>PROMISE: 19 papers</title></rect>
+    <text x="200" y="61" text-anchor="end">19</text>
+
+    <text x="0" y="70">ASE (journal)</text>
+    <rect x="55" y="64" width="36" height="6" fill="#ffb86c"><title>Autom. Softw. Eng. (ASEJ): 13 papers</title></rect>
+    <text x="200" y="70" text-anchor="end">13</text>
+
+    <text x="0" y="79">MSR</text>
+    <rect x="55" y="73" width="28" height="6" fill="#ffb86c"><title>MSR: 10 papers</title></rect>
+    <text x="200" y="79" text-anchor="end">10</text>
+
+    <text x="0" y="88">IST</text>
+    <rect x="55" y="82" width="28" height="6" fill="#ffb86c"><title>Information &amp; Software Technology: 10 papers</title></rect>
+    <text x="200" y="88" text-anchor="end">10</text>
+
+    <text x="0" y="97">TOSEM</text>
+    <rect x="55" y="91" width="11" height="6" fill="#ffb86c"><title>ACM TOSEM: 4 papers</title></rect>
+    <text x="200" y="97" text-anchor="end">4</text>
+  </g>
+</svg>
+Other ~80</p>
+
+<h2>Most-Cited Papers</h2>
+<p style="font-size:0.9em;color:#888;">Top 10 by citation count via <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Google Scholar</a>.</p>
+<ul>
+  <li><b>TSE'07</b> Data Mining Static Code Attributes to Learn Defect Predictors <a href="https://ieeexplore.ieee.org/document/4339702">[pdf]</a> &middot; <i>1,969 cites</i></li>
+  <li><b>PROMISE'12</b> The PROMISE Repository of Empirical SE Data <a href="https://arxiv.org/pdf/2501.15662">[pdf]</a> &middot; <i>1,471 cites</i></li>
+  <li><b>EMSE'09</b> Cross-Company vs. Within-Company Data for Defect Prediction <a href="https://link.springer.com/article/10.1007/s10664-008-9103-7">[pdf]</a> &middot; <i>897 cites</i></li>
+  <li><b>FSE'15</b> Heterogeneous Defect Prediction <a href="https://dl.acm.org/doi/10.1145/2786805.2786814">[pdf]</a> &middot; <i>661 cites</i></li>
+  <li><b>ASEJ'10</b> Defect Prediction from Static Code Features <a href="https://link.springer.com/article/10.1007/s10515-010-0069-5">[pdf]</a> &middot; <i>619 cites</i></li>
+  <li><b>ICSM'08</b> Automated Severity Assessment of Software Defect Reports <a href="https://ieeexplore.ieee.org/document/4658083">[pdf]</a> &middot; <i>432 cites</i></li>
+  <li><b>FSE'21</b> Bias in Machine Learning Software: Why? How? What to do? <a href="https://dl.acm.org/doi/10.1145/3468264.3468537">[pdf]</a> &middot; <i>369 cites</i></li>
+  <li><b>IST'18</b> What is Wrong with Topic Modeling? <a href="https://arxiv.org/abs/1608.08176">[pdf]</a> &middot; <i>351 cites</i></li>
+  <li><b>TSE'07</b> Problems with Precision (response paper) <a href="https://ieeexplore.ieee.org/document/4288196">[pdf]</a> &middot; <i>344 cites</i></li>
+  <li><b>TSE'11</b> On the Value of Ensemble Effort Estimation <a href="https://ieeexplore.ieee.org/document/5928334">[pdf]</a> &middot; <i>340 cites</i></li>
+</ul>
+
+<h2>Recent Work (last five years)</h2>
+<p style="font-size:0.9em;color:#888;">Selected papers, grouped by topic. Full list on <a href="https://dblp.org/pid/m/TimMenzies.html">DBLP</a>.</p>
+
+<h3>AI, for Less</h3>
 <p>Simpler, optimized models yield exceptional results while remaining transparent and trustworthy.</p>
 <ul>
-  <li><b>FSE'26</b> Data-Light SE Challenge <a href="https://scholar.google.com/scholar?q=%22How+Low+Can+You+Go?+The+Data-Light+SE+Challenge%22+Menzies">[pdf]</a></li>
-  <li><b>VERIFAI'26</b> Exploiting Software Sparsity <a href="https://scholar.google.com/scholar?q=%22From+Verification+to+Herding:+Exploiting+Software%27s+Sparsity+of+Influence%22+Menzies">[pdf]</a></li>
-  <li><b>TOSEM'26</b> LLMs Warming-Up Active Learning <a href="https://scholar.google.com/scholar?q=%22Can+Large+Language+Models+Improve+SE+Active+Learning+via+Warm-Starts%3F%22+Menzies">[pdf]</a></li>
+  <li><b>FSE'26</b> Data-Light SE Challenge <a href="https://arxiv.org/abs/2512.13524">[pdf]</a></li>
+  <li><b>VERIFAI'26</b> Exploiting Software Sparsity <a href="https://arxiv.org/pdf/2603.10478">[pdf]</a></li>
+  <li><b>TOSEM'26</b> LLMs Warming-Up Active Learning <a href="https://arxiv.org/abs/2501.00125">[pdf]</a></li>
   <li><b>CACM'25</b> The Case for Compact AI <a href="https://cacm.acm.org/opinion/the-case-for-compact-ai/">[pdf]</a></li>
   <li><b>TOSEM'24</b> Learning from Very Little Data</li>
   <li><b>EMSE'24</b> Co-Training for Defect Prediction</li>
@@ -160,18 +292,18 @@ Archives, etc:<br>
   <li><b>EMSE'22</b> Minimizing Tech Debt Labeling Cost</li>
 </ul>
 
-<h2>LLMs</h2>
+<h3>LLMs</h3>
 <p>Where LLMs and deep learning help &mdash; and where they hurt.</p>
 <ul>
-  <li><b>EMSE'26</b> Improving LLM Annotations <a href="https://scholar.google.com/scholar?q=%22From+Brittle+to+Robust:+Improving+LLM+Annotations+for+SE+Optimization%22+Menzies">[pdf]</a></li>
-  <li><b>MSR'26</b> Domain Knowledge for LLM Optimization <a href="https://scholar.google.com/scholar?q=%22Beyond+the+Prompt:+Assessing+Domain+Knowledge+Strategies+for+High-Dimensional+LLM+Optimization+in+Software+Engineering%22+Menzies">[pdf]</a></li>
+  <li><b>EMSE'26</b> Improving LLM Annotations <a href="https://arxiv.org/pdf/2603.22474">[pdf]</a></li>
+  <li><b>MSR'26</b> Domain Knowledge for LLM Optimization <a href="https://arxiv.org/abs/2602.02752">[pdf]</a></li>
   <li><b>IEEE IC'23</b> Variances in Robust DL</li>
   <li><b>TSE'22</b> Oversampling for DL Defect Prediction</li>
   <li><b>MSR'22</b> Improving DL for SE Analytics</li>
   <li><b>MSR'22</b> GANs for Security Class Imbalance</li>
 </ul>
 
-<h2>Security</h2>
+<h3>Security</h3>
 <p>Vulnerability detection and cyberthreat intelligence via active learning and adversarial ML.</p>
 <ul>
   <li><b>KAIS'25</b> Mining CTI Attack Patterns <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6">[pdf]</a></li>
@@ -180,10 +312,10 @@ Archives, etc:<br>
   <li><b>EMSE'21</b> Security Bug Report Classification</li>
 </ul>
 
-<h2>Analytics</h2>
+<h3>Analytics</h3>
 <p>Better predictors for software quality, project health, and technical debt.</p>
 <ul>
-  <li><b>MSR'26</b> Multi-Objective Optimization Repo <a href="https://scholar.google.com/scholar?q=%22MOOT:+a+Repository+of+Many+Multi-Objective+Optimization+Tasks%22+Menzies">[pdf]</a></li>
+  <li><b>MSR'26</b> Multi-Objective Optimization Repo <a href="https://arxiv.org/pdf/2511.16882">[pdf]</a></li>
   <li><b>TSE'25</b> Is HPO Different for SE? <a href="https://ieeexplore.ieee.org/document/10919477/">[pdf]</a></li>
   <li><b>TSE'25</b> Static Code Mining Retrospective <a href="https://ieeexplore.ieee.org/document/10869331/">[pdf]</a></li>
   <li><b>SIGSOFT SEN'25</b> Replications &amp; Negative Results</li>
@@ -194,7 +326,7 @@ Archives, etc:<br>
   <li><b>ICSE'21</b> Early Life Cycle Defect Prediction</li>
 </ul>
 
-<h2>Trust</h2>
+<h3>Trust</h3>
 <p>Verify, audit, and correct AI outputs &mdash; ensuring decisions can be inspected, reproduced, and challenged.</p>
 <ul>
   <li><b>JSS'26</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667">[pdf]</a></li>
@@ -205,9 +337,9 @@ Archives, etc:<br>
   <li><b>IEEE Access'24</b> Scalability, Privacy, &amp; Performance</li>
 </ul>
 
-<h2>Other</h2>
+<h3>Other</h3>
 <ul>
-  <li><b>ICSE'26</b> SE Journals in 2036 <a href="https://scholar.google.com/scholar?q=%22SE+Journals+in+2036:+Looking+Back+at+the+Future+We+Need+to+Have%22+Menzies">[pdf]</a></li>
+  <li><b>ICSE'26</b> SE Journals in 2036 <a href="https://arxiv.org/pdf/2601.19217">[pdf]</a></li>
   <li><b>TSE'24</b> Scoping SE for AI</li>
   <li><b>IST'24</b> Contributions of Guenther Ruhe</li>
   <li><b>CACM'23</b> (Re)Use of Research Results</li>
@@ -216,9 +348,9 @@ Archives, etc:<br>
 
 <hr>
 <div style="display: flex; justify-content: space-between; align-items: center; font-style:italic;">
-  <a href="https://www.csc.ncsu.edu/"><img src="960px-NC_State_University_brick_logo.svg.png" height="40" alt="NC State"></a>
+  <a href="https://www.csc.ncsu.edu/"><img src="ncsu_brick.png" height="40" alt="NC State"></a>
   <span style="text-align:right;">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
-  <a href="min.css">99 words of css</a><br>
+  <a href="site.css">99 words of css</a><br>
   <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
 </div>
 </main>
