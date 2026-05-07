@@ -27,6 +27,15 @@ table.news td:nth-child(2) { color : #888;
                              width : 25px; }
 table.news td:nth-child(3) { width : 100%; text-align : left; }
 
+.btn       { display : inline-block;
+             padding : 6px 14px;
+             border : 1px solid #ffb86c;
+             border-radius : 8px;
+             cursor : pointer;
+             user-select : none; }
+.btn:hover { background : #ffb86c;
+             color : #1a1a1a; }
+
 nav { display : flex;
       flex-wrap : wrap;
       gap : 8px;
