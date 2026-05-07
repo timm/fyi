@@ -35,5 +35,4 @@ table.news td:nth-child(2) { color : #888;
 nav { display : flex;
       flex-wrap : wrap;
       gap : 8px;
-      justify-content : space-between;
-      margin-bottom : 5px; }
+      justify-content : space-between; }
