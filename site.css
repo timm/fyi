@@ -1,3 +1,5 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
 html { overflow-y : scroll; }
 
 body {
@@ -19,9 +21,8 @@ hr     { border : 0;
 
 table                      { border-collapse : collapse;
                              width : 100%; }
-th, td                     { padding : 3px 8px; }
+th, td, details.older summary { padding : 3px 8px; }
 details.older summary      { cursor : pointer;
-                             padding : 3px 8px;
                              color : #888;
                              list-style : none; }
 
@@ -37,3 +38,9 @@ nav { display : flex;
       flex-wrap : wrap;
       gap : 8px;
       justify-content : space-between; }
+
+.r     { text-align : right; }
+.round { border-radius : 50%; }
+.bigq  { font-size : 2em; line-height : 0; vertical-align : -0.4em; }
+.fit   { max-width : 100%; height : auto; display : block; margin : 0 auto; }
+.foot  { display : flex; justify-content : space-between; align-items : center; font-style : italic; }
