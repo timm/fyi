@@ -1,0 +1,198 @@
+<!--
+  Wikipedia article draft for "Tim Menzies (computer scientist)".
+
+  =============================================================
+  SUBMISSION WORKFLOW (Articles for Creation)
+  =============================================================
+
+  1. CREATE AN ACCOUNT
+     If you don't already have a Wikipedia account, register at
+     https://en.wikipedia.org/wiki/Special:CreateAccount
+     Use a recognisable username; you'll need it for the COI tag.
+
+  2. CREATE THE DRAFT (NOT MAINSPACE)
+     Go to:
+        https://en.wikipedia.org/wiki/Draft:Tim_Menzies_(computer_scientist)
+     The page won't exist yet — click "Create" / "Start the Draft".
+     Paste the entire contents of this file into the editor.
+
+     IMPORTANT: do NOT create the article directly at
+        https://en.wikipedia.org/wiki/Tim_Menzies_(computer_scientist)
+     Self-created mainspace bios get speedy-deleted on COI grounds.
+     The Draft: namespace is the protected workspace.
+
+  3. DECLARE CONFLICT OF INTEREST (TWO PLACES)
+     a. On the draft's TALK page (Draft talk:Tim Menzies (computer
+        scientist)), add a single line:
+            {{Connected contributor|User=YourUserName}}
+        Save with edit summary "COI disclosure".
+
+     b. Optionally, near the top of the draft article itself, add:
+            {{COI|date=May 2026}}
+        Reviewers appreciate transparency; this reduces the chance
+        of a decline purely on COI grounds.
+
+  4. TRIGGER REVIEW
+     The {{subst:submit}} template at the top of this file is what
+     places the draft in the AfC review queue. As long as that
+     template is present when you save, you're queued.
+
+  5. WAIT
+     Volunteer reviewer turnaround is typically 2-3 months
+     (sometimes longer; sometimes a few days). The draft sits
+     unmolested in Draft: while you wait — no urgency to refresh.
+
+  6. RESPOND TO REVIEW
+     Possible outcomes:
+       - Accepted: reviewer moves the page into mainspace; done.
+       - Declined with feedback: revise per their notes, then
+         click "Resubmit" on the decline notice. Common asks:
+         more independent secondary sources, fewer self-published
+         refs. Good additions if requested: profile pieces in
+         IEEE Spectrum / CACM, conference keynote announcements,
+         book reviews, news coverage of fellowship awards.
+       - Rejected: rare; usually only for clear notability fails.
+         Doesn't apply here (NPROF is comfortably satisfied by
+         the ACM/IEEE/ASE Fellow trifecta and EiC role).
+
+  =============================================================
+  IMAGE
+  =============================================================
+
+  The infobox references "Tim Menzies.png", which is uploaded to
+  Wikimedia Commons at:
+     https://commons.wikimedia.org/wiki/File:Tim_Menzies.png
+  Wikipedia will pull it automatically — no further action needed.
+
+  =============================================================
+  POSSIBLE FILL-INS BEFORE SUBMITTING
+  =============================================================
+
+  - Additional independent secondary sources (press profiles,
+    interviews, named-lecture announcements). Heavier independent
+    sourcing reduces the chance of a sourcing-based decline.
+  - If the SIGSOFT/MSR awards page has a more permanent URL than
+    the conference site (2017.msrconf.org may eventually rot),
+    swap it into the msr-2017 reference.
+-->
+
+{{subst:submit}}
+
+{{Short description|Australian-American computer scientist}}
+
+{{Infobox scientist
+| name              = Tim Menzies
+| image             = Tim Menzies.png
+| image_size        = 220px
+| caption           = Menzies in 2025
+| birth_name        = Timothy Menzies
+| birth_date        = {{birth date and age|1960|7|28}}
+| birth_place       = [[Melbourne]], Australia
+| nationality       = Australian, American
+| alma_mater        = [[University of New South Wales]]
+| workplaces        = [[North Carolina State University]] (2014–present)<br />[[West Virginia University]] (2006–2012)<br />[[NASA]] [[Independent Verification and Validation Facility|IV&V Facility]] (2002–2004)
+| fields            = [[Software engineering]]<br />[[Artificial intelligence]]<br />[[Search-based software engineering]]<br />[[Software analytics]]
+| known_for         = PROMISE repository<br />Defect prediction<br />Search-based software engineering
+| awards            = [[Association for Computing Machinery|ACM Fellow]] (2024)<br />[[Institute of Electrical and Electronics Engineers|IEEE Fellow]] (2019)<br />ASE Fellow (2023)<br />MSR Foundational Contribution Award (2017)
+| website           = {{URL|https://timm.fyi}}
+}}
+
+'''Timothy Menzies''' is an Australian-American computer scientist and professor in the Department of Computer Science at [[North Carolina State University]], where he directs the Irrational Research Lab.<ref name="ncsu-acm" /><ref name="irl" /> His research concerns the application of [[artificial intelligence]] and [[data mining]] methods to [[software engineering]], including [[defect prediction]], software effort estimation, [[search-based software engineering]], and [[Explainable artificial intelligence|explainable]] machine learning.<ref name="ncsu-acm" /><ref name="uci-isr" /><ref name="people-of-acm" />
+
+Menzies is a [[Fellow of the Association for Computing Machinery|Fellow of the ACM]] (2024), an [[IEEE Fellow]] (2019), and a Fellow of the Automated Software Engineering community (2023).<ref name="ncsu-acm" /><ref name="people-of-acm" /> He is editor-in-chief of the journal ''Automated Software Engineering''<ref name="timm-fyi" /><ref name="people-of-acm" /> and was an associate editor of ''[[IEEE Transactions on Software Engineering]]'' from 2010 to 2026.<ref name="timm-fyi" /> He is a co-creator of the PROMISE repository, an open archive of software engineering datasets that supports reproducible empirical research.<ref name="ncsu-acm" /><ref name="promise-retrospective" /><ref name="people-of-acm" />
+
+== Education ==
+
+Menzies received his Bachelor of Science in computer science, his Master of Cognitive Science, and his PhD in cognitive science, all from the [[University of New South Wales]] in Australia. His doctorate was awarded in 1995.<ref name="ncsu-acm" /><ref name="uci-isr" />
+
+== Career ==
+
+From 2002 to 2004, Menzies served as the Software Engineering Research Chair at [[NASA]]'s Independent Verification and Validation Facility.<ref name="uci-isr" /> He was an associate professor in the Lane Department of Computer Science and Electrical Engineering at [[West Virginia University]] from 2006 to 2012.<ref name="wvu-today" /> He joined the Department of Computer Science at North Carolina State University in 2014 as a full professor.<ref name="ncsu-acm" />
+
+At North Carolina State, Menzies directs the Irrational Research Lab and curates the PROMISE repository.<ref name="ncsu-acm" /><ref name="irl" /> He has supervised more than twenty doctoral students.<ref name="timm-fyi" />
+
+== Research ==
+
+A unifying theme of Menzies' research is the argument that small, interpretable models can frequently match or outperform larger and more complex approaches in software engineering tasks, sometimes summarized in the phrase "simple ain't stupid".<ref name="timm-fyi" /><ref name="strangest-thing" /><ref name="compact-ai" /><ref name="data-light" /> His work spans [[defect prediction]] from static code attributes,<ref name="data-mining-static" /><ref name="promise-retrospective" /> [[search-based software engineering]], hyperparameter optimization for software analytics, fairness in machine learning systems, and the use of [[active learning]] to reduce labeling cost in empirical software engineering studies.<ref name="ncsu-acm" />
+
+Menzies co-founded the PROMISE conference series on predictive models in software engineering. According to Menzies, the project began in 2004 when, walking through Chicago's Grant Park with collaborator Jelber Sayyad, the two committed to making empirical software engineering reproducible by encouraging authors to share their data alongside their papers — an idea that was, at the time, controversial.<ref name="people-of-acm" /> He has served on program committees and editorial boards for venues including ''IEEE Transactions on Software Engineering'', ''[[Communications of the ACM]]'', ''[[ACM Transactions on Software Engineering and Methodology]]'', ''Empirical Software Engineering'', ''IEEE Software'', and the ''Software Quality Journal''.<ref name="uci-isr" /><ref name="people-of-acm" /> He served as co-general chair of ICSME 2016 and as program co-chair of ASE 2012.<ref name="uci-isr" />
+
+== Awards and honors ==
+
+* 2017: Mining Software Repositories Foundational Contribution Award, for his work on the PROMISE repository<ref name="msr-2017" /><ref name="people-of-acm" />
+* 2019: [[IEEE Fellow]], for contributions to software engineering for artificial intelligence<ref name="research-com" /><ref name="people-of-acm" />
+* 2023: Fellow, Automated Software Engineering<ref name="ncsu-acm" />
+* 2024: [[Fellow of the Association for Computing Machinery]], for contributions to the foundation and application of AI to software engineering<ref name="ncsu-acm" /><ref name="people-of-acm" />
+ 
+
+== Personal life ==
+
+Before beginning his academic career, Menzies worked from 1978 to 1982 as a registered general nurse in hospitals around [[Sydney]].<ref name="timm-fyi" /> From 1985 to 1986, while a student at the [[University of New South Wales]], he served as a co-editor of [[Gamamari|''Tharunka'']], the UNSW student newspaper (since renamed ''[[Gamamari]]'').<ref name="timm-fyi" />
+
+== Selected publications ==
+
+* Menzies, Tim; Owen, David; Richardson, Julian (2007). "The Strangest Thing About Software". ''Computer''. 40 (1): 54–60. {{doi|10.1109/MC.2007.37}}.
+* Menzies, Tim; Greenwald, Jeremy; Frank, Art (2007). "Data Mining Static Code Attributes to Learn Defect Predictors". ''IEEE Transactions on Software Engineering''. 33 (1): 2–13.
+* Turhan, Burak; Menzies, Tim; Bener, Ayşe B.; Di Stefano, Justin (2009). "On the relative value of cross-company and within-company data for defect prediction". ''Empirical Software Engineering''. 14 (5): 540–578.
+* Menzies, Tim; Kocaguneli, Ekrem; Turhan, Burak; Minku, Leandro; Peters, Fayola (2014). ''Sharing Data and Models in Software Engineering''. Morgan Kaufmann. {{ISBN|978-0-12-417295-1}}.
+* Agrawal, Amritanshu; Fu, Wei; Menzies, Tim (2018). "What is wrong with topic modeling? And how to fix it using search-based software engineering". ''Information and Software Technology''. 98: 74–88.
+* Chakraborty, Joymallya; Majumder, Suvodeep; Menzies, Tim (2021). "Bias in Machine Learning Software: Why? How? What to Do?". ''Proceedings of the 29th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2021)''.
+* Menzies, Tim (2025). "Retrospective: Data Mining Static Code Attributes to Learn Defect Predictors". ''IEEE Transactions on Software Engineering''. 51 (3): 858–863. {{doi|10.1109/TSE.2025.3537406}}.
+* Menzies, Tim (2025). "The Case for Compact AI". ''Communications of the ACM''. 68 (9): 6–7. {{doi|10.1145/3746057}}.
+* Ganguly, Kishan Kumar; Menzies, Tim (2026). "How Low Can You Go? The Data-Light SE Challenge". ''Proceedings of the ACM International Conference on the Foundations of Software Engineering (FSE 2026)''.
+
+== References ==
+
+{{reflist|refs=
+
+<ref name="ncsu-acm">{{cite web |title=Tim Menzies named ACM Fellow |url=https://engr.ncsu.edu/news/2025/01/24/tim-menzies-named-acm-fellow/ |publisher=North Carolina State University College of Engineering |date=24 January 2025 |access-date=7 May 2026}}</ref>
+
+<ref name="uci-isr">{{cite web |title=Timothy Menzies |url=https://isr.uci.edu/content/timothy-menzies |publisher=University of California, Irvine — Institute for Software Research |access-date=7 May 2026}}</ref>
+
+<ref name="wvu-today">{{cite web |title=WVU computer science professor Tim Menzies available to discuss Jobs death |url=http://wvutoday-archive.wvu.edu/n/2011/10/06/wvu-computer-science-professor-tim-menzies-available-to-discuss-jobs-death.html |publisher=WVU Today |date=6 October 2011 |access-date=7 May 2026}}</ref>
+
+<ref name="timm-fyi">{{cite web |title=Tim Menzies — AI & Software Engineering |url=https://timm.fyi/ |access-date=7 May 2026}}</ref>
+
+<ref name="irl">{{cite web |title=Irrational Research Lab |url=http://timm.fyi/irl.html |access-date=7 May 2026}}</ref>
+
+<ref name="research-com">{{cite web |title=Tim Menzies: H-index & Awards — Academic Profile |url=https://research.com/u/tim-menzies |publisher=Research.com |access-date=7 May 2026}}</ref>
+
+<ref name="msr-2017">{{cite web |title=MSR 2017 Awards |url=http://2017.msrconf.org/#/awards |publisher=14th International Conference on Mining Software Repositories |date=2017 |access-date=7 May 2026}}</ref>
+
+<ref name="people-of-acm">{{cite web |title=People of ACM — Tim Menzies |url=https://www.acm.org/articles/people-of-acm/2025/tim-menzies |publisher=[[Association for Computing Machinery]] |date=18 March 2025 |access-date=7 May 2026}}</ref>
+
+<ref name="data-mining-static">{{cite journal |last1=Menzies |first1=Tim |last2=Greenwald |first2=Jeremy |last3=Frank |first3=Art |year=2007 |title=Data Mining Static Code Attributes to Learn Defect Predictors |journal=IEEE Transactions on Software Engineering |volume=33 |issue=1 |pages=2–13 |doi=10.1109/TSE.2007.256941}}</ref>
+
+<ref name="promise-retrospective">{{cite journal |last1=Menzies |first1=Tim |year=2025 |title=Retrospective: Data Mining Static Code Attributes to Learn Defect Predictors |journal=IEEE Transactions on Software Engineering |volume=51 |issue=3 |pages=858–863 |doi=10.1109/TSE.2025.3537406 |arxiv=2501.15662}}</ref>
+
+<ref name="strangest-thing">{{cite journal |last1=Menzies |first1=Tim |last2=Owen |first2=David |last3=Richardson |first3=Julian |year=2007 |title=The Strangest Thing About Software |journal=Computer |volume=40 |issue=1 |pages=54–60 |doi=10.1109/MC.2007.37}}</ref>
+
+<ref name="compact-ai">{{cite journal |last1=Menzies |first1=Tim |year=2025 |title=The Case for Compact AI |journal=Communications of the ACM |volume=68 |issue=9 |pages=6–7 |doi=10.1145/3746057 |url=https://dl.acm.org/doi/10.1145/3746057}}</ref>
+
+<ref name="data-light">{{cite conference |last1=Ganguly |first1=Kishan Kumar |last2=Menzies |first2=Tim |year=2026 |title=How Low Can You Go? The Data-Light SE Challenge |conference=ACM International Conference on the Foundations of Software Engineering (FSE 2026) |arxiv=2512.13524}}</ref>
+
+}}
+
+== External links ==
+
+* {{Official website|https://timm.fyi/}}
+* [http://timm.fyi/irl.html Irrational Research Lab]
+* [https://csc.ncsu.edu/people/tjmenzie/ Faculty page at North Carolina State University]
+* {{Google Scholar|7htTUTgmLtUC|Tim Menzies}}
+* [https://dblp.org/pid/m/TimMenzies.html DBLP profile]
+* {{ORCID|0000-0002-5040-3196}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:Menzies, Tim}}
+[[Category:1960 births]]
+[[Category:Living people]]
+[[Category:Scientists from Melbourne]]
+[[Category:21st-century American computer scientists]]
+[[Category:Australian computer scientists]]
+[[Category:North Carolina State University faculty]]
+[[Category:West Virginia University faculty]]
+[[Category:Fellows of the Association for Computing Machinery]]
+[[Category:Fellow Members of the IEEE]]
+[[Category:University of New South Wales alumni]]
+[[Category:Australian emigrants to the United States]]
