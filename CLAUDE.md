@@ -1,79 +1,50 @@
 # Project: timm.fyi — Personal Academic Website
 
 ## Tech Stack
-- Single-file HTML pages with inline `<style>` in `<head>`
-- No build tools, no JS frameworks — pure HTML + CSS
-- CSS-only tabs via radio buttons (no JavaScript)
-- Font Awesome icons, IBM Plex Sans / IBM Plex Mono fonts
-- All pages (main + blog/sub) use `site.css` (the "99 words of css" — was `min.css` until 2026-05; old `style.css` moved to `old/`)
+- Pure HTML + CSS, no build tools, no JS frameworks
+- Single CSS file: `site.css` (the "99 words of css")
+- Font Awesome 6.5.1 via cdnjs `<link>` in each `<head>`
+- Dark theme: bg `#1a1a1a`, fg `#e0e0e0`, accent amber `#ffb86c`, muted `#888`
 
-## Dark Theme
-- CSS variables defined in `:root` — always use them, never hardcode colors
-- Key vars: `--bg`, `--fg`, `--heading`, `--accent` (#ffb86c amber), `--card`, `--card-2`, `--muted`, `--border`
-- Dark logos need `filter: invert(1) brightness(1.05)` (Meta, LexisNexis, NSA)
-- Dashed separators use `--muted` color (not `--border` — too dark to see)
+## Pages
+- **Main 5**: `index.html`, `research.html`, `teaching.html`, `higher_way.html` (blog post), plus `irl.html` (lab home, formerly separate "Service" page dropped 2026-05).
+- **IRL section** (4 pages): `irl.html`, `irl-projects.html`, `irl-people.html`, `irl-collaborators.html`. Linked from main nav as "Lab".
+- **Static assets**: PDFs at root (e.g. `26smooth.pdf`, kept at root for stable external links). Images in `assets/img/`. Old/unlinked stuff moved to `old/`.
 
-## Layout — Home Page (a.html)
-- **Link bar** at top (email, phone, scholar, pre-prints)
-- **Header**: photo (`assets/img/timm.png`, ~105px) + name + 3 subtitle lines
-- **Recruit box** ("Join My Lab?") with rocket icon, full-width above tabs in left column
-- **Two columns**: tabbed content (left), news+service (right, 260px)
-- **Responsive**: stacks at 680px — news goes to BOTTOM (order:1), not top
-- **Gap** between columns: 24px
+## Page Structure
+All pages share:
+- `<nav>`: home icon (left, → `index.html`; on irl pages → `irl.html`) + section links + `papers:` group with arxiv & Scholar icons (right). Flex with `flex-wrap: wrap; gap: 8px;` so it wraps cleanly on narrow screens.
+- Photo + h1 + contact lines (icon + text for phone/email).
+- `<hr>` separators.
+- Footer: NC State logo, copyright, css link, designed.2.last.
 
-## Tabs
-- Top-level: About (default/landing), Research, Teaching
-- Research has 6 sub-tabs: AI for Less, LLMs, Security, Analytics, Trust, Other
-- Pill-style labels, amber background when active
-- Tab content has fade-in animation
-
-## Right Column
-- "News" pill header (styled like always-on tab)
-- Month subheadings in monospace amber uppercase
-- News = papers, talks, blogs, keynotes, milestones
-- Dashed separator (60% width, centered, `--muted` color)
-- "Service" pill header below
-- Service = PC memberships, area chairing, editorial, review committees
-- 2025 items grouped under single "2025" subheading (not per-month)
-
-## Paper Lists
-- Venue in monospace pill: `<b>FSE'26</b>` — styled with `--accent` color, border, rounded
-- Short title + [pdf] link
-- Funder logos in About tab: two centered rows (MS+Meta top, LN+NSF+NASA+NSA bottom)
-
-## Sub-Pages (e.g., higher_way.html, irl.html)
-- Same header as home page (photo + name + 3 lines), same `site.css`
-- No news column on sub-pages
-- Blinking cursor span: `<span class="cursor">&#9612;</span>`
-
-## Style Preferences
-- Compact — minimize vertical scrolling
-- No unnecessary headings — use pill headers or sub-tabs instead
-- Don't add features beyond what's asked
-- Keep pages self-contained (single HTML file)
-- When adding news items, separate papers/talks (News) from committee work (Service)
+## Conventions
+- All visible text lowercase via CSS `text-transform: lowercase` on `nav, h1, h2, h3, p`. Override with inline `style="text-transform:none"` when needed (e.g. mission-statement quote).
+- Recruit-style call-out boxes: amber border, dark `#2a2218` background, centered, max-width 75%. Used for "wanna work with me?" (index), "join my reading group" (teaching `#reading-group`), "join us?" (irl).
+- News table on `index.html`: 3-column `<table class="news">`. Col 1 = `<b>MMM'YR</b>` (skip on continuation rows). Col 2 = type icon (FA, narrow, muted). Col 3 = title with optional `<a>`.
+- Pre-2026 news collapsed in `<details><summary>older news (YEAR)</summary>...</details>`.
 
 ## New Paper Workflow
 When user announces a new accepted paper, update these locations:
 
-1. **index.html → News table** — prepend row at top (look for `ADD-NEWS-HINT` comment).
-2. **research.html → Recent Work `<h3>` matching topic** — insert `<li>` at top (look for `ADD-PAPER-HINT` comment near each topic).
-3. **research.html → venues bar** — increment venue count, recompute bar width = `round(100 * count / 36)` (look for `ADD-PAPER-HINT` in DBLP DATA SOURCE comment block).
-4. **irl-projects.html** — if it fits an existing project, add `<li>` under that section. If it opens a new thread, add a new `<h2>` section (template in `ADD-PROJECT-HINT` comment).
-5. **irl-people.html** — for each student-coauthor, prepend the new paper to their "Recent" line (keep ≤3). Look for `ADD-PAPER-HINT` comment.
+1. **index.html News table** — prepend row (see `ADD-NEWS-HINT` comment for format).
+2. **research.html Recent Work** — insert `<li>` under matching topic h3 (see `ADD-PAPER-HINT` comment).
+3. **research.html venues bar** — increment venue count, bar width = `round(100 * count / 36)`. New venue → `Other` count +1.
+4. **irl-projects.html** — add `<li>` under existing project, OR new `<h2>` section (`ADD-PROJECT-HINT` comment has template).
+5. **irl-people.html** — for each student-coauthor, prepend to their "Recent" `<ul>` (keep ≤3).
 
-**Auto-derive when possible**:
-- Title, authors, abstract — fetch from arxiv URL (`WebFetch`).
-- Student lead — current students listed in `irl-who.html`.
-- Year — from arxiv ID (e.g. `2512.xxxxx` → 2025/2026 boundary; check arxiv submission date).
+**Auto-derive when possible**: title/authors/abstract via `WebFetch` arxiv; student lead from `irl-people.html`; year from arxiv ID + submission date.
 
-**Must ask user**:
-- Topic bucket (Analytics / Trust / LLMs / Security / AI for Less / Trust / Other).
-- Venue (arxiv preprint doesn't say target journal/conf).
-- Whether to create new IRL project section.
+**Must ask user**: topic bucket (AI for Less / LLMs / Security / Analytics / Trust / Other); venue (target journal/conf, since arxiv preprint doesn't say); whether to create new IRL project section.
+
+## Style Preferences
+- Compact — minimize vertical scrolling.
+- Don't add features beyond what's asked.
+- Keep pages self-contained (single HTML file).
+- Less is more: prefer dropping over adding.
 
 ## Handoff Command
 When told to "hand off" or running out of context on a complex task:
-- Write `HANDOFF.md` with: what the task is, what you tried, what worked, what didn't, and what remains
-- Goal: next agent loads `HANDOFF.md` alone and has full context to finish the job
-- Delete `HANDOFF.md` when task is complete
+- Write `HANDOFF.md` with: what the task is, what you tried, what worked, what didn't, and what remains.
+- Goal: next agent loads `HANDOFF.md` alone and has full context to finish the job.
+- Delete `HANDOFF.md` when task is complete.
