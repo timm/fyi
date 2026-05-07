@@ -9,6 +9,19 @@
 <title>Research | Tim Menzies</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="site.css">
+<style>
+  input[name="r"] { display: none; }
+  .tab-content { display: none; }
+  #tab-19m:checked    ~ #grants,
+  #tab-papers:checked ~ #papers,
+  #tab-most:checked   ~ #most,
+  #tab-ai:checked     ~ #ai,
+  #tab-llms:checked   ~ #llms,
+  #tab-sec:checked    ~ #sec,
+  #tab-ana:checked    ~ #ana,
+  #tab-trust:checked  ~ #trust,
+  #tab-other:checked  ~ #other { display: block; }
+</style>
 </head>
 <body>
 <main>
@@ -48,17 +61,31 @@ My students and I seek out, then apply, those shortcuts to make software simpler
 
 <hr>
 
+<input type="radio" name="r" id="tab-19m" checked>
+<input type="radio" name="r" id="tab-papers">
+<input type="radio" name="r" id="tab-most">
+<input type="radio" name="r" id="tab-ai">
+<input type="radio" name="r" id="tab-llms">
+<input type="radio" name="r" id="tab-sec">
+<input type="radio" name="r" id="tab-ana">
+<input type="radio" name="r" id="tab-trust">
+<input type="radio" name="r" id="tab-other">
+
 <div style="text-align:center; margin:1em 0; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
-  <a href="#most-cited" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px;">Most-Cited</a>
-  <a href="#ai-for-less" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px;">AI for Less</a>
-  <a href="#llms" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px;">LLMs</a>
-  <a href="#security" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px;">Security</a>
+  <label for="tab-19m" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">Grants ($19M)</label>
+  <label for="tab-papers" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">Papers (300+)</label>
+  <label for="tab-most" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">Most-Cited</label>
   <div style="flex-basis:100%; height:0;"></div>
-  <a href="#analytics" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px;">Analytics</a>
-  <a href="#trust" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px;">Trust</a>
-  <a href="#other" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px;">Other</a>
+  <label for="tab-ai" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">AI for Less</label>
+  <label for="tab-llms" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">LLMs</label>
+  <label for="tab-sec" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">Security</label>
+  <div style="flex-basis:100%; height:0;"></div>
+  <label for="tab-ana" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">Analytics</label>
+  <label for="tab-trust" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">Trust</label>
+  <label for="tab-other" style="display:inline-block; padding:6px 14px; border:1px solid #ffb86c; border-radius:8px; cursor:pointer; user-select:none;">Other</label>
 </div>
 
+<div id="grants" class="tab-content">
 <p><a href="https://docs.google.com/spreadsheets/d/1Y5YrD3WkZlee7LLXLN5m9vvMPL2qBU-vruHpRr77dqg/edit?gid=676744746#gid=676744746">$19M in grants</a>
 from NASA, NSF, NSA, LexisNexis, Microsoft, Meta, National
 Archives, etc:<br>
@@ -151,7 +178,9 @@ Archives, etc:<br>
     <text x="200" y="52" text-anchor="end">~$1.4M</text>
   </g>
 </svg></p>
+</div>
 
+<div id="papers" class="tab-content">
 <p>300+ <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">papers</a>,
 25,000+ citations (h-index=75):</p>
 <!--
@@ -285,7 +314,9 @@ Archives, etc:<br>
   </g>
 </svg>
 Other ~81</p>
+</div>
 
+<div id="most" class="tab-content">
 <h2 id="most-cited">Most-Cited Papers</h2>
 <p style="font-size:0.9em;color:#888;">Top by citation count via <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Google Scholar</a>.</p>
 <ul>
@@ -300,11 +331,10 @@ Other ~81</p>
   <li><b>TSE'11</b> On the Value of Ensemble Effort Estimation <a href="https://ieeexplore.ieee.org/document/6081882/">[pdf]</a> &middot; <i>340 cites</i></li>
   <li><b>TSE'06</b> Selecting Best Practices for Effort Estimation <a href="https://doi.org/10.1109/TSE.2006.114">[pdf]</a> &middot; <i>335 cites</i></li>
 </ul>
+</div>
 
-<h2>Recent Work (last five years)</h2>
-<p style="font-size:0.9em;color:#888;">Selected papers, grouped by topic.</p>
-
-<h3 id="ai-for-less">AI, for Less</h3>
+<div id="ai" class="tab-content">
+<h2>AI, for Less</h2>
 <p>Simpler, optimized models yield exceptional results while remaining transparent and trustworthy.</p>
 <!-- ADD-PAPER-HINT: insert new <li> at top. Format: <li><b>VENUE'YR</b> Short Title <a href="URL">[pdf]</a></li> -->
 <ul>
@@ -319,7 +349,10 @@ Other ~81</p>
   <li><b>EMSE'22</b> Minimizing Tech Debt Labeling Cost</li>
 </ul>
 
-<h3 id="llms">LLMs</h3>
+</div>
+
+<div id="llms" class="tab-content">
+<h2>LLMs</h2>
 <p>Where LLMs and deep learning help &mdash; and where they hurt.</p>
 <ul>
   <li><b>EMSE'26</b> Improving LLM Annotations <a href="https://arxiv.org/pdf/2603.22474">[pdf]</a></li>
@@ -330,7 +363,10 @@ Other ~81</p>
   <li><b>MSR'22</b> GANs for Security Class Imbalance</li>
 </ul>
 
-<h3 id="security">Security</h3>
+</div>
+
+<div id="sec" class="tab-content">
+<h2>Security</h2>
 <p>Vulnerability detection and cyberthreat intelligence via active learning and adversarial ML.</p>
 <ul>
   <li><b>KAIS'25</b> Mining CTI Attack Patterns <a href="https://link.springer.com/article/10.1007/s10115-025-02491-6">[pdf]</a></li>
@@ -339,7 +375,10 @@ Other ~81</p>
   <li><b>EMSE'21</b> Security Bug Report Classification</li>
 </ul>
 
-<h3 id="analytics">Analytics</h3>
+</div>
+
+<div id="ana" class="tab-content">
+<h2>Analytics</h2>
 <p>Better predictors for software quality, project health, and technical debt.</p>
 <!-- ADD-PAPER-HINT: insert new <li> at top. Format: <li><b>VENUE'YR</b> Short Title <a href="URL">[pdf]</a></li> -->
 <ul>
@@ -355,7 +394,10 @@ Other ~81</p>
   <li><b>ICSE'21</b> Early Life Cycle Defect Prediction</li>
 </ul>
 
-<h3 id="trust">Trust</h3>
+</div>
+
+<div id="trust" class="tab-content">
+<h2>Trust</h2>
 <p>Verify, audit, and correct AI outputs &mdash; ensuring decisions can be inspected, reproduced, and challenged.</p>
 <ul>
   <li><b>JSS'26</b> Explaining Optimization Heuristics <a href="https://arxiv.org/abs/2509.08667">[pdf]</a></li>
@@ -366,7 +408,10 @@ Other ~81</p>
   <li><b>IEEE Access'24</b> Scalability, Privacy, &amp; Performance</li>
 </ul>
 
-<h3 id="other">Other</h3>
+</div>
+
+<div id="other" class="tab-content">
+<h2>Other</h2>
 <ul>
   <li><b>ICSE'26</b> SE Journals in 2036 <a href="https://arxiv.org/pdf/2601.19217">[pdf]</a></li>
   <li><b>TSE'24</b> Scoping SE for AI</li>
@@ -374,6 +419,7 @@ Other ~81</p>
   <li><b>CACM'23</b> (Re)Use of Research Results</li>
   <li><b>IEEE Computer'22</b> AI and SE: Are We Ready?</li>
 </ul>
+</div>
 
 <hr>
 <div style="display: flex; justify-content: space-between; align-items: center; font-style:italic;">
