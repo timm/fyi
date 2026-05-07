@@ -23,6 +23,16 @@ th, td                     { padding : 3px 8px; }
 table.news td:nth-child(2) { color : #888;
                              text-align : center;
                              width : 25px; }
+.news-key                  { color : #888;
+                             font-size : 90%;
+                             text-align : center;
+                             margin : 0 0 8px; }
+.news-key i                { color : #888; }
+details.older summary      { cursor : pointer;
+                             padding : 3px 8px;
+                             color : #888;
+                             list-style : none; }
+details.older summary::-webkit-details-marker { display : none; }
 
 .btn       { display : inline-block;
              padding : 6px 14px;
