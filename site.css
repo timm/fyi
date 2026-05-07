@@ -1,6 +1,10 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
-html { overflow-y : scroll; }
+html { overflow-y : scroll; scroll-behavior : smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior : auto; }
+  .themeswitch::after { transition : none; } }
 
 body {
   padding : 20px;
