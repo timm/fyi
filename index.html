@@ -15,16 +15,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <meta name="description" content="Tim Menzies — professor of CS at NC State. AI, SE, compact models, explainability.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tim Menzies | AI &amp; SE">
+<meta property="og:description" content="Tim Menzies — professor of CS at NC State. AI, SE, compact models, explainability.">
+<meta property="og:url" content="https://timm.fyi/index.html">
+<meta property="og:image" content="https://timm.fyi/assets/img/timm.png">
+<meta name="twitter:card" content="summary_large_image">
 <title>Tim Menzies | AI &amp; SE</title>
 <link rel="stylesheet" href="site.css">
+<script>(function(){var k="theme",d=document.documentElement,s=localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");if(s==="light")d.classList.add("light");window.toggleTheme=function(){d.classList.toggle("light");localStorage.setItem(k,d.classList.contains("light")?"light":"dark");};})();</script>
 <style>
 table.news td:nth-child(2) { color : #888; text-align : center; width : 25px; }
 .news-key                  { color : #888; font-size : 90%; text-align : center; margin : 0 0 8px; }
 .news-key i                { color : #888; }
 </style>
+<script type="application/ld+json">
+{ "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Tim Menzies",
+  "url":"https://timm.fyi/",
+  "image":"https://timm.fyi/assets/img/timm.png",
+  "email":"timm@ieee.org",
+  "telephone":"+1-304-376-2859",
+  "jobTitle":"Professor of Computer Science",
+  "alumniOf":{ "@type":"CollegeOrUniversity", "name":"University of New South Wales" },
+  "affiliation":{ "@type":"CollegeOrUniversity", "name":"North Carolina State University", "url":"https://www.csc.ncsu.edu/" },
+  "sameAs":[ "https://scholar.google.com/citations?user=7htTUTgmLtUC",
+             "https://arxiv.org/a/menzies_t_1",
+             "https://github.com/timm" ] }
+</script>
 </head>
 <body>
 <main>
@@ -34,7 +56,7 @@ table.news td:nth-child(2) { color : #888; text-align : center; width : 25px; }
   <a href="research.html">Research</a> |
   <a href="teaching.html">Teaching</a> |
   <a href="irl.html">Lab</a></span>
-  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a> &middot; <button class="themeswitch" onclick="toggleTheme()" title="Toggle light/dark"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-moon"></i></button></span>
 </nav>
 
 <hr>
@@ -143,7 +165,7 @@ Archives, etc.</p>
 <div class="foot">
   <a href="https://www.csc.ncsu.edu/"><img src="ncsu_brick.png" height="40" alt="NC State"></a>
   <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
-  <a href="site.css">99 words of css</a><br>
+  <a href="site.css">144 words of css</a><br>
   <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
 </div>
 </main>

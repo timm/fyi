@@ -2,7 +2,7 @@
 
 ## Tech Stack
 - Pure HTML + CSS, no build tools, no JS frameworks
-- Single CSS file: `site.css` (the "99 words of css")
+- Single CSS file: `site.css` (the "144 words of css")
 - Font Awesome 6.5.1 via cdnjs `<link>` in each `<head>`
 - Dark theme: bg `#1a1a1a`, fg `#e0e0e0`, accent amber `#ffb86c`, muted `#888`
 

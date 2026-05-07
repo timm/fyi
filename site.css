@@ -44,3 +44,28 @@ nav { display : flex;
 .bigq  { font-size : 2em; line-height : 0; vertical-align : -0.4em; }
 .fit   { max-width : 100%; height : auto; display : block; margin : 0 auto; }
 .foot  { display : flex; justify-content : space-between; align-items : center; font-style : italic; }
+
+@media print { nav, .foot, details { display : none; }
+               body { color : #000; background : #fff; max-width : none; }
+               a { color : #000; } }
+
+html.light body { background : #fff; color : #222; }
+html.light a    { color : #b85c00; }
+html.light .btn { border-color : #b85c00; }
+html.light .btn:hover { background : #b85c00; color : #fff; }
+html.light h2, html.light th, html.light hr { border-color : #ccc; }
+html.light p[style*="#ffb86c"]   { color : #b85c00 !important; }
+html.light div[style*="#2a2218"] { background : #fff5e6 !important; color : #222; }
+html.light .bigq                 { color : #b85c00; }
+
+.themeswitch { background : #333; border : 1px solid #555; border-radius : 999px;
+               width : 44px; height : 22px; position : relative; cursor : pointer;
+               padding : 0; display : inline-flex; align-items : center;
+               justify-content : space-around; vertical-align : middle; }
+.themeswitch i { font-size : 11px; color : #ffb86c; z-index : 1; }
+.themeswitch::after { content : ''; position : absolute; width : 16px; height : 16px;
+                      background : #ffb86c; border-radius : 50%; top : 2px; left : 24px;
+                      transition : left 0.2s; }
+html.light .themeswitch          { background : #fff5e6; border-color : #b85c00; }
+html.light .themeswitch i        { color : #b85c00; }
+html.light .themeswitch::after   { left : 2px; background : #b85c00; }
