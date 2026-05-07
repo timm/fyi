@@ -1,8 +1,10 @@
+html { overflow-y : scroll; }
+
 body {
-  padding : 20px; 
-  margin : 20px auto; 
+  padding : 20px;
+  margin : 20px auto;
   max-width : 500px;
-  background : #1a1a1a; 
+  background : #1a1a1a;
   color : #e0e0e0;
   font : small Optima, "Gill Sans", sans-serif;
 }
