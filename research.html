@@ -209,8 +209,11 @@ Archives, etc:<br>
   DATA SOURCE: https://dblp.org/pid/m/TimMenzies.html (use "by venue" view).
   Sort ascending, "Other" last. Skip CoRR (arXiv preprints, often duplicates)
   and LNCS (publisher wrapper, not a venue). Update when refreshing.
+  ADD-PAPER-HINT: when adding a new paper to a known venue, increment that venue's
+  count + tooltip + label, and recompute bar width = round(100 * count / 36).
+  New venue → +1 to "Other ~80" total below SVG.
   Last refresh data: TSE 36, IEEE Softw. 31, ICSE 24, EMSE 24, ASE conf 24, FSE 20,
-  PROMISE 19, ESEC 17, ASEJ (Autom. Softw. Eng., journal) 13, MSR 10, IST 10.
+  PROMISE 19, ESEC 17, ASEJ (Autom. Softw. Eng., journal) 13, MSR 10, IST 11.
   Note: DBLP "ASE" = ASE conference; ASEJ = Autom. Softw. Eng. journal (Tim is EIC).
   MERGE RULE: FSE + ESEC are same merged conference (ESEC/FSE since 1999) — DBLP
   double-tags many entries. Combine FSE+ESEC and dedupe; exclude "Documenting
@@ -262,8 +265,8 @@ Archives, etc:<br>
     <text x="200" y="79" text-anchor="end">10</text>
 
     <text x="0" y="88">IST</text>
-    <rect x="55" y="82" width="28" height="6" fill="#ffb86c"><title>Information &amp; Software Technology: 10 papers</title></rect>
-    <text x="200" y="88" text-anchor="end">10</text>
+    <rect x="55" y="82" width="31" height="6" fill="#ffb86c"><title>Information &amp; Software Technology: 11 papers</title></rect>
+    <text x="200" y="88" text-anchor="end">11</text>
 
     <text x="0" y="97">TOSEM</text>
     <rect x="55" y="91" width="11" height="6" fill="#ffb86c"><title>ACM TOSEM: 4 papers</title></rect>
@@ -324,7 +327,9 @@ Other ~80</p>
 
 <h3>Analytics</h3>
 <p>Better predictors for software quality, project health, and technical debt.</p>
+<!-- ADD-PAPER-HINT: insert new <li> at top. Format: <li><b>VENUE'YR</b> Short Title <a href="URL">[pdf]</a></li> -->
 <ul>
+  <li><b>IST'26</b> Data-Centric Fuzzing for JS Engines <a href="https://arxiv.org/abs/2512.18102">[pdf]</a></li>
   <li><b>MSR'26</b> Multi-Objective Optimization Repo <a href="https://arxiv.org/pdf/2511.16882">[pdf]</a></li>
   <li><b>TSE'25</b> Is HPO Different for SE? <a href="https://ieeexplore.ieee.org/document/10919477/">[pdf]</a></li>
   <li><b>TSE'25</b> Static Code Mining Retrospective <a href="https://ieeexplore.ieee.org/document/10869331/">[pdf]</a></li>

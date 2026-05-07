@@ -53,6 +53,25 @@
 - Keep pages self-contained (single HTML file)
 - When adding news items, separate papers/talks (News) from committee work (Service)
 
+## New Paper Workflow
+When user announces a new accepted paper, update these locations:
+
+1. **index.html → News table** — prepend row at top (look for `ADD-NEWS-HINT` comment).
+2. **research.html → Recent Work `<h3>` matching topic** — insert `<li>` at top (look for `ADD-PAPER-HINT` comment near each topic).
+3. **research.html → venues bar** — increment venue count, recompute bar width = `round(100 * count / 36)` (look for `ADD-PAPER-HINT` in DBLP DATA SOURCE comment block).
+4. **irl-projects.html** — if it fits an existing project, add `<li>` under that section. If it opens a new thread, add a new `<h2>` section (template in `ADD-PROJECT-HINT` comment).
+5. **irl-people.html** — for each student-coauthor, prepend the new paper to their "Recent" line (keep ≤3). Look for `ADD-PAPER-HINT` comment.
+
+**Auto-derive when possible**:
+- Title, authors, abstract — fetch from arxiv URL (`WebFetch`).
+- Student lead — current students listed in `irl-who.html`.
+- Year — from arxiv ID (e.g. `2512.xxxxx` → 2025/2026 boundary; check arxiv submission date).
+
+**Must ask user**:
+- Topic bucket (Analytics / Trust / LLMs / Security / AI for Less / Trust / Other).
+- Venue (arxiv preprint doesn't say target journal/conf).
+- Whether to create new IRL project section.
+
 ## Handoff Command
 When told to "hand off" or running out of context on a complex task:
 - Write `HANDOFF.md` with: what the task is, what you tried, what worked, what didn't, and what remains
