@@ -29,9 +29,15 @@ wc: ## show word counts (site.css strips :{} before count)
 
 links: ## check for dead local refs in HTML
 	@for f in *.html; do \
-	  for ref in $$(grep -oE 'href="[^"]*"|src="[^"]*"' $$f | grep -vE 'https?://|^href="#|mailto:|tel:' | sed 's/.*"\([^"]*\)".*/\1/' | sort -u); do \
-	    [ -e "$$ref" ] || echo "MISSING: $$f -> $$ref"; \
-	  done; \
+	  grep -oE '(href|src)="[^"]+"' $$f \
+	  | sed 's/.*"\([^"]*\)".*/\1/' \
+	  | grep -vE '^(https?:|mailto:|tel:|#|URL$$)' \
+	  | sed 's/#.*//' \
+	  | sort -u \
+	  | while read ref; do \
+	      [ -z "$$ref" ] && continue; \
+	      [ -e "$$ref" ] || echo "MISSING: $$f -> $$ref"; \
+	    done; \
 	done
 
 clean: ## remove macOS junk + tmp files
