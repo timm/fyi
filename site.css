@@ -4,9 +4,7 @@ body {
   max-width : 500px;
   background : #1a1a1a; 
   color : #e0e0e0;
-  font : small Optima, Candara, "Gill Sans", "Gill Sans MT",
-               Calibri, "Source Sans Pro", "Trebuchet MS", 
-               sans-serif;
+  font : small Optima, "Gill Sans", sans-serif;
 }
 
 a              { color : #ffb86c; text-decoration : none; }
@@ -25,14 +23,12 @@ th, td                     { padding : 3px 8px; }
 table.news td:nth-child(2) { color : #888;
                              text-align : center;
                              width : 25px; }
-table.news td:nth-child(3) { width : 100%; text-align : left; }
 
 .btn       { display : inline-block;
              padding : 6px 14px;
              border : 1px solid #ffb86c;
              border-radius : 8px;
-             cursor : pointer;
-             user-select : none; }
+             cursor : pointer; }
 .btn:hover { background : #ffb86c;
              color : #1a1a1a; }
 
