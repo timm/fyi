@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <meta name="description" content="IRL current research projects — optimization, causality, agentic systems.">
@@ -13,23 +14,23 @@
 <meta property="og:image" content="https://timm.fyi/irl.png">
 <meta name="twitter:card" content="summary_large_image">
 <title>Projects · IRL</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="site.css">
-<script>(function(){var k="theme",d=document.documentElement,s=localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");if(s==="light")d.classList.add("light");window.toggleTheme=function(){d.classList.toggle("light");localStorage.setItem(k,d.classList.contains("light")?"light":"dark");};})();</script>
 </head>
 <body>
 <main>
 
 <nav>
-  <span><a href="irl.html"><i class="fa-solid fa-house"></i></a> |
+  <span><a href="irl.html" aria-label="IRL home"><i class="fa-solid fa-house"></i></a> |
   <b><a href="irl-projects.html">Projects</a></b> |
   <a href="irl-people.html">People</a> |
   <a href="irl-collaborators.html">Collaborators</a></span>
-  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a> &middot; <button class="themeswitch" onclick="toggleTheme()" title="Toggle light/dark"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-moon"></i></button></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
 </nav>
 
 <hr>
 
-<a href="irl.html"><img src="irl.png" alt="IRL — Irrational Research Lab" style="max-width: 100%;"></a>
+<a href="irl.html"><img loading="lazy" src="irl.png" alt="IRL — Irrational Research Lab" style="max-width: 100%;"></a>
 
 <h1>IRL · Projects</h1>
 
@@ -87,11 +88,12 @@ Move beyond coverage to data-centric fuzzing that targets the <em>causes</em> of
 
 <hr>
 <div class="foot">
-  <a href="https://www.ncsu.edu/"><img src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <a href="https://www.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
   <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
-  <a href="site.css">144 words of css</a><br>
+  <a href="site.css">150 words of css</a><br>
   <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
 </div>
 </main>
+<script src="site.js" defer></script>
 </body>
 </html>
