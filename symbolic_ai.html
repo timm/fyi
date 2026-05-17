@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="Is This the Return of Symbolic AI? — Tim Menzies on AGENTS.md, Karpathy's LLM wiki, and where human skill still lives.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Is This the Return of Symbolic AI?">
+<meta property="og:description" content="Tim Menzies on AGENTS.md, Karpathy's LLM wiki, and where human skill still lives.">
+<meta property="og:url" content="https://timm.fyi/symbolic_ai.html">
+<meta property="og:image" content="https://timm.fyi/assets/img/timm.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>Is This the Return of Symbolic AI? | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+<style>
+sup a { text-decoration:none; }
+ol.refs { font-size:0.92em; padding-left:1.4em; }
+ol.refs li { margin:0.3em 0; word-break:break-word; }
+</style>
+</head>
+<body>
+<main>
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="blog.html">Blog</a></b> |
+  <a href="irl.html">Lab</a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+</nav>
+
+<hr>
+
+<img loading="lazy" class="banner" src="assets/img/returnsymbols.png" alt="Is this the return of symbolic AI? Rules, logic, and knowledge are making a comeback.">
+
+<h1>&nbsp;<br>Is This the Return<br>of Symbolic AI?</h1>
+<p><a href="index.html">Tim Menzies</a> &middot; May 2026</p>
+
+<hr>
+
+<p class="quote">
+<span class="bigq">&ldquo;</span>
+Human-readable knowledge just went viral. Phase change? Or hype?
+<span class="bigq">&rdquo;</span>
+</p>
+
+<p>Have things just changed?</p><p>A lot?</p><p>
+For a decade Sutton's bitter lesson<sup><a href="#r1">[1]</a></sup> was gospel: stop curating, scale compute, let the model figure it out. Symbolic AI was the cautionary tale. The LLM era doubled down &mdash; embed everything, retrieve chunks, generate, repeat.</p>
+
+<p>Then quietly, the entire coding agent stack converged on the same artifact. 
+Hints on "how to do it", written in plain markdown at the repo root. Anthropic ships <code>CLAUDE.md</code>. OpenAI Codex ships <code>AGENTS.md</code>. Google ships <code>GEMINI.md</code>. Cursor, Copilot, Windsurf, Cline, Roo &mdash; same idea, different filenames. <code>AGENTS.md</code> emerged from collaborative work across OpenAI Codex, Amp, Google Jules, Cursor, and Factory, now stewarded by the Agentic AI Foundation under the Linux Foundation<sup><a href="#r2">[2]</a></sup>. No schema. No parser. Just markdown the agent reads each session.</p>
+
+<p>Then April 2026 Karpathy &mdash; yeah, the guy who coined "vibe coding" &mdash; drops a GitHub gist<sup><a href="#r3">[3]</a></sup>. Not code. An "idea file." Pitch: stop re-deriving knowledge on every query. Let the LLM compile sources into a structured, cross-referenced markdown wiki. Knowledge compounds instead of evaporating. His line: <em>"Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase"</em><sup><a href="#r4">[4]</a></sup>.</p>
+
+<p>The receipts are wild. 16 million views and 5,000 stars within days<sup><a href="#r5">[5]</a></sup>. 5,000+ stars and 1,294 forks in 48 hours for a document that contains zero code<sup><a href="#r6">[6]</a></sup>. Dozens of GitHub reimplementations inside two weeks. "LLM Wiki v2" extension gist drops April 26, hits 985 stars and 143 forks in 24 hours<sup><a href="#r7">[7]</a></sup>. Shopify CEO Tobi L&uuml;tke ships QMD (a markdown search engine), Karpathy recommends it as the search layer<sup><a href="#r8">[8]</a></sup>. Karpathy's gist explicitly references Vannevar Bush's 1945 memex &mdash; the maintenance problem Bush couldn't solve, the LLM apparently can<sup><a href="#r8">[8]</a></sup>.</p>
+
+<p>Is it a phase change? Six weeks of GitHub enthusiasm isn't a paradigm shift. Same crowd was certain about knowledge graphs in 2023 and agents-as-a-service in 2024. But the <code>AGENTS.md</code> convergence is infrastructure-level, not meme-level. That bit doesn't unwind.</p>
+
+<h2>Two Paths Now Diverge</h2>
+
+<p>They differ in where the human skill lives.</p>
+
+<p><strong>Path one &mdash; Karpathy's version.</strong> The wiki is "AI territory." Karpathy himself: <em>"the LLM writes and maintains all of the data of the wiki. I rarely touch it directly"</em><sup><a href="#r8">[8]</a></sup>. His wiki is 100 articles and 400,000 words and he wrote none of it. The human role: curate sources, ask good questions, consume answers. The trajectory is named on the box: vibe coding (Feb 2025) &rarr; agentic engineering (Jan 2026) &rarr; LLM knowledge bases (Apr 2026). Each phase shifts more cognitive labor to the LLM. On this path, "human skill" reduces to taste-in-sources and quality-of-prompts. Not much else.</p>
+
+<p><strong>Path two &mdash; the production-extended version.</strong> The gist comments and the v2 follow-ups push back hard. The critique: <em>"because the LLM summarizes and compresses sources into wiki pages, there's a risk of hallucinations getting baked in as facts. With pure RAG, a wrong answer is just one wrong answer. With an LLM wiki, a small misunderstanding can quietly propagate across linked pages"</em><sup><a href="#r4">[4]</a></sup>. LLM Wiki v2<sup><a href="#r7">[7]</a></sup> and AKBP add review-gated writes, confidence thresholds, typed relationships, human-in-the-loop checkpoints. On this path, "human skill" lives in three real places:</p>
+
+<div class="callout" style="text-align:left;">
+(a) Writing the schema file (<code>CLAUDE.md</code> / <code>SKILL.md</code> / <code>AGENTS.md</code>) that governs everything.<br>
+(b) Selecting which skill to invoke when.<br>
+(c) Auditing and linting &mdash; actually reading the generated pages against sources.
+</div>
+
+<h2>Teaching Implication</h2>
+
+<p>The teaching implication is sharp. Path one is uncurriculum-able &mdash; "ask better questions" isn't a course. Path two is curriculum-shaped: schema design, skill-selection, audit-discipline, knowing when to override the auto-output. That upstream layer is where human expertise still lives, and it's where the SE course of the next five years probably belongs.</p>
+
+<div class="callout">
+The wiki itself is a byproduct.<br>
+The judgment about what governs it is the actual subject.
+</div>
+
+<hr>
+
+<h2>References</h2>
+<ol class="refs">
+<li id="r1">Sutton, <em>The Bitter Lesson</em>. <a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">incompleteideas.net/IncIdeas/BitterLesson.html</a></li>
+<li id="r2">AGENTS.md open spec. <a href="https://agents.md/">agents.md</a></li>
+<li id="r3">Karpathy, LLM wiki gist. <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</a></li>
+<li id="r4">Joshi, <em>Andrej Karpathy's LLM Wiki: Create Your Own Knowledge Base</em>. <a href="https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5">medium.com</a></li>
+<li id="r5">Dunham, <em>Karpathy's LLM Wiki: How to Actually Use AI So It Stops Starting Over</em>. <a href="https://medium.com/@creativeaininja/karpathys-llm-wiki-how-to-actually-use-ai-so-it-stops-starting-over-21c5146a7b53">medium.com</a></li>
+<li id="r6">Karhade, <em>Andrej Karpathy Killed RAG. Or Did He?</em> <a href="https://pub.towardsai.net/andrej-karpathy-killed-rag-or-did-he-the-llm-wiki-pattern-7824d876e790">pub.towardsai.net</a></li>
+<li id="r7">TamilTech, <em>LLM Wiki v2: Extending Karpathy's Pattern with Production Lessons</em>. <a href="https://tamiltech.in/article/llm-wiki-v2-extending-karpathy-pattern">tamiltech.in</a></li>
+<li id="r8">Starmorph, <em>How to Build Karpathy's LLM Wiki: The Complete Guide</em>. <a href="https://blog.starmorph.com/blog/karpathy-llm-wiki-knowledge-base-guide">blog.starmorph.com</a></li>
+</ol>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
