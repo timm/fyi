@@ -7,7 +7,9 @@
 - Dark theme: bg `#1a1a1a`, fg `#e0e0e0`, accent amber `#ffb86c`, muted `#888`
 
 ## Pages
-- **Main 5**: `index.html`, `research.html`, `teaching.html`, `higher_way.html` (blog post), plus `irl.html` (lab home, formerly separate "Service" page dropped 2026-05).
+- **Personal pages**: `index.html`, `research.html`, `teach.html`, `blog.html`, `news.html`, plus `irl.html` (lab home, formerly separate "Service" page dropped 2026-05).
+- **Blog posts**: `higher_way.html` (Apr'26), `symbolic_ai.html` (May'26). Listed under `blog.html` Posts section.
+- **Nav on personal pages** (uniform): `Home | Research | Teach | Blog | Lab`. `tools.html` exists but is orphaned (Tools removed from nav 2026-05).
 - **IRL section** (4 pages): `irl.html`, `irl-projects.html`, `irl-people.html`, `irl-collaborators.html`. Linked from main nav as "Lab".
 - **Static assets**: PDFs at root (e.g. `26smooth.pdf`, kept at root for stable external links). Images in `assets/img/`. Old/unlinked stuff moved to `old/`.
 
@@ -21,13 +23,13 @@ All pages share:
 ## Conventions
 - All visible text lowercase via CSS `text-transform: lowercase` on `nav, h1, h2, h3, p`. Override with inline `style="text-transform:none"` when needed (e.g. mission-statement quote).
 - Recruit-style call-out boxes: amber border, dark `#2a2218` background, centered, max-width 75%. Used for "wanna work with me?" (index), "join my reading group" (teaching `#reading-group`), "join us?" (irl).
-- News table on `index.html`: 3-column `<table class="news">`. Col 1 = `<b>MMM'YR</b>` (skip on continuation rows). Col 2 = type icon (FA, narrow, muted). Col 3 = title with optional `<a>`.
-- Pre-2026 news collapsed in `<details><summary>older news (YEAR)</summary>...</details>`.
+- News table format: 3-column `<table class="news">`. Col 1 = `<b>MMM'YR</b>` (skip on continuation rows). Col 2 = type icon (FA, narrow, muted). Col 3 = title with optional `<a>`.
+- **News split (2026-05)**: canonical full news lives in `news.html`. `index.html` shows only top 5 rows + "> more news & older" link to `news.html`. When adding news: prepend to `news.html` first, then mirror new top 5 onto `index.html`.
 
 ## New Paper Workflow
 When user announces a new accepted paper, update these locations:
 
-1. **index.html News table** — prepend row (see `ADD-NEWS-HINT` comment for format).
+1. **News** — prepend row to `news.html` (canonical), then mirror onto `index.html` top 5 (drop oldest). See `ADD-NEWS-HINT` comment.
 2. **research.html Recent Work** — insert `<li>` under matching topic h3 (see `ADD-PAPER-HINT` comment).
 3. **research.html venues bar** — increment venue count, bar width = `round(100 * count / 36)`. New venue → `Other` count +1.
 4. **irl-projects.html** — add `<li>` under existing project, OR new `<h2>` section (`ADD-PROJECT-HINT` comment has template).

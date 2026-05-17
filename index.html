@@ -57,6 +57,7 @@ table.news td:nth-child(2) { color : #888; text-align : center; width : 25px; }
   <span><b><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a></b> |
   <a href="research.html">Research</a> |
   <a href="teach.html">Teach</a> |
+  <a href="blog.html">Blog</a> |
   <a href="irl.html">Lab</a></span>
   <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
 </nav>
@@ -74,21 +75,41 @@ style="float: right; margin: 0; border-radius: 8px;">
 
 <hr>
 
-<p class="quote">
-<span class="bigq">&ldquo;</span>
-Software has too many states.<br>People have too little time. Both need shortcuts.
-<span class="bigq">&rdquo;</span>
-</p>
+<!--
+  ADD-NEWS-HINT: canonical news lives in news.html. Mirror only the top 5 rows here.
+  When adding: prepend to news.html FIRST, then mirror the new top 5 rows below.
+  Format: <tr><td><b>MMM'YR</b></td><td><i class="fa-solid fa-ICON" title="TYPE"></i></td><td>VENUE: <a href="URL">title</a></td></tr>
+  Icon by TYPE: paper=fa-file-lines, talk=fa-microphone, keynote=fa-bullhorn,
+  blog=fa-pen, panel=fa-people-group, service=fa-handshake, milestone=fa-flag.
+  Date in MMM'YR (e.g. May'26). Skip <b>MMM'YR</b> for additional rows in same month.
+-->
+<table class="news">
+<tr><td><b>May'26</b></td><td><i class="fa-solid fa-pen" title="blog"></i></td><td><a href="symbolic_ai.html">Return of Symbolic AI?</a></td></tr>
+<tr><td></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>PC, ESEM'26</td></tr>
+<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>SSBSE'26: <a href="https://arxiv.org/pdf/2605.09658">Zoom, Don't Wander</a></td></tr>
+<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>IST: <a href="https://arxiv.org/abs/2512.18102">Coverage to Causes</a></td></tr>
+<tr><td><b>Apr'26</b></td><td><i class="fa-solid fa-microphone" title="talk"></i></td><td>ICSE'26: <a href="https://timm.fyi/26smooth.pdf">HPO and SE</a></td></tr>
+</table>
 
-<P>I am an ACM fellow, IEEE fellow, ASE fellow
+<p class="news-key"><i class="fa-solid fa-file-lines"></i> paper &middot;
+<i class="fa-solid fa-handshake"></i> appointed &middot;
+<i class="fa-solid fa-microphone"></i> talk &middot;
+<i class="fa-solid fa-bullhorn"></i> keynote &middot;
+<i class="fa-solid fa-pen"></i> blog &middot;
+<i class="fa-solid fa-people-group"></i> panel</p>
+
+<p style="text-align:center; margin:1.2em 0;"><a href="news.html" class="btn">&raquo; more news &amp; older</a></p>
+
+<hr>
+
+<p>I am an ACM fellow, IEEE fellow, ASE fellow
 and the editor-in-chief of the
  <a href="https://link.springer.com/journal/10515">Automated SE</a> journal.
  For 2010&ndash;2026
 I was an
-Associate Editor, IEEE TSE</p>
+Associate Editor, IEEE TSE.</p>
 
-</p>
-<p>I earned my phd from UNSW (1995) and am a Full Professor at NC State,
+<p>I earned my PhD from UNSW (1995) and am a Full Professor at NC State,
 where I direct the <a href="irl.html">Irrational Research Lab</a>.
 My work focuses on software engineering for AI &mdash; building
 data-driven, explainable, and intelligent software systems.
@@ -111,60 +132,6 @@ Archives, etc.</p>
 <a href="https://forms.gle/yQuFkgrP3Kkq68Dk6"><i class="fa-solid fa-pen-to-square"></i> sign up</a> for my reading group (Fall 2026).
 </p>
 </div>
-
-
-<!--
-  ADD-NEWS-HINT: prepend new row to top of table.
-  Format: <tr><td><b>MMM'YR</b></td><td><i class="fa-solid fa-ICON" title="TYPE"></i></td><td>VENUE: <a href="URL">title</a></td></tr>
-  Icon by TYPE: paper=fa-file-lines, talk=fa-microphone, keynote=fa-bullhorn,
-  blog=fa-pen, panel=fa-people-group, service=fa-handshake, milestone=fa-flag.
-  If new TYPE introduced, add to .news-key legend above table.
-  Date in MMM'YR (e.g. May'26). Skip <b>MMM'YR</b> for additional rows in same month.
--->
-<p class="news-key"><i class="fa-solid fa-file-lines"></i> paper &middot;
-<i class="fa-solid fa-handshake"></i> appointed &middot;
-<i class="fa-solid fa-microphone"></i> talk &middot;
-<i class="fa-solid fa-bullhorn"></i> keynote &middot;
-<i class="fa-solid fa-pen"></i> blog &middot;
-<i class="fa-solid fa-people-group"></i> panel</p>
-<table class="news">
-<tr><td><b>May'26</b></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>PC Member, ESEM'26</td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>SSBSE'26: <a href="https://arxiv.org/pdf/2605.09658">Zoom, Don't Wander &mdash; Regional Search vs. Pareto vs. Global</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>IST: <a href="https://arxiv.org/abs/2512.18102">From Coverage to Causes: Data-Centric Fuzzing for JS Engines</a></td></tr>
-<tr><td><b>Apr'26</b></td><td><i class="fa-solid fa-microphone" title="talk"></i></td><td>JF talk: ICSE'26: <a href="https://timm.fyi/26smooth.pdf">HPO and SE</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-pen" title="blog"></i></td><td><a href="https://timm.fyi/higher_way.html">Promoted, Not Replaced</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-microphone" title="talk"></i></td><td>JF talk: ICSE'26: <a href="https://timm.fyi/26causal.pdf">shaky causal structures</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>JSS: <a href="https://arxiv.org/abs/2509.08667">explaining optimization</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>TOSEM: LLMs warming-up active learning</td></tr>
-<tr><td></td><td><i class="fa-solid fa-people-group" title="panel"></i></td><td>ICSE'26: Future of SE</td></tr>
-<tr><td><b>Mar'26</b></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>Reappointed EIC, ASE journal</td></tr>
-<tr><td></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>PC Member, FSE'27</td></tr>
-<tr><td></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>Co-chair, Future of SE track, ICSE 2028</td></tr>
-<tr><td></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>PC Member, ICSE'27 NIER</td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>FSE'26: <a href="https://arxiv.org/abs/2512.13524">Data-Light SE Challenge</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>EMSE: <a href="https://arxiv.org/pdf/2603.22474">Improving LLM Annotations</a></td></tr>
-<tr><td><b>Feb'26</b></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>IEEE Fellows Review Committee</td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>VERIFAI'26: <a href="https://arxiv.org/pdf/2603.10478">Exploiting Sparsity</a></td></tr>
-<tr><td><b>Jan'26</b></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>ICSE'26 FOSE: <a href="https://arxiv.org/pdf/2601.19217">SE Journals in 2036</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>MSR: <a href="https://arxiv.org/pdf/2511.16882">Multi-Objective Optimization Repo</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-bullhorn" title="keynote"></i></td><td>VerifAI, France</td></tr>
-<tr><td></td><td><i class="fa-solid fa-bullhorn" title="keynote"></i></td><td>invited keynote, SSBSE'26</td></tr>
-</table>
-
-<details class="older">
-<summary><b>2025</b> &nbsp; &gt; older news</summary>
-<table class="news">
-<tr><td><b>Dec'25</b></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>Area Chair: ASE'26, ICSE'26</td></tr>
-<tr><td><b>Oct'25</b></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>PC Member: ISSTA'26, FSE'26, ICSE NIER'26,<br>CAIN'26</td></tr>
-<tr><td><b>Sep'25</b></td><td><i class="fa-solid fa-microphone" title="talk"></i></td><td>Valencia SE Group</td></tr>
-<tr><td><b>Aug'25</b></td><td><i class="fa-solid fa-file-lines" title="paper"></i></td><td>CACM: <a href="assets/pdf/cacm25.pdf">The Case for Compact AI</a></td></tr>
-<tr><td></td><td><i class="fa-solid fa-bullhorn" title="keynote"></i></td><td>Airbnb Dev Conference, San Francisco</td></tr>
-<tr><td><b>Jul'25</b></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>PC: AAAI Social Impact'26, CAIN'26</td></tr>
-<tr><td></td><td><i class="fa-solid fa-bullhorn" title="keynote"></i></td><td>Future Advanced Testing Workshop, Paris</td></tr>
-<tr><td><b>Jun'25</b></td><td><i class="fa-solid fa-bullhorn" title="keynote"></i></td><td><a href="esem25.pdf">ESEM'25, Hawaii</a></td></tr>
-<tr><td><b>May'25</b></td><td><i class="fa-solid fa-handshake" title="service"></i></td><td>Co-chair, EMSE'25 Doctoral Symposium</td></tr>
-</table>
-</details>
 
 <hr>
 <div class="foot">
