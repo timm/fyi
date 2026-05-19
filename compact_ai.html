@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="The Case for Compact AI &mdash; Tim Menzies on active learning, funneling, and why smarter questioning beats planetary-scale compute.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Case for Compact AI">
+<meta property="og:description" content="Tim Menzies on active learning, funneling, and why smarter questioning beats planetary-scale compute.">
+<meta property="og:url" content="https://timm.fyi/compact_ai.html">
+<meta property="og:image" content="https://timm.fyi/assets/img/compact.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>The Case for Compact AI | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+<style>
+sup a { text-decoration:none; }
+ol.refs { font-size:0.92em; padding-left:1.4em; }
+ol.refs li { margin:0.3em 0; word-break:break-word; }
+</style>
+</head>
+<body>
+<main>
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="blog.html">Blog</a></b> |
+  <a href="irl.html">Lab</a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+</nav>
+
+<hr>
+
+<img loading="lazy" class="banner" src="assets/img/compact-head.png" alt="The case for compact AI: smarter questioning beats planetary-scale compute.">
+
+<h1>&nbsp;<br>The Case for<br>Compact AI</h1>
+<p><a href="index.html">Tim Menzies</a> &middot; Posted Jul 10, 2025</p>
+<p><small>Published as &ldquo;The Case for Compact AI,&rdquo; <em>Communications of the ACM</em> 68(9), Sep 2025, pp.&nbsp;6&ndash;7. <a href="https://doi.org/10.1145/3746057">doi:10.1145/3746057</a><sup><a href="#r0">[0]</a></sup></small></p>
+
+<hr>
+
+<p class="quote">
+<span class="bigq">&ldquo;</span>
+State-of-the-art results come from smarter questioning, not planetary-scale computation.
+<span class="bigq">&rdquo;</span>
+</p>
+
+<p>Reading CACM's March 2025 issue, it struck me how many articles assume Large Language Models are the inevitable and best future path for AI. This post invites you to question that assumption.</p>
+
+<p>To be clear: I use LLMs, a lot &mdash; for <em>solo</em> and <em>tactical</em> tasks such as condensing my arguments into short prose. But for <em>strategic</em> tasks that might be critiqued externally, I need other tools: faster, simpler, and whose reasoning can be explained and audited. I do not want to replace LLMs. I want to ensure we are also supporting and exploring alternatives.</p>
+
+<h2>The 5% Problem</h2>
+
+<p>In software engineering, very few researchers explore alternatives to LLMs. A recent systematic review found only 5% of hundreds of SE LLM papers considered alternatives<sup><a href="#r1">[1]</a></sup>. A major methodological mistake that ignores simpler and faster methods. For instance, UCL researchers found SVM+TF-IDF methods vastly outperformed standard "Big AI" for effort estimation &mdash; 100 times faster, with greater accuracy<sup><a href="#r2">[2]</a></sup>.</p>
+
+<h2>Funneling</h2>
+
+<p>One reason for asking "if not LLM, then what?" is that software often exhibits <em>funneling</em>: despite internal complexity, behavior converges to few outcomes, enabling simpler reasoning<sup><a href="#r3">[3]</a>,<a href="#r4">[4]</a></sup>. Funneling explains how my "BareLogic"<sup><a href="#r5">[5]</a></sup> active learner can build models using very little data for (e.g.) 63 SE multi-objective optimization tasks from the MOOT repository<sup><a href="#r6">[6]</a></sup>. These tasks cover software process decisions, configuration tuning, and learner tuning for analytics &mdash; better advice for project managers, better control of options, sharper local analytics.</p>
+
+<h2>BareLogic</h2>
+
+<p>MOOT includes 100,000s of examples with up to a thousand settings. Each example labelled with up to five effects. Obtaining labels is slow, expensive, error-prone. Hence the task of active learners like BareLogic: find the <em>best</em> example(s), after requesting the <em>least</em> number of labels<sup><a href="#r7">[7]</a></sup>.</p>
+
+<p>BareLogic labels <em>N</em>=4 random examples, then:</p>
+
+<ol>
+<li>Scores and sorts labeled examples by "distance to heaven" (heaven = ideal target, e.g. weight=0, mpg=max).</li>
+<li>Splits the sort into &radic;<em>N</em> <em>best</em> and <em>N</em>&minus;&radic;<em>N</em> <em>rest</em>.</li>
+<li>Trains a two-class Bayes classifier on <em>best</em> and <em>rest</em>.</li>
+<li>Finds unlabeled example X most likely <em>best</em> via<br>
+&nbsp;&nbsp;argmax<sub>X</sub> ( log like(<em>best</em>&nbsp;|&nbsp;X) &minus; log like(<em>rest</em>&nbsp;|&nbsp;X) ).</li>
+<li>Labels X, increments <em>N</em>.</li>
+<li>If <em>N</em> &lt; Stop, go to step 1. Else return top-ranked labeled example and a regression tree built from the <em>N</em> labeled examples.</li>
+</ol>
+
+<p>Written for teaching as a simple demonstrator. But consistent with funneling, this quick-and-dirty tool achieves near optimal results using a handful of labels.</p>
+
+<img loading="lazy" src="assets/img/compact.png" alt="20 runs of BareLogic across 63 multi-objective tasks" style="max-width:100%; height:auto;">
+
+<p>Across 63 tasks: <strong>eight labels yielded 62% of optimal</strong>; 16 reached nearly 80%; 32 approached 90%; 64 barely improved on 32.</p>
+
+<h2>Why It Wins</h2>
+
+<p>State-of-the-art with smarter questioning, not planetary-scale compute. Active learning addresses common LLM concerns:</p>
+
+<div class="callout" style="text-align:left;">
+<strong>slow training</strong> &mdash; BareLogic generated the figure in three minutes on a laptop (63 tasks &times; 20 trials).<br>
+<strong>energy &amp; hardware</strong> &mdash; no billions of parameters, no specialized silicon.<br>
+<strong>testability &amp; reproducibility</strong> &mdash; fast Bayesian active learning, fully repeatable.<br>
+<strong>explainability</strong> &mdash; results explained via small labeled sets (e.g. <em>N</em>=32) and tiny regression trees. Humans can guide reasoning whenever a label is required.
+</div>
+
+<h2>Weight Loss for AI</h2>
+
+<p>I am not the only one proposing weight loss for AI. LLM distillation &mdash; shrinking huge models for specific purposes<sup><a href="#r8">[8]</a></sup> &mdash; already shows giant models are not always necessary. Active learning pushes the idea further: leaner, smarter modeling achieves great results.</p>
+
+<div class="callout">
+Before we build the behemoth,<br>
+why not try something smaller and faster?
+</div>
+
+<hr>
+
+<h2>References</h2>
+<ol class="refs">
+<li id="r0">Menzies, T. <em>The Case for Compact AI.</em> Commun. ACM 68(9), Sep 2025, 6&ndash;7. <a href="https://doi.org/10.1145/3746057">doi:10.1145/3746057</a></li>
+<li id="r1">Hou, X. et al. <em>Large Language Models for SE: A Systematic Literature Review.</em> TOSEM 33, 8 (Sept 2024).</li>
+<li id="r2">Tawosi, V., Moussa, R., Sarro, F. <em>Agile Effort Estimation: Have We Solved the Problem Yet?</em> IEEE Trans SE 49, 4 (2023), 2677&ndash;2697.</li>
+<li id="r3">Menzies, T., Owen, D., Richardson, J. <em>The Strangest Thing About Software.</em> Computer 40, 1 (2007), 54&ndash;60.</li>
+<li id="r4">Lustosa, A., Menzies, T. <em>Less Noise, More Signal: DRR for Better Optimizations of SE Tasks.</em> <a href="https://arxiv.org/abs/2503.21086">arXiv:2503.21086</a></li>
+<li id="r5">Menzies, T. <em>BareLogic Python Source Code.</em> <a href="https://github.com/timm/barelogic/blob/main/src/bl.py">github.com/timm/barelogic</a></li>
+<li id="r6">Menzies, T. <em>MOOT&mdash;Many multi-objective optimization tests.</em> <a href="https://github.com/timm/moot/tree/master/optimize">github.com/timm/moot</a></li>
+<li id="r7">Settles, B. <em>Active learning literature survey.</em> Tech. Rep. 1648, U. Wisconsin-Madison Dept of CS, 2009.</li>
+<li id="r8">Zeming, L. et al. <em>Survey on Knowledge Distillation for Large Language Models.</em> ACM Trans. Int. Systems &amp; Technology (2024).</li>
+</ol>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
