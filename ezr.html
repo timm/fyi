@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="Can AI be Easy? — Tim Menzies on EZR.py, a 400-line toolkit that matches state-of-the-art on 120+ tabular SE tasks.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can AI be Easy?">
+<meta property="og:description" content="A 400-line toolkit that matches state-of-the-art on 120+ tabular SE tasks, 500x faster, with under 100 labels.">
+<meta property="og:url" content="https://timm.fyi/ezr.html">
+<meta property="og:image" content="https://timm.fyi/assets/img/timm.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>Can AI be Easy? | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+<style>
+table.nums              { margin: 0 auto; border-collapse: collapse; }
+table.nums td           { padding: 3px 12px; }
+table.nums td:first-child { color: #888; text-align: right; }
+table.nums td:last-child  { color: #ffb86c; font-weight: bold; }
+</style>
+</head>
+<body>
+<main>
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="blog.html">Blog</a></b> |
+  <a href="irl.html">Lab</a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+</nav>
+
+<hr>
+
+<img loading="lazy" class="banner" src="assets/img/ezr.png" alt="Can AI be Easy? Lessons learned from the EZR.py toolkit. Tim Menzies and Srinath Srinivasan. Lightweight. Interpretable. Effective. Less is more.">
+
+<p class="quote">
+<span class="bigq">&ldquo;</span>
+Before you buy a Ferrari to drive to the grocery store, try walking.
+<span class="bigq">&rdquo;</span>
+</p>
+
+<p style="text-align:center; margin-top: 1.5em;"><a href="index.html">Tim Menzies</a> &amp; <a href="https://srina1h.github.io/">Srinath Srinivasan</a> &middot; June 2026</p>
+
+<p>We built <a href="https://github.com/timm/ezr"><code>EZR.py</code></a>: a 400-line Python toolkit, stdlib only, under 1MB to install. On 120+ tabular SE optimization tasks it matches or beats SMAC3, SHAP, LIME, FASTREAD &mdash; while running 500&times; faster on under 100 labels.</p>
+
+<p>How? Read the code. Strip the redundancy. Many "different" algorithms &mdash; classification, clustering, optimization, text mining &mdash; collapse to the same four classes: <code>Num</code>, <code>Sym</code>, <code>Cols</code>, <code>Data</code>. One-line change flips a decision tree from numeric to symbolic prediction. 1983's Simulated Annealing still beats modern Local Search variants. Naive Bayes in 30 lines beats SVM on text.</p>
+
+<div class="callout" style="text-align:left;">
+<b>Caveat.</b> Scope is tabular SE problems. Generative tasks (LLMs, images) are TBD &mdash; complexity may earn its keep there. But the text-mining result (30-line Naive Bayes beating SVM on FASTREAD) hints the EZR approach may extend past tables into text.
+</div>
+
+<h2>Six Myths</h2>
+<ol>
+<li>Heavy infrastructure is necessary. <em>No &mdash; Python stdlib.</em></li>
+<li>Different tasks need different algorithms. <em>No &mdash; same four classes.</em></li>
+<li>Decision trees differ by prediction type. <em>No &mdash; one-line change.</em></li>
+<li>Newer methods beat older ones. <em>No &mdash; SA'83 still wins.</em></li>
+<li>You need massive labeled data. <em>No &mdash; under 100 labels reach 85-95% of optimal.</em></li>
+<li>Text mining needs advanced models. <em>No &mdash; 30-line Naive Bayes beats SVM.</em></li>
+</ol>
+
+<h2>By the Numbers</h2>
+<table class="nums">
+<tr><td>vs. SMAC3</td><td>500&times; faster</td></tr>
+<tr><td>labels to optimum</td><td>&lt; 100</td></tr>
+<tr><td>features used</td><td>&lt; 10</td></tr>
+<tr><td>code size</td><td>400 lines</td></tr>
+<tr><td>install size</td><td>&lt; 1 MB</td></tr>
+<tr><td>tasks tested</td><td>120+</td></tr>
+</table>
+
+<div class="callout">
+If a simple model matches a complex one,<br>
+the complex one is technical debt.
+</div>
+
+<p>Developers still need to read code. At least for tabular optimization.</p>
+
+<hr>
+
+<p style="text-align:center;"><a href="https://arxiv.org/abs/2606.03640" class="btn"><i class="fa-solid fa-scroll"></i>&nbsp;Read the paper (arXiv:2606.03640)</a></p>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
