@@ -38,3 +38,14 @@ nav  { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; }
 .skip:focus { left:8px; top:8px; background:#ffb86c; color:#1a1a1a; padding:4px 10px; z-index:9; }
 h2[id]:hover::after, h3[id]:hover::after { content:" #"; color:#888; font-weight:normal; }
 body.konami { filter:hue-rotate(180deg); transition:filter 0.4s; }
+
+/* tool pages: man-page READMEs imported from gists (make tools) */
+body.tool { max-width:760px; }
+body.tool pre { background:#222; border:1px solid #333; border-radius:6px;
+                padding:8px 12px; overflow-x:auto; font-size:0.8em; line-height:1.4; }
+body.tool code { font-family:ui-monospace,Menlo,monospace; }
+body.tool p > code, body.tool li > code { background:#222; padding:1px 4px; border-radius:4px; }
+body.tool h2 { margin-top:1.4em; }
+.tools-list h2 { border:0; margin-bottom:0.1em; }
+.tools-list p  { margin-top:0.2em; color:#bbb; }
+.small { font-size:0.55em; color:#888; font-weight:normal; }
