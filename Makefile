@@ -11,7 +11,7 @@ GISTS    ?= $(HOME)/gists
 TOOLS := konfig:konfig:,konfig.md kah-lua:kah-lua:,kah.md lithp:lithp:,lithp.md \
          luamine:luamine:,luamine.md luk:luk:,luk.md repltut:repltut:,Repltut.md
 # gist-only lines dropped before conversion (shields badges, screenshot, Files TOC)
-STRIP := img.shields.io|gist.github.com/user-attachments|\*\*Files:\*\*
+STRIP := img.shields.io|gist.github.com/user-attachments|qr-image|\*\*Files:\*\*
 
 CLS     := '\033[H\033[J'
 cRESET  := '\033[0m'
