@@ -1,6 +1,6 @@
 konfig|portable, self-erasing boilerplate shared across all my gists
 kah-lua|~50 short, reusable lua functions — one file, no deps
-lithp|lib- — less library: the pay-rent subset (130 lines, no deps)
+lithp|lithp — less library: the pay-rent subset (130 lines, no deps)
 luamine|lua data-mining — many learners behind one small engine
 luk|the .luk language: a tiny indentation-based lua dialect
 repltut|how to convert source code into a textbook

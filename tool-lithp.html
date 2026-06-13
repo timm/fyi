@@ -30,7 +30,7 @@
 
 <h3 id="httptinycclithp"><a
 href="http://tiny.cc/lithp"><span>http://tiny.cc/lithp</span></a></h3>
-<p><code>lib-</code> is <strong>less library</strong>: the smallest set
+<p><code>lithp</code> is <strong>less library</strong>: the smallest set
 of Common Lisp add-ons that measurably shrinks application code — five
 plain constructs plus a handful of utilities, ~130 lines total, no
 reader macros, no dependencies. Found by ablation: we wrote the same
@@ -46,9 +46,9 @@ sbcl --script fft.lisp --grows  # timing benchmark</code></pre>
 <p><strong>Sections:</strong> NAME | SYNOPSIS | KIT | UTILITIES | FILES
 | LICENSE</p>
 <h2 id="name">NAME</h2>
-<pre><code>lib- — less library: the pay-rent subset (130 lines, no deps)</code></pre>
+<pre><code>lithp — less library: the pay-rent subset (130 lines, no deps)</code></pre>
 <h2 id="synopsis">SYNOPSIS</h2>
-<pre><code>(load &quot;lib-.lisp&quot;)
+<pre><code>(load &quot;lithp.lisp&quot;)
 (defvar *settings* &#39;((seed . 1234567891) (file . &quot;data.csv&quot;)))
 (defmacro my (k) `(cdr (assoc &#39;,k *settings*)))
 (cli *settings*)                ; -s 42 on argv updates seed
@@ -134,7 +134,7 @@ split csv line; <code>(csv file)</code> rows of things</td>
 </thead>
 <tbody>
 <tr>
-<td><code>lib-.lisp</code></td>
+<td><code>lithp.lisp</code></td>
 <td>this library</td>
 </tr>
 <tr>
