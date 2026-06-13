@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="konfig — a software tool by Tim Menzies.">
+<title>konfig | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="tool">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="tools.html">Tools</a></b> |
+  <a href="blog.html">Blog</a> |
+  <a href="irl.html">Lab</a></span>
+  <span><a href="tools.html" title="All tools">&laquo; all tools</a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<h3 id="httptinycckonfig"><a
+href="http://tiny.cc/konfig"><span>http://tiny.cc/konfig</span></a></h3>
+<p>Portable, self-erasing boilerplate for all my gists: one Makefile
+(help, doctor, lint, push, pdf, tuned shells/editors/mux), one bashrc,
+one init.lua, one tmux.conf, plus isolated nvim/micro configs. A project
+repo is just knobs plus <code>include $(KONFIG)/Makefile</code>. Every
+file these tools generate is buried under a <code>.../konfig/...</code>
+directory — never your real dotfiles — so <code>make death</code> wipes
+the lot and leaves your machine spotless.</p>
+<pre class="bash"><code># install and test-drive from any sibling gist
+git clone http://tiny.cc/konfig
+git clone http://tiny.cc/luamine luamine &amp;&amp; cd luamine
+make help</code></pre>
+<p><strong>Sections:</strong> NAME | SYNOPSIS | OPTIONS | OUTPUT | SEE
+ALSO | LICENSE | AUTHOR</p>
+<h2 id="name">NAME</h2>
+<pre><code>konfig - shared Makefile + dotfiles for sibling gist repos</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code># in a project repo&#39;s Makefile: knobs, guard, include
+KONFIG ?= ../konfig
+APP    := project
+...
+include $(KONFIG)/Makefile
+
+make help|doctor|check|test|push|hist|sh|vi|mux|pdf|death</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>Knobs a repo sets before the include (see style_gist.md):
+
+  APP    project name (tmux socket, NVIM_APPNAME, banner)
+  MAIN   primary source file        (code repos)
+  EXT    source extension           (code repos)
+  LANG   language name              (code repos)
+  LINT   lint command               (code repos)
+  TOOLS  tool:why pairs for doctor
+  PKG    packages doctor suggests installing
+
+Tool tutorials: make.md, bash.md, nvim.md, micro.md, tmux.md.
+Style law for sibling gists: style_code.md, style_gist.md.</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code>make help    banner + every `target: ## desc` line
+make doctor  tool checklist with install hints
+make sh      tuned bash    (banner, git prompt, vi-mode)
+make vi      isolated nvim (catppuccin + tree; --clean)
+make mux     private-socket tmux; `make claude` = 3 panes
+make pdf     a2ps pretty-print -&gt; ~/tmp/konfig/*.pdf
+make death   wipe every generated .../konfig/ dir (2x confirm)
+
+Editors (aliases inside `make sh`): vi=nvim  m=micro.
+All state isolated under ~/.{cache,config,local}/konfig/ + ~/tmp/konfig
+— nothing touches your real dotfiles; `make death` erases it all.</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>luamine   http://tiny.cc/luamine   Lua data mining
+optimiz   http://tiny.cc/optimiz   example datasets
+fft       http://tiny.cc/fft       FFTs + regression trees
+repltut   http://tiny.cc/repltut   REPL tutorial prompts</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+</body>
+</html>

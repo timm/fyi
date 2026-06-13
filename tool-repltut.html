@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="repltut — a software tool by Tim Menzies.">
+<title>repltut | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="tool">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="tools.html">Tools</a></b> |
+  <a href="blog.html">Blog</a> |
+  <a href="irl.html">Lab</a></span>
+  <span><a href="tools.html" title="All tools">&laquo; all tools</a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<h3 id="httptinyccrepltut"><a
+href="http://tiny.cc/repltut"><span>http://tiny.cc/repltut</span></a></h3>
+<p>How to convert source code into a textbook. Prompts and exemplars for
+generating "genetic stanza" REPL tutorials: source files that read
+top-to-bottom as a short paper and load top-to-bottom as code, narrated
+by numbered REPL traces (<code>[1]&gt;</code> ...
+<code>[48]&gt;</code>). Includes the authoring prompt, a worked example
+(Lisp data mining), and the K&amp;R tone exemplar.</p>
+<pre class="bash"><code># install and read
+git clone http://tiny.cc/repltut repltut &amp;&amp; cd repltut
+less author.md</code></pre>
+<img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~repltut~l~150.png" />
+
+<p><strong>Sections:</strong> NAME | SYNOPSIS | OPTIONS | EXEMPLARS |
+OUTPUT | SEE ALSO | LICENSE | AUTHOR</p>
+<p>tutgen.md = meta-prompt: code in, multi-lecture REPL course out
+(harness, audits, weave rules); author.md = the authoring prompt
+(genetic stanza spec, AUTHOR-CONFIG knobs); fri2.md = worked example,
+data-lite active learning in SBCL, 48 REPL steps; kr_ch1.md = K&amp;R
+ch.1 tone calibration; ezr.tex = paper-dialog exemplar (coverage + topic
+order); repl.lua = reference replay harness for verbatim numbered
+traces.</p>
+<h2 id="name">NAME</h2>
+<pre><code>repltut - authoring kit for REPL-driven literate tutorials.
+Paste author.md into an LLM (system prompt, CLAUDE.md, or
+lead of a turn); it writes a tutorial like fri2.md.</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>1. Read author.md; fill in its AUTHOR-CONFIG stanza
+   (audience, language, depth, tone, repl-density...).
+2. Give the prompt + config + your source code to an LLM.
+3. Out comes a stanza-form tutorial: 65-col prose blocks
+   paired with 4-space code blocks, punctuated by numbered
+   REPL traces.</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>AUTHOR-CONFIG knobs (see author.md for full list + defaults):
+
+  audience          one sentence pinning reader background
+  assumed           concepts NOT explained
+  language          target language + runtime
+  depth             terse | standard | verbose
+  tone              academic | textbook | conversational | kr
+  prose-width       columns of prose            (65)
+  stanza-length-cap max code lines per stanza   (10)
+  repl-density      stanzas between REPL traces (3)
+  repl-prompt       trace prompt string         ([1]&gt;)</code></pre>
+<h2 id="exemplars">EXEMPLARS</h2>
+<pre><code>K&amp;R chapter 1        tone and pacing (kr_ch1.md)
+Lions&#39; Commentary    code-as-paper coverage (cited)
+fri2.md              the stanza + numbered-REPL form
+ezr.tex              coverage, topic order, paper dialog</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code>A single markdown/source file. Each stanza: claim -&gt; code -&gt;
+consequence. Every few stanzas, a runnable REPL trace:
+
+  [12]&gt; (adds (mapcar #&#39;second rows) (make-num))
+  #S(NUM :n 398 :mu 23.5 :sd 7.8)</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>luamine   http://tiny.cc/luamine  Lua data mining (same CSV protocol)
+konfig    http://tiny.cc/konfig   shared Makefile, dotfiles</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+</body>
+</html>

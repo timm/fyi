@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="kah-lua — a software tool by Tim Menzies.">
+<title>kah-lua | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="tool">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="tools.html">Tools</a></b> |
+  <a href="blog.html">Blog</a> |
+  <a href="irl.html">Lab</a></span>
+  <span><a href="tools.html" title="All tools">&laquo; all tools</a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<h3 id="httptinycckah-lua"><a
+href="http://tiny.cc/kah-lua"><span>http://tiny.cc/kah-lua</span></a></h3>
+<p>KAH: one file, ~50 short Lua functions that kept reappearing across
+my other Lua projects: lists, strings, random, csv, stats (incl.
+effect-size tests + confusion matrix), objects, tests. No dependencies
+beyond Lua 5.3+. Every function: one line of comment, a few lines of
+code, 65 columns max.</p>
+<pre class="bash"><code># install and test
+git clone http://tiny.cc/konfig ../konfig
+git clone http://tiny.cc/kah-lua kah &amp;&amp; cd kah
+lua kah.lua --all</code></pre>
+<p><a href="http://tiny.cc/kah-lua"><img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~kah-lua~l~150.png"></a></p>
+<p><strong>Sections:</strong> NAME | SYNOPSIS | OPTIONS | TESTS | OUTPUT
+| EXIT | SEE ALSO | LICENSE | AUTHOR</p>
+<h2 id="name">NAME</h2>
+<pre><code>kah - useful short lua functions. one file, zero deps,
+Lua 5.3+. import as a library or run its demos from the
+command line.</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>local l = require&quot;kah&quot;           -- library
+lua kah.lua [-h] [--ACTION]...   -- demos/tests
+
+luarocks install kah             -- via luarocks</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>Topic areas inside kah.lua (one ## section each):
+
+  rand     srand rand any anys shuffle pickDict irwinHall
+           (portable Park-Miller PRNG: seeded runs match
+            across machines and languages)
+  lists    push sort same nth lt gt map kap keys list
+           copy deepCopy slice keysort argmin
+  objects  new (metatable binder; tiny OO in one line)
+  strings  fmt trim thing o o2
+  files    path csv
+  stats    sum mean welford welfords sd mode ent bisect
+           pooledSd cliffsDelta ks sames topTier
+  Confuse  confusion matrix: new add scores show
+  test     chk run1 main (reusable argv eg-runner: any
+           eg{} table gets -h/--all/--name dispatch free)
+
+n.b. same(x) = identity; sames(xs,ys) = stats-same
+(median gap + Cliff&#39;s delta + KS, all must agree).</code></pre>
+<h2 id="tests">TESTS</h2>
+<pre><code>Every action is a test; --all runs them all:
+
+  lua kah.lua --all
+  lua kah.lua --lists --stats      # run a subset
+
+Actions: --confuse --copy --csv --lists --obj --rand
+         --sames --stats --str
+Each prints `tag = value` check lines; runs end
+&quot;all pass&quot; or &quot;N failed&quot;.</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code>E.g. `lua kah.lua --stats`:
+
+  -- --stats
+  mu = 3
+  sd = 1.58
+  ...
+  all pass</code></pre>
+<h2 id="exit">EXIT</h2>
+<pre><code>0 always (failures print as FAIL lines; grep FAIL to
+detect). Non-zero only on Lua errors.</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>konfig    http://tiny.cc/konfig   shared Makefile, dotfiles
+luamine   http://tiny.cc/luamine  AI primitives built in
+                                  this same style
+optimiz   http://tiny.cc/optimiz  example CSV datasets</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+</body>
+</html>
