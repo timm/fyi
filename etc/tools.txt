@@ -1,4 +1,5 @@
 konfig|portable, self-erasing boilerplate shared across all my gists
+ezr|explainable multi-objective optimization in one stdlib-only file
 kah-lua|~50 short, reusable lua functions — one file, no deps
 lithp|lithp — less library: the pay-rent subset (130 lines, no deps)
 luamine|lua data-mining — many learners behind one small engine

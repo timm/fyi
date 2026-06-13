@@ -22,6 +22,7 @@ gists** — gists never reference fyi; this Makefile lists what to pull.
 Curated list — edit `TOOLS` in the `Makefile` to add/remove (`slug:gistdir:mdfile`):
 
     konfig   ~/gists/konfig/,konfig.md     shared gist boilerplate
+    ezr      ~/gists/ezr/,ezr.md           XAI multi-objective optimization
     kah-lua  ~/gists/kah-lua/,kah.md       ~50 reusable Lua functions
     lithp    ~/gists/lithp/,lithp.md       "less library" Common Lisp kit
     luamine  ~/gists/luamine/,luamine.md   Lua data-mining learners

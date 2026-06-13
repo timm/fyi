@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="ezr — a software tool by Tim Menzies.">
+<title>ezr | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="tool">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="tools.html">Tools</a></b> |
+  <a href="blog.html">Blog</a> |
+  <a href="irl.html">Lab</a></span>
+  <span><a href="tools.html" title="All tools">&laquo; all tools</a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2025 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<h3 id="httptinyccezr"><a
+href="http://tiny.cc/ezr"><span>http://tiny.cc/ezr</span></a></h3>
+<p>ezr.py (v0.5): lightweight XAI for multi-objective optimization. One
+self-contained file, Python stdlib only, zero dependencies. Learns a
+small explainable tree that finds the best rows in a CSV while labelling
+as few examples as it can.</p>
+<pre class="bash"><code># install + run on sample data from the optimiz gist
+git clone http://tiny.cc/optimiz        # CSV test data (sibling dir)
+git clone http://tiny.cc/ezr &amp;&amp; cd ezr
+python3 ezr.py                          # tree over ../optimiz/auto93.csv
+python3 ezr.py -f ../optimiz/SS-A.csv   # any other CSV</code></pre>
+<p><strong>Sections:</strong> NAME | SYNOPSIS | OPTIONS | DATA | OUTPUT
+| LICENSE | AUTHOR</p>
+<h2 id="name">NAME</h2>
+<pre><code>ezr - explainable multi-objective optimization, in one file</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>python3 ezr.py [options]
+p                        # konfig bashrc alias: python3 -B ezr.py
+
+Sibling layout (gists share one parent dir):
+  ezr/      this repo
+  optimiz/  CSV data (default file = ../optimiz/auto93.csv)
+  konfig/   shared Makefile + dotfiles (make help|sh|vi|...)</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>-a acq=near         label with (near|xploit|xplor|bore|adapt)
+-A Any=4            initial random guesses before learning
+-B Budget=30        labels spent growing the theory
+-C Check=5          budget for checking the learned model
+-D Delta=smed       effect-size test for Cliff&#39;s delta
+-F Few=128          sample size for random sampling
+-K Ks=0.95          confidence for Kolmogorov-Smirnov test
+-l leaf=3           min items in a tree leaf
+-m m=1              Bayes low-frequency parameter
+-p p=2              distance coefficient (1,2 = Manhattan,Euclid)
+-s seed=1234567891  random number seed
+-f file=...         data file (default ../optimiz/auto93.csv)
+-h                  show help</code></pre>
+<h2 id="data">DATA</h2>
+<pre><code>CSV with a self-describing header (see optimiz):
+  Upper first char -&gt; numeric column
+  lower first char -&gt; symbolic column
+  suffix +         -&gt; numeric goal, maximize
+  suffix -         -&gt; numeric goal, minimize
+  suffix X         -&gt; ignore
+  missing value    -&gt; &#39;?&#39;</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code>Prints an explainable tree: each branch is a rule, indented by
+depth; `win` scores how good the rows under that rule are (higher
+= closer to all goals). The footer lists the columns actually used.</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+</body>
+</html>
