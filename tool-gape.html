@@ -58,6 +58,7 @@ along as keyword args, so any function drops into another app:
 <pre><code>records / io / format
   o(dict)        attribute access: d.x is d[&#39;x&#39;]
   thing(s)       coerce str -&gt; int|float|bool|str
+  settings(s)    every var=val in s -&gt; an o (vals coerced)
   csv(file)      yield typed rows (&#39;#&#39; = comment)
   say(x, dec=2)  pretty str; whole floats as ints
   main(funs)     run funs[name] for each --name in argv
@@ -73,10 +74,17 @@ stats  (non-parametric &quot;are these two the same?&quot;)
   same(xs, ys, cliff=.195, conf=1.36)
   top_tier(groups, ...) names tied for best (min median)
 
-columns / table
-  Num  Sym             slots-numeric / dict-symbolic summaries
-  add(col,v) adds(src,col)
-  mid(col) spread(col) norm(col,v)
+columns / table  (Num, Sym, Cols, Data all just o-records)
+  Num(txt,at) Sym(txt,at)  column summaries (Sym counts in .has)
+  add(it,v,inc=1)          add v to a Num/Sym, or a row to a Data;
+                           inc=-1 subtracts (Num resets if n&lt;2)
+  adds(src,it)             add every item of src to it
+  mid(col) spread(col)     mean/mode, stdev/entropy
+  norm(col,v)              0..1 via a logistic on v&#39;s z-score
+  Cols(names)              -&gt; o(names, all, x, y, klass) by role
+  Data(rows)               -&gt; o(cols, rows); first row = names
+  clone(data, src=None)    new Data, same columns, fresh rows
+                           Upper=Num lower=Sym; +/-/! goal; ! klass; X skip
   Data(rows)           header sets roles: Upper=Num, lower=Sym,
                        +/-/! = goal, X = skip
 
@@ -84,7 +92,13 @@ distance  (exponent `p` is a keyword)
   minkowski(vals, p=2)
   disty(data, row, p=2)      distance to best goals (0=ideal)
   distx(data, r1, r2, p=2)   distance between two rows on x
-  gap(col, u, v)             per-column value distance 0..1</code></pre>
+  gap(col, u, v)             per-column value distance 0..1
+
+bayes  (naive bayes; m, k carried as kwargs, no global the)
+  like(col, v, prior=0, k=1)            how a column likes a value
+  likes(data, row, nrows, nklasses)     log-likelihood of a row
+  confuse(pairs)                        (want,got) -&gt; per-class
+                                        o(pd, pf, prec, acc)</code></pre>
 <h2 id="style">STYLE</h2>
 <pre><code>Minimal python: one file, one-line comments, ~65-char lines,
 very short functions, `i` (not self), records over classes.
