@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="gape — a software tool by Tim Menzies.">
+<title>gape | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="tool">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <b><a href="tools.html">Tools</a></b> |
+  <a href="blog.html">Blog</a> |
+  <a href="irl.html">Lab</a></span>
+  <span><a href="tools.html" title="All tools">&laquo; all tools</a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<h3 id="httptinyccgape"><a
+href="http://tiny.cc/gape"><span>http://tiny.cc/gape</span></a></h3>
+<p>gape: one tiny file of reusable Python tricks — attribute-dicts,
+typed CSV, pretty-print, seeded randomness, non-parametric stats,
+minimal column summaries, and row distances. Pure stdlib, zero
+dependencies. The cut-down kernel under my bigger apps, <strong>with no
+global config</strong>: every parameter (<code>p</code>,
+<code>cliff</code>, <code>conf</code>, <code>rng</code>) is passed as a
+keyword, so any function lifts out into another project.</p>
+<pre class="python"><code>from gape import o, csv, say, Data, disty, same, shuffle
+import random
+
+d = Data(csv(&quot;../optimiz/auto93.csv&quot;))         # build a table
+say(disty(d, d.rows[0], p=1))                  # row-&gt;goal distance, p a kwarg
+shuffle(rows, rng=random.Random(1))            # repeatable, own RNG
+same(a, b, cliff=0.195, conf=1.36)             # are two samples the same?</code></pre>
+<p><strong>Sections:</strong> NAME | DESIGN | API | STYLE | LICENSE |
+AUTHOR</p>
+<h2 id="name">NAME</h2>
+<pre><code>gape - one file of tiny stdlib python tricks (no global config)</code></pre>
+<h2 id="design">DESIGN</h2>
+<pre><code>One file, themed sections, no module-level `the`. Tuning rides
+along as keyword args, so any function drops into another app:
+  disty(data, row, p=2)
+  same(xs, ys, cliff=0.195, conf=1.36)
+  shuffle(lst, rng=random.Random(seed))</code></pre>
+<h2 id="api">API</h2>
+<pre><code>records / io / format
+  o(dict)        attribute access: d.x is d[&#39;x&#39;]
+  thing(s)       coerce str -&gt; int|float|bool|str
+  csv(file)      yield typed rows (&#39;#&#39; = comment)
+  say(x, dec=2)  pretty str; whole floats as ints
+  main(funs)     run funs[name] for each --name in argv
+
+rand   (pass your own random.Random(seed) for repeatability)
+  shuffle(lst, rng)     shuffled copy
+  some(lst, k, rng)     sample without replacement
+  one(lst, rng)         one random item
+
+stats  (non-parametric &quot;are these two the same?&quot;)
+  cliffs(xs, ys)        Cliff&#39;s delta effect size 0..1
+  ks(xs, ys)            Kolmogorov-Smirnov CDF gap
+  same(xs, ys, cliff=.195, conf=1.36)
+  top_tier(groups, ...) names tied for best (min median)
+
+columns / table
+  Num  Sym             slots-numeric / dict-symbolic summaries
+  add(col,v) adds(src,col)
+  mid(col) spread(col) norm(col,v)
+  Data(rows)           header sets roles: Upper=Num, lower=Sym,
+                       +/-/! = goal, X = skip
+
+distance  (exponent `p` is a keyword)
+  minkowski(vals, p=2)
+  disty(data, row, p=2)      distance to best goals (0=ideal)
+  distx(data, r1, r2, p=2)   distance between two rows on x
+  gap(col, u, v)             per-column value distance 0..1</code></pre>
+<h2 id="style">STYLE</h2>
+<pre><code>Minimal python: one file, one-line comments, ~65-char lines,
+very short functions, `i` (not self), records over classes.
+Threshold for a new file vs a new gist: parts you *import* stay
+in here; *wholes* you *run* (apps, other languages, data) get
+their own gist.</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+</body>
+</html>

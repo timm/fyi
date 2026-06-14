@@ -23,6 +23,7 @@ Curated list — edit `TOOLS` in the `Makefile` to add/remove (`slug:gistdir:mdf
 
     konfig   ~/gists/konfig/,konfig.md     shared gist boilerplate
     ezr      ~/gists/ezr/,ezr.md           XAI multi-objective optimization
+    gape     ~/gists/gape/,gape.md         tiny one-file python tricks lib
     kah-lua  ~/gists/kah-lua/,kah.md       ~50 reusable Lua functions
     lithp    ~/gists/lithp/,lithp.md       "less library" Common Lisp kit
     luamine  ~/gists/luamine/,luamine.md   Lua data-mining learners
