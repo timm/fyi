@@ -8,7 +8,7 @@ PORT     := 8080
 
 GISTS    ?= $(HOME)/gists
 # slug:gistdir:mdfile — curated gist READMEs imported as Tools pages (make tools)
-TOOLS := konfig:konfig:,konfig.md ezr:ezr:,ezr.md gape:gape:,gape.md \
+TOOLS := konfig:konfig:,konfig.md ezr:ezr:,ezr.md nuff:nuff:,nuff.md \
          kah-lua:kah-lua:,kah.md lithp:lithp:,lithp.md \
          luamine:luamine:,luamine.md luk:luk:,luk.md repltut:repltut:,Repltut.md
 # gist-only lines dropped before conversion (shields badges, screenshot, Files TOC)

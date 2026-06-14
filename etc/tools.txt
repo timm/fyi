@@ -1,6 +1,6 @@
 konfig|portable, self-erasing boilerplate shared across all my gists
 ezr|explainable multi-objective optimization — two files, zero deps
-gape|tiny one-file python tricks: records, stats, columns, distance — zero deps
+nuff|tiny one-file python tricks: records, stats, columns, distance — zero deps
 kah-lua|~50 short, reusable lua functions — one file, no deps
 lithp|lithp — less library: the pay-rent subset (130 lines, no deps)
 luamine|lua data-mining — many learners behind one small engine

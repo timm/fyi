@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<meta name="description" content="gape — a software tool by Tim Menzies.">
-<title>gape | Tim Menzies</title>
+<meta name="description" content="nuff — a software tool by Tim Menzies.">
+<title>nuff | Tim Menzies</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="site.css">
 </head>
@@ -28,16 +28,16 @@
 
 <!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
 
-<h3 id="httptinyccgape"><a
-href="http://tiny.cc/gape"><span>http://tiny.cc/gape</span></a></h3>
-<p>gape: one tiny file of reusable Python tricks — attribute-dicts,
+<h3 id="httptinyccnuff"><a
+href="http://tiny.cc/nuff"><span>http://tiny.cc/nuff</span></a></h3>
+<p>nuff: one tiny file of reusable Python tricks — attribute-dicts,
 typed CSV, pretty-print, seeded randomness, non-parametric stats,
 minimal column summaries, and row distances. Pure stdlib, zero
 dependencies. The cut-down kernel under my bigger apps, <strong>with no
 global config</strong>: every parameter (<code>p</code>,
 <code>cliff</code>, <code>conf</code>, <code>rng</code>) is passed as a
 keyword, so any function lifts out into another project.</p>
-<pre class="python"><code>from gape import o, csv, say, Data, disty, same, shuffle
+<pre class="python"><code>from nuff import o, csv, say, Data, disty, same, shuffle
 import random
 
 d = Data(csv(&quot;../optimiz/auto93.csv&quot;))         # build a table
@@ -47,7 +47,7 @@ same(a, b, cliff=0.195, conf=1.36)             # are two samples the same?</code
 <p><strong>Sections:</strong> NAME | DESIGN | API | STYLE | LICENSE |
 AUTHOR</p>
 <h2 id="name">NAME</h2>
-<pre><code>gape - one file of tiny stdlib python tricks (no global config)</code></pre>
+<pre><code>nuff - one file of tiny stdlib python tricks (no global config)</code></pre>
 <h2 id="design">DESIGN</h2>
 <pre><code>One file, themed sections, no module-level `the`. Tuning rides
 along as keyword args, so any function drops into another app:
