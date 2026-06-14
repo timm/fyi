@@ -41,16 +41,16 @@ git clone http://tiny.cc/optimiz       # optimization data
 git clone http://tiny.cc/klassif       # classification data
 git clone http://tiny.cc/ezr &amp;&amp; cd ezr
 python3 cli.py --list                  # all commands
-python3 cli.py tree ../optimiz/auto93.csv
-python3 cli.py test_all                # run every self-test</code></pre>
+python3 cli.py --tree ../optimiz/auto93.csv
+python3 cli.py --all                   # run every self-test</code></pre>
 <p><strong>Sections:</strong> NAME | SYNOPSIS | DESCRIPTION | DATA |
 COMMANDS | OPTIONS | LAYOUT | LICENSE | AUTHOR</p>
 <h2 id="name">NAME</h2>
 <pre><code>ezr - explainable multi-objective optimization via decision
       trees, clustering, naive bayes, and active learning</code></pre>
 <h2 id="synopsis">SYNOPSIS</h2>
-<pre><code>python3 cli.py [--key=val ...] CMD [args]
-python3 cli.py --list | --help
+<pre><code>python3 cli.py [--key=val ...] --&lt;name&gt; [FILE]
+python3 cli.py --list | --fast | --slow | --all | --help
 p                          # konfig bashrc alias: python3 -B cli.py
 
 Sibling gists (one parent dir; no naked paths):
@@ -75,15 +75,18 @@ or centroid acquisition. Input is CSV; the header defines roles
   *X        ignored        (e.g. &quot;idX&quot;)
   ?         missing value  (in rows, not the header)</code></pre>
 <h2 id="commands">COMMANDS</h2>
-<pre><code>each `eg_&lt;app&gt;` in cli.py is a command; `eg_test_&lt;app&gt;` is a test.
-  tree      grow + show a regression tree
-  cluster   k-means++ / recursive halving
-  classify  incremental naive bayes (confusion matrix)
-  search    sa | ls | de optimizers (energy trace)
-  acquire   active learning; top rows by distance-to-heaven
-  textmine  CNB text mining (needs ../textz)
-  stats     same / bestRanks / confused demo
-  test_all  run every self-test (no pytest needed)</code></pre>
+<pre><code>each `test_&lt;name&gt;` in cli.py is one command (demo + self-check),
+run via `--&lt;name&gt;`. No FILE -&gt; default dataset; FILE -&gt; that CSV.
+  --core       primitives: Num/Sym/Data/distance/format
+  --tree       grow + show a regression tree, check plans
+  --cluster    k-means++ / k-means / recursive halving
+  --classify   naive bayes beats ZeroR        (needs ../klassif)
+  --search     sa | ls | de optimizers (energy trace)
+  --acquire    active learning beats random (20 reps)
+  --acquire20  hold-out tree win (acquire half, sort the other)
+  --textmine   CNB + tf-idf text mining        (needs ../textz)
+  --stats      same / bestRanks / confused
+lanes: --fast (skip slow) | --slow (textmine) | --all</code></pre>
 <h2 id="options">OPTIONS</h2>
 <pre><code>--seed=1            random seed
 --p=2               distance (1,2 = Manhattan, Euclid)
@@ -98,7 +101,8 @@ or centroid acquisition. Input is CSV; the header defines roles
 <pre><code>ezr.py   library; section banners per app (Types, Col, Data,
          Distance, Bayes, Tree, Cluster, Classify, Search,
          Acquire, Textmine, Stats, Format)
-cli.py   dispatch; eg_&lt;app&gt; demos + eg_test_&lt;app&gt; tests</code></pre>
+cli.py   dispatch; one test_&lt;name&gt; per concept (demo + assert),
+         run via --&lt;name&gt;; --fast/--slow/--all lanes</code></pre>
 <h2 id="license">LICENSE</h2>
 <pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
 <h2 id="author">AUTHOR</h2>
