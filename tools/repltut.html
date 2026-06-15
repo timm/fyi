@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>repltut</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Markdown-000080?logo=markdown&logoColor=white"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-LLM·Authoring·Teaching-7b68ee?logo=githubcopilot&logoColor=white"></p>
+<h3 id="httptinyccrepltut"><a
+href="http://tiny.cc/repltut"><span>http://tiny.cc/repltut</span></a></h3>
+<p>How to convert source code into a textbook. Prompts and exemplars for
+generating "genetic stanza" REPL tutorials: source files that read
+top-to-bottom as a short paper and load top-to-bottom as code, narrated
+by numbered REPL traces (<code>[1]&gt;</code> ...
+<code>[48]&gt;</code>). Includes the authoring prompt, a worked example
+(Lisp data mining), and the K&amp;R tone exemplar.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and read</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/repltut repltut <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> repltut</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> author.md</span></code></pre></div>
+<img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~repltut~l~150.png" />
+
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a href="#options">OPTIONS</a> | <a
+href="#exemplars">EXEMPLARS</a> | <a href="#output">OUTPUT</a> | <a
+href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
+href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/f3904ef32c867ace4746ef913a7691e9/raw/db36cdb25d27cff65ce87baf8da2869350c71bdd/tutgen.md">tutgen.md</a> | <a
+href="https://gist.githubusercontent.com/timm/f3904ef32c867ace4746ef913a7691e9/raw/e17b31e1ca985be297c0ecf9185f173966b11d1d/author.md">author.md</a> | <a
+href="https://gist.githubusercontent.com/timm/f3904ef32c867ace4746ef913a7691e9/raw/e661c6bc5ce046e9c769ebb252a84c0ee5cf7b37/fri2.md">fri2.md</a> | <a
+href="https://gist.githubusercontent.com/timm/f3904ef32c867ace4746ef913a7691e9/raw/7bff7859b3860904f534c9560e57fcc16c469f28/kr_ch1.md">kr_ch1.md</a> | <a
+href="https://gist.githubusercontent.com/timm/f3904ef32c867ace4746ef913a7691e9/raw/a6b492def56ca3c98c0f3ac2234b12f0131ffca9/ezr.tex">ezr.tex</a> | <a href="https://gist.githubusercontent.com/timm/f3904ef32c867ace4746ef913a7691e9/raw/678e1f056935f91660d7b67de89ae2eb13aac867/repl.lua">repl.lua</a>
+| <a href="https://gist.githubusercontent.com/timm/f3904ef32c867ace4746ef913a7691e9/raw/c3f13486faa9ccc46419854ded101cfbd80c01c7/Makefile">Makefile</a></p>
+<p>tutgen.md = meta-prompt: code in, multi-lecture REPL course out
+(harness, audits, weave rules); author.md = the authoring prompt
+(genetic stanza spec, AUTHOR-CONFIG knobs); fri2.md = worked example,
+data-lite active learning in SBCL, 48 REPL steps; kr_ch1.md = K&amp;R
+ch.1 tone calibration; ezr.tex = paper-dialog exemplar (coverage + topic
+order); repl.lua = reference replay harness for verbatim numbered
+traces.</p>
+<h2 id="name">NAME</h2>
+<pre><code>repltut - authoring kit for REPL-driven literate tutorials.
+Paste author.md into an LLM (system prompt, CLAUDE.md, or
+lead of a turn); it writes a tutorial like fri2.md.</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>1. Read author.md; fill in its AUTHOR-CONFIG stanza
+   (audience, language, depth, tone, repl-density...).
+2. Give the prompt + config + your source code to an LLM.
+3. Out comes a stanza-form tutorial: 65-col prose blocks
+   paired with 4-space code blocks, punctuated by numbered
+   REPL traces.</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>AUTHOR-CONFIG knobs (see author.md for full list + defaults):
+
+  audience          one sentence pinning reader background
+  assumed           concepts NOT explained
+  language          target language + runtime
+  depth             terse | standard | verbose
+  tone              academic | textbook | conversational | kr
+  prose-width       columns of prose            (65)
+  stanza-length-cap max code lines per stanza   (10)
+  repl-density      stanzas between REPL traces (3)
+  repl-prompt       trace prompt string         ([1]&gt;)</code></pre>
+<h2 id="exemplars">EXEMPLARS</h2>
+<pre><code>K&amp;R chapter 1        tone and pacing (kr_ch1.md)
+Lions&#39; Commentary    code-as-paper coverage (cited)
+fri2.md              the stanza + numbered-REPL form
+ezr.tex              coverage, topic order, paper dialog</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code>A single markdown/source file. Each stanza: claim -&gt; code -&gt;
+consequence. Every few stanzas, a runnable REPL trace:
+
+  [12]&gt; (adds (mapcar #&#39;second rows) (make-num))
+  #S(NUM :n 398 :mu 23.5 :sd 7.8)</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>luamine   http://tiny.cc/luamine  Lua data mining (same CSV protocol)
+konfig    http://tiny.cc/konfig   shared Makefile, dotfiles</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

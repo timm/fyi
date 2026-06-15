@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>luamine</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Lua-000080?logo=lua&logoColor=white"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-AI·Applications·Teaching-7b68ee?logo=githubcopilot&logoColor=white"></p>
+<h3 id="httptinyccluamine"><a
+href="http://tiny.cc/luamine"><span>http://tiny.cc/luamine</span></a></h3>
+<p>LUAMINE = LUA MINing Engines: lots of useful learners. Three small
+files, each a few hundred lines long, no dependencies beyond Lua 5.x:
+generic helpers, AI primitives (Num, Sym, distance, trees, Bayes), and
+apps (clustering, classification, active learning, GA/DE/SA/LS
+optimizers, synthetic data, anomaly detection).</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and test</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/konfig ../konfig</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/luamine luamine <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> luamine</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> lapps.lua <span class="at">--all</span></span></code></pre></div>
+<p><a href="http://tiny.cc/luamine"><img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~luamine~l~150.png"></a></p>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a href="#options">OPTIONS</a> | <a
+href="#data">DATA</a> | <a href="#tests">TESTS</a> | <a
+href="#output">OUTPUT</a> | <a href="#exit">EXIT</a> | <a
+href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
+href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/e58302c1750e553068ef8905eb6e083dc9fba0e1/lib.lua">lib.lua</a> | <a
+href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/17643311d4d685d8bfa1f802f094d9db3eb7f3e9/luamine.lua">luamine.lua</a> | <a
+href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/1896f1c6901a1094d71977f3324666f7fe45c213/lapps.lua">lapps.lua</a> | <a href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/61b3734865b2a5a677cef346a60fc58565812797/tut.md">tut.md</a>
+| <a href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/25b2947d4df17b91d353b8817a1cc3ef113bf9c7/tut.html">tut.html</a> | <a
+href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/eb27b9929e2b2f123afdadf63b0d0dca9d0419f0/luamine-2.0.0-1.rockspec">luamine-2.0.0-1.rockspec</a> | <a
+href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/cdf2956a5a05b141a825d141c0adc126bdbeb3aa/Makefile">Makefile</a> | <a
+href="https://gist.githubusercontent.com/timm/d2f6e74750271fc68a215d1967d34c29/raw/a56394ab280bef2c7a382cb5609f6cb5df4d1537/style.md">style.md</a></p>
+<p>lib.lua = generic helpers (list, stats, csv, cli, o); luamine.lua =
+AI primitives (Num, Sym, Cols, dist, tree, like, pick, extrapolate);
+lapps.lua = apps (kmeans, classify, acquire, bob, ga, de, sa, ls,
+sample, anomaly); tut.md/tut.html = ten-lecture REPL tutorial (307
+worked prompts; rebuild html: <code>make tut.html</code>); style.md =
+read-fast cheat sheet.</p>
+<h2 id="name">NAME</h2>
+<pre><code>luamine - multi-objective explanation, optimization, and
+anomaly detection via incremental stats, recursive
+bi-clustering, and active learning. Lua, three files, zero
+dependencies.</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>lua lapps.lua   [-h] [--FLAG VALUE]... [--ACTION]...
+lua luamine.lua [-h] [--FLAG VALUE]... [--ACTION]...
+lua lib.lua     [-h] [--FLAG VALUE]... [--ACTION]...
+
+luarocks install luamine</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>Shared:
+  -t  --train=F   training CSV   ($MOOT/optimize/misc/auto93.csv)
+  -T  --test=F    test CSV       (defaults to --train)
+      --seed=N    RNG seed       (1)
+
+luamine.lua: --bins --leaf --p --cap --budget --k --m --F --cr
+lapps.lua:   --k_cluster --iter --few --start --wait --np
+             --gens --tour --mut --de_iter --budget --budget1
+             --dot --repeats --check
+
+`lua FILE.lua -h` lists every flag with its default. $MOOT =
+data repo root (env var; default ~/gits/moot).</code></pre>
+<h2 id="data">DATA</h2>
+<pre><code>CSV with self-describing header; no separate schema file:
+
+  first char UPPER  -&gt; numeric (Num)
+  first char lower  -&gt; symbolic (Sym)
+  suffix &#39;+&#39;        -&gt; numeric goal, maximize
+  suffix &#39;-&#39;        -&gt; numeric goal, minimize
+  suffix &#39;!&#39;        -&gt; symbolic goal (klass)
+  suffix &#39;X&#39;        -&gt; ignore
+  else              -&gt; predictor
+  missing value     -&gt; &#39;?&#39;
+
+E.g. auto93.csv: Clndrs,Volume,HpX,Lbs-,Acc+,Model,origin,Mpg+</code></pre>
+<h2 id="tests">TESTS</h2>
+<pre><code>Every action is a test; --all runs them in order:
+
+  lua lib.lua     --all  lists, rand, stats, sames, tabulate,
+                         confuse, str, csv
+  lua luamine.lua --all  cols, data, dist, cuts, tree, ftree,
+                         bayes, mutate, body
+  lua lapps.lua   --all  kmeans, kpp, classify, acquire, sample,
+                         anomaly, bob, acq, ga, de, sa, ls, race
+
+Each prints `tag = value` check lines; runs end &quot;all pass&quot; or
+&quot;N failed&quot;. Missing train CSV -&gt; synthetic mock data (still runs).</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code>Check lines, tables, and trees. E.g. `lua luamine.lua --tree`:
+
+     n     Mpg+  disty  tree
+  +  10      30   0.26  Volume &lt;= 105 |  Lbs- &lt;= 2130
+  -   8      20   0.69  Volume &gt;  191
+
+`lua lapps.lua --race` prints one merged best-so-far trace
+across ga/de/sa/ls, sorted by #evals.</code></pre>
+<h2 id="exit">EXIT</h2>
+<pre><code>0 always (including test failures, which print as FAIL lines;
+grep FAIL to detect). Non-zero only on Lua errors (e.g. bad
+flag, missing required file for --acq).</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>konfig    http://tiny.cc/konfig      shared Makefile, dotfiles
+kah       http://tiny.cc/kah-lua     utility library, same style
+moot      http://github.com/timm/moot  optimization datasets
+style     http://tiny.cc/luamine#file-style-md  coding conventions</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

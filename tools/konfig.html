@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>konfig</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Shell-000080?logo=sh&logoColor=white"><a href="https://choosealicense.com/licenses/mit/"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"></a><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-Shell·Teaching-7b68ee?logo=githubcopilot&logoColor=white"></p>
+<h3 id="httptinycckonfig"><a
+href="http://tiny.cc/konfig"><span>http://tiny.cc/konfig</span></a></h3>
+<p>Portable, self-erasing boilerplate for all my gists: one Makefile
+(help, doctor, lint, push, pdf, tuned shells/editors/mux), one bashrc,
+init.lua + init.el, one tmux.conf, plus isolated nvim/micro configs. A
+project repo is just knobs plus <code>include $(KONFIG)/Makefile</code>.
+Every file these tools generate is buried under a
+<code>.../konfig/...</code> directory — never your real dotfiles — so
+<code>make death</code> wipes the lot and leaves your machine
+spotless.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and test-drive from any sibling gist</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/konfig</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/luamine luamine <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> luamine</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> help</span></code></pre></div>
+<img align="right" alt="image" src="https://gist.github.com/user-attachments/assets/41ed5d0c-c2dd-40a8-91ce-74223a19df96" />
+
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a href="#options">OPTIONS</a> | <a
+href="#output">OUTPUT</a> | <a href="#see-also">SEE ALSO</a> | <a
+href="#license">LICENSE</a> | <a href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/20020d510a54d8bf12c076894226bebf4c837a2e/Makefile">Makefile</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/867145a56088f951a23056c5b9ae394511208908/bashrc">bashrc</a> | <a href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/7edabac3e62d05870084068994c1667f5b7c9b58/init.lua">init.lua</a> |
+<a href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/2223c034d3398bbf6a62210382a2f9abeaa112e4/init.el">init.el</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/ae5e66eccb38bcc03299f3771e514f7958e4fa5b/tmux.conf">tmux.conf</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/55472512ae8090407758b841a05359ebb7794db1/micro.settings.json">micro.settings.json</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/a523352cd44a1966039e44a5d9ad1821f428b11a/micro.bindings.json">micro.bindings.json</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/77dc5d154805ec808b6e8dfc4074894f3cf21bbb/micro.lisp.yaml">micro.lisp.yaml</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/83f4e6bc2fadecc8412c31550228d07ccddfed2b/style_code.md">style_code.md</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/d56279ae9152c7fa0ca216b89b617c8715a4ab64/style_gist.md">style_gist.md</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/f82d395040ef65723beae61ce35505fe3c9695b5/newgist.md">newgist.md</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/d8ca7530d8f8e2a621f936054c66c7a4a91b0e57/make.md">make.md</a> | <a href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/c11440c5849d5041c148e9189e74d4e68e3da544/bash.md">bash.md</a> |
+<a href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/ab7f963ce195a443c60bbea0c22e2f9f84ca87c4/nvim.md">nvim.md</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/b5cd366d989ebeb55de494694e7f471a19ca05f4/micro.md">micro.md</a> | <a href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/0953c9390be435effc66a049ec597e3dcad6229b/tmux.md">tmux.md</a>
+| <a href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/d8e7afc77e7ba89ce1443681fafd09ef5391084a/banner.sh">banner.sh</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/2a1aa04053ce30f42a304c8012a28cd19aacdb01/help.awk">help.awk</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/a6aff9054c573a13f1ed7e8167db7aa624977562/hist.awk">hist.awk</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/cb2745a99152f658f2a06480da6ec53993b50f01/install.sh">install.sh</a> | <a
+href="https://gist.githubusercontent.com/timm/431f18a0f4010117892810cb3585c076/raw/05ba57ede45e2456a3c9cc17c9923f2ab65bc8d0/Brewfile">Brewfile</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>konfig - shared Makefile + dotfiles for sibling gist repos</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code># in a project repo&#39;s Makefile: knobs, guard, include
+KONFIG ?= ../konfig
+APP    := project
+...
+include $(KONFIG)/Makefile
+
+make help|doctor|check|test|push|hist|sh|vi|mux|pdf|death</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>Knobs a repo sets before the include (see style_gist.md):
+
+  APP    project name (tmux socket, NVIM_APPNAME, banner)
+  MAIN   primary source file        (code repos)
+  EXT    source extension           (code repos)
+  LANG   language name              (code repos)
+  LINT   lint command               (code repos)
+  TOOLS  tool:why pairs for doctor
+  PKG    packages doctor suggests installing
+
+Tool tutorials: make.md, bash.md, nvim.md, micro.md, tmux.md.
+Style law for sibling gists: style_code.md, style_gist.md.
+Spinning up a new gist (tool or data): newgist.md.</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code>make help    banner + every `target: ## desc` line
+make doctor  tool checklist with install hints
+make sh      tuned bash    (banner, git prompt, vi-mode)
+make vi      isolated nvim (catppuccin + tree; --clean)
+make mux     private-socket tmux; `make claude` = 3 panes
+make pdf     a2ps pretty-print -&gt; ~/tmp/konfig/*.pdf
+make death   wipe every generated .../konfig/ dir (2x confirm)
+
+Editors (aliases inside `make sh`): vi=nvim  m=micro.
+All state isolated under ~/.{cache,config,local}/konfig/ + ~/tmp/konfig
+— nothing touches your real dotfiles; `make death` erases it all.</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>luamine   http://tiny.cc/luamine   Lua data mining
+optimiz   http://tiny.cc/optimiz   example datasets
+fft       http://tiny.cc/fft       FFTs + regression trees
+repltut   http://tiny.cc/repltut   REPL tutorial prompts</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

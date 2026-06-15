@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>klassif</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-CSV-000080?logo=files&logoColor=white"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-Data·Classification-7b68ee?logo=githubcopilot&logoColor=white"></p>
+<h3 id="httptinyccklassif"><a
+href="http://tiny.cc/klassif"><span>http://tiny.cc/klassif</span></a></h3>
+<p>Example classification datasets: 73 CSV files (anneal, audiology,
+COMPAS, diabetes, soybean, vote, ...) with self-describing headers — the
+klass column ends in '!', so no separate schema files are needed. Data
+only, no code.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/konfig ../konfig</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/klassif klassif <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> klassif</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> help</span></code></pre></div>
+<p><a href="http://tiny.cc/klassif"><img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~klassif~l~150.png"></a></p>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#data">DATA</a> | <a href="#files">FILES</a> | <a
+href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
+href="#author">AUTHOR</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>klassif - classification benchmark CSVs. headers are the
+schema; the symbolic goal column ends in &#39;!&#39;.</code></pre>
+<h2 id="data">DATA</h2>
+<pre><code>CSV with self-describing header; no separate schema file:
+
+  first char UPPER  -&gt; numeric (Num)
+  first char lower  -&gt; symbolic (Sym)
+  suffix &#39;+&#39;        -&gt; numeric goal, maximize
+  suffix &#39;-&#39;        -&gt; numeric goal, minimize
+  suffix &#39;!&#39;        -&gt; symbolic goal (klass)
+  suffix &#39;X&#39;        -&gt; ignore
+  else              -&gt; predictor
+  missing value     -&gt; &#39;?&#39;
+
+E.g. diabetes.csv: Preg,Plas,Pres,Skin,Insu,Mass,Pedi,Age,klass!</code></pre>
+<h2 id="files">FILES</h2>
+<p><a href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/dff1e660d38b84b8b8a23e495dace329cef3e33e/COMPAS53.csv">COMPAS53.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/06d3ea8b58978fbf8ca1c56b575369824085d2b0/anneal.csv">anneal.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/06d3ea8b58978fbf8ca1c56b575369824085d2b0/anneal.orig.csv">anneal.orig.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/3c513101fc5b191f3440c20575b9303b4a0d4cac/arrhythmia.csv">arrhythmia.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/005e705dfd3f419b0a176438fa87a75c848d7558/audiology.csv">audiology.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/158522363a1ca0bc49109884412d299ee5603d2d/autos.csv">autos.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/9129e1fd5c899d53d514f12465d242f0d5f11110/balance.scale.csv">balance.scale.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/5882e2f2d5dc999a592aba01a620bfe7461af5c8/breast.cancer.csv">breast.cancer.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/e21e4ea28712fbcf1dbbd469753e8d8a7028bc7a/breast.w.csv">breast.w.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/0cb25fd5ec67de7c175f2fbaa55287acae50179e/breastcancer.csv">breastcancer.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/a01f284be0602d7be453b7c21608055dcd0043c1/bridges.version1.csv">bridges.version1.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/93c9b7bdf516d10f7d4d68b3d0eb21fad86e15d6/bridges.version2.csv">bridges.version2.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/e8096c4ac0e512fae443381ba6b6f27a8d89ad23/car.csv">car.csv</a> | <a href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/01a83df34ae875f5775ce48fe9db3674aa1af669/cmc.csv">cmc.csv</a> |
+<a href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/614f69ab57dbd46fbf9d5615bd29045d3531e4e5/colic.csv">colic.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/dd0105e0dd24077afe0ee6d5c52f84f1cb64f3d3/colic.orig.csv">colic.orig.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/7c54181683231454820f40a4abe909d7ff716ac4/column2C.csv">column2C.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/d55cabc1e0abf14e28fa9cadb5e712816c07290a/column3C.csv">column3C.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/19d00c32ae45e5fc2b721af9cc1fb2d4826ede33/credit.a.csv">credit.a.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/6befa446a3795bbe4e7c208359d21abd18da77f6/credit.g.csv">credit.g.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/ea1dd71866e7e8bfb94e68d93a4089a2c75a9f76/cylinder.bands.csv">cylinder.bands.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/0c1f725fe8e84584bd70f70d17866f3bff511763/dermatology.csv">dermatology.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/ad7ef664313c0d1b58ffb94830dc022cc6a372b2/diabetes.csv">diabetes.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/2fe6cf1bf3b0dd8877a67ff21b08e85499316c78/ecoli.csv">ecoli.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/4891d56902a80dd795af8ed9d0fcdf70f1ae05a2/flags.csv">flags.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/4336f496fedf009683646e2c3e0a65062e628a5d/german.csv">german.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/2cb289c03f4d13d1e8d083baddff9baa55687935/glass.csv">glass.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/22829e29434c8e02cea72fde3d53b855270b283c/haberman.csv">haberman.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/b05c7025b40443b9f43ce6828dc59d2517465bec/heart.c.csv">heart.c.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/079a5bcab5bae314839700b7cef4a99acbe28f56/heart.h.csv">heart.h.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/08e6670dbd817b8d45ef950f634a5d9d7297cf08/heart.statlog.csv">heart.statlog.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/f724454ec6852d9c147aa89ce9e99d491384e718/hepatitis.csv">hepatitis.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/d0b37acc741de832dca450970421d263d59f6ae5/hypothyroid.csv">hypothyroid.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/820010fe009813b4320dc6c5fc22e0fb5447c5d2/ionosphere.csv">ionosphere.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/b4ec63252f8ac8f0e74b7c6e9709cb93a0e5726f/iris.csv">iris.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/1fbdb955c1435630126f3b4088159c0455a12754/kr.vs.kp.csv">kr.vs.kp.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/f1d0fd10c6f4adc7413c3f2eed3b2cb9782ad7e8/labor.csv">labor.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/23e7db3db91bc0fbbc5f70f9ccc64174bcfba9cd/letter.csv">letter.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/b9297a48e18a0ba8d5946d4e0b5aa37e77c592be/lymph.csv">lymph.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/a5e4b362399946b1da886b85b3c465837329321d/mnist_1.csv">mnist_1.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/7c4d3198c16a203ff2da274afe957556425d6933/mushroom.csv">mushroom.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/9d6512d9d603bc8c2e51627c55670c430488e572/nursery.csv">nursery.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/59313ab651b0e73ce9794bd15a8e86273147d13a/optdigits.csv">optdigits.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/d9fb156d48f6d583dee2e639203f1e9be8d80484/page.blocks.csv">page.blocks.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/1fc3a1eb7369342cd0220b9c7d409aeae22e5954/pendigits.csv">pendigits.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/a7c651bfca5193a9278fd678ac0ce1f580cfad02/postoperative.patient.data.csv">postoperative.patient.data.csv</a>
+| <a href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/a48ea7da2f8dccb95d94bde707be12b43cbd3f54/primary.tumor.csv">primary.tumor.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/e4a20f39a17d6e0fa93707d87064aac2ac93b5f5/segment.csv">segment.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/c56280a73b155cde20c2dc1edbcb03639acb5ebc/shuttle.landing.control.csv">shuttle.landing.control.csv</a>
+| <a href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/1f3b625edb0bdb0c5c9988d07f87172200c15131/sick.csv">sick.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/ed4f4edef8a9170b726a0271485e9fd81db92a80/solar.flare1.csv">solar.flare1.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/585a25293d09a8c3f909a4a853cfb362d3d607fa/solar.flare2.csv">solar.flare2.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/e115f7fff0cec64d08b290b682506d2d02756447/sonar.csv">sonar.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/19c05b9f4172e17d29417663883bb1ea60f6b2b5/soybean.csv">soybean.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/3f9c7a65f1b5dd929f5a8d86b4519a4234102bf9/spambase.csv">spambase.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/d05062275efb067b3f991299df945837b1360814/spect.test.csv">spect.test.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/876934ce6c671db496602788cc8cad33013094b2/spect.train.csv">spect.train.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/05c067b61d83fc6916347ca123c508bd7c673ddf/spectf.test.csv">spectf.test.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/f466104e2b11e06da25459b843b5f344c77a5d25/spectf.train.csv">spectf.train.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/8d3aa97c24f21f3721581efd1470cb0e6451e750/spectrometer.csv">spectrometer.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/42d28ab6173006691ee489d8155da241fa1dd2ca/splice.csv">splice.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/02816af85a60c59e340e138437b440b21e05e030/sponge.csv">sponge.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/49295afa911650d7702da51ec2d608ca3c06802f/tae.csv">tae.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/4e964ab595f7d400a0413aabc2b68c6a0d1b7e0f/tic-tac-toe.csv">tic-tac-toe.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/7414ee3a731bfe3b589a011e5fdda783bb9eefb9/trains.csv">trains.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/4da5866e87c482e724ecc46a4d164f9c95a68022/vehicle.csv">vehicle.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/54d66b0b1dc533890a36a2741633ad6f2bffbcd0/vote.csv">vote.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/218d73488f43213b9985625cc948f7f476d82d2e/vowel.csv">vowel.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/043e64d235b31bde36f55c72d2d72521d2d143aa/waveform5000.csv">waveform5000.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/3c8634421abc6b6524544750c912a84e6891cbc0/weather.csv">weather.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/9b94055239b852a0e683e49e19375e4344a02845/weathernom.csv">weathernom.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/6e5d23ba8e3bd804d21ac595bdd4b95b561676d0/wine.csv">wine.csv</a> | <a
+href="https://gist.githubusercontent.com/timm/9152e959927e5c812904320bddf64aa5/raw/db9149b5219720003b80698c624da19d26c29daf/zoo.csv">zoo.csv</a></p>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>konfig    http://tiny.cc/konfig   shared Makefile, dotfiles
+optimiz   http://tiny.cc/optimiz  optimization datasets
+regress   http://tiny.cc/regress  regression datasets
+luamine   http://tiny.cc/luamine  code that reads these files</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

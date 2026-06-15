@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>lithp</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><img src="https://img.shields.io/badge/Purpose-Succinct·Lisp-7b68ee?logo=githubcopilot&logoColor=white" alt="Purpose">
+<a href="https://timm.fyi">
+<img src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white" alt="Author"></a>
+<img src="https://img.shields.io/badge/Language-Common%20Lisp-000080?logo=commonlisp&logoColor=white" alt="Language"><a href="https://choosealicense.com/licenses/mit/">
+<img src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white" alt="License"></a></p>
+<h3 id="httptinycclithp"><a
+href="http://tiny.cc/lithp"><span>http://tiny.cc/lithp</span></a></h3>
+<p><a href="http://tiny.cc/lithp"><img align="right" src="https://tiny.cc/tiny/qr-image/tiny.cc~lithp~l~150.png" alt="QR"></a></p>
+<p><code>lithp</code> is <strong>less library</strong>: the smallest set
+of Common Lisp add-ons that measurably shrinks application code — five
+plain constructs plus a handful of utilities, ~130 lines total, no
+reader macros, no dependencies. Found by ablation: we wrote the same
+machine-learner four ways and kept only what paid rent. <strong>The why,
+the data, and the style rules are in <a
+href="https://gist.github.com/timm/729164d89ae32ca4b6a83483be9e761b#file-blog-md">blog.md</a></strong>
+— this file is just the manual.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/optimiz <span class="co"># access test data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/lithp <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> lithp</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">sbcl</span> <span class="at">--script</span> fft.lisp          <span class="co"># the sweet-spot version</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sbcl</span> <span class="at">--script</span> fft.lisp <span class="at">--trees</span>  <span class="co"># show all grown trees</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">sbcl</span> <span class="at">--script</span> fft.lisp <span class="at">--grows</span>  <span class="co"># timing benchmark</span></span></code></pre></div>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a
+href="#the-kit-five-constructs">KIT</a> | <a
+href="#utilities">UTILITIES</a> | <a href="#files">FILES</a> | <a
+href="#license">LICENSE</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/8f8f97c054687861d7f33c3c28548281bd3cc3fd/lithp.lisp">lithp.lisp</a> |
+<a href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/79aecbe4a89f7e48ae706f0f928d18ed1296f045/blog.md">blog.md</a> | <a
+href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/f799919edbdaa666e4ab555a8a86cd72039b3037/fft.lisp">fft.lisp</a> | <a
+href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/9e975c0814e992666ba520e2abf3935bc6ec8265/small.lisp">small.lisp</a> | <a
+href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/a48c63b014c2e92b7e55b23b827e41709fb673dd/to_small.lisp">to_small.lisp</a> | <a
+href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/0aa99fd29887c896aa9ddd194b425888c876bef4/yuck.lisp">yuck.lisp</a> | <a
+href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/0d2dccb57160ed7fb7a0c4bb428885d749278b85/tiny.lisp">tiny.lisp</a> | <a
+href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/3e291a196e11c98c00b05dccbf9384a2b93157aa/tiny.vim">tiny.vim</a> | <a
+href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/d7da827bc2a066e8806725bff355dd687e8dc8d6/Makefile">Makefile</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>lithp — less library: the pay-rent subset (130 lines, no deps)</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>(load &quot;lithp.lisp&quot;)
+(defvar *settings* &#39;((seed . 1234567891) (file . &quot;data.csv&quot;)))
+(defmacro my (k) `(cdr (assoc &#39;,k *settings*)))
+(cli *settings*)                ; -s 42 on argv updates seed
+(setf *seed* (my seed))</code></pre>
+<h2 id="the-kit-five-constructs">THE KIT (five constructs)</h2>
+<table>
+<thead>
+<tr>
+<th>form</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(fn expr)</code></td>
+<td>variadic lambda; refer to args as <code>$1</code>..<code>$9</code>
+as used</td>
+</tr>
+<tr>
+<td><code>(? x a b)</code></td>
+<td>quoted-key chained access: <code>(ats (ats x 'a) 'b)</code></td>
+</tr>
+<tr>
+<td><code>(let+ (...) ...)</code></td>
+<td>one binder: <code>(x 1)</code> let, <code>((a b) lst)</code>
+destructure, <code>(f (z) ...)</code> local fn</td>
+</tr>
+<tr>
+<td><code>(o 'k1 v1 'k2 v2)</code></td>
+<td>build equal-hash record</td>
+</tr>
+<tr>
+<td><code>(ats x k)</code></td>
+<td>read hash <em>or</em> struct slot uniformly; setf-able</td>
+</tr>
+</tbody>
+</table>
+<p>Plus <code>(keys h)</code> — list of hash keys.</p>
+<h2 id="utilities">UTILITIES</h2>
+<table>
+<thead>
+<tr>
+<th>group</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td><code>(cat ...)</code> strings together;
+<code>(prn fmt args...)</code> format + newline</td>
+</tr>
+<tr>
+<td>pick</td>
+<td><code>(least lst f)</code> / <code>(most lst f)</code> — min/max by
+key fn</td>
+</tr>
+<tr>
+<td>parse</td>
+<td><code>(thing s)</code> string→number/symbol; <code>(cells s)</code>
+split csv line; <code>(csv file)</code> rows of things</td>
+</tr>
+<tr>
+<td>cli</td>
+<td><code>(args)</code> argv; <code>(cli alist)</code>
+<code>-x val</code> sets first-char-matching key</td>
+</tr>
+<tr>
+<td>random</td>
+<td><code>(rand n)</code> <code>(rint n)</code>
+<code>(shuffle lst)</code> <code>(few lst n)</code> — seeded Park-Miller
+(<code>*seed*</code>), reproducible across languages</td>
+</tr>
+</tbody>
+</table>
+<h2 id="files">FILES</h2>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>what</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lithp.lisp</code></td>
+<td>this library</td>
+</tr>
+<tr>
+<td><code>blog.md</code></td>
+<td>the ablation study: why these and only these</td>
+</tr>
+<tr>
+<td><code>yuck.lisp</code></td>
+<td>naive CLOS port, 605 lines — the cautionary tale</td>
+</tr>
+<tr>
+<td><code>small.lisp</code></td>
+<td>plain ANSI CL, design only, 261 lines</td>
+</tr>
+<tr>
+<td><code>fft.lisp</code></td>
+<td>+ the kit, 240 lines — <strong>the sweet spot</strong></td>
+</tr>
+<tr>
+<td><code>to_small.lisp</code></td>
+<td>+ reader macros via <code>tiny.lisp</code>, 214 lines — fun, not
+leverage</td>
+</tr>
+<tr>
+<td><code>tiny.lisp</code> / <code>tiny.vim</code></td>
+<td>the full dialect and its required editor support</td>
+</tr>
+</tbody>
+</table>
+<p>All four programs (<code>fft</code>, <code>small</code>,
+<code>to_small</code>, <code>yuck</code>) produce byte-identical output
+(same seeded RNG as the Python original they port).</p>
+<h2 id="license">LICENSE</h2>
+<p>MIT. (c) 2026 Tim Menzies, <a
+href="mailto:timm@ieee.org">timm@ieee.org</a></p>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

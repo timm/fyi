@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>fft</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><img align="right" src="https://img.shields.io/badge/Purpose-AI·Applications·Teaching-7b68ee?logo=githubcopilot&logoColor=white" alt="Purpose">
+<a href="https://timm.fyi">
+<img align="right" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white" alt="Author"></a>
+<img align="right" src="https://img.shields.io/badge/Language-Python-000080?logo=python&logoColor=white" alt="Language"><a href="https://choosealicense.com/licenses/mit/">
+<img align="right" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white" alt="License"></a></p>
+<h3 id="httptinyccfft"><a
+href="http://tiny.cc/fft"><span>http://tiny.cc/fft</span></a></h3>
+<p>A fast-and-frugal tree (FFT) makes urgent binary choices via a few
+yes/no questions, deliberately ignoring most of the data: fast since
+little computation, frugal since it often stops after one or two cues.
+Here: <code>fft.py</code> is the core (one pass = 16 candidate trees,
+one per bias string, from min-variance cuts on incremental Welford
+stats; ~240 lines, pure Python, no deps); <code>eval.py</code> samples
+many such trees and picks winners cheaply (successive halving, Hoeffding
+racing), scoring accuracy plus fairness. Data is CSV; column-name suffix
+tags type and goal.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and test</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/optimiz <span class="kw">&amp;&amp;</span> <span class="fu">git</span> clone http://tiny.cc/fft fft</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> fft <span class="kw">&amp;&amp;</span> <span class="ex">python3</span> <span class="at">-B</span> fft.py <span class="at">-f</span> ../optimiz/auto93.csv</span></code></pre></div>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a href="#options">OPTIONS</a> | <a
+href="#data">DATA</a> | <a href="#tests">TESTS</a> | <a
+href="#tree-output">TREE OUTPUT</a> | <a href="#exit">EXIT</a> | <a
+href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
+href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/8af895c6e2d94a6556d3f3e735587d0c/raw/8b4268181e865b58220f0eb57e19ee79218c1330/fft.py">fft.py</a> | <a
+href="https://gist.githubusercontent.com/timm/8af895c6e2d94a6556d3f3e735587d0c/raw/1dc72deef7f0725d7f022cf2ad467f6aeae33e30/eval.py">eval.py</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>fft - fast-frugal multi-objective trees; eval - sample + race them</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>python3 -B fft.py  [-flag VAL]... [--grows|--trees]
+python3 -B eval.py [-flag VAL]... [--sha|--csv|--final]</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>fft.py (defaults from its docstring; SSOT):
+
+  -s seed     random seed              (1234567891)
+  -p dist     distance exponent        (2)
+  -b bins     numeric bin count        (7)
+  -d depth    max tree depth           (4)
+  -R Round    display decimals         (2)
+  -F fan      cue fan: ifan | dfan     (ifan)
+  -f file     data file                ($DOOT/optimiz/auto93.csv)
+
+eval.py:
+
+  -f file     data file                ($DOOT/fairnez/adult.csv)
+  -t trainN   train rows per sample    (200; 100 in --sha/--final)
+  -P pos      positive label           (auto: labels.py, else minority)
+  -r repeats  resamples of trainN rows (10)
+  -S start    first rung, rows         (50; --sha/--final only)</code></pre>
+<h2 id="data">DATA</h2>
+<pre><code>CSV with header row. Each column name encodes type + role
+via first char (case) and last char (suffix):
+
+  first char UPPER  -&gt; numeric (Num)
+  first char lower  -&gt; symbolic (Sym)
+  suffix &#39;+&#39;        -&gt; numeric goal, maximize
+  suffix &#39;-&#39;        -&gt; numeric goal, minimize
+  suffix &#39;!&#39;        -&gt; symbolic goal (klass)
+  suffix &#39;~&#39;        -&gt; protected attribute (fairness)
+  suffix &#39;X&#39;        -&gt; ignore
+  else              -&gt; predictor
+
+Missing values: &#39;?&#39;. Example header:
+
+  Clndrs,Volume,HpX,Model,origin,Lbs-,Acc+,Mpg+</code></pre>
+<h2 id="tests">TESTS</h2>
+<pre><code>fft.py (multi-goal regression to distance-to-heaven):
+
+  (none)      grow 16 trees, show the lowest-error one
+  --trees     show all 16 candidate trees + their bias + error
+  --grows     timing: trees/second over repeated samples
+
+eval.py (binary classification + fairness, e.g. fairnez CSVs):
+
+  (none)      table: every tree x (pd, pf, prec, spd...) by disty
+  --sha       full grid vs successive-halving vs Hoeffding race
+  --csv       same comparison, one CSV row (for make ens)
+  --final     race on train, report winner on test (make best)</code></pre>
+<h2 id="tree-output">TREE OUTPUT</h2>
+<pre><code>fft.py prints one decision spine: each line is a cue; rows
+matching it stop there (their distance-to-heaven d2h, 0=best),
+all others fall through to the next cue.
+
+  if Volume &lt;= 83        then d2h 0.28 n=18
+  if Model &lt;= 74         then d2h 0.65 n=140
+  ...
+                         leaf d2h 0.66 n=99
+
+Example:
+
+  python3 -B fft.py -f ../optimiz/config_SS-N.csv --trees</code></pre>
+<h2 id="exit">EXIT</h2>
+<pre><code>0  success
+1  bad file / flag</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>http://tiny.cc/fairnez  fairness CSVs scored by eval.py
+http://tiny.cc/optimiz  example CSVs (auto93, config_SS-N, ...)
+http://tiny.cc/konfig   shared Makefile, bashrc, nvim, tmux</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT.  https://choosealicense.com/licenses/mit/
+(c) 2025 Tim Menzies.</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>xomo</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Python%203.12+-000080?logo=python&logoColor=white"><img align="right" alt="Deps" src="https://img.shields.io/badge/Deps-nuff%20(--learn)-32cd32?logo=checkmarx&logoColor=white"><a href="https://choosealicense.com/licenses/mit/"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"></a><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-SE·Estimation-7b68ee?logo=githubcopilot&logoColor=white"><br></p>
+<h3 id="httptinyccxomo"><a
+href="http://tiny.cc/xomo"><span>http://tiny.cc/xomo</span></a></h3>
+<p>xomo: one short file that runs COCOMO-II (effort), COQUALMO (defects)
+and Boehm's risk tables (schedule/cost risk) as a Monte-Carlo over four
+classic NASA/JPL case studies (flight, ground, osp, osp2). A project is
+a <em>box</em> of rating ranges; sample inside it many times and read
+effort, defects and risk as <strong>distributions</strong>, not single
+guesses. The model is pure stdlib; <code>--learn</code> grows a
+min-variance decision tree over the draws using <a
+href="http://tiny.cc/nuff">nuff</a>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and test</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/xomo <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> xomo</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-B</span> xomo.py             <span class="co"># medians (p25 p50 p75) per study</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-B</span> xomo.py <span class="at">--learn</span>     <span class="co"># decision tree: what drives good outcomes</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-B</span> xomo.py <span class="at">--checks</span>    <span class="co"># self-tests</span></span></code></pre></div>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a href="#options">OPTIONS</a> | <a
+href="#data">DATA</a> | <a href="#tests">TESTS</a> | <a
+href="#output">OUTPUT</a> | <a href="#learn">LEARN</a> | <a
+href="#calibration">CALIBRATION</a> | <a href="#see-also">SEE ALSO</a> |
+<a href="#license">LICENSE</a> | <a href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/6bc85bc848a516f111bd89ad501a7004/raw/5caba04a5e7bc8ebc38a416bc4c282d715d33262/xomo.py">xomo.py</a> | <a
+href="https://gist.githubusercontent.com/timm/6bc85bc848a516f111bd89ad501a7004/raw/bbe3bd0d7dc682541ac87dcf75d2ff4539a4caea/Makefile">Makefile</a> | <a
+href="https://gist.githubusercontent.com/timm/6bc85bc848a516f111bd89ad501a7004/raw/41055e75fdcf46ebf8eae0595e1c1a7e906dc80d/pyproject.toml">pyproject.toml</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>xomo - Monte-Carlo COCOMO-II + COQUALMO (effort, defects, risk)</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>python3 -B xomo.py [-s N] [-n N] [-l N] [-p STUDY] [--learn] [--checks] [-h]</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>-s --seed     random seed                   seed=1
+-n --n        samples/study, or --learn rows  n=1000
+-l --leaf     min rows per tree leaf         leaf=3
+-p --project  study to --learn               project=osp
+   --learn    grow a decision tree (needs nuff)
+   --checks   run model self-tests
+-h --help     show the docstring</code></pre>
+<h2 id="data">DATA</h2>
+<p>A <em>case study</em> is a dict of COCOMO driver ranges. Any driver
+left unset spans its full legal range. Drivers fall in four
+families:</p>
+<pre><code>family   members                              role
+------   -----------------------------------  ----------------------
+sf       prec flex resl team pmat             scale factors (exponent)
+em(+)    rely data cplx ruse docu time stor   effort up as rating up
+         pvol
+em(-)    acap pcap pcon aexp plex ltex tool   effort down as rating up
+         site sced
+dr       aa etat pr                           defect removers</code></pre>
+<p>Each draw: pick an integer rating in every driver's box, then</p>
+<pre><code>effort  = a * KLOC^(b + 0.01*sum SF) * prod EM        (COCOMO-II)
+defects = sum over {reqs,design,code} of
+          introduced(SF,EM) * (1 - removed(dr))        (COQUALMO)
+risk    = 100 * (fired Boehm risk-table cells) / 216</code></pre>
+<h2 id="tests">TESTS</h2>
+<p><code>--checks</code> runs every <code>test_*</code>:</p>
+<pre><code>test_positive                 effort/defects/risk finite, in range
+test_osp_riskier_than_osp2    maturing osp-&gt;osp2 cuts risk
+test_flight_bigger_than_ground tighter flight s/w costs more
+test_seed_repeats             same seed -&gt; same draw
+test_learn_tree               nuff tree finds at least one split</code></pre>
+<h2 id="output">OUTPUT</h2>
+<pre><code># 1000 samples/study, seed=1
+                          effort               defects               risk
+  study      p25     p50     p75     p25    p50    p75    p25   p50   p75
+ flight      921    1971    3672    1606   3508   6939      4     6     7
+ ground      558    1144    2123    1508   3471   6846      2     3     5
+    osp     1743    2240    3014    3589   5511   8161     12    16    20
+   osp2      237     307     386     131    205    298      3     3     4</code></pre>
+<p>Note osp -&gt; osp2: process maturity (prec, pmat up) drops median
+effort ~7x, defects ~27x, and risk from 16 to 3 -- the "orders of
+magnitude" effect, shown reproducibly.</p>
+<h2 id="learn">LEARN</h2>
+<p><code>--learn</code> turns N random draws of one project into a table
+(driver ratings -&gt; effort/defects/risk) and grows <a
+href="http://tiny.cc/nuff">nuff</a>'s min-variance decision tree over
+it. The root split = the single factor that most separates good from bad
+outcomes; follow branches to the <code>+</code> leaf for the rating
+combo that minimises the blended goals.</p>
+<pre><code>python3 -B xomo.py --learn -p osp2 -n 200 -l 20
+
+   d2h    n  Effort-  Defects-  Risk-  tree
+  0.51  200   324.21    228.95   3.48              &lt;- baseline (all draws)
+  0.45  148   317.55    224.21   3.12  Sced &gt; 2
+  0.37   79   260.86    194.78   3.11  |  Kloc &lt;= 102
++ 0.31   36   231.56    170.25      3  |  |  Ltex &gt; 3
+  ...</code></pre>
+<p>Needs nuff: <code>pip install nuff</code>, or clone the sibling gist
+so <code>$DOOT/nuff</code> is importable. <code>-n</code> sets rows,
+<code>-l</code> the min leaf size.</p>
+<h2 id="calibration">CALIBRATION</h2>
+<p>Each draw guesses a fresh internal calibration (effort
+<code>a,b</code>, the EM/SF slopes, COQUALMO m-ranges). So 1000 runs
+marginalize over the <em>space</em> of plausible calibrations: a
+conclusion that survives is stable no matter which calibration is "true"
+-- letting you decide without local tuning data. This is the core XOMO
+idea (Menzies &amp; Richardson, 2005). Tweak the ranges in the
+<code>POLICY</code> block to widen or narrow that space.</p>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>konfig    http://tiny.cc/konfig   shared Makefile/boilerplate
+nuff      http://tiny.cc/nuff     tiny stdlib python tricks
+paper     Menzies &amp; Richardson, &quot;XOMO: Understanding Development
+          Options for Autonomy&quot;, 20th Intl Forum on COCOMO, 2005.
+          http://timmenzies.net/pdf/05xomo.pdf</code></pre>
+<h2 id="license">LICENSE</h2>
+<p>MIT. <a
+href="https://choosealicense.com/licenses/mit/">https://choosealicense.com/licenses/mit/</a></p>
+<h2 id="author">AUTHOR</h2>
+<p>Tim Menzies, <a href="mailto:timm@ieee.org">timm@ieee.org</a></p>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

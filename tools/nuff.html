@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>nuff</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Python%203.12+-000080?logo=python&logoColor=white"><img align="right" alt="Deps" src="https://img.shields.io/badge/Deps-0-32cd32?logo=checkmarx&logoColor=white"><a href="https://choosealicense.com/licenses/mit/"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"></a><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-Python·Tricks-7b68ee?logo=githubcopilot&logoColor=white"><br></p>
+<h3 id="httptinyccnuff"><a
+href="http://tiny.cc/nuff"><span>http://tiny.cc/nuff</span></a></h3>
+<p>nuff: one tiny file of reusable Python tricks — attribute-dicts,
+typed CSV, pretty-print, seeded randomness, non-parametric stats,
+minimal column summaries, and row distances. Pure stdlib, zero
+dependencies. The cut-down kernel under my bigger apps, <strong>with no
+global config</strong>: every parameter (<code>p</code>,
+<code>cliff</code>, <code>conf</code>, <code>rng</code>) is passed as a
+keyword, so any function lifts out into another project.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nuff <span class="im">import</span> o, csv, say, Data, disty, same, shuffle</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> Data(csv(<span class="st">&quot;../optimiz/auto93.csv&quot;</span>))         <span class="co"># build a table</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>say(disty(d, d.rows[<span class="dv">0</span>], p<span class="op">=</span><span class="dv">1</span>))                  <span class="co"># row-&gt;goal distance, p a kwarg</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>shuffle(rows, rng<span class="op">=</span>random.Random(<span class="dv">1</span>))            <span class="co"># repeatable, own RNG</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>same(a, b, cliff<span class="op">=</span><span class="fl">0.195</span>, conf<span class="op">=</span><span class="fl">1.36</span>)             <span class="co"># are two samples the same?</span></span></code></pre></div>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#design">DESIGN</a> | <a href="#api">API</a> | <a
+href="#style">STYLE</a> | <a href="#license">LICENSE</a> | <a
+href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/cf1069a18549c562d808a72c5d256dcc/raw/1e67be53d378ab76559526802f2adceba06b2a90/nuff.py">nuff.py</a> | <a
+href="https://gist.githubusercontent.com/timm/cf1069a18549c562d808a72c5d256dcc/raw/0e4f61f1d9c13cfc2a33a6d18e12be1bb9cfb6ae/test_nuff.py">test_nuff.py</a> | <a
+href="https://gist.githubusercontent.com/timm/cf1069a18549c562d808a72c5d256dcc/raw/677954a579d16e073c7ce0f424d4a387e4a1c4e0/Makefile">Makefile</a> | <a
+href="https://gist.githubusercontent.com/timm/cf1069a18549c562d808a72c5d256dcc/raw/80ea922d22c3554671673660cb4ea5dfbc58cb54/pyproject.toml">pyproject.toml</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>nuff - one file of tiny stdlib python tricks (no global config)</code></pre>
+<h2 id="design">DESIGN</h2>
+<pre><code>One file, themed sections, no module-level `the`. Tuning rides
+along as keyword args, so any function drops into another app:
+  disty(data, row, p=2)
+  same(xs, ys, cliff=0.195, conf=1.36)
+  shuffle(lst, rng=random.Random(seed))</code></pre>
+<h2 id="api">API</h2>
+<pre><code>records / io / format
+  o              SimpleNamespace alias: o(x=1).x == 1
+  thing(s)       coerce str -&gt; int|float|bool|str
+  settings(s)    every var=val in s -&gt; an o (vals coerced)
+  csv(file)      yield typed rows (&#39;#&#39; = comment)
+  say(x, dec=2)  pretty str; whole floats as ints
+  sho(rows,just) align list[list[str]] to cols; just=&#39;&gt;&#39;/&#39;&lt;&#39;
+  main(funs)     run funs[name] for each --name in argv
+
+rand   (pass your own random.Random(seed) for repeatability)
+  shuffle(lst, rng)     shuffled copy
+  some(lst, k, rng)     sample without replacement
+  one(lst, rng)         one random item
+
+stats  (non-parametric &quot;are these two the same?&quot;)
+  cliffs(xs, ys)        Cliff&#39;s delta effect size 0..1
+  ks(xs, ys)            Kolmogorov-Smirnov CDF gap
+  same(xs, ys, cliff=.195, conf=1.36)
+  top_tier(groups, ...) names tied for best (min median)
+
+columns  (lightweight: Sym = dict {value:count}, Num = (n,mu,m2);
+          dispatch by isa(col, Sym), no tags)
+  Sym() Num(n,mu,m2)       a dict / a 3-tuple; n_/mu_/m2_ read it
+  welford(num,v,inc=1)     Num + v (inc=-1 removes) -&gt; new Num
+  mix(i,j,inc=1)           merge two same-type cols (inc=-1 = out)
+  mid(col) spread(col)     mode/mean, entropy/stdev
+  norm(num,v)              0..1 via a logistic on v&#39;s z-score (Num)
+
+table  (immutable cols -&gt; add RETURNS the new it, never mutates)
+  add(it,v,inc=1)          fold v into a Sym/Num, or a row into a
+                           Data; returns it (inc=-1 subtracts)
+  adds(src,it=None)        fold all of src into it (default a Num)
+  Data(rows)               -&gt; o(names, cols{at:col}, x, y, goal,
+                           klass, rows); first row = the header.
+                           Upper=Num lower=Sym; +/-/! = goal y;
+                           + maximizes; ! = klass; X = skip
+  clone(data, src=None)    new Data, same columns, fresh rows
+
+distance  (exponent `p` is a keyword)
+  minkowski(vals, p=2)
+  disty(data, row, p=2)      distance to best goals (0=ideal)
+  distx(data, r1, r2, p=2)   distance between two rows on x
+  gap(col, u, v)             per-column value distance 0..1
+
+bayes  (naive bayes; m, k carried as kwargs, no global the)
+  like(col, v, n=0, prior=0, k=1)       how a column likes a value
+                                        (n = #rows, for the Sym case)
+  likes(data, row, nrows, nklasses)     log-likelihood of a row
+  confuse(pairs)                        (want,got) -&gt; per-class
+                                        o(pd, pf, prec, acc)
+
+tree  (min-variance binary tree; exact cuts, no binning)
+  tree(data, leaf=3, maxDepth=12)       build; y defaults to disty
+  treeCuts(data, rows, y)               yield candidate cuts
+  treeCut(data, rows, y, leaf=3)        the best cut (or None)
+  treePredict(t, row)                   leaf disty mean for a row
+  treeShow(data, t)                     table: +/- d2h n ymeans tree</code></pre>
+<h2 id="style">STYLE</h2>
+<pre><code>Minimal python: one file, one-line comments, ~65-char lines,
+very short functions, `i` (not self), records over classes.
+Threshold for a new file vs a new gist: parts you *import* stay
+in here; *wholes* you *run* (apps, other languages, data) get
+their own gist.</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

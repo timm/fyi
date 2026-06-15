@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>luk</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><img align="right" src="https://img.shields.io/badge/Purpose-Tiny·Lua·Transpiler-7b68ee?logo=githubcopilot&logoColor=white" alt="Purpose">
+<a href="https://timm.fyi">
+<img align="right" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white" alt="Author"></a>
+<img align="right" src="https://img.shields.io/badge/Language-Lua-000080?logo=lua&logoColor=white" alt="Language"><a href="https://choosealicense.com/licenses/mit/">
+<img align="right" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white" alt="License"></a></p>
+<h3 id="httptinyccluk"><a
+href="http://tiny.cc/luk"><span>http://tiny.cc/luk</span></a></h3>
+<p><a href="http://tiny.cc/luk"><img align="right" src="https://tiny.cc/tiny/qr-image/tiny.cc~luk~l~150.png" alt="QR"></a></p>
+<p><code>luk</code> is the <strong><code>.luk</code> language</strong>:
+a tiny indentation-based dialect that transpiles to Lua via
+<code>luk.lua</code> (~100-line module). <code>luk.lua</code> returns a
+single function: <code>local lua_src = require("luk")(fun_src)</code>.
+Same Lua semantics, fewer <code>end</code>s, Python-style list
+comprehensions.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/luk <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> luk</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># transpile (luk.lua is a module; one-liner driver):</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> <span class="at">-e</span> <span class="st">&#39;io.write(require(&quot;luk&quot;)(io.read(&quot;*a&quot;)))&#39;</span> <span class="op">&lt;</span> my.luk <span class="op">&gt;</span> my.lua</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> my.lua                            <span class="co"># run</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> my.lua                           <span class="co"># via Makefile</span></span></code></pre></div>
+<p>For the optimizer shipped with luk (<code>fft.luk</code>) see <a
+href="fft.md">fft.md</a>.</p>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a href="#language-reference">LANGUAGE
+REFERENCE</a> | <a href="#performance">PERFORMANCE</a> | <a
+href="#files">FILES</a> | <a href="#vim-support">VIM SUPPORT</a> | <a
+href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
+href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/0f36d41c3c39290207401a4e1d085029cdce0d1e/luk.lua">luk.lua</a> | <a
+href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/c714224551b05353b5e3cb6e322dc9ed7d6f3054/fft.luk">fft.luk</a> | <a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/deb1e8f441ff0b9195c1a36648c7f2d5748dd259/lib.luk">lib.luk</a> |
+<a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/faa75058b6cceba87042ff41f94a6d49831f696a/fft.lua">fft.lua</a> | <a
+href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/5a6d7ee3c13db6871d2d109b697cecb3d8238d1d/lib.lua">lib.lua</a> | <a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/54929fcd6d24cdebb155780debab19586a2028a6/fft.md">fft.md</a> |
+<a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/32f7d59c9c1a4cbbfd3273aede5af0d40525259f/luk.rc">luk.rc</a> | <a
+href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/1418fd1dbeb6a6c52ca8ae0689fcfac3fb8e27f0/luk.vim">luk.vim</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>luk - .luk-to-Lua transpiler (single-file, no deps)</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>lua -e &#39;io.write(require&quot;luk&quot;(io.read&quot;*a&quot;))&#39; &lt;IN.luk &gt;OUT.lua
+-- or programmatically:
+--   local lua_src = require(&quot;luk&quot;)(fun_src)</code></pre>
+<h2 id="language-reference">LANGUAGE REFERENCE</h2>
+<h3 id="keywords-whole-word-substitution">Keywords (whole-word
+substitution)</h3>
+<pre><code>fun                -&gt; function
+!                  -&gt; return
+!=                 -&gt; ~=     (Lua&#39;s not-equal)</code></pre>
+<h3 id="local-declarations">Local declarations</h3>
+<pre><code>NAME := EXPR       -&gt; local NAME = EXPR
+A, B := X, Y       -&gt; local A, B = X, Y</code></pre>
+<h3 id="compound-assignment-start-of-line">Compound assignment (start of
+line)</h3>
+<pre><code>X += V             -&gt; X = X + V
+X -= V             -&gt; X = X - V
+X *= V             -&gt; X = X * V
+X /= V             -&gt; X = X / V</code></pre>
+<h3 id="block-openers-use--at-eol-or-before-body">Block openers (use ":"
+at EOL or before body)</h3>
+<pre><code>if (cond):         -&gt; if cond then
+elseif (cond):     -&gt; elseif cond then
+else:              -&gt; else
+for X in Y:        -&gt; for X in Y do
+for i = a, b:      -&gt; for i = a, b do
+while cond:        -&gt; while cond do
+fun (args):        -&gt; function(args)
+NAME := fun (a):   -&gt; local NAME = function(a)</code></pre>
+<h3 id="block-bodies">Block bodies</h3>
+<ul>
+<li><p>Same line after <code>:</code> = one-liner, auto-appends
+<code> end</code>.</p></li>
+<li><p>Indented next lines = multi-line; outdent emits
+<code> end</code>.</p></li>
+<li><p>Continuation lines starting with
+<code>else</code>/<code>elseif</code> do NOT trigger the outdent
+close.</p></li>
+<li><p>Lone <code> end</code> lines are folded onto the previous code
+line (skipping blank lines and comments).</p></li>
+<li><p>Inline anonymous <code>fun</code> in expressions needs explicit
+<code>end</code>:</p>
+<pre><code>cb := fun (x): ! x*2 end</code></pre></li>
+</ul>
+<h3 id="list-comprehensions-python-style-inside--">List comprehensions
+(Python-style, inside <code>[ ]</code>)</h3>
+<pre><code>[EXPR for V in ITER]
+[EXPR for V in ITER if COND]
+[EXPR for K,V in ITER]            -- 2 loop vars -&gt; pairs</code></pre>
+<p>ITER auto-wrapping inside comprehensions:</p>
+<pre><code>- 1 var, no &quot;(&quot; in ITER  -&gt; ipairs(ITER)
+- 2 vars, no &quot;(&quot; in ITER -&gt; pairs(ITER)
+- else passed through as-is</code></pre>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>Strings/comments are hidden during substitution, so sigils inside
+them are safe: <code>print("hi!")</code> stays untouched.</li>
+<li>Shebang <code>#!...</code> at top is rewritten to
+<code>--...</code>.</li>
+</ul>
+<h2 id="performance">PERFORMANCE</h2>
+<p>Runtime, default mode (depth=4, 16 trees built):</p>
+<pre><code>file       rows    fft.py   fft.lua  fft.luk (transpile+run)
+--------   -----   ------   ------   -----------------------
+auto93     398     0.080s   0.032s   0.039s
+SS-N      53663    9.18s    6.24s    6.11s</code></pre>
+<p>Lua 1.5x-2.5x faster than Python. Transpile overhead ~7ms (constant,
+negligible on any real workload).</p>
+<h2 id="files">FILES</h2>
+<pre><code>luk.lua      .luk -&gt; .lua transpiler (filter)
+lib.luk      &quot;battery&quot; helpers (argmin, sum, csv, of, ...)
+fft.luk      example: multi-objective regression tree
+Makefile     rule:  %.lua: %.luk luk.lua</code></pre>
+<h2 id="vim-support">VIM SUPPORT</h2>
+<pre><code>syntax: http://tiny.cc/timm-lua  -&gt; etc/syntax/luk.vim
+nvim init at etc/nvimluk.lua.</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>fft.md                   help page for the fft.lua app
+http://tiny.cc/fft       Python sibling project
+http://tiny.cc/optimiz   example CSVs
+http://tiny.cc/konfig    shared Makefile</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT. (c) 2026 Tim Menzies.</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

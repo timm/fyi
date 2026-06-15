@@ -40,6 +40,17 @@ links: ## check for dead local refs in HTML
 	    done; \
 	done
 
+# DOOT = gists root (dir holding the konfig-style gists). env wins.
+DOOT ?= $(HOME)/gists
+# SKIP = retired/experimental gist slugs to leave OUT of the catalog.
+# (gist API has no folders, so old/ gists still return -- exclude here.)
+SKIP ?= ape,dot-files,preci0us,ranger,ruler,tests4mop,tinypythonclasses,tricks
+
+.PHONY: tools
+tools: ## render gist catalog -> tools/ (needs $(DOOT)/gistsite + pandoc)
+	@python3 -B $(DOOT)/gistsite/gistsite.py -o tools -c ../site.css --skip $(SKIP)
+	@echo "rendered -> tools/  (review, then: make push)"
+
 clean: ## remove macOS junk + tmp files
 	@find . -name '.DS_Store' -delete
 	@find . -name '*~' -delete
