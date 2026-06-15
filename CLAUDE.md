@@ -9,9 +9,32 @@
 ## Pages
 - **Personal pages**: `index.html`, `research.html`, `teach.html`, `blog.html`, `news.html`, plus `irl.html` (lab home, formerly separate "Service" page dropped 2026-05).
 - **Blog posts**: `higher_way.html` (Apr'26), `symbolic_ai.html` (May'26). Listed under `blog.html` Posts section.
-- **Nav on personal pages** (uniform): `Home | Research | Teach | Blog | Lab`. `tools.html` exists but is orphaned (Tools removed from nav 2026-05).
+- **Nav on personal pages** (uniform): `Home | Research | Teach | Tools | Blog | Lab`. Tools restored to nav 2026-06; `tools.html` + `tool-*.html` are GENERATED (see Tools section) — don't hand-edit them.
 - **IRL section** (4 pages): `irl.html`, `irl-projects.html`, `irl-people.html`, `irl-collaborators.html`. Linked from main nav as "Lab".
 - **Static assets**: PDFs at root (e.g. `26smooth.pdf`, kept at root for stable external links). Images in `assets/img/`. Old/unlinked stuff moved to `old/`.
+
+## Tools (imported from gists)
+`make tools` builds the Tools section from curated gist READMEs (needs
+`pandoc` — the site's one build tool). Each gist's `,*.md` man-page README
+is converted to a styled page. **The import is owned here, not in the
+gists** — gists never reference fyi; this Makefile lists what to pull.
+
+Curated list — edit `TOOLS` in the `Makefile` to add/remove (`slug:gistdir:mdfile`):
+
+    konfig   ~/gists/konfig/,konfig.md     shared gist boilerplate
+    ezr      ~/gists/ezr/,ezr.md           XAI multi-objective optimization
+    nuff     ~/gists/nuff/,nuff.md         tiny one-file python tricks lib
+    kah-lua  ~/gists/kah-lua/,kah.md       ~50 reusable Lua functions
+    lithp    ~/gists/lithp/,lithp.md       "less library" Common Lisp kit
+    luamine  ~/gists/luamine/,luamine.md   Lua data-mining learners
+    luk      ~/gists/luk/,luk.md           .luk indentation dialect
+    repltut  ~/gists/repltut/,Repltut.md   source-code-as-textbook prompts
+
+Output: `tools.html` (index) + `tool-<slug>.html` (one per tool, flat at
+root). Regenerate after any gist README changes. `etc/tool.html` is the
+pandoc template (fyi chrome); styling via `body.tool` + `.tools-list` in
+`site.css`. The build strips gist-only lines (shields badges, screenshot,
+`**Files:**` TOC, relative-file links). `GISTS` defaults to `~/gists`.
 
 ## Page Structure
 All pages share:
