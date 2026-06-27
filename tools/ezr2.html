@@ -36,6 +36,18 @@ explains which input ranges lead to the best goals.</p>
 <p>Runs on <strong>data</strong> (a CSV) or a live
 <strong>model</strong> (override <code>labelled()</code> so a row's
 goals are computed on demand — see <code>dtlz.py</code>).</p>
+<p><strong>Files:</strong> <a
+href="http://tiny.cc/ezr2#file-ezr2-py">ezr2.py</a> | <a
+href="http://tiny.cc/ezr2#file-test_ezr2-py">test_ezr2.py</a> | <a
+href="http://tiny.cc/ezr2#file-dtlz-py">dtlz.py</a> | <a
+href="http://tiny.cc/ezr2#file-growing-py">Growing.py</a> | <a
+href="http://tiny.cc/ezr2#file-pctl-py">pctl.py</a> | <a
+href="http://tiny.cc/ezr2#file-ezr2-md">ezr2.md</a> | <a
+href="http://tiny.cc/ezr2#file-random-md">Random.md</a> | <a
+href="http://tiny.cc/ezr2#file-growing-md">Growing.md</a> | <a
+href="http://tiny.cc/ezr2#file-makefile">Makefile</a> | <a
+href="http://tiny.cc/ezr2#file-pyproject-toml">pyproject.toml</a> | <a
+href="http://tiny.cc/ezr2#file-license-md">LICENSE.md</a></p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sibling data gist supplies the CSVs (no data lives in here)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/optimiz                 <span class="co"># optimization data</span></span>
@@ -45,47 +57,6 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py <span class="at">--file</span><span class="op">=</span>../optimiz/auto93.csv disty</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py all                          <span class="co"># run every self-test</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> test                                         <span class="co"># same, via konfig</span></span></code></pre></div>
-<h3 id="files">Files</h3>
-<table>
-<thead>
-<tr>
-<th>file</th>
-<th>what</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ezr2.py</code></td>
-<td>the library + CLI dispatch (<code>main</code>); no tests inside</td>
-</tr>
-<tr>
-<td><code>test_ezr2.py</code></td>
-<td>every <code>test_*</code> + the runnable entry point</td>
-</tr>
-<tr>
-<td><code>dtlz.py</code></td>
-<td>tutorial: drive ezr2 with external models (DTLZ1–7)</td>
-</tr>
-<tr>
-<td><code>Growing.py/.md/.png</code></td>
-<td>sensitivity study of the <code>keepf</code>/<code>grow</code>
-knobs</td>
-</tr>
-<tr>
-<td><code>Random.md</code></td>
-<td>is random as good as active learning? (corpus study)</td>
-</tr>
-<tr>
-<td><code>pctl.py</code></td>
-<td>percentile summary for the <code>holdouts</code>/<code>pure</code>
-lanes</td>
-</tr>
-<tr>
-<td><code>ezr2.md</code></td>
-<td>the tour — a build-order textbook of the code</td>
-</tr>
-</tbody>
-</table>
 <h3 id="knobs---keyval">Knobs (<code>--key=val</code>)</h3>
 <p><code>--file --seed --leaf --maxd --grow --budget --cap --check --keepf --round --landscape</code>.
 See <code>python3 test_ezr2.py -h</code>.</p>
