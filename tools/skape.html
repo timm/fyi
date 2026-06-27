@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>skape</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Python%203.12+-000080?logo=python&logoColor=white"><img align="right" alt="Deps" src="https://img.shields.io/badge/Deps-0-32cd32?logo=checkmarx&logoColor=white"><a href="https://choosealicense.com/licenses/mit/"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"></a><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-Active·Learning-7b68ee?logo=githubcopilot&logoColor=white"><br></p>
+<h3 id="httptinyccskape"><a
+href="http://tiny.cc/skape"><span>http://tiny.cc/skape</span></a></h3>
+<p>skape: a multi-objective optimizer that spends labels like they are
+expensive — because they are. Each level it labels a few rows, projects
+the whole pool onto a FastMap line (poles = the two most distant
+labelled rows, by <strong>x</strong>-distance, so unlabelled rows
+project too), keeps the better two-thirds, and recurses. The ~50 labels
+it buys then grow a tiny min-variance tree that sorts a held-out half.
+One stdlib file, zero dependencies: the nuff closure it needs (typed
+CSV, Sym/Num columns, distance, tree) is <strong>inlined</strong>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-B</span> skape.py <span class="at">-file</span> ../optimiz/auto93.csv   <span class="co"># -&gt; a 0..100 win</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-B</span> skape.py <span class="at">-budget</span> 30 <span class="at">-keep</span> 0.7          <span class="co"># tune any setting</span></span></code></pre></div>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#design">DESIGN</a> | <a href="#usage">USAGE</a> | <a
+href="#settings">SETTINGS</a> | <a href="#style">STYLE</a> | <a
+href="#license">LICENSE</a> | <a href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/6fdf79f69294bfc64442379955c7fca0/raw/30e17f51439625068861b87bbbbbdc68d209dbf7/skape.py">skape.py</a> | <a
+href="https://gist.githubusercontent.com/timm/6fdf79f69294bfc64442379955c7fca0/raw/9e74b30f3ef215a1d67d5cd87a33e0e0ccd33706/test_skape.py">test_skape.py</a> | <a
+href="https://gist.githubusercontent.com/timm/6fdf79f69294bfc64442379955c7fca0/raw/cc896fb28dd94014c483f8e22676b8765e365eb4/Makefile">Makefile</a> | <a
+href="https://gist.githubusercontent.com/timm/6fdf79f69294bfc64442379955c7fca0/raw/77701b7ac0e1f99c5916edbf4379358c558996c3/pyproject.toml">pyproject.toml</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>skape - a FastMap landscape active learner (stdlib only)</code></pre>
+<h2 id="design">DESIGN</h2>
+<pre><code>The loop (landscape): poles in O(2N), keep the kept side.
+  label `grow` rows  -&gt;  the worst survivors of the last cut
+  project the pool   -&gt;  (d(a,r)^2 + c^2 - d(b,r)^2) / 2c, c=d(a,b)
+  drop the worst 1/3 -&gt;  recurse until `budget` labels are spent
+Poles come only from the labels still inside the surviving
+region (local poles). Distance is root-stable: norms and goals
+are read off the whole data, so subtrees see no spurious splits.
+
+The yardstick (holdout): split rows in half, acquire on one half,
+grow a tree, sort the other half by the tree, check the top
+`check`, take the best by true distance, score 0..100 vs the
+data&#39;s own spread. Mean over `repeats`.</code></pre>
+<h2 id="usage">USAGE</h2>
+<pre><code>python3 -B skape.py [-KEY VAL ...]
+  -file F     dataset (CSV; `+`/`-`/`!` header suffix = goal/klass)
+  prints      &quot;WIN&lt;tab&gt;basename&quot;  (WIN is the mean hold-out score)
+
+make test     # smoke tests (needs ../optimiz)
+make sh       # konfig dev shell</code></pre>
+<h2 id="settings">SETTINGS</h2>
+<pre><code>seed 1234567891   grow 4     keep 0.66    budget 50
+cap  1024         check 5    leaf 3       repeats 20
+
+Any `-key val` on the CLI overrides; types follow the default.</code></pre>
+<h2 id="style">STYLE</h2>
+<pre><code>konfig house style (style_code.md): 2-space indent, short names,
+one-line colon bodies, python3 -B. Promoted from sand-box/far.py;
+the nuff primitives are inlined so the file stands alone.</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT (c) 2026 Tim Menzies.</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies &lt;timm@ieee.org&gt;, https://timm.fyi</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>

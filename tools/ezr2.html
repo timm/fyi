@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>ezr2</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Python%203.12+-000080?logo=python&logoColor=white"><img align="right" alt="Deps" src="https://img.shields.io/badge/Deps-0-32cd32?logo=checkmarx&logoColor=white"><a href="https://choosealicense.com/licenses/mit/"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"></a></p>
+<h3 id="httptinyccezr2"><a
+href="http://tiny.cc/ezr2"><span>http://tiny.cc/ezr2</span></a></h3>
+<p><strong>ezr2</strong> — explainable multi-objective optimization in
+one file, <strong>zero dependencies</strong>, pure Python stdlib. Build
+a large pool of candidate rows, recursively split it by far-point
+projection (a descendant of SWAY), label only a few dozen informative
+rows, then sort the rest. A regression <em>or</em> classification tree
+explains which input ranges lead to the best goals.</p>
+<p>Runs on <strong>data</strong> (a CSV) or a live
+<strong>model</strong> (override <code>labelled()</code> so a row's
+goals are computed on demand — see <code>dtlz.py</code>).</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sibling data gist supplies the CSVs (no data lives in here)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/optimiz                 <span class="co"># optimization data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/ezr2 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ezr2</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py <span class="at">-h</span>                           <span class="co"># options + test names</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py tree                         <span class="co"># build + show a tree</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py <span class="at">--file</span><span class="op">=</span>../optimiz/auto93.csv disty</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py all                          <span class="co"># run every self-test</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> test                                         <span class="co"># same, via konfig</span></span></code></pre></div>
+<h3 id="files">Files</h3>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>what</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ezr2.py</code></td>
+<td>the library + CLI dispatch (<code>main</code>); no tests inside</td>
+</tr>
+<tr>
+<td><code>test_ezr2.py</code></td>
+<td>every <code>test_*</code> + the runnable entry point</td>
+</tr>
+<tr>
+<td><code>dtlz.py</code></td>
+<td>tutorial: drive ezr2 with external models (DTLZ1–7)</td>
+</tr>
+<tr>
+<td><code>Growing.py/.md/.png</code></td>
+<td>sensitivity study of the <code>keepf</code>/<code>grow</code>
+knobs</td>
+</tr>
+<tr>
+<td><code>Random.md</code></td>
+<td>is random as good as active learning? (corpus study)</td>
+</tr>
+<tr>
+<td><code>pctl.py</code></td>
+<td>percentile summary for the <code>holdouts</code>/<code>pure</code>
+lanes</td>
+</tr>
+<tr>
+<td><code>ezr2.md</code></td>
+<td>the tour — a build-order textbook of the code</td>
+</tr>
+</tbody>
+</table>
+<h3 id="knobs---keyval">Knobs (<code>--key=val</code>)</h3>
+<p><code>--file --seed --leaf --maxd --grow --budget --cap --check --keepf --round --landscape</code>.
+See <code>python3 test_ezr2.py -h</code>.</p>
+<h3 id="data-format">Data format</h3>
+<p>First row names the columns; a name's <strong>last char</strong> sets
+its role, its <strong>first char</strong> its type:</p>
+<ul>
+<li>upper-case first letter → numeric (else symbolic)</li>
+<li><code>+</code> / <code>-</code> suffix → goal to maximize /
+minimize</li>
+<li><code>!</code> suffix → klass; <code>X</code> → ignore;
+<code>~</code> → protected x-column; else → input x</li>
+</ul>
+<pre><code>Clndrs,Volume,HpX,Model,origin,Lbs-,Acc+,Mpg+</code></pre>
+<p>numeric inputs <code>Clndrs/Volume/Model</code>, symbolic input
+<code>origin</code>, ignored <code>HpX</code>, goals minimize
+<code>Lbs</code>, maximize <code>Acc</code>/<code>Mpg</code>.</p>
+<h3 id="findings">Findings</h3>
+<ul>
+<li><strong>Active beats random ~3:1</strong> where landscapes separate,
+ties at the sparsity ceiling; the edge lives in the hard tail, not the
+mean (<code>Random.md</code>).</li>
+<li><strong><code>grow</code> is the dominant knob</strong> and SWAY's
+<code>(keepf=0.5, grow=2)</code> is the weakest setting in its own space
+— growing a little faster gains ~11 win points and the surface is a
+smooth, low-sensitivity plateau (<code>Growing.md</code>).</li>
+</ul>
+<p>Data lives in sibling DATA gists (<code>../optimiz</code>), never
+inside this tool gist.</p>
+
+<hr>
+<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+</main></body></html>
