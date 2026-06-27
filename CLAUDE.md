@@ -36,6 +36,20 @@ pandoc template (fyi chrome); styling via `body.tool` + `.tools-list` in
 `site.css`. The build strips gist-only lines (shields badges, screenshot,
 `**Files:**` TOC, relative-file links). `GISTS` defaults to `~/gists`.
 
+### Tools vs Blog — what goes where (a gist may ship two docs)
+- `,<name>.md` — the man-page README → **Tools** (auto-imported by `make
+  tools`; don't hand-edit `tools/`). One per gist.
+- `<name>.md` — an optional long-form "tour" / genetic-stanza tutorial →
+  a **Blog** post. Render it with pandoc through `etc/blog.html` (the fyi
+  chrome template), e.g.
+  `pandoc ~/gists/<g>/<name>.md -s --template=etc/blog.html
+  --highlight-style=breezedark --metadata title="..." --metadata
+  slug=<name> -o <name>.html`, then add a row to `blog.html` Posts (and
+  usually `news.html`). **Copy any images the tour uses into
+  `assets/img/` and repoint the `src=` — fyi never reads from gists.**
+- Never put the long tour in Tools (the strip rules mangle it); never put
+  the man-page in Blog (too terse). Cross-link the two.
+
 ## Page Structure
 All pages share:
 - `<nav>`: home icon (left, → `index.html`; on irl pages → `irl.html`) + section links + `papers:` group with arxiv & Scholar icons (right). Flex with `flex-wrap: wrap; gap: 8px;` so it wraps cleanly on narrow screens.
