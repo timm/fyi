@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="https://timm.fyi/site.css">
 <style>
 body{max-width:860px}
 pre{overflow-x:auto;white-space:pre;color:#e6edf3;
@@ -29,9 +29,9 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 <img align="right" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white" alt="Author"></a>
 <img align="right" src="https://img.shields.io/badge/Language-Lua-000080?logo=lua&logoColor=white" alt="Language"><a href="https://choosealicense.com/licenses/mit/">
 <img align="right" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white" alt="License"></a></p>
-<h3 id="httptinyccluk"><a
-href="http://tiny.cc/luk"><span>http://tiny.cc/luk</span></a></h3>
-<p><a href="http://tiny.cc/luk"><img align="right" src="https://tiny.cc/tiny/qr-image/tiny.cc~luk~l~150.png" alt="QR"></a></p>
+<h3 id="httpsgithubcomaiezluk"><a
+href="https://github.com/aiez/luk"><span>https://github.com/aiez/luk</span></a></h3>
+<p><a href="https://github.com/aiez/luk"><img align="right" src="https://tiny.cc/tiny/qr-image/tiny.cc~luk~l~150.png" alt="QR"></a></p>
 <p><code>luk</code> is the <strong><code>.luk</code> language</strong>:
 a tiny indentation-based dialect that transpiles to Lua via
 <code>luk.lua</code> (~100-line module). <code>luk.lua</code> returns a
@@ -39,25 +39,28 @@ single function: <code>local lua_src = require("luk")(fun_src)</code>.
 Same Lua semantics, fewer <code>end</code>s, Python-style list
 comprehensions.</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/luk <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> luk</span>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/luk <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> luk</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># transpile (luk.lua is a module; one-liner driver):</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> <span class="at">-e</span> <span class="st">&#39;io.write(require(&quot;luk&quot;)(io.read(&quot;*a&quot;)))&#39;</span> <span class="op">&lt;</span> my.luk <span class="op">&gt;</span> my.lua</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> my.lua                            <span class="co"># run</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> my.lua                           <span class="co"># via Makefile</span></span></code></pre></div>
 <p>For the optimizer shipped with luk (<code>fft.luk</code>) see <a
-href="fft.md">fft.md</a>.</p>
+href="https://github.com/aiez/luk/blob/HEAD/fft.md">fft.md</a>.</p>
 <p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
 href="#synopsis">SYNOPSIS</a> | <a href="#language-reference">LANGUAGE
 REFERENCE</a> | <a href="#performance">PERFORMANCE</a> | <a
 href="#files">FILES</a> | <a href="#vim-support">VIM SUPPORT</a> | <a
 href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
 href="#author">AUTHOR</a></p>
-<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/0f36d41c3c39290207401a4e1d085029cdce0d1e/luk.lua">luk.lua</a> | <a
-href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/c714224551b05353b5e3cb6e322dc9ed7d6f3054/fft.luk">fft.luk</a> | <a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/deb1e8f441ff0b9195c1a36648c7f2d5748dd259/lib.luk">lib.luk</a> |
-<a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/faa75058b6cceba87042ff41f94a6d49831f696a/fft.lua">fft.lua</a> | <a
-href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/5a6d7ee3c13db6871d2d109b697cecb3d8238d1d/lib.lua">lib.lua</a> | <a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/54929fcd6d24cdebb155780debab19586a2028a6/fft.md">fft.md</a> |
-<a href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/32f7d59c9c1a4cbbfd3273aede5af0d40525259f/luk.rc">luk.rc</a> | <a
-href="https://gist.githubusercontent.com/timm/47dfa0f6ab796999410afa3c0dcbdae2/raw/1418fd1dbeb6a6c52ca8ae0689fcfac3fb8e27f0/luk.vim">luk.vim</a></p>
+<p><strong>Files:</strong> <a
+href="https://github.com/aiez/luk#file-luk-lua">luk.lua</a> | <a
+href="https://github.com/aiez/luk#file-fft-luk">fft.luk</a> | <a
+href="https://github.com/aiez/luk#file-lib-luk">lib.luk</a> | <a
+href="https://github.com/aiez/luk#file-fft-lua">fft.lua</a> | <a
+href="https://github.com/aiez/luk#file-lib-lua">lib.lua</a> | <a
+href="https://github.com/aiez/luk#file-fft-md">fft.md</a> | <a
+href="https://github.com/aiez/luk#file-luk-rc">luk.rc</a> | <a
+href="https://github.com/aiez/luk#file-luk-vim">luk.vim</a></p>
 <h2 id="name">NAME</h2>
 <pre><code>luk - .luk-to-Lua transpiler (single-file, no deps)</code></pre>
 <h2 id="synopsis">SYNOPSIS</h2>
@@ -138,14 +141,14 @@ Makefile     rule:  %.lua: %.luk luk.lua</code></pre>
 nvim init at etc/nvimluk.lua.</code></pre>
 <h2 id="see-also">SEE ALSO</h2>
 <pre><code>fft.md                   help page for the fft.lua app
-http://tiny.cc/fft       Python sibling project
-http://tiny.cc/optimiz   example CSVs
-http://tiny.cc/konfig    shared Makefile</code></pre>
+https://github.com/aiez/fft       Python sibling project
+https://github.com/aiez/optimiz   example CSVs
+https://github.com/aiez/konfig    shared Makefile</code></pre>
 <h2 id="license">LICENSE</h2>
 <pre><code>MIT. (c) 2026 Tim Menzies.</code></pre>
 <h2 id="author">AUTHOR</h2>
 <pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
 
 <hr>
-<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+<p class="foot"><span>built by <a href="https://github.com/aiez/gistsite">gistsite</a></span></p>
 </main></body></html>

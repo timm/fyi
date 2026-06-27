@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://timm.fyi/site.css">
+<style>
+body{max-width:860px}
+pre{overflow-x:auto;white-space:pre;color:#e6edf3;
+    background:linear-gradient(145deg,#0d1117 0%,#161b22 60%,#1b2230 100%);
+    border:1px solid #30363d;border-left:3px solid #ffb86c;
+    border-radius:8px;padding:12px 14px;
+    box-shadow:inset 0 1px 0 #000, 0 0 20px rgba(255,184,108,.07)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.sourceCode .co{color:#888;font-style:italic}
+.sourceCode .kw,.sourceCode .cf{color:#ff7b72}
+.sourceCode .fu,.sourceCode .at{color:#d2a8ff}
+.sourceCode .st,.sourceCode .vs,.sourceCode .ss{color:#a5d6ff}
+.sourceCode .dv,.sourceCode .bn,.sourceCode .fl{color:#79c0ff}
+.sourceCode .va,.sourceCode .cn{color:#ffa657}
+.sourceCode .op,.sourceCode .sc{color:#e0e0e0}
+</style>
+<title>ezr2</title></head><body><main>
+<nav><span><b><a href="index.html">tools</a></b> |
+<a href="https://timm.fyi">timm.fyi</a></span>
+<span><a href="https://github.com/timm">github</a></span></nav>
+<hr>
+<!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
+
+<p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Python%203.12+-000080?logo=python&logoColor=white"><img align="right" alt="Deps" src="https://img.shields.io/badge/Deps-0-32cd32?logo=checkmarx&logoColor=white"><a href="https://choosealicense.com/licenses/mit/"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"></a><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-XAI·Optimization-7b68ee?logo=githubcopilot&logoColor=white"></p>
+<h3 id="httpsgithubcomaiezezr2"><a
+href="https://github.com/aiez/ezr2"><span>https://github.com/aiez/ezr2</span></a></h3>
+<p>ezr2 — explainable multi-objective optimization in one file,
+<strong>zero dependencies</strong>, pure Python stdlib. Build a large
+pool of candidate rows, recursively split it by far-point projection (a
+descendant of SWAY), label only a few dozen informative rows, then sort
+the rest. A regression <em>or</em> classification tree explains which
+input ranges lead to the best goals, and a branch-delta reads as an
+action. Runs on a CSV, or a live model (override
+<code>labelled()</code>).</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sibling data gist supplies the CSVs (no data lives in here)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/optimiz                 <span class="co"># optimization data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/ezr2 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ezr2</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py tree                         <span class="co"># build + show a tree</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test_ezr2.py all                          <span class="co"># run every self-test</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> test                                         <span class="co"># same, via konfig</span></span></code></pre></div>
+<p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
+href="#synopsis">SYNOPSIS</a> | <a href="#description">DESCRIPTION</a> |
+<a href="#data">DATA</a> | <a href="#options">OPTIONS</a> | <a
+href="#findings">FINDINGS</a> | <a href="#see-also">SEE ALSO</a> | <a
+href="#license">LICENSE</a> | <a href="#author">AUTHOR</a></p>
+<p><strong>Files:</strong> <a
+href="https://github.com/aiez/ezr2#file-ezr2-py">ezr2.py</a> | <a
+href="https://github.com/aiez/ezr2#file-test_ezr2-py">test_ezr2.py</a> |
+<a href="https://github.com/aiez/ezr2#file-dtlz-py">dtlz.py</a> | <a
+href="https://github.com/aiez/ezr2#file-growing-py">Growing.py</a> | <a
+href="https://github.com/aiez/ezr2#file-pctl-py">pctl.py</a> | <a
+href="https://github.com/aiez/ezr2#file-ezr2-md">ezr2.md</a> | <a
+href="https://github.com/aiez/ezr2#file-random-md">Random.md</a> | <a
+href="https://github.com/aiez/ezr2#file-growing-md">Growing.md</a> | <a
+href="https://github.com/aiez/ezr2#file-makefile">Makefile</a> | <a
+href="https://github.com/aiez/ezr2#file-pyproject-toml">pyproject.toml</a>
+| <a
+href="https://github.com/aiez/ezr2#file-license-md">LICENSE.md</a></p>
+<h2 id="name">NAME</h2>
+<pre><code>ezr2 - explainable multi-objective optimization via active
+       learning and a dual-mode (regression|classification) tree</code></pre>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>python3 test_ezr2.py [--key=val ...] &lt;test&gt;
+python3 test_ezr2.py -h | all
+python3 dtlz.py [--model=dtlz1..dtlz7] [--M=int] [--N=int]
+
+Sibling gists (one parent dir; no naked paths):
+  ezr2/     this repo (ezr2.py library + test_ezr2.py dispatch)
+  optimiz/  optimization CSVs   (https://github.com/aiez/optimiz)
+  konfig/   shared Makefile + dotfiles (make help|sh|vi|...)</code></pre>
+<h2 id="description">DESCRIPTION</h2>
+<pre><code>Summarizes a CSV into Num/Sym columns in constant space; scores
+each row by distance-to-heaven over its goals; spends a small
+label budget via SWAY-style far-point projection; then grows a
+tree that minimizes a size-weighted variance (sd for numeric
+goals, entropy for symbolic) so the SAME code yields regression
+or classification trees. A leaf is a real cluster; the delta
+between two leaves&#39; branch tests is a feasible intervention.
+
+Two modes: a static CSV, or a live model -- override the
+`labelled()` seam so goals are computed on demand (see dtlz.py,
+which drives ezr2 over the DTLZ1-7 benchmarks).
+
+Tests live in test_ezr2.py (`from ezr2 import *; main(globals())`);
+the library ezr2.py has no tests inside it.</code></pre>
+<h2 id="data">DATA</h2>
+<pre><code>First row names the columns; a name&#39;s last char sets its role,
+its first char its type:
+  [A-Z]*    numeric        (e.g. &quot;Clndrs&quot;)
+  [a-z]*    symbolic       (e.g. &quot;origin&quot;)
+  *+        maximize goal  (e.g. &quot;Mpg+&quot;)
+  *-        minimize goal  (e.g. &quot;Lbs-&quot;)
+  *!        class label    (e.g. &quot;sick!&quot;)
+  *X        ignored        (e.g. &quot;HpX&quot;)
+  *~        protected x-column
+
+E.g. Clndrs,Volume,HpX,Model,origin,Lbs-,Acc+,Mpg+ -&gt; numeric
+inputs Clndrs/Volume/Model, symbolic input origin, ignored HpX,
+goals minimize Lbs, maximize Acc/Mpg.</code></pre>
+<h2 id="options">OPTIONS</h2>
+<pre><code>--file   data file             = ../optimiz/misc_auto93.csv
+--seed   random seed           = 1
+--leaf   tree min leaf rows    = 3
+--maxd   tree max depth        = 8
+--grow   add labels/round      = 4
+--budget labeling cap          = 50
+--cap    max rows kept         = 1024
+--check  rows labelled by tree = 5    (at-k trust knob)
+--keepf  keep frac             = 0.66
+--round  decimals shown        = 3
+--landscape  active | random   = active</code></pre>
+<h2 id="findings">FINDINGS</h2>
+<pre><code>Active beats random ~3:1 where landscapes separate, ties at the
+sparsity ceiling; the edge lives in the hard tail, not the mean
+(Random.md). `grow` is the dominant knob and SWAY&#39;s (keepf=0.5,
+grow=2) is the weakest setting in its own space -- growing a
+little faster gains ~11 win points across a smooth, low-
+sensitivity plateau (Growing.md).</code></pre>
+<h2 id="see-also">SEE ALSO</h2>
+<pre><code>ezr2.md       the tour -- a build-order textbook of the code
+dtlz.py       drive ezr2 with an external model (DTLZ1-7)
+https://github.com/aiez/optimiz   sibling data gist (CSVs; never bundled here)
+https://github.com/aiez/ezr       the original ezr (v1)</code></pre>
+<h2 id="license">LICENSE</h2>
+<pre><code>MIT (c) 2026 Tim Menzies &lt;timm@ieee.org&gt;.</code></pre>
+<h2 id="author">AUTHOR</h2>
+<pre><code>Tim Menzies, http://timm.fyi</code></pre>
+
+<hr>
+<p class="foot"><span>built by <a href="https://github.com/aiez/gistsite">gistsite</a></span></p>
+</main></body></html>

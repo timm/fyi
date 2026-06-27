@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="https://timm.fyi/site.css">
 <style>
 body{max-width:860px}
 pre{overflow-x:auto;white-space:pre;color:#e6edf3;
@@ -29,9 +29,9 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 <img src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white" alt="Author"></a>
 <img src="https://img.shields.io/badge/Language-Common%20Lisp-000080?logo=commonlisp&logoColor=white" alt="Language"><a href="https://choosealicense.com/licenses/mit/">
 <img src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white" alt="License"></a></p>
-<h3 id="httptinycclithp"><a
-href="http://tiny.cc/lithp"><span>http://tiny.cc/lithp</span></a></h3>
-<p><a href="http://tiny.cc/lithp"><img align="right" src="https://tiny.cc/tiny/qr-image/tiny.cc~lithp~l~150.png" alt="QR"></a></p>
+<h3 id="httpsgithubcomaiezlithp"><a
+href="https://github.com/aiez/lithp"><span>https://github.com/aiez/lithp</span></a></h3>
+<p><a href="https://github.com/aiez/lithp"><img align="right" src="https://tiny.cc/tiny/qr-image/tiny.cc~lithp~l~150.png" alt="QR"></a></p>
 <p><code>lithp</code> is <strong>less library</strong>: the smallest set
 of Common Lisp add-ons that measurably shrinks application code — five
 plain constructs plus a handful of utilities, ~130 lines total, no
@@ -41,8 +41,8 @@ the data, and the style rules are in <a
 href="https://gist.github.com/timm/729164d89ae32ca4b6a83483be9e761b#file-blog-md">blog.md</a></strong>
 — this file is just the manual.</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/optimiz <span class="co"># access test data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/lithp <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> lithp</span>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/optimiz <span class="co"># access test data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/lithp <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> lithp</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">sbcl</span> <span class="at">--script</span> fft.lisp          <span class="co"># the sweet-spot version</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sbcl</span> <span class="at">--script</span> fft.lisp <span class="at">--trees</span>  <span class="co"># show all grown trees</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">sbcl</span> <span class="at">--script</span> fft.lisp <span class="at">--grows</span>  <span class="co"># timing benchmark</span></span></code></pre></div>
@@ -51,15 +51,16 @@ href="#synopsis">SYNOPSIS</a> | <a
 href="#the-kit-five-constructs">KIT</a> | <a
 href="#utilities">UTILITIES</a> | <a href="#files">FILES</a> | <a
 href="#license">LICENSE</a></p>
-<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/8f8f97c054687861d7f33c3c28548281bd3cc3fd/lithp.lisp">lithp.lisp</a> |
-<a href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/79aecbe4a89f7e48ae706f0f928d18ed1296f045/blog.md">blog.md</a> | <a
-href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/f799919edbdaa666e4ab555a8a86cd72039b3037/fft.lisp">fft.lisp</a> | <a
-href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/9e975c0814e992666ba520e2abf3935bc6ec8265/small.lisp">small.lisp</a> | <a
-href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/a48c63b014c2e92b7e55b23b827e41709fb673dd/to_small.lisp">to_small.lisp</a> | <a
-href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/0aa99fd29887c896aa9ddd194b425888c876bef4/yuck.lisp">yuck.lisp</a> | <a
-href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/0d2dccb57160ed7fb7a0c4bb428885d749278b85/tiny.lisp">tiny.lisp</a> | <a
-href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/3e291a196e11c98c00b05dccbf9384a2b93157aa/tiny.vim">tiny.vim</a> | <a
-href="https://gist.githubusercontent.com/timm/729164d89ae32ca4b6a83483be9e761b/raw/d7da827bc2a066e8806725bff355dd687e8dc8d6/Makefile">Makefile</a></p>
+<p><strong>Files:</strong> <a
+href="https://github.com/aiez/lithp#file-lithp-lisp">lithp.lisp</a> | <a
+href="https://github.com/aiez/lithp#file-blog-md">blog.md</a> | <a
+href="https://github.com/aiez/lithp#file-fft-lisp">fft.lisp</a> | <a
+href="https://github.com/aiez/lithp#file-small-lisp">small.lisp</a> | <a
+href="https://github.com/aiez/lithp#file-to_small-lisp">to_small.lisp</a>
+| <a href="https://github.com/aiez/lithp#file-yuck-lisp">yuck.lisp</a> |
+<a href="https://github.com/aiez/lithp#file-tiny-lisp">tiny.lisp</a> |
+<a href="https://github.com/aiez/lithp#file-tiny-vim">tiny.vim</a> | <a
+href="https://github.com/aiez/lithp#file-makefile">Makefile</a></p>
 <h2 id="name">NAME</h2>
 <pre><code>lithp — less library: the pay-rent subset (130 lines, no deps)</code></pre>
 <h2 id="synopsis">SYNOPSIS</h2>
@@ -187,5 +188,5 @@ leverage</td>
 href="mailto:timm@ieee.org">timm@ieee.org</a></p>
 
 <hr>
-<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+<p class="foot"><span>built by <a href="https://github.com/aiez/gistsite">gistsite</a></span></p>
 </main></body></html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="https://timm.fyi/site.css">
 <style>
 body{max-width:860px}
 pre{overflow-x:auto;white-space:pre;color:#e6edf3;
@@ -25,14 +25,15 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 <!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
 
 <p><a href="https://timm.fyi"><img align="right" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white" alt="Author"></a><img align="right" src="https://img.shields.io/badge/Language-CSV-000080?logo=files&logoColor=white" alt="Language"><a href="https://choosealicense.com/licenses/mit/"><img align="right" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white" alt="License"></a><img align="right" src="https://img.shields.io/badge/Purpose-Fairness·Benchmarks-7b68ee?logo=githubcopilot&logoColor=white" alt="Purpose"></p>
-<h3 id="httptinyccfairnez"><a
-href="http://tiny.cc/fairnez"><span>http://tiny.cc/fairnez</span></a></h3>
+<h3 id="httpsgithubcomaiezfairnez"><a
+href="https://github.com/aiez/fairnez"><span>https://github.com/aiez/fairnez</span></a></h3>
 <p>Standard fairness-benchmark CSVs in fft column-suffix format. Adult,
 German, Bank, COMPAS. Each has a sensitive attribute (race / sex / age)
-and a binary klass. Use with <a href="http://tiny.cc/fft">fft</a>.</p>
+and a binary klass. Use with <a
+href="https://github.com/aiez/fft">fft</a>.</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and test</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/fairnez <span class="kw">&amp;&amp;</span> <span class="fu">git</span> clone http://tiny.cc/fft fft</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/fairnez <span class="kw">&amp;&amp;</span> <span class="fu">git</span> clone https://github.com/aiez/fft fft</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> fft <span class="kw">&amp;&amp;</span> <span class="ex">python3</span> <span class="at">-B</span> eval.py <span class="at">-f</span> ../fairnez/compas.csv</span></code></pre></div>
 <p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
 href="#synopsis">SYNOPSIS</a> | <a href="#data">DATA</a> | <a
@@ -40,15 +41,19 @@ href="#datasets">DATASETS</a> | <a href="#notes">NOTES</a> | <a
 href="#recreate">RECREATE</a> | <a href="#references">REFERENCES</a> |
 <a href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
 href="#author">AUTHOR</a></p>
-<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/f10de0e080bd7278572e96850c9a816c405dd124/adult.csv">adult.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/86f206c3d91613716010777ce5e9380395710e19/bank.csv">bank.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/70025efebc6e1f8276a3aa1e4b73df828915fed8/communities.csv">communities.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/1bcf226d6769342299bfc4122eb3cb30678aeada/compas.csv">compas.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/b9cd0b4ca3ab26ad4cdaaf0fcda8480b6591ffb6/german.csv">german.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/74b381da4f883a6b6983644bd4b9b7fde0e55232/law.csv">law.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/876706c0587a3cdb56572c65febf02a7acbba268/convert.py">convert.py</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/2c84b7829f866ee02ebaaad71814aef6b6809a33/protect.py">protect.py</a> | <a
-href="https://gist.githubusercontent.com/timm/14bc843155b22ad8e3b83407ac8396f3/raw/dfea76553a17505d2a1b3474a2aacc458b7199de/labels.py">labels.py</a></p>
+<p><strong>Files:</strong> <a
+href="https://github.com/aiez/fairnez#file-adult-csv">adult.csv</a> | <a
+href="https://github.com/aiez/fairnez#file-bank-csv">bank.csv</a> | <a
+href="https://github.com/aiez/fairnez#file-communities-csv">communities.csv</a>
+| <a
+href="https://github.com/aiez/fairnez#file-compas-csv">compas.csv</a> |
+<a href="https://github.com/aiez/fairnez#file-german-csv">german.csv</a>
+| <a href="https://github.com/aiez/fairnez#file-law-csv">law.csv</a> |
+<a href="https://github.com/aiez/fairnez#file-convert-py">convert.py</a>
+| <a
+href="https://github.com/aiez/fairnez#file-protect-py">protect.py</a> |
+<a
+href="https://github.com/aiez/fairnez#file-labels-py">labels.py</a></p>
 <h2 id="name">NAME</h2>
 <pre><code>fairnez - fairness benchmark datasets, fft-CSV format</code></pre>
 <h2 id="synopsis">SYNOPSIS</h2>
@@ -112,9 +117,9 @@ own terms (UCI = CC BY 4.0; ProPublica = open).</code></pre>
 [6] 2017. The Adult Census Income dataset.
     https://archive.ics.uci.edu/ml/datasets/adult</code></pre>
 <h2 id="see-also">SEE ALSO</h2>
-<pre><code>http://tiny.cc/fft      trees + ensembles using these CSVs
-http://tiny.cc/optimiz  optimization CSVs (auto93, config_SS-N, ...)
-http://tiny.cc/konfig   shared Makefile, bashrc, nvim, tmux</code></pre>
+<pre><code>https://github.com/aiez/fft      trees + ensembles using these CSVs
+https://github.com/aiez/optimiz  optimization CSVs (auto93, config_SS-N, ...)
+https://github.com/aiez/konfig   shared Makefile, bashrc, nvim, tmux</code></pre>
 <h2 id="license">LICENSE</h2>
 <pre><code>MIT.  https://choosealicense.com/licenses/mit/
 (c) 2025 Tim Menzies.</code></pre>
@@ -122,5 +127,5 @@ http://tiny.cc/konfig   shared Makefile, bashrc, nvim, tmux</code></pre>
 <pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
 
 <hr>
-<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+<p class="foot"><span>built by <a href="https://github.com/aiez/gistsite">gistsite</a></span></p>
 </main></body></html>

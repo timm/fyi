@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="https://timm.fyi/site.css">
 <style>
 body{max-width:860px}
 pre{overflow-x:auto;white-space:pre;color:#e6edf3;
@@ -25,8 +25,8 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 <!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
 
 <p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Python%203.12+-000080?logo=python&logoColor=white"><img align="right" alt="Deps" src="https://img.shields.io/badge/Deps-0-32cd32?logo=checkmarx&logoColor=white"><a href="https://choosealicense.com/licenses/mit/"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"></a><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-XAI·Optimization-7b68ee?logo=githubcopilot&logoColor=white"></p>
-<h3 id="httptinyccezr"><a
-href="http://tiny.cc/ezr"><span>http://tiny.cc/ezr</span></a></h3>
+<h3 id="httpsgithubcomaiezezr"><a
+href="https://github.com/aiez/ezr"><span>https://github.com/aiez/ezr</span></a></h3>
 <p>ezr — explainable multi-objective optimization. Two files, ~1100
 lines, <strong>zero dependencies</strong>, pure Python stdlib. An
 experiment in "how low can you go?": active learning labels a few dozen
@@ -35,9 +35,9 @@ studies show that labelling just the first ~5 examples optimizes as well
 or better than SMAC — at two orders of magnitude less cost.</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sibling data gists supply the CSVs (no data lives in here)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/optimiz       <span class="co"># optimization data</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/klassif       <span class="co"># classification data</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/ezr <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ezr</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/optimiz       <span class="co"># optimization data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/klassif       <span class="co"># classification data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/ezr <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ezr</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> cli.py <span class="at">--list</span>                  <span class="co"># all commands</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> cli.py <span class="at">--tree</span> ../optimiz/auto93.csv</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> cli.py <span class="at">--all</span>                   <span class="co"># run every self-test</span></span></code></pre></div>
@@ -46,10 +46,13 @@ href="#synopsis">SYNOPSIS</a> | <a href="#description">DESCRIPTION</a> |
 <a href="#data">DATA</a> | <a href="#commands">COMMANDS</a> | <a
 href="#options">OPTIONS</a> | <a href="#layout">LAYOUT</a> | <a
 href="#license">LICENSE</a> | <a href="#author">AUTHOR</a></p>
-<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/cf818571287c22c381305072229be859/raw/0c5f30f505bfa46cf06dce7d3f0684f43d9ba948/ezr.py">ezr.py</a> | <a
-href="https://gist.githubusercontent.com/timm/cf818571287c22c381305072229be859/raw/82486d62331918e960731f9e77c283f3912043ba/cli.py">cli.py</a> | <a href="https://gist.githubusercontent.com/timm/cf818571287c22c381305072229be859/raw/cc3c8551b79d4fed076c1d1e9322f428222bb671/Makefile">Makefile</a> |
-<a href="https://gist.githubusercontent.com/timm/cf818571287c22c381305072229be859/raw/929176f6358b0143cbd958170cf6d2ae9226c145/pyproject.toml">pyproject.toml</a> | <a
-href="https://gist.githubusercontent.com/timm/cf818571287c22c381305072229be859/raw/67a092c178e375142050eb1d24fd4f624a46c795/LICENSE.md">LICENSE.md</a></p>
+<p><strong>Files:</strong> <a
+href="https://github.com/aiez/ezr#file-ezr-py">ezr.py</a> | <a
+href="https://github.com/aiez/ezr#file-cli-py">cli.py</a> | <a
+href="https://github.com/aiez/ezr#file-makefile">Makefile</a> | <a
+href="https://github.com/aiez/ezr#file-pyproject-toml">pyproject.toml</a>
+| <a
+href="https://github.com/aiez/ezr#file-license-md">LICENSE.md</a></p>
 <h2 id="name">NAME</h2>
 <pre><code>ezr - explainable multi-objective optimization via decision
       trees, clustering, naive bayes, and active learning</code></pre>
@@ -60,9 +63,9 @@ p                          # konfig bashrc alias: python3 -B cli.py
 
 Sibling gists (one parent dir; no naked paths):
   ezr/      this repo (ezr.py library + cli.py dispatch)
-  optimiz/  optimization CSVs   (tiny.cc/optimiz)
-  klassif/  classification CSVs (tiny.cc/klassif)
-  textz/    text-mining CSVs    (tiny.cc/textz)
+  optimiz/  optimization CSVs   (https://github.com/aiez/optimiz)
+  klassif/  classification CSVs (https://github.com/aiez/klassif)
+  textz/    text-mining CSVs    (https://github.com/aiez/textz)
   konfig/   shared Makefile + dotfiles (make help|sh|vi|...)</code></pre>
 <h2 id="description">DESCRIPTION</h2>
 <pre><code>Summarizes CSV into Num/Sym columns; grows decision trees that
@@ -114,5 +117,5 @@ cli.py   dispatch; one test_&lt;name&gt; per concept (demo + assert),
 <pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
 
 <hr>
-<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+<p class="foot"><span>built by <a href="https://github.com/aiez/gistsite">gistsite</a></span></p>
 </main></body></html>

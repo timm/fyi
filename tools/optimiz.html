@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="https://timm.fyi/site.css">
 <style>
 body{max-width:860px}
 pre{overflow-x:auto;white-space:pre;color:#e6edf3;
@@ -25,8 +25,8 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 <!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
 
 <p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-CSV-000080?logo=files&logoColor=white"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-Data·Optimization-7b68ee?logo=githubcopilot&logoColor=white"></p>
-<h3 id="httptinyccoptimiz"><a
-href="http://tiny.cc/optimiz"><span>http://tiny.cc/optimiz</span></a></h3>
+<h3 id="httpsgithubcomaiezoptimiz"><a
+href="https://github.com/aiez/optimiz"><span>https://github.com/aiez/optimiz</span></a></h3>
 <p>Example multi-objective optimization datasets: 100+ CSV files with
 self-describing headers — column names encode type and goal, so no
 separate schema files are needed. Topics span software config,
@@ -34,10 +34,10 @@ hyper-parameter tuning, process models, health, finance, sales, and RL.
 Data only, no code.</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/konfig ../konfig</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/optimiz optimiz <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> optimiz</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/konfig ../konfig</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/optimiz optimiz <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> optimiz</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> help</span></code></pre></div>
-<p><a href="http://tiny.cc/optimiz"><img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~optimiz~l~150.png"></a></p>
+<p><a href="https://github.com/aiez/optimiz"><img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~optimiz~l~150.png"></a></p>
 <p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
 href="#data">DATA</a> | <a href="#files">FILES</a> | <a
 href="#see-also">SEE ALSO</a> | <a href="#license">LICENSE</a> | <a
@@ -73,208 +73,208 @@ E.g. auto93.csv: Clndrs,Volume,HpX,Lbs-,Acc+,Model,origin,Mpg+</code></pre>
   sales_data_*      retail + marketing tables
   systems_*         computer-systems tuning
   test_*            tiny smoke-test tables</code></pre>
-<p><a href="https://gist.github.com/timm/078f9287b9871124c63be19f8c9ec5de#file-ss-n-csv">SS-N.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/112eea16d7fffaf091025ed5a0f0324525331cd8/auto93.csv">auto93.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/8a12db4b234cb3dbfead8131c3c017a1a1e3eb46/behavior_data_WA_Fn-UseC_-HR-Employee-Attrition.csv">behavior_data_WA_Fn-UseC_-HR-Employee-Attrition.csv</a>
+<p><a href="#file-ss-n-csv">SS-N.csv</a> | <a
+href="#file-auto93-csv">auto93.csv</a> | <a
+href="#file-behavior_data_wa_fn-usec_-hr-employee-attrition-csv">behavior_data_WA_Fn-UseC_-HR-Employee-Attrition.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/903697b37fbf14f7582a4b43e0553ee9ac93fdf8/behavior_data_all_players.csv">behavior_data_all_players.csv</a>
+href="#file-behavior_data_all_players-csv">behavior_data_all_players.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/5cd84d5ff8e1a67c96fa5e50809fd5e75c4c2f56/behavior_data_player_statistics_cleaned_final.csv">behavior_data_player_statistics_cleaned_final.csv</a>
+href="#file-behavior_data_player_statistics_cleaned_final-csv">behavior_data_player_statistics_cleaned_final.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/b176f00ff70f64c78a2ef7f89b7e2638e7b3ae22/behavior_data_student_dropout.csv">behavior_data_student_dropout.csv</a>
+href="#file-behavior_data_student_dropout-csv">behavior_data_student_dropout.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/b8134a78eeba1cbdb510f73956534616696d1758/binary_config_FFM-1000-200-0.50-SAT-1.csv">binary_config_FFM-1000-200-0.50-SAT-1.csv</a>
+href="#file-binary_config_ffm-1000-200-0-50-sat-1-csv">binary_config_FFM-1000-200-0.50-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/631d42c7739bb1d77663ea78c11661c858727a6c/binary_config_FFM-125-25-0.50-SAT-1.csv">binary_config_FFM-125-25-0.50-SAT-1.csv</a>
+href="#file-binary_config_ffm-125-25-0-50-sat-1-csv">binary_config_FFM-125-25-0.50-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c945972ee09960c7e19b0e4995cacc94d51b6802/binary_config_FFM-250-50-0.50-SAT-1.csv">binary_config_FFM-250-50-0.50-SAT-1.csv</a>
+href="#file-binary_config_ffm-250-50-0-50-sat-1-csv">binary_config_FFM-250-50-0.50-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/28854dde801e69970d93dbf975f2fc4f9cdbcba4/binary_config_FFM-500-100-0.50-SAT-1.csv">binary_config_FFM-500-100-0.50-SAT-1.csv</a>
+href="#file-binary_config_ffm-500-100-0-50-sat-1-csv">binary_config_FFM-500-100-0.50-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/5e586cd2a46a9a5eb0aa3980a5165afc196bdd56/binary_config_FM-500-100-0.25-SAT-1.csv">binary_config_FM-500-100-0.25-SAT-1.csv</a>
+href="#file-binary_config_fm-500-100-0-25-sat-1-csv">binary_config_FM-500-100-0.25-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/ba642aae37ffa9aad5fd6601a6a288d251aa140c/binary_config_FM-500-100-0.50-SAT-1.csv">binary_config_FM-500-100-0.50-SAT-1.csv</a>
+href="#file-binary_config_fm-500-100-0-50-sat-1-csv">binary_config_FM-500-100-0.50-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/d921aa24a969baee8139ac8d71b4711cd2a57817/binary_config_FM-500-100-0.75-SAT-1.csv">binary_config_FM-500-100-0.75-SAT-1.csv</a>
+href="#file-binary_config_fm-500-100-0-75-sat-1-csv">binary_config_FM-500-100-0.75-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/bcd40366491f239295474d5b8df1874d38d84f73/binary_config_FM-500-100-1.00-SAT-1.csv">binary_config_FM-500-100-1.00-SAT-1.csv</a>
+href="#file-binary_config_fm-500-100-1-00-sat-1-csv">binary_config_FM-500-100-1.00-SAT-1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/eea984fd87e89658103f7ac0a4807501ecabfd5d/binary_config_Scrum100k.csv">binary_config_Scrum100k.csv</a>
+href="#file-binary_config_scrum100k-csv">binary_config_Scrum100k.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/402b7b47f1b9ec9f5b5e62c993758400e72d287e/binary_config_Scrum10k.csv">binary_config_Scrum10k.csv</a> |
-<a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/a39c047bcf792ddd6dc061ff96ab94617ab89552/binary_config_Scrum1k.csv">binary_config_Scrum1k.csv</a>
+href="#file-binary_config_scrum10k-csv">binary_config_Scrum10k.csv</a> |
+<a href="#file-binary_config_scrum1k-csv">binary_config_Scrum1k.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/ea391c2dae108f104132a2c2cd2ece670c803ea1/binary_config_billing10k.csv">binary_config_billing10k.csv</a>
+href="#file-binary_config_billing10k-csv">binary_config_billing10k.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/38da61a39dd3c1f1f83b8b3d3b1badf945533439/config_Apache_AllMeasurements.csv">config_Apache_AllMeasurements.csv</a>
-| <a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c26b8347020580b490e7e766aba4824f3559de20/config_HSMGP_num.csv">config_HSMGP_num.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/6a5539cc9996caf4abb2545290eda1d21e2fa669/config_SQL_AllMeasurements.csv">config_SQL_AllMeasurements.csv</a>
-| <a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/22e91d52acea0393d479bdf659d7f93ab0380d52/config_SS-A.csv">config_SS-A.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/5242fa823cdb8fa1d03216e82e95df91a1d3e50a/config_SS-B.csv">config_SS-B.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/4f400270ec1919e69d35a861aefad1150c5b9e2f/config_SS-C.csv">config_SS-C.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/7e77911d27df79c7ee680be99f6657167c150124/config_SS-D.csv">config_SS-D.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/1f5d6821b424214b7fc54e31571115bbcc037d4f/config_SS-E.csv">config_SS-E.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/ab3f0a56e1a455182f2812af0e7f73052e11b042/config_SS-F.csv">config_SS-F.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/1de94e82cd6003f50342ac3aa710c83be0f944e3/config_SS-G.csv">config_SS-G.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/0f786dc7b42a35fc8218216060ab9d5f4add8e37/config_SS-H.csv">config_SS-H.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/4579fe4d80ff48d99786eaf773c81adff928281f/config_SS-I.csv">config_SS-I.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/a0ef40081eb2e4a5bdc011987d4cc31be12e069a/config_SS-J.csv">config_SS-J.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/b693dd5a5f639a513c5de03adea861f80cde2bd6/config_SS-K.csv">config_SS-K.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/ca83e6abfc4321c009c210959ee07218e25b2516/config_SS-L.csv">config_SS-L.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/1126b3a2b554772f60753276c63d712135b089f1/config_SS-M.csv">config_SS-M.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/267aa83a2e812eaa324f02808c689741c23259bc/config_SS-N.csv">config_SS-N.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/5018eb3f1a5ebb940ee8e63c635fd18722da3e1d/config_SS-O.csv">config_SS-O.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/55d0728170cb24390323719d266e0b15b0a6a32c/config_SS-P.csv">config_SS-P.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c71fe7604e9c443a8bbc720b48ced6b35b1904a1/config_SS-Q.csv">config_SS-Q.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/67a4dbc663b0a414e5c5b70e19c62111a4b0ffcc/config_SS-R.csv">config_SS-R.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/b91ef937aaf749810cf25cab6b74c13301f49df8/config_SS-S.csv">config_SS-S.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/6de192cb5853f63961a67ebf6814b65b7acff8ac/config_SS-T.csv">config_SS-T.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/91255dbcff29c54761284e0f100e220b629fe038/config_SS-U.csv">config_SS-U.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/0d176835c10a8a7164d7be551e88038c2445018e/config_SS-V.csv">config_SS-V.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/193e5b1fcb21367976b83b4cbfc9e8cc9c93b58d/config_SS-W.csv">config_SS-W.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/46f62db83137f515c7ccd3d2a742728ac7633f4e/config_SS-X.csv">config_SS-X.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/36e645662d512fc3e649572abe53f75e7a0fe91a/config_X264_AllMeasurements.csv">config_X264_AllMeasurements.csv</a>
-| <a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/90bc7ef256f6d460e6b84e62a9ddd690942ca016/config_rs-6d-c3_obj1.csv">config_rs-6d-c3_obj1.csv</a>
-| <a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/2137971e48bf7dde9eccd549085a3bfea070d7a5/config_rs-6d-c3_obj2.csv">config_rs-6d-c3_obj2.csv</a>
+href="#file-config_apache_allmeasurements-csv">config_Apache_AllMeasurements.csv</a>
+| <a href="#file-config_hsmgp_num-csv">config_HSMGP_num.csv</a> | <a
+href="#file-config_sql_allmeasurements-csv">config_SQL_AllMeasurements.csv</a>
+| <a href="#file-config_ss-a-csv">config_SS-A.csv</a> | <a
+href="#file-config_ss-b-csv">config_SS-B.csv</a> | <a
+href="#file-config_ss-c-csv">config_SS-C.csv</a> | <a
+href="#file-config_ss-d-csv">config_SS-D.csv</a> | <a
+href="#file-config_ss-e-csv">config_SS-E.csv</a> | <a
+href="#file-config_ss-f-csv">config_SS-F.csv</a> | <a
+href="#file-config_ss-g-csv">config_SS-G.csv</a> | <a
+href="#file-config_ss-h-csv">config_SS-H.csv</a> | <a
+href="#file-config_ss-i-csv">config_SS-I.csv</a> | <a
+href="#file-config_ss-j-csv">config_SS-J.csv</a> | <a
+href="#file-config_ss-k-csv">config_SS-K.csv</a> | <a
+href="#file-config_ss-l-csv">config_SS-L.csv</a> | <a
+href="#file-config_ss-m-csv">config_SS-M.csv</a> | <a
+href="#file-config_ss-n-csv">config_SS-N.csv</a> | <a
+href="#file-config_ss-o-csv">config_SS-O.csv</a> | <a
+href="#file-config_ss-p-csv">config_SS-P.csv</a> | <a
+href="#file-config_ss-q-csv">config_SS-Q.csv</a> | <a
+href="#file-config_ss-r-csv">config_SS-R.csv</a> | <a
+href="#file-config_ss-s-csv">config_SS-S.csv</a> | <a
+href="#file-config_ss-t-csv">config_SS-T.csv</a> | <a
+href="#file-config_ss-u-csv">config_SS-U.csv</a> | <a
+href="#file-config_ss-v-csv">config_SS-V.csv</a> | <a
+href="#file-config_ss-w-csv">config_SS-W.csv</a> | <a
+href="#file-config_ss-x-csv">config_SS-X.csv</a> | <a
+href="#file-config_x264_allmeasurements-csv">config_X264_AllMeasurements.csv</a>
+| <a href="#file-config_rs-6d-c3_obj1-csv">config_rs-6d-c3_obj1.csv</a>
+| <a href="#file-config_rs-6d-c3_obj2-csv">config_rs-6d-c3_obj2.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/339806e0e15294449dfbac04220ad03456ffaf13/config_sol-6d-c2-obj1.csv">config_sol-6d-c2-obj1.csv</a> |
+href="#file-config_sol-6d-c2-obj1-csv">config_sol-6d-c2-obj1.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/4b8c0023894a93927d88b91d0884aed760b6603b/config_wc%2Brs-3d-c4-obj1.csv">config_wc+rs-3d-c4-obj1.csv</a>
+href="#file-config_wc-rs-3d-c4-obj1-csv">config_wc+rs-3d-c4-obj1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/fb7388a72ad6754a735e4ba336eaa2eb0b2953c5/config_wc%2Bsol-3d-c4-obj1.csv">config_wc+sol-3d-c4-obj1.csv</a>
+href="#file-config_wc-sol-3d-c4-obj1-csv">config_wc+sol-3d-c4-obj1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/b03f088b040ddc3ecde3af3702df4af8a5b9bffa/config_wc%2Bwc-3d-c4-obj1.csv">config_wc+wc-3d-c4-obj1.csv</a>
-| <a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/e76db179cd574ea0320566bbd1a26a88f0378ee2/config_wc-6d-c1-obj1.csv">config_wc-6d-c1-obj1.csv</a>
+href="#file-config_wc-wc-3d-c4-obj1-csv">config_wc+wc-3d-c4-obj1.csv</a>
+| <a href="#file-config_wc-6d-c1-obj1-csv">config_wc-6d-c1-obj1.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/a04423cdfec3e089b14d35751a4a14f7a8bb9c3f/financial_data_BankChurners.csv">financial_data_BankChurners.csv</a>
-| <a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/5e3c3c52e3c93010500ac697f56e9a647c295822/financial_data_Loan.csv">financial_data_Loan.csv</a> |
+href="#file-financial_data_bankchurners-csv">financial_data_BankChurners.csv</a>
+| <a href="#file-financial_data_loan-csv">financial_data_Loan.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/b3531ae8831360e052e0c47c6d7081d19f000db1/financial_data_WA_Fn-UseC_-Telco-Customer-Churn.csv">financial_data_WA_Fn-UseC_-Telco-Customer-Churn.csv</a>
+href="#file-financial_data_wa_fn-usec_-telco-customer-churn-csv">financial_data_WA_Fn-UseC_-Telco-Customer-Churn.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/23a9f329a6c32576d624068b8684447d8e3d2ac5/financial_data_home_data_for_ml_course.csv">financial_data_home_data_for_ml_course.csv</a>
+href="#file-financial_data_home_data_for_ml_course-csv">financial_data_home_data_for_ml_course.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/a988840a3d1da6b2e3d4e1e5438b2fe6f156c83c/health_data_Data_COVID19_Indonesia.csv">health_data_Data_COVID19_Indonesia.csv</a>
+href="#file-health_data_data_covid19_indonesia-csv">health_data_Data_COVID19_Indonesia.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c7c5b1f0596a8b8db411c168e8170c9811e0e8fe/health_data_Life_Expectancy_Data.csv">health_data_Life_Expectancy_Data.csv</a>
+href="#file-health_data_life_expectancy_data-csv">health_data_Life_Expectancy_Data.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/013725892fef27cfe2cca6343cf06076bd2568ec/health_data_Medical_Data_and_Hospital_Readmissions.csv">health_data_Medical_Data_and_Hospital_Readmissions.csv</a>
+href="#file-health_data_medical_data_and_hospital_readmissions-csv">health_data_Medical_Data_and_Hospital_Readmissions.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c76f3430287ed36834032f5f11706d87c7f6f65e/hpo_Health-ClosedIssues0000.csv">hpo_Health-ClosedIssues0000.csv</a>
+href="#file-hpo_health-closedissues0000-csv">hpo_Health-ClosedIssues0000.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/6e39ff1d193c75d6db6822a4021789ff2630db75/hpo_Health-ClosedIssues0001.csv">hpo_Health-ClosedIssues0001.csv</a>
+href="#file-hpo_health-closedissues0001-csv">hpo_Health-ClosedIssues0001.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/24187de11841a549f7996879c5f32b7e17dbdcfe/hpo_Health-ClosedIssues0002.csv">hpo_Health-ClosedIssues0002.csv</a>
+href="#file-hpo_health-closedissues0002-csv">hpo_Health-ClosedIssues0002.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/bb87d40ecfbe6a6a6aeb289b72abb4ec855decc4/hpo_Health-ClosedIssues0003.csv">hpo_Health-ClosedIssues0003.csv</a>
+href="#file-hpo_health-closedissues0003-csv">hpo_Health-ClosedIssues0003.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/81e62bfe72fa096817f499f799996e02479ede7a/hpo_Health-ClosedIssues0004.csv">hpo_Health-ClosedIssues0004.csv</a>
+href="#file-hpo_health-closedissues0004-csv">hpo_Health-ClosedIssues0004.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/161ee1baf89d96a74efcdb0e6f46d6229d34653f/hpo_Health-ClosedIssues0005.csv">hpo_Health-ClosedIssues0005.csv</a>
+href="#file-hpo_health-closedissues0005-csv">hpo_Health-ClosedIssues0005.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/3c5d1b18934519b0b50ffb254f8224a90bafe57b/hpo_Health-ClosedIssues0006.csv">hpo_Health-ClosedIssues0006.csv</a>
+href="#file-hpo_health-closedissues0006-csv">hpo_Health-ClosedIssues0006.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/9a635abbfcd4d82f8e3287bfc69848d1c1fc8245/hpo_Health-ClosedIssues0007.csv">hpo_Health-ClosedIssues0007.csv</a>
+href="#file-hpo_health-closedissues0007-csv">hpo_Health-ClosedIssues0007.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/8526cbab29025276c483f4c32a6ab7779085968f/hpo_Health-ClosedIssues0008.csv">hpo_Health-ClosedIssues0008.csv</a>
+href="#file-hpo_health-closedissues0008-csv">hpo_Health-ClosedIssues0008.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/e9d572c93ab63500ffc4b6a7c1f6f9509f5368fc/hpo_Health-ClosedIssues0009.csv">hpo_Health-ClosedIssues0009.csv</a>
+href="#file-hpo_health-closedissues0009-csv">hpo_Health-ClosedIssues0009.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/a72845dbc1a729e8a5915b2f532c3de7b772bdfd/hpo_Health-ClosedIssues0010.csv">hpo_Health-ClosedIssues0010.csv</a>
+href="#file-hpo_health-closedissues0010-csv">hpo_Health-ClosedIssues0010.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/79dbeb90d9ea9376e778e3d27a8a8a024d7e9967/hpo_Health-ClosedIssues0011.csv">hpo_Health-ClosedIssues0011.csv</a>
+href="#file-hpo_health-closedissues0011-csv">hpo_Health-ClosedIssues0011.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c10c5fba445cb1caf4036196aab47bdef8e417f5/hpo_Health-ClosedPRs0000.csv">hpo_Health-ClosedPRs0000.csv</a>
+href="#file-hpo_health-closedprs0000-csv">hpo_Health-ClosedPRs0000.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/5dbaa75221359daf7815289c04b51416697f3c58/hpo_Health-ClosedPRs0002.csv">hpo_Health-ClosedPRs0002.csv</a>
+href="#file-hpo_health-closedprs0002-csv">hpo_Health-ClosedPRs0002.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/8ead02bae4945a58e7cbccefb70ad9a127a0480f/hpo_Health-ClosedPRs0003.csv">hpo_Health-ClosedPRs0003.csv</a>
+href="#file-hpo_health-closedprs0003-csv">hpo_Health-ClosedPRs0003.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/ad16cae440267e00188dcbd54488176f607aee4c/hpo_Health-ClosedPRs0004.csv">hpo_Health-ClosedPRs0004.csv</a>
+href="#file-hpo_health-closedprs0004-csv">hpo_Health-ClosedPRs0004.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/6350d46f44a5b49df9d0149d58816dc9ff062747/hpo_Health-ClosedPRs0005.csv">hpo_Health-ClosedPRs0005.csv</a>
+href="#file-hpo_health-closedprs0005-csv">hpo_Health-ClosedPRs0005.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/a7dcdbed01e7c50ba98e4cf94edf0d20649fbd9a/hpo_Health-ClosedPRs0006.csv">hpo_Health-ClosedPRs0006.csv</a>
+href="#file-hpo_health-closedprs0006-csv">hpo_Health-ClosedPRs0006.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/22ac3b60d98fb091b5a707a1e8f2d8be78f0b61f/hpo_Health-ClosedPRs0007.csv">hpo_Health-ClosedPRs0007.csv</a>
+href="#file-hpo_health-closedprs0007-csv">hpo_Health-ClosedPRs0007.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/f45e74baaad2931db85228f8ef757f0ec133d034/hpo_Health-ClosedPRs0008.csv">hpo_Health-ClosedPRs0008.csv</a>
+href="#file-hpo_health-closedprs0008-csv">hpo_Health-ClosedPRs0008.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/e3f0450f130d966474fdf9342f9c1ac10f7c6edb/hpo_Health-ClosedPRs0009.csv">hpo_Health-ClosedPRs0009.csv</a>
+href="#file-hpo_health-closedprs0009-csv">hpo_Health-ClosedPRs0009.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/8b38c875b22d4176502cbd63e6f84e25e06c48d6/hpo_Health-ClosedPRs0010.csv">hpo_Health-ClosedPRs0010.csv</a>
+href="#file-hpo_health-closedprs0010-csv">hpo_Health-ClosedPRs0010.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/5856bd05b307eb030b781e0ee7cccac216f4472d/hpo_Health-ClosedPRs0011.csv">hpo_Health-ClosedPRs0011.csv</a>
+href="#file-hpo_health-closedprs0011-csv">hpo_Health-ClosedPRs0011.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/4599ee7b57fc0c9d430ed2e0cdc0d03d363e2129/hpo_Health-Commits0000.csv">hpo_Health-Commits0000.csv</a> |
+href="#file-hpo_health-commits0000-csv">hpo_Health-Commits0000.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/495892f25552b3242b42787475983615f1269632/hpo_Health-Commits0001.csv">hpo_Health-Commits0001.csv</a> |
+href="#file-hpo_health-commits0001-csv">hpo_Health-Commits0001.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/3e3ba025bc1c46321d1b9104a89ed3c850fd3131/hpo_Health-Commits0002.csv">hpo_Health-Commits0002.csv</a> |
+href="#file-hpo_health-commits0002-csv">hpo_Health-Commits0002.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/776d0f3d4f1a9eca5ad350aa5523860ada9413b5/hpo_Health-Commits0003.csv">hpo_Health-Commits0003.csv</a> |
+href="#file-hpo_health-commits0003-csv">hpo_Health-Commits0003.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/08dae37d1b3b33d3f967298b757a9ebc3717caed/hpo_Health-Commits0004.csv">hpo_Health-Commits0004.csv</a> |
+href="#file-hpo_health-commits0004-csv">hpo_Health-Commits0004.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/333d08c2c5e8beb9e5867ba99cca376d68a35334/hpo_Health-Commits0005.csv">hpo_Health-Commits0005.csv</a> |
+href="#file-hpo_health-commits0005-csv">hpo_Health-Commits0005.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/64203e45ab359fea1dbca033a0249329e38ea527/hpo_Health-Commits0006.csv">hpo_Health-Commits0006.csv</a> |
+href="#file-hpo_health-commits0006-csv">hpo_Health-Commits0006.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c78942ef24edab674cf122e5292d4b5e2a725754/hpo_Health-Commits0007.csv">hpo_Health-Commits0007.csv</a> |
+href="#file-hpo_health-commits0007-csv">hpo_Health-Commits0007.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/2fd37189f76a5875aa528a62534555e20e8d0078/hpo_Health-Commits0008.csv">hpo_Health-Commits0008.csv</a> |
+href="#file-hpo_health-commits0008-csv">hpo_Health-Commits0008.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/65121531e00189d5bf9b791be35f80eef4c310f1/hpo_Health-Commits0009.csv">hpo_Health-Commits0009.csv</a> |
+href="#file-hpo_health-commits0009-csv">hpo_Health-Commits0009.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/a8ecbb47c2eb2424bb5d9b144b19eef13e7fca37/hpo_Health-Commits0010.csv">hpo_Health-Commits0010.csv</a> |
+href="#file-hpo_health-commits0010-csv">hpo_Health-Commits0010.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/0ee02a1b276f2beaa326867869093bf29bbd0640/hpo_Health-Commits0011.csv">hpo_Health-Commits0011.csv</a> |
+href="#file-hpo_health-commits0011-csv">hpo_Health-Commits0011.csv</a> |
 <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/7d5dc33a911bd060f1c5c7a5a7b7b97c85a4e7a3/misc_Car_price_cleaned.csv">misc_Car_price_cleaned.csv</a> |
-<a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/7940658480debb873c0a70d6b59d1ec7b3ccef65/misc_Wine_quality.csv">misc_Wine_quality.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/112eea16d7fffaf091025ed5a0f0324525331cd8/misc_auto93.csv">misc_auto93.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/645f5c13bc737aa0491f52dc88348bb2cd557703/misc_multiLabel.csv">misc_multiLabel.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/4c130dc583617fcb170e71831a30080380a3ea85/process_coc1000.csv">process_coc1000.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/1f868d1a6d343bc5652905af2ae2794154f8e90b/process_nasa93dem.csv">process_nasa93dem.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/10475bfb1de75603c372cd29648dc58805dd9e49/process_pom3a.csv">process_pom3a.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/f51b604aa6baabc04d46c56b7eeba56a2ef204f8/process_pom3b.csv">process_pom3b.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/4fb7f9305c7eb901aa776011ede0b4dc665f3e88/process_pom3c.csv">process_pom3c.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/188d0c8d356572ec77db74e9ac2a07a08793a93d/process_pom3d.csv">process_pom3d.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/f3617bca8169e776adb18d827d425daf232103ef/process_xomo_flight.csv">process_xomo_flight.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/931bf45fc87f120195214bcb1ed93807c00219e3/process_xomo_ground.csv">process_xomo_ground.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/758ec29cd9f110d292fa554a1130f907d8ccc31c/process_xomo_osp.csv">process_xomo_osp.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/7056cdf1552e4d2bd51c501140dd55ea411f479a/process_xomo_osp2.csv">process_xomo_osp2.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/6155ebc4d7aff7bf499ae7daa4d9c6295c28a3d2/rl_A2C_Acrobot.csv">rl_A2C_Acrobot.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/188792f03dffb40659504d61d476d5fb0680b2cc/rl_A2C_CartPole.csv">rl_A2C_CartPole.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/581367ecee942aa87bfb750de1876f142850e000/sales_data_Marketing_Analytics.csv">sales_data_Marketing_Analytics.csv</a>
+href="#file-misc_car_price_cleaned-csv">misc_Car_price_cleaned.csv</a> |
+<a href="#file-misc_wine_quality-csv">misc_Wine_quality.csv</a> | <a
+href="#file-misc_auto93-csv">misc_auto93.csv</a> | <a
+href="#file-misc_multilabel-csv">misc_multiLabel.csv</a> | <a
+href="#file-process_coc1000-csv">process_coc1000.csv</a> | <a
+href="#file-process_nasa93dem-csv">process_nasa93dem.csv</a> | <a
+href="#file-process_pom3a-csv">process_pom3a.csv</a> | <a
+href="#file-process_pom3b-csv">process_pom3b.csv</a> | <a
+href="#file-process_pom3c-csv">process_pom3c.csv</a> | <a
+href="#file-process_pom3d-csv">process_pom3d.csv</a> | <a
+href="#file-process_xomo_flight-csv">process_xomo_flight.csv</a> | <a
+href="#file-process_xomo_ground-csv">process_xomo_ground.csv</a> | <a
+href="#file-process_xomo_osp-csv">process_xomo_osp.csv</a> | <a
+href="#file-process_xomo_osp2-csv">process_xomo_osp2.csv</a> | <a
+href="#file-rl_a2c_acrobot-csv">rl_A2C_Acrobot.csv</a> | <a
+href="#file-rl_a2c_cartpole-csv">rl_A2C_CartPole.csv</a> | <a
+href="#file-sales_data_marketing_analytics-csv">sales_data_Marketing_Analytics.csv</a>
 | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/775a13a10fc7209040aa8eda88c0363f89d45810/sales_data_accessories.csv">sales_data_accessories.csv</a> |
-<a href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/3d968b088fbba508dbb2ca2368525c6ee3d0e74d/sales_data_dress-up.csv">sales_data_dress-up.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/097e2b1950c53b6a85423df23f84f0018bfe0670/sales_data_socks.csv">sales_data_socks.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/2088bcf19eb5b078091bd83f9f3c194fb8602beb/sales_data_wallpaper.csv">sales_data_wallpaper.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/e766c6052cb80b386cbd26ffce07e20028a3f765/systems_7z.csv">systems_7z.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/3f94eb52e401dee699ec868501f8f2d9ac6f0d76/systems_BDBC.csv">systems_BDBC.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/2f71d845af612a4388df06d9a2d4425eefc736d8/systems_HSQLDB.csv">systems_HSQLDB.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/dfe2b221e993b36e2c741a246082316295563d56/systems_LLVM.csv">systems_LLVM.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/bacb9a3f0cf8d28725c180638766793fd28fb91e/systems_PostgreSQL.csv">systems_PostgreSQL.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/de711f4d32e164ecc2fcb31d7a42e27fd2e112df/systems_dconvert.csv">systems_dconvert.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/2e9fbaf51bc3b9c389369c4eddb7db46d19bac31/systems_deeparch.csv">systems_deeparch.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/c007a6a8f35f9e07c077f4c64eda8087cfba5c9e/systems_exastencils.csv">systems_exastencils.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/536d7e9213eda13ac4ad9e94c197551a77cbfc57/systems_javagc.csv">systems_javagc.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/50b992fa34b0ce56d87340d83339967d27c6cb32/systems_redis.csv">systems_redis.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/193a7ff18e8b9ef39e84c0ff86da7265173872c8/systems_storm.csv">systems_storm.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/dabd0055fed33787b8cbf1d2e2f6959f84cc810d/systems_x264.csv">systems_x264.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/fa6fb447e529b8276f9c5cd1d9727881fe970941/test_dataset120.csv">test_dataset120.csv</a> | <a
-href="https://gist.githubusercontent.com/timm/078f9287b9871124c63be19f8c9ec5de/raw/dc9a1be2c68ad89ae14fddbac6620bb3c275e346/test_dataset600.csv">test_dataset600.csv</a></p>
+href="#file-sales_data_accessories-csv">sales_data_accessories.csv</a> |
+<a href="#file-sales_data_dress-up-csv">sales_data_dress-up.csv</a> | <a
+href="#file-sales_data_socks-csv">sales_data_socks.csv</a> | <a
+href="#file-sales_data_wallpaper-csv">sales_data_wallpaper.csv</a> | <a
+href="#file-systems_7z-csv">systems_7z.csv</a> | <a
+href="#file-systems_bdbc-csv">systems_BDBC.csv</a> | <a
+href="#file-systems_hsqldb-csv">systems_HSQLDB.csv</a> | <a
+href="#file-systems_llvm-csv">systems_LLVM.csv</a> | <a
+href="#file-systems_postgresql-csv">systems_PostgreSQL.csv</a> | <a
+href="#file-systems_dconvert-csv">systems_dconvert.csv</a> | <a
+href="#file-systems_deeparch-csv">systems_deeparch.csv</a> | <a
+href="#file-systems_exastencils-csv">systems_exastencils.csv</a> | <a
+href="#file-systems_javagc-csv">systems_javagc.csv</a> | <a
+href="#file-systems_redis-csv">systems_redis.csv</a> | <a
+href="#file-systems_storm-csv">systems_storm.csv</a> | <a
+href="#file-systems_x264-csv">systems_x264.csv</a> | <a
+href="#file-test_dataset120-csv">test_dataset120.csv</a> | <a
+href="#file-test_dataset600-csv">test_dataset600.csv</a></p>
 <h2 id="see-also">SEE ALSO</h2>
-<pre><code>konfig    http://tiny.cc/konfig   shared Makefile, dotfiles
+<pre><code>konfig    https://github.com/aiez/konfig   shared Makefile, dotfiles
 regress   http://tiny.cc/regress  regression datasets
-klassif   http://tiny.cc/klassif  classification datasets
-luamine   http://tiny.cc/luamine  code that reads these files</code></pre>
+klassif   https://github.com/aiez/klassif  classification datasets
+luamine   https://github.com/aiez/luamine  code that reads these files</code></pre>
 <h2 id="license">LICENSE</h2>
 <pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
 <h2 id="author">AUTHOR</h2>
 <pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
 
 <hr>
-<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+<p class="foot"><span>built by <a href="https://github.com/aiez/gistsite">gistsite</a></span></p>
 </main></body></html>

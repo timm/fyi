@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="https://timm.fyi/site.css">
 <style>
 body{max-width:860px}
 pre{overflow-x:auto;white-space:pre;color:#e6edf3;
@@ -17,7 +17,7 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 .sourceCode .va,.sourceCode .cn{color:#ffa657}
 .sourceCode .op,.sourceCode .sc{color:#e0e0e0}
 </style>
-<title>kah</title></head><body><main>
+<title>kahlua</title></head><body><main>
 <nav><span><b><a href="index.html">tools</a></b> |
 <a href="https://timm.fyi">timm.fyi</a></span>
 <span><a href="https://github.com/timm">github</a></span></nav>
@@ -25,8 +25,8 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 <!-- Copyright (c) 2026 Tim Menzies, MIT License https://opensource.org/licenses/MIT -->
 
 <p><a href="https://timm.fyi"><img align="right" alt="Author" src="https://img.shields.io/badge/Author-timm-dc143c?logo=readme&logoColor=white"></a><img align="right" alt="Language" src="https://img.shields.io/badge/Language-Lua-000080?logo=lua&logoColor=white"><img align="right" alt="License" src="https://img.shields.io/badge/License-MIT-32cd32?logo=open-source-initiative&logoColor=white"><img align="right" alt="Purpose" src="https://img.shields.io/badge/Purpose-Utilities·Teaching-7b68ee?logo=githubcopilot&logoColor=white"></p>
-<h3 id="httptinycckah-lua"><a
-href="http://tiny.cc/kah-lua"><span>http://tiny.cc/kah-lua</span></a></h3>
+<h3 id="httpsgithubcomaiezkahlua"><a
+href="https://github.com/aiez/kahlua"><span>https://github.com/aiez/kahlua</span></a></h3>
 <p>KAH: one file, ~50 short Lua functions that kept reappearing across
 my other Lua projects: lists, strings, random, csv, stats (incl.
 effect-size tests + confusion matrix), objects, tests. No dependencies
@@ -34,18 +34,20 @@ beyond Lua 5.3+. Every function: one line of comment, a few lines of
 code, 65 columns max.</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and test</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/konfig ../konfig</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone http://tiny.cc/kah-lua kah <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> kah</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/konfig ../konfig</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/kahlua kah <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> kah</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> kah.lua <span class="at">--all</span></span></code></pre></div>
-<p><a href="http://tiny.cc/kah-lua"><img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~kah-lua~l~150.png"></a></p>
+<p><a href="https://github.com/aiez/kahlua"><img width="150" align="right" alt="qr" src="https://tiny.cc/tiny/qr-image/tiny.cc~kah-lua~l~150.png"></a></p>
 <p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
 href="#synopsis">SYNOPSIS</a> | <a href="#options">OPTIONS</a> | <a
 href="#tests">TESTS</a> | <a href="#output">OUTPUT</a> | <a
 href="#exit">EXIT</a> | <a href="#see-also">SEE ALSO</a> | <a
 href="#license">LICENSE</a> | <a href="#author">AUTHOR</a></p>
-<p><strong>Files:</strong> <a href="https://gist.githubusercontent.com/timm/4990faa5b0ddc9b1db2e17ce310b205e/raw/25be0973d8b64d100efd8f8c9e5c32072305354e/kah.lua">kah.lua</a> | <a
-href="https://gist.githubusercontent.com/timm/4990faa5b0ddc9b1db2e17ce310b205e/raw/949349d072080354983818b58841c04c3d460699/kah-1.0.0-1.rockspec">kah-1.0.0-1.rockspec</a> | <a
-href="https://gist.githubusercontent.com/timm/4990faa5b0ddc9b1db2e17ce310b205e/raw/98edd5884dd159dc0f2995898a06e8a00cfbd851/Makefile">Makefile</a></p>
+<p><strong>Files:</strong> <a
+href="https://github.com/aiez/kahlua#file-kah-lua">kah.lua</a> | <a
+href="https://github.com/aiez/kahlua#file-kah-1-0-0-1-rockspec">kah-1.0.0-1.rockspec</a>
+| <a
+href="https://github.com/aiez/kahlua#file-makefile">Makefile</a></p>
 <h2 id="name">NAME</h2>
 <pre><code>kah - useful short lua functions. one file, zero deps,
 Lua 5.3+. import as a library or run its demos from the
@@ -96,15 +98,15 @@ Each prints `tag = value` check lines; runs end
 <pre><code>0 always (failures print as FAIL lines; grep FAIL to
 detect). Non-zero only on Lua errors.</code></pre>
 <h2 id="see-also">SEE ALSO</h2>
-<pre><code>konfig    http://tiny.cc/konfig   shared Makefile, dotfiles
-luamine   http://tiny.cc/luamine  AI primitives built in
+<pre><code>konfig    https://github.com/aiez/konfig   shared Makefile, dotfiles
+luamine   https://github.com/aiez/luamine  AI primitives built in
                                   this same style
-optimiz   http://tiny.cc/optimiz  example CSV datasets</code></pre>
+optimiz   https://github.com/aiez/optimiz  example CSV datasets</code></pre>
 <h2 id="license">LICENSE</h2>
 <pre><code>MIT. https://choosealicense.com/licenses/mit/</code></pre>
 <h2 id="author">AUTHOR</h2>
 <pre><code>Tim Menzies &lt;timm@ieee.org&gt;</code></pre>
 
 <hr>
-<p class="foot"><span>built by <a href="http://tiny.cc/gistsite">gistsite</a></span></p>
+<p class="foot"><span>built by <a href="https://github.com/aiez/gistsite">gistsite</a></span></p>
 </main></body></html>
