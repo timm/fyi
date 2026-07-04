@@ -32,17 +32,17 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 <h3 id="httpsgithubcomaiezluk"><a
 href="https://github.com/aiez/luk"><span>https://github.com/aiez/luk</span></a></h3>
 <p><code>luk</code> is the <strong><code>.luk</code> language</strong>:
-a tiny indentation-based dialect that transpiles to Lua via
-<code>luk.lua</code> (~100-line module). <code>luk.lua</code> returns a
-single function: <code>local lua_src = require("luk")(fun_src)</code>.
-Same Lua semantics, fewer <code>end</code>s, Python-style list
-comprehensions.</p>
+Lua plus <code>fn</code>, <code>^</code> for return, <code>:=</code>
+locals, <code>!=</code>, and Python-style comprehensions. Blocks stay
+pure Lua (<code>then/do/else/end</code>), so any Lua is (almost) valid
+luk. One ~70-line module, <code>luk.lua</code>, does whole-source
+transpilation and installs a <code>require()</code> hook for
+<code>.luk</code> modules.</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/aiez/luk <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> luk</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># transpile (luk.lua is a module; one-liner driver):</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> <span class="at">-e</span> <span class="st">&#39;io.write(require(&quot;luk&quot;)(io.read(&quot;*a&quot;)))&#39;</span> <span class="op">&lt;</span> my.luk <span class="op">&gt;</span> my.lua</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">lua</span> my.lua                            <span class="co"># run</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> my.lua                           <span class="co"># via Makefile</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./luk</span> fft.luk                 <span class="co"># transpile + run, args pass through</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./luk</span> <span class="at">-d</span> fft.luk <span class="op">&gt;</span> fft.lua    <span class="co"># dump generated Lua</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> fft.lua                  <span class="co"># same, via Makefile</span></span></code></pre></div>
 <p>For the optimizer shipped with luk (<code>fft.luk</code>) see <a
 href="https://github.com/aiez/luk/blob/HEAD/fft.md">fft.md</a>.</p>
 <p><strong>Sections:</strong> <a href="#name">NAME</a> | <a
@@ -63,81 +63,74 @@ href="https://github.com/aiez/luk#file-luk-vim">luk.vim</a></p>
 <h2 id="name">NAME</h2>
 <pre><code>luk - .luk-to-Lua transpiler (single-file, no deps)</code></pre>
 <h2 id="synopsis">SYNOPSIS</h2>
-<pre><code>lua -e &#39;io.write(require&quot;luk&quot;(io.read&quot;*a&quot;))&#39; &lt;IN.luk &gt;OUT.lua
+<pre><code>./luk FILE.luk [args...]     # transpile + run
+./luk -d FILE.luk            # dump generated Lua
+lua -e &#39;io.write(require&quot;luk&quot;(io.read&quot;*a&quot;))&#39; &lt;IN.luk &gt;OUT.lua
 -- or programmatically:
---   local lua_src = require(&quot;luk&quot;)(fun_src)</code></pre>
+--   local lua_src = require(&quot;luk&quot;)(luk_src)</code></pre>
+<p>Requiring <code>luk</code> also installs a <code>require()</code>
+hook: <code>require"xx"</code> loads <code>xx.luk</code> if present
+(transpiled, with real error line numbers), else falls back to plain
+Lua. <code>require"xx.luk"</code> forces the <code>.luk</code>
+version.</p>
 <h2 id="language-reference">LANGUAGE REFERENCE</h2>
-<h3 id="keywords-whole-word-substitution">Keywords (whole-word
-substitution)</h3>
-<pre><code>fun                -&gt; function
-!                  -&gt; return
+<p>Blocks are pure Lua: <code>if c then ... else ... end</code>,
+<code>for ... do ... end</code>, <code>while ... do ... end</code>.
+Everything below is whole-source token rewriting; strings and comments
+are hidden first, so sigils inside them are safe.</p>
+<h3 id="keywords">Keywords</h3>
+<pre><code>fn                 -&gt; function
 !=                 -&gt; ~=     (Lua&#39;s not-equal)</code></pre>
+<h3 id="return">Return</h3>
+<pre><code>^ EXPR             -&gt; return EXPR</code></pre>
+<p><code>^</code> means return only at a statement start: start of line,
+or after <code>;</code>, <code>then</code>, <code>do</code>,
+<code>else</code>, or a <code>fn(...)</code> parameter list. Infix
+exponentiation <code>a^b</code> is untouched.</p>
+<pre><code>double := fn(z) ^ z * 2 end
+pick   := fn(b) if b then ^ &quot;yes&quot; else ^ &quot;no&quot; end end</code></pre>
 <h3 id="local-declarations">Local declarations</h3>
 <pre><code>NAME := EXPR       -&gt; local NAME = EXPR
 A, B := X, Y       -&gt; local A, B = X, Y</code></pre>
-<h3 id="compound-assignment-start-of-line">Compound assignment (start of
-line)</h3>
-<pre><code>X += V             -&gt; X = X + V
-X -= V             -&gt; X = X - V
-X *= V             -&gt; X = X * V
-X /= V             -&gt; X = X / V</code></pre>
-<h3 id="block-openers-use--at-eol-or-before-body">Block openers (use ":"
-at EOL or before body)</h3>
-<pre><code>if (cond):         -&gt; if cond then
-elseif (cond):     -&gt; elseif cond then
-else:              -&gt; else
-for X in Y:        -&gt; for X in Y do
-for i = a, b:      -&gt; for i = a, b do
-while cond:        -&gt; while cond do
-fun (args):        -&gt; function(args)
-NAME := fun (a):   -&gt; local NAME = function(a)</code></pre>
-<h3 id="block-bodies">Block bodies</h3>
-<ul>
-<li><p>Same line after <code>:</code> = one-liner, auto-appends
-<code> end</code>.</p></li>
-<li><p>Indented next lines = multi-line; outdent emits
-<code> end</code>.</p></li>
-<li><p>Continuation lines starting with
-<code>else</code>/<code>elseif</code> do NOT trigger the outdent
-close.</p></li>
-<li><p>Lone <code> end</code> lines are folded onto the previous code
-line (skipping blank lines and comments).</p></li>
-<li><p>Inline anonymous <code>fun</code> in expressions needs explicit
-<code>end</code>:</p>
-<pre><code>cb := fun (x): ! x*2 end</code></pre></li>
-</ul>
-<h3 id="list-comprehensions-python-style-inside--">List comprehensions
-(Python-style, inside <code>[ ]</code>)</h3>
-<pre><code>[EXPR for V in ITER]
+<h3 id="comprehensions-may-span-lines-no-nesting">Comprehensions (may
+span lines; no nesting)</h3>
+<pre><code>[EXPR for V in ITER]              -- list
 [EXPR for V in ITER if COND]
-[EXPR for K,V in ITER]            -- 2 loop vars -&gt; pairs</code></pre>
-<p>ITER auto-wrapping inside comprehensions:</p>
+{K, V for K, V in ITER}           -- dict
+{K, V for K, V in ITER if COND}</code></pre>
+<p>ITER auto-wrapping:</p>
 <pre><code>- 1 var, no &quot;(&quot; in ITER  -&gt; ipairs(ITER)
 - 2 vars, no &quot;(&quot; in ITER -&gt; pairs(ITER)
 - else passed through as-is</code></pre>
+<p>Limit: a dict comprehension's key expression must not contain a bare
+comma.</p>
 <h3 id="misc">Misc</h3>
 <ul>
-<li>Strings/comments are hidden during substitution, so sigils inside
-them are safe: <code>print("hi!")</code> stays untouched.</li>
-<li>Shebang <code>#!...</code> at top is rewritten to
-<code>--...</code>.</li>
+<li>No compound assignment: write <code>x = x + 1</code>, not
+<code>x += 1</code>.</li>
+<li>No shebang line in <code>.luk</code> files (load() rejects
+<code>#</code>).</li>
+<li>Long strings/comments <code>[[...]]</code> pass through
+untouched.</li>
 </ul>
 <h2 id="performance">PERFORMANCE</h2>
 <p>Runtime, default mode (depth=4, 16 trees built):</p>
 <pre><code>file       rows    fft.py   fft.lua  fft.luk (transpile+run)
 --------   -----   ------   ------   -----------------------
-auto93     398     0.080s   0.032s   0.039s
-SS-N      53663    9.18s    6.24s    6.11s</code></pre>
-<p>Lua 1.5x-2.5x faster than Python. Transpile overhead ~7ms (constant,
-negligible on any real workload).</p>
+auto93     398     0.080s   0.038s   0.035s
+SS-N      53663    9.18s    5.86s    6.15s</code></pre>
+<p>Lua 1.5x-2.5x faster than Python. Transpile is whole-source gsub,
+~1ms for a 250-line file: negligible on any real workload.</p>
 <h2 id="files">FILES</h2>
-<pre><code>luk.lua      .luk -&gt; .lua transpiler (filter)
+<pre><code>luk.lua      .luk -&gt; .lua transpiler + require() hook
+luk          runner: transpile + run (./luk FILE.luk)
 lib.luk      &quot;battery&quot; helpers (argmin, sum, csv, of, ...)
 fft.luk      example: multi-objective regression tree
-Makefile     rule:  %.lua: %.luk luk.lua</code></pre>
+Makefile     rule:  %.lua: %.luk luk.lua
+sandbox/     retired v0.1 indentation-based dialect (luk2)</code></pre>
 <h2 id="vim-support">VIM SUPPORT</h2>
-<pre><code>syntax: https://github.com/aiez/luk  -&gt; etc/syntax/luk.vim
-nvim init at etc/nvimluk.lua.</code></pre>
+<pre><code>syntax: luk.vim (Lua syntax + luk overlay)
+shell with .luk-aware vi: make fsh (see luk.rc)</code></pre>
 <h2 id="see-also">SEE ALSO</h2>
 <pre><code>fft.md                   help page for the fft.lua app
 https://github.com/aiez/fft       Python sibling project
