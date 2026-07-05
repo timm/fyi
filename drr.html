@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="The DRR effect: when 1 - I/R &gt;
+0.35, a 30-sample optimizer matches state-of-the-art HPO, 100x faster.
+New IEEE TSE paper.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="less noise, more signal">
+<meta property="og:url" content="https://timm.fyi/drr.html">
+<title>less noise, more signal | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<main>
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <a href="tools/index.html">Tools</a> |
+  <b><a href="blog.html">Blog</a></b> |
+  <a href="irl.html">Lab</a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License -->
+<h1 id="less-noise-more-signal">less noise, more signal</h1>
+<p>Tim Menzies <a href="mailto:timm@ieee.org">timm@ieee.org</a> · <a
+href="http://timm.fyi">timm.fyi</a> · 2026-07-05 · <a
+href="26drr.pdf">paper (IEEE TSE, to appear)</a></p>
+<p>Good news: our paper “Less Noise, More Signal: the DRR Effect for
+Better Optimizations of a Range of SE Tasks” (Andre Lustosa &amp; Tim
+Menzies) was just accepted to IEEE Transactions on Software Engineering.
+Here is the story, minus the greek.</p>
+<h2 id="the-one-line-version">the one-line version</h2>
+<p>Before you buy an expensive optimizer, measure your data. If</p>
+<pre><code>DRR = 1 - I/R &gt; 0.35</code></pre>
+<p>then a 30-sample optimizer will very probably do as well as a
+state-of-the-art one running 3000 evaluations — two orders of magnitude
+faster (seconds, not 20+ minutes).</p>
+<p>Here <code>R</code> is the number of raw attributes in your data and
+<code>I</code> is its <em>intrinsic</em> dimensionality (how many
+underlying dimensions actually matter, computed via a quick
+fractal-based measure). DRR — the Dimensionality Reduction Ratio — is
+just the fraction of your attributes that are noise.</p>
+<h2 id="why-this-works">why this works</h2>
+<p>SE data is famously compressible. Software projects report many
+things, but only a few of them relate to any particular goal. When most
+attributes are superfluous, the optimization landscape collapses to a
+few buckets, and elaborate search (evolution, multi-fidelity, iterated
+racing) is effort spent exploring dimensions that are not there.</p>
+<p>We tested this on 50 datasets — software configuration, cloud
+resource management, project health prediction, effort/defect/schedule
+process models — tuning a random-forest learner with two optimizers:</p>
+<ul>
+<li><strong>LITE</strong>: ~30 lines of code, 30 evaluations;</li>
+<li><strong>DEHB</strong>: state-of-the-art hyperparameter optimization,
+3000 evaluations.</li>
+</ul>
+<p>38 of 50 SE datasets (76%) had DRR &gt; 0.35. On <em>all</em> of
+those, LITE was statistically indistinguishable from DEHB (Scott-Knott +
+Cliff’s delta, 20 repeats), while running about 100 times faster. On
+low-DRR data — which includes most classic non-SE machine learning
+benchmarks — the extra 3000 evaluations really do pay off. Which is
+maybe why AI researchers never noticed this effect: they were looking at
+different data.</p>
+<h2 id="an-effect-not-a-law">an effect, not a law</h2>
+<p>DRR is an empirical effect in the tradition of the Pareto principle
+or Brooks’ Law: a frequently recurring pattern with known exceptions,
+not a universal truth. Near the threshold there is noise (a couple of
+DRR ≈ 0.3 datasets were easy anyway). It also <em>corrects</em> prior
+work: an earlier TSE paper proposed “use simple methods when I &lt; 4”,
+a rule that mis-advises most of our 50 datasets.</p>
+<p>So the recommendation is a cheap diagnostic, not a dogma: check DRR
+before deploying expensive optimization. A full reproduction package
+(all 50 datasets, LITE, DEHB, the intrinsic-dimension calculator) is at
+<a href="https://github.com/timm/ezr">github.com/timm/ezr</a>.</p>
+<p><em>Congrats to Andre Lustosa (IRL PhD 2025, now Redhat) — this one
+was years in the making.</em></p>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
