@@ -8,45 +8,36 @@
 
 ## Pages
 - **Personal pages**: `index.html`, `research.html`, `teach.html`, `blog.html`, `news.html`, plus `irl.html` (lab home, formerly separate "Service" page dropped 2026-05).
-- **Blog posts**: `higher_way.html` (Apr'26), `symbolic_ai.html` (May'26). Listed under `blog.html` Posts section.
-- **Nav on personal pages** (uniform): `Home | Research | Teach | Tools | Blog | Lab`. Tools restored to nav 2026-06; `tools.html` + `tool-*.html` are GENERATED (see Tools section) — don't hand-edit them.
+- **Blog posts**: root-level `<slug>.html` files (e.g. `higher_way.html`, `symbolic_ai.html`, `ezr2.html`, `drr.html`). Listed under `blog.html` Posts section.
+- **Nav on personal pages** (uniform): `Home | Research | Teach | Tools | Blog | Lab`. Tools restored to nav 2026-06; everything under `tools/` is GENERATED (see Tools section) — don't hand-edit it.
 - **IRL section** (4 pages): `irl.html`, `irl-projects.html`, `irl-people.html`, `irl-collaborators.html`. Linked from main nav as "Lab".
 - **Static assets**: PDFs at root (e.g. `26smooth.pdf`, kept at root for stable external links). Images in `assets/img/`. Old/unlinked stuff moved to `old/`.
 
-## Tools (imported from gists)
-`make tools` builds the Tools section from curated gist READMEs (needs
-`pandoc` — the site's one build tool). Each gist's `,*.md` man-page README
-is converted to a styled page. **The import is owned here, not in the
-gists** — gists never reference fyi; this Makefile lists what to pull.
+## Tools (imported from the aiez org)
+The tool sources are repos in the GitHub org `aiez` (local checkouts at
+`~/gits/aiez/<slug>`, e.g. `~/gits/aiez/luk`; the old `~/gists` tree is
+dead). `make tools` runs `~/gits/aiez/gistsite/gistsite.py -g aiez`
+(needs network + pandoc), which pulls every org repo's `README.md` via
+the GitHub API, strips repo-only lines (shields badges, `**Files:**`
+TOC, relative-file links), and renders the catalog to `tools/`:
+`tools/index.html` (roster) + `tools/<slug>.html` (one per tool).
+Everything in `tools/` is GENERATED — don't hand-edit; regenerate after
+README changes. Curate by exclusion: edit `SKIP` (and `DOOT`/`ORG`) in
+the `Makefile`. Some tools also ship on package managers (e.g. `luk` on
+luarocks as `timm/luk`).
 
-Curated list — edit `TOOLS` in the `Makefile` to add/remove (`slug:gistdir:mdfile`):
-
-    konfig   ~/gists/konfig/,konfig.md     shared gist boilerplate
-    ezr      ~/gists/ezr/,ezr.md           XAI multi-objective optimization
-    nuff     ~/gists/nuff/,nuff.md         tiny one-file python tricks lib
-    kah-lua  ~/gists/kah-lua/,kah.md       ~50 reusable Lua functions
-    lithp    ~/gists/lithp/,lithp.md       "less library" Common Lisp kit
-    luamine  ~/gists/luamine/,luamine.md   Lua data-mining learners
-    luk      ~/gists/luk/,luk.md           .luk indentation dialect
-    repltut  ~/gists/repltut/,Repltut.md   source-code-as-textbook prompts
-
-Output: `tools.html` (index) + `tool-<slug>.html` (one per tool, flat at
-root). Regenerate after any gist README changes. `etc/tool.html` is the
-pandoc template (fyi chrome); styling via `body.tool` + `.tools-list` in
-`site.css`. The build strips gist-only lines (shields badges, screenshot,
-`**Files:**` TOC, relative-file links). `GISTS` defaults to `~/gists`.
-
-### Tools vs Blog — what goes where (a gist may ship two docs)
-- `,<name>.md` — the man-page README → **Tools** (auto-imported by `make
-  tools`; don't hand-edit `tools/`). One per gist.
+### Tools vs Blog — what goes where (a repo may ship two docs)
+- `README.md` — the man-page → **Tools** (auto-imported by `make tools`).
+  One per repo.
 - `<name>.md` — an optional long-form "tour" / genetic-stanza tutorial →
   a **Blog** post. Render it with pandoc through `etc/blog.html` (the fyi
   chrome template), e.g.
-  `pandoc ~/gists/<g>/<name>.md -s --template=etc/blog.html
-  --highlight-style=breezedark --metadata title="..." --metadata
-  slug=<name> -o <name>.html`, then add a row to `blog.html` Posts (and
-  usually `news.html`). **Copy any images the tour uses into
-  `assets/img/` and repoint the `src=` — fyi never reads from gists.**
+  `pandoc ~/gits/aiez/<g>/<name>.md -s --template=etc/blog.html
+  --syntax-highlighting=breezedark --metadata title="..." --metadata
+  slug=<name> --metadata description="..." -o <name>.html`, then add a
+  row to `blog.html` Posts (and usually `news.html`). **Copy any images
+  the tour uses into `assets/img/` and repoint the `src=` — fyi never
+  reads from other repos.**
 - Never put the long tour in Tools (the strip rules mangle it); never put
   the man-page in Blog (too terse). Cross-link the two.
 
