@@ -253,9 +253,9 @@ Archives, etc:<br>
   Sort ascending, "Other" last. Skip CoRR (arXiv preprints, often duplicates)
   and LNCS (publisher wrapper, not a venue). Update when refreshing.
   ADD-PAPER-HINT: when adding a new paper to a known venue, increment that venue's
-  count + tooltip + label, and recompute bar width = round(100 * count / 36).
+  count + tooltip + label, and recompute bar width = round(100 * count / 37).
   New venue → +1 to "Other ~80" total below SVG.
-  Last refresh data: TSE 36, IEEE Softw. 31, ICSE 24, EMSE 24, ASE conf 24, FSE 20,
+  Last refresh data: TSE 37, IEEE Softw. 31, ICSE 24, EMSE 24, ASE conf 24, FSE 20,
   PROMISE 19, ESEC 17, ASEJ (Autom. Softw. Eng., journal) 13, MSR 10, IST 11.
   Note: DBLP "ASE" = ASE conference; ASEJ = Autom. Softw. Eng. journal (Tim is EIC).
   MERGE RULE: FSE + ESEC are same merged conference (ESEC/FSE since 1999) — DBLP
@@ -272,43 +272,43 @@ Archives, etc:<br>
   <title>Top publication venues (DBLP)</title>
   <g font-family="monospace" font-size="6" fill="#888">
     <text x="0" y="7">TSE</text>
-    <rect x="55" y="1" width="100" height="6" fill="#ffb86c"><title>IEEE TSE: 36 papers</title></rect>
-    <text x="200" y="7" text-anchor="end">36</text>
+    <rect x="55" y="1" width="100" height="6" fill="#ffb86c"><title>IEEE TSE: 37 papers</title></rect>
+    <text x="200" y="7" text-anchor="end">37</text>
 
     <text x="0" y="16">IEEE Softw.</text>
-    <rect x="55" y="10" width="86" height="6" fill="#ffb86c"><title>IEEE Software: 31 papers</title></rect>
+    <rect x="55" y="10" width="84" height="6" fill="#ffb86c"><title>IEEE Software: 31 papers</title></rect>
     <text x="200" y="16" text-anchor="end">31</text>
 
     <text x="0" y="25">FSE</text>
-    <rect x="55" y="19" width="69" height="6" fill="#ffb86c"><title>FSE/ESEC merged, deduped: ~25 papers</title></rect>
+    <rect x="55" y="19" width="68" height="6" fill="#ffb86c"><title>FSE/ESEC merged, deduped: ~25 papers</title></rect>
     <text x="200" y="25" text-anchor="end">~25</text>
 
     <text x="0" y="34">ICSE</text>
-    <rect x="55" y="28" width="67" height="6" fill="#ffb86c"><title>ICSE: 24 papers</title></rect>
+    <rect x="55" y="28" width="65" height="6" fill="#ffb86c"><title>ICSE: 24 papers</title></rect>
     <text x="200" y="34" text-anchor="end">24</text>
 
     <text x="0" y="43">EMSE</text>
-    <rect x="55" y="37" width="67" height="6" fill="#ffb86c"><title>EMSE: 24 papers</title></rect>
+    <rect x="55" y="37" width="65" height="6" fill="#ffb86c"><title>EMSE: 24 papers</title></rect>
     <text x="200" y="43" text-anchor="end">24</text>
 
     <text x="0" y="52">ASE (conf)</text>
-    <rect x="55" y="46" width="67" height="6" fill="#ffb86c"><title>ASE conference: 24 papers</title></rect>
+    <rect x="55" y="46" width="65" height="6" fill="#ffb86c"><title>ASE conference: 24 papers</title></rect>
     <text x="200" y="52" text-anchor="end">24</text>
 
     <text x="0" y="61">PROMISE</text>
-    <rect x="55" y="55" width="53" height="6" fill="#ffb86c"><title>PROMISE: 19 papers</title></rect>
+    <rect x="55" y="55" width="51" height="6" fill="#ffb86c"><title>PROMISE: 19 papers</title></rect>
     <text x="200" y="61" text-anchor="end">19</text>
 
     <text x="0" y="70">ASE (journal)</text>
-    <rect x="55" y="64" width="36" height="6" fill="#ffb86c"><title>Autom. Softw. Eng. (ASEJ): 13 papers</title></rect>
+    <rect x="55" y="64" width="35" height="6" fill="#ffb86c"><title>Autom. Softw. Eng. (ASEJ): 13 papers</title></rect>
     <text x="200" y="70" text-anchor="end">13</text>
 
     <text x="0" y="79">MSR</text>
-    <rect x="55" y="73" width="28" height="6" fill="#ffb86c"><title>MSR: 10 papers</title></rect>
+    <rect x="55" y="73" width="27" height="6" fill="#ffb86c"><title>MSR: 10 papers</title></rect>
     <text x="200" y="79" text-anchor="end">10</text>
 
     <text x="0" y="88">IST</text>
-    <rect x="55" y="82" width="31" height="6" fill="#ffb86c"><title>Information &amp; Software Technology: 11 papers</title></rect>
+    <rect x="55" y="82" width="30" height="6" fill="#ffb86c"><title>Information &amp; Software Technology: 11 papers</title></rect>
     <text x="200" y="88" text-anchor="end">11</text>
 
     <text x="0" y="97">TOSEM</text>
@@ -341,6 +341,7 @@ Other ~81</p>
 <p>Simpler, optimized models yield exceptional results while remaining transparent and trustworthy.</p>
 <!-- ADD-PAPER-HINT: insert new <li> at top. Format: <li><b>VENUE'YR</b> Short Title <a href="URL">[pdf]</a></li> -->
 <ul>
+  <li><b>TSE'26</b> Less Noise, More Signal: the DRR Effect <a href="26drr.pdf">[pdf]</a></li>
   <li><b>arXiv'26</b> Can AI be Easy? Lessons from the EZR.py Toolkit <a href="ezr.html">[pdf]</a></li>
   <li><b>SSBSE'26</b> Zoom, Don't Wander: Regional Search vs. Pareto vs. Global Optimization <a href="https://arxiv.org/pdf/2605.09658">[pdf]</a></li>
   <li><b>FSE'26</b> Data-Light SE Challenge <a href="https://arxiv.org/abs/2512.13524">[pdf]</a></li>

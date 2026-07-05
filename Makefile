@@ -40,15 +40,16 @@ links: ## check for dead local refs in HTML
 	    done; \
 	done
 
-# DOOT = gists root (dir holding the konfig-style gists). env wins.
-DOOT ?= $(HOME)/gists
-# SKIP = retired/experimental gist slugs to leave OUT of the catalog.
-# (gist API has no folders, so old/ gists still return -- exclude here.)
-SKIP ?= ape,dot-files,preci0us,ranger,ruler,tests4mop,tinypythonclasses,tricks
+# DOOT = local checkout of the aiez org repos (holds gistsite/).
+DOOT ?= $(HOME)/gits/aiez
+# ORG  = github org whose repo READMEs become the catalog.
+ORG  ?= aiez
+# SKIP = retired/experimental repo slugs to leave OUT of the catalog.
+SKIP ?= regress,xomo
 
 .PHONY: tools
-tools: ## render gist catalog -> tools/ (needs $(DOOT)/gistsite + pandoc)
-	@python3 -B $(DOOT)/gistsite/gistsite.py -o tools -c ../site.css --skip $(SKIP)
+tools: ## render aiez-org catalog -> tools/ (needs $(DOOT)/gistsite + pandoc)
+	@python3 -B $(DOOT)/gistsite/gistsite.py -g $(ORG) -o tools -c ../site.css --skip $(SKIP)
 	@echo "rendered -> tools/  (review, then: make push)"
 
 clean: ## remove macOS junk + tmp files
