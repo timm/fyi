@@ -52,7 +52,7 @@ All pages share:
 - All visible text lowercase via CSS `text-transform: lowercase` on `nav, h1, h2, h3, p`. Override with inline `style="text-transform:none"` when needed (e.g. mission-statement quote).
 - Recruit-style call-out boxes: amber border, dark `#2a2218` background, centered, max-width 75%. Used for "wanna work with me?" (index), "join my reading group" (teaching `#reading-group`), "join us?" (irl).
 - News table format: 3-column `<table class="news">`. Col 1 = `<b>MMM'YR</b>` (skip on continuation rows). Col 2 = type icon (FA, narrow, muted). Col 3 = title with optional `<a>`.
-- **News split (2026-05)**: canonical full news lives in `news.html`. `index.html` shows only top 5 rows + "> more news & older" link to `news.html`. When adding news: prepend to `news.html` first, then mirror new top 5 onto `index.html`.
+- **News split (2026-05)**: canonical full news lives in `news.html`. `index.html` mirrors the ~3 most recent months of rows, verbatim, + "> more news & older" link to `news.html`. When adding news: prepend to `news.html` first, then mirror onto `index.html`, dropping the oldest month when a new one starts.
 
 ## New Paper Workflow
 When user announces a new accepted paper, update these locations:
