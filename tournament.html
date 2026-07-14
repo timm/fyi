@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="A tournament of 20 optimizers over 106 SE
+tasks: the best optimizer changes with the labeling budget, and a free
+two-attribute lookup predicts the winner. New preprint.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="which optimizer, at what budget?">
+<meta property="og:url" content="https://timm.fyi/tournament.html">
+<title>which optimizer, at what budget? | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<main>
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <a href="tools/index.html">Tools</a> |
+  <b><a href="blog.html">Blog</a></b> |
+  <a href="irl.html">Lab</a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License -->
+<h1 id="which-optimizer-at-what-budget">which optimizer, at what budget?</h1>
+<p>Tim Menzies <a href="mailto:timm@ieee.org">timm@ieee.org</a> · <a
+href="http://timm.fyi">timm.fyi</a> · 2026-07-14 · <a
+href="https://arxiv.org/pdf/2607.11705">paper (arXiv preprint)</a></p>
+<p>New preprint: &ldquo;Which Optimizer, At What Budget? A Tournament of
+Optimizers for Search-Based SE&rdquo; (Kishan Kumar Ganguly &amp; Tim
+Menzies). We ran 20 black-box optimizers head-to-head on 106 SE tasks
+&mdash; about 180,000 search runs, 14,000 CPU hours &mdash; and the
+short answer is: there is no best optimizer. But there is a best
+optimizer <em>for your budget</em>, and you can look it up for free.</p>
+<h2 id="the-one-line-version">the one-line version</h2>
+<p>At tight labeling budgets (30&ndash;50 samples) a tiny geometric
+active learner (EZR) wins; at larger budgets (100&ndash;200)
+differential evolution takes over. Which one you need is predicted by
+just two zero-cost task attributes plus the budget &mdash; a six-cell
+table lookup that ties or beats a hindsight oracle on 74% of held-out
+tasks.</p>
+<h2 id="why-a-tournament">why a tournament?</h2>
+<p>Every optimizer bakes in assumptions about the fitness landscape:
+local continuity, building-block decomposability, Pareto
+incomparability, low intrinsic dimensionality, and so on. We went back
+to the originating paper of each optimizer family, mapped each to one of
+seven such assumptions, then built a binary tournament tree where each
+match isolates one assumption. Quality was scored as
+distance-to-heaven against a random-search floor, with Scott-Knott +
+Cliff&rsquo;s delta over 20 seeds.</p>
+<h2 id="what-we-found">what we found</h2>
+<ul>
+<li><strong>Optimization pays, fast:</strong> 30 labels close 31% of the
+random-to-optimal gap; 200 labels close 74.5%.</li>
+<li><strong>The winner migrates:</strong> 58% of tasks change their best
+optimizer at least once as the budget grows. Pick an optimizer at one
+budget and it falls out of the top tier on up to half the tasks at
+another.</li>
+<li><strong>Popular &ne; efficient:</strong> the widely recommended
+NSGA-II needed ~1000 evaluations to match what EZR achieved in 200
+&mdash; and no optimizer family led on more than 37 of the 106
+tasks.</li>
+<li><strong>Cheap beats clever:</strong> expensive instance-space
+clustering predicted the right optimizer 44% of the time; our free
+two-attribute lookup (objective conflict &times; input-space shape
+&times; budget) scored 74%.</li>
+</ul>
+<h2 id="so-what">so what?</h2>
+<p>Budget is a first-class variable. The open question in SE
+optimization is never <em>whether</em> to optimize, only <em>which
+optimizer earns those few dozen labels</em>. In practice this suggests a
+&ldquo;warm handoff&rdquo;: start geometric and frugal, switch to
+evolutionary search only if the labels keep coming. Reproduction
+package: <a
+href="https://github.com/KKGanguly/OptimizerTournament">github.com/KKGanguly/OptimizerTournament</a>.</p>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>

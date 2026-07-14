@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="Classical-then-LLM beats LLM-first for SE
+optimization: same ingredients, opposite order, eleven points better,
+half the cost. New preprint on SNAP2.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="better together, in the right order">
+<meta property="og:url" content="https://timm.fyi/snap2.html">
+<title>better together, in the right order | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<main>
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <a href="tools/index.html">Tools</a> |
+  <b><a href="blog.html">Blog</a></b> |
+  <a href="irl.html">Lab</a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License -->
+<h1 id="better-together-in-the-right-order">better together, in the right order</h1>
+<p>Tim Menzies <a href="mailto:timm@ieee.org">timm@ieee.org</a> · <a
+href="http://timm.fyi">timm.fyi</a> · 2026-07-14 · <a
+href="https://arxiv.org/pdf/2607.02583">paper (arXiv preprint)</a></p>
+<p>New preprint: &ldquo;Better Together, in the Right Order:
+Classical-then-LLM Optimization for SE&rdquo; (Srinath Srinivasan &amp;
+Tim Menzies). Everyone is bolting LLMs onto optimizers. Prior hybrids
+put the classical optimizer in charge and asked the LLM for hints. We
+tried the opposite: let a cheap classical learner go first, then hand
+its trail to the LLM to finish. Same ingredients, opposite order,
+eleven points better.</p>
+<h2 id="the-one-line-version">the one-line version</h2>
+<p>SNAP2 runs the EZR active learner for the first 10 of a 20-label
+budget, then feeds that labeled trajectory as generation zero to an
+OPRO-style LLM loop. Result: statistically top-tier on 85% of 105 SE
+optimization tasks &mdash; versus 74&ndash;75% for every LLM-first or
+LLM-only rival &mdash; while using ~30% fewer tokens and half the
+dollar cost of the pure-LLM approach.</p>
+<h2 id="why-order-matters">why order matters</h2>
+<p>An LLM prompted cold has to guess the shape of the landscape from
+generic priors. Seed it with even ten well-chosen labeled examples and
+it starts in the right region, with real gradients to reason over. The
+classical stage is the cheap scout; the LLM is the expensive closer.
+Collision tracking (nudging proposals away from already-explored
+regions) keeps it from re-asking questions the scout already
+answered.</p>
+<h2 id="the-uncomfortable-baseline">the uncomfortable baseline</h2>
+<p>Honesty compels a footnote that is really a headline: plain EZR
+&mdash; no LLM, zero tokens, zero dollars, three orders of magnitude
+faster &mdash; landed within 2.8 points of SNAP2. So the pragmatic
+advice is a two-step: run the free thing first; pay for the LLM only
+when the last few points of optimization matter. (The whole study,
+including all seven methods over 105 tasks and 20 seeds, was budgeted at
+$400 &mdash; on the principle that an LLM budget should stay below the
+cost of a graduate research assistant.)</p>
+<h2 id="details">details</h2>
+<p>Benchmarked: SNAP2, SNAP, BS_LLM, SYNTHCORE, EZR, random, and
+row-ranking baselines on 105 tasks from the MOOT repository (config
+tuning, process models, effort/defect/health prediction), scored by
+distance-to-heaven with Cliff&rsquo;s delta + Kolmogorov-Smirnov at 95%.
+LLM: gpt-oss-120b.</p>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
