@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<meta name="description" content="Two runs of the same optimizer on the same
+data agree on 2.9% of test cases. Instability is not noise — it is a
+property you can manage. New preprint.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="your model is unstable (and that's fixable)">
+<meta property="og:url" content="https://timm.fyi/unstable.html">
+<title>your model is unstable | Tim Menzies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<main>
+
+<nav>
+  <span><a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i></a> |
+  <a href="research.html">Research</a> |
+  <a href="teach.html">Teach</a> |
+  <a href="tools/index.html">Tools</a> |
+  <b><a href="blog.html">Blog</a></b> |
+  <a href="irl.html">Lab</a></span>
+  <span>papers:&nbsp;<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="Pre-prints (arxiv)"><i class="fa-solid fa-scroll"></i></a> &middot; <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></span>
+</nav>
+
+<hr>
+
+<!-- Copyright (c) 2026 Tim Menzies, MIT License -->
+<h1 id="your-model-is-unstable">your model is unstable (and that&rsquo;s fixable)</h1>
+<p>Tim Menzies <a href="mailto:timm@ieee.org">timm@ieee.org</a> · <a
+href="http://timm.fyi">timm.fyi</a> · 2026-07-14 · <a
+href="https://arxiv.org/pdf/2607.10420">paper (arXiv preprint)</a></p>
+<p>New preprint: &ldquo;Is Model Instability just Noise to be Tolerated
+or a Property that can be Managed?&rdquo; (Amirali Rayegan, Lunxiao Li
+&amp; Tim Menzies). Here is a number that should worry anyone who runs
+an optimizer once and ships the answer: under default settings, two runs
+of the same state-of-the-art optimizer on the same data agreed on just
+<strong>2.9%</strong> of 12,700 test cases.</p>
+<h2 id="the-one-line-version">the one-line version</h2>
+<p>Performance instability is the norm, not the exception &mdash; but it
+is not just noise. It is a measurable, manageable property. A handful of
+configuration changes raised run-to-run agreement 4.8x and cut the
+variance of optimization error by 22%, while <em>improving</em>
+optimization quality.</p>
+<h2 id="two-kinds-of-instability">two kinds of instability</h2>
+<p>The study (127 multi-objective SE tasks, 20 repeated runs per
+treatment) separates two things people usually conflate:</p>
+<ul>
+<li><strong>Structural instability</strong>: the learned trees look
+different from run to run. This is the Rashomon effect and it is largely
+irreducible &mdash; and harmless. Different-looking trees can give the
+same advice.</li>
+<li><strong>Performance instability</strong>: different runs give
+different <em>recommendations</em>. This one matters, and this one is
+fixable.</li>
+</ul>
+<h2 id="what-fixes-it">what fixes it</h2>
+<p>Six candidate causes were tested (budget, acquisition strategy, tree
+complexity, split criterion, confounder filtering, data locality). The
+winning recipe: labeling budget 50, &ldquo;near&rdquo; acquisition,
+min-leaf 3, Gini splits. The acquisition function alone lifted stability
+top-rank rates from under 50% to over 80% of datasets &mdash; at zero
+extra labeling cost. And stability did not tax quality: the refined
+settings were statistically top-ranked for optimization performance on
+119 of 127 datasets, versus 74 for the defaults.</p>
+<h2 id="a-floor-you-cannot-dig-below">a floor you cannot dig below</h2>
+<p>Some instability is the data&rsquo;s fault, not the learner&rsquo;s.
+Even with causal confounder-filtering and the friendliest clusterers,
+agreement never passed ~51% of cases. So the honest position is:
+instability can be managed down to a data-inherent floor, and past that
+you should report it, not hide it. We argue stability should be a
+routinely-reported evaluation axis in SBSE, right next to accuracy.
+Reproduction package: <a
+href="https://tinyurl.com/Model-Instability">tinyurl.com/Model-Instability</a>.</p>
+
+<hr>
+<div class="foot">
+  <a href="https://www.csc.ncsu.edu/"><img loading="lazy" src="ncsu_brick.png" height="40" alt="NC State"></a>
+  <span class="r">&copy;2026, <a href="http://timm.fyi">timm</a>, MIT License<br>
+  <a href="site.css">150 words of css</a><br>
+  <a href="https://jeffhuang.com/designed_to_last/">designed.2.last</a></span>
+</div>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
