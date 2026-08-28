@@ -5,17 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Tim Menzies — full news archive: papers, talks, service, keynotes.">
 <title>News | Tim Menzies</title>
+<link rel="icon" type="image/png" href="../favicon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
 html { background: #d6d2ca; }
-body { max-width: 28em; margin: 2em auto; padding: 0 1em; font-size: 14px; line-height: 1.45; color: #222; font-family: "Ubuntu Mono", "Courier New", monospace; }
+body { max-width: 65ch; margin: 2em auto; padding: 0 1em; font-size: 14px; line-height: 1.45; color: #222; font-family: "Ubuntu Mono", "Courier New", monospace; }
 p    { margin: 0 0 0.8em; }
 h2,h3 { margin: 0.3em 0; }
 body > p { padding: 0.5em 0.8em; background: #e5e1d8; border-radius: 8px; }
 a    { color: #cc0000; text-decoration: none; }
+a:hover { text-decoration: underline; }
 span.d { padding-left: 2em; display: block; }
 .f   { font-size: small; }
+@media (prefers-color-scheme: dark) {
+  html { background: #1f1e1c; }
+  body { color: #c8c4bc; }
+  body > p, pre, table { background: #2b2a27; }
+  a { color: #e06a5a; }
+  hr { border-top-color: #4a4844; }
+  img { opacity: 0.9; }
+}
 </style>
 </head>
 <body>
@@ -27,7 +37,7 @@ span.d { padding-left: 2em; display: block; }
 <a href="research.html">research</a> |
 <a href="teach.html">teach</a> |
 <a href="blog.html">blog</a> |
-<a href="news.html">news</a> |
+<b><a href="news.html">news</a></b> |
 <a href="irl.html">lab</a> |
 <a href="../tools/index.html">tools</a><br>
 papers: <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">arxiv</a> |
@@ -43,26 +53,26 @@ PC SANER'27</span></p>
 <span class="d">papers:
 <a href="../26impact.pdf">AI &amp; productivity</a> (IEEE Software),
 <a href="../26coffe.pdf">LLM code efficiency</a> (TSE),
-<a href="../drr.html">the DRR effect</a> (TSE),
-<a href="../tournament.html">optimizer tournament</a>,
-<a href="../unstable.html">model instability</a>,
-<a href="../snap2.html">classical-then-LLM</a> (arXiv)</span>
+<a href="drr.html">the DRR effect</a> (TSE),
+<a href="tournament.html">optimizer tournament</a>,
+<a href="unstable.html">model instability</a>,
+<a href="snap2.html">classical-then-LLM</a> (arXiv)</span>
 <span class="d">award: <a href="../assets/img/sigsoft-academy-2026.jpg">ACM SIGSOFT Academy</a>, inaugural class</span>
 <span class="d">keynote: SSBSE'26, <a href="../26less.pdf">easier AI?</a></span>
 <span class="d">appointed: PC MSR'27, PC AAAI'27 Social Impact</span>
-<span class="d">tool: <a href="https://luarocks.org/modules/timm/luk">luk on luarocks</a> (<a href="../luk.html">tour</a>)</span></p>
+<span class="d">tool: <a href="https://luarocks.org/modules/timm/luk">luk on luarocks</a> (<a href="luk.html">tour</a>)</span></p>
 
 <p><b>Jun'26</b><br>
-<span class="d">tools: <a href="../tools/ezr2.html">ezr2</a> (<a href="../ezr2.html">tour</a>),
+<span class="d">tools: <a href="../tools/ezr2.html">ezr2</a> (<a href="ezr2.html">tour</a>),
 <a href="../tools/ezr.html">ezr toolkit</a></span>
-<span class="d">paper: <a href="../ezr.html">can AI be easy?</a> (arXiv)</span>
+<span class="d">paper: <a href="ezr.html">can AI be easy?</a> (arXiv)</span>
 <span class="d">award: invited, ACM SIGSOFT Academy</span></p>
 
 <p><b>May'26</b><br>
 <span class="d">award: <a href="../assets/pdf/springer2026award.pdf">Springer Nature Editorial Contribution</a></span>
 <span class="d">papers: <a href="https://arxiv.org/pdf/2605.09658">zoom, don't wander</a> (SSBSE'26),
 <a href="https://arxiv.org/abs/2512.18102">data-centric fuzzing</a> (IST)</span>
-<span class="d">blog: <a href="../symbolic_ai.html">return of symbolic AI?</a></span>
+<span class="d">blog: <a href="symbolic_ai.html">return of symbolic AI?</a></span>
 <span class="d">appointed: PC ESEM'26</span></p>
 
 <p><b>Apr'26</b><br>
@@ -70,7 +80,7 @@ PC SANER'27</span></p>
 <a href="../26causal.pdf">shaky causal structures</a></span>
 <span class="d">papers: <a href="https://arxiv.org/abs/2509.08667">explaining optimization</a> (JSS),
 LLMs warming-up active learning (TOSEM)</span>
-<span class="d">blog: <a href="../higher_way.html">promoted, not replaced</a></span>
+<span class="d">blog: <a href="higher_way.html">promoted, not replaced</a></span>
 <span class="d">panel: ICSE'26 Future of SE</span></p>
 
 <p><b>Mar'26</b><br>
@@ -98,7 +108,7 @@ PC FSE'27, co-chair FoSE ICSE'28, PC ICSE'27 NIER</span>
 <span class="d">talk: Valencia SE Group</span></p>
 
 <p><b>Aug'25</b><br>
-<span class="d">paper: <a href="../compact_ai.html">the case for compact AI</a> (CACM)</span>
+<span class="d">paper: <a href="compact_ai.html">the case for compact AI</a> (CACM)</span>
 <span class="d">keynote: Airbnb Dev Conference, San Francisco</span></p>
 
 <p><b>Jul'25</b><br>
