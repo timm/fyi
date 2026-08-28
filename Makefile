@@ -27,8 +27,13 @@ wc: ## show word counts (site.css strips :{} before count)
 	   printf "  %-22s %s lines\n" $$f $$(wc -l < $$f); \
 	 done
 
-links: ## check for dead local refs in HTML
-	@for f in *.html; do \
+.PHONY: raw
+raw: ## regenerate raw/ versions of blog posts (etc/rawify.py)
+	@python3 -B etc/rawify.py
+	@echo "rendered -> raw/  (main raw pages are hand-edited; posts regenerate)"
+
+links: ## check for dead local refs in HTML (root + raw/)
+	@for f in *.html raw/*.html; do \
 	  grep -oE '(href|src)="[^"]+"' $$f \
 	  | sed 's/.*"\([^"]*\)".*/\1/' \
 	  | grep -vE '^(https?:|mailto:|tel:|#|URL$$)' \
@@ -36,7 +41,7 @@ links: ## check for dead local refs in HTML
 	  | sort -u \
 	  | while read ref; do \
 	      [ -z "$$ref" ] && continue; \
-	      [ -e "$$ref" ] || echo "MISSING: $$f -> $$ref"; \
+	      [ -e "$$(dirname $$f)/$$ref" ] || echo "MISSING: $$f -> $$ref"; \
 	    done; \
 	done
 
