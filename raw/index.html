@@ -6,49 +6,57 @@
 <meta name="description" content="Tim Menzies — professor of CS at NC State. AI, SE, compact models, explainability.">
 <title>Tim Menzies</title>
 <link rel="icon" type="image/png" href="../favicon.png">
-<meta name="theme-color" content="#d6d2ca" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1f1e1c" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-html { background: #d6d2ca; }
-body { max-width: 65ch; margin: 2em auto; padding: 0 1em; font-size: 14px; line-height: 1.45; color: #222; font-family: "Ubuntu Mono", "Courier New", monospace; }
+html { background: white; }
+body { max-width: 600px; margin: 10px auto; padding: 10px; font-size: 13px; line-height: 1.4; color: black; font-family: "Ubuntu Mono", "Courier New", monospace; }
 p    { margin: 0 0 0.8em; }
 h2,h3 { margin: 0.3em 0; }
-body > p { padding: 0.5em 0.8em; background: #e5e1d8; border-radius: 8px; }
+h2   { font-size: 22px; }
+center.top { background: #cc0000; color: white; padding: 3px 10px; margin-bottom: 5px; }
+center.top a { color: white; }
+body > p { padding: 0.5em 0.8em; background: whitesmoke; }
+hr   { display: none; }
 a    { color: #cc0000; text-decoration: none; }
 a:hover { text-decoration: underline; }
 p.news { border-left: 4px solid #cc0000; }
 span.d { padding-left: 2em; display: block; }
 .f   { font-size: small; }
-@media (prefers-color-scheme: dark) {
-  html { background: #1f1e1c; }
-  body { color: #c8c4bc; }
-  body > p, pre, table { background: #2b2a27; }
-  a { color: #e06a5a; }
-  hr { border-top-color: #4a4844; }
-  img { opacity: 0.9; }
+center { text-align: left; }
+.hd  { display: flex; justify-content: space-between; gap: 10px; }
+.rhs { display: flex; flex-direction: column; justify-content: space-between; text-align: right; }
+.hd p { text-align: right; }
+a.cta { background: #cc0000; color: white; padding: 3px 10px; display: inline-block; margin-top: 2px; }
+img  { max-width: 100%; height: auto; }
+@media (max-width: 480px) {
+  .hd { flex-direction: column; }
+  .hd p, .rhs { text-align: left; }
 }
 </style>
 </head>
 <body>
 
+<center class="f top"><span style="float: right;"><a href="index.html">home</a></span>Tim Menzies &middot; prof &middot; <a href="https://www.csc.ncsu.edu/">cs</a> &middot; <a href="https://www.ncsu.edu/">NC State</a></center>
+
 <center>
-<h2>Tim Menzies</h2>
-<h3>professor, computer science<br>NC State University</h3>
+<div class="hd">
+<p><img src="timm.png" width="240" alt="Tim Menzies"></p>
+<div class="rhs">
 <p class="f"><a href="research.html">research</a> |
-<a href="teach.html">teaching</a> |
+<a href="teach.html">teach</a> |
 <a href="blog.html">blog</a> |
-<a href="news.html">news</a> |
-<a href="irl.html">lab</a> |
-<a href="../tools/index.html">tools</a><br>
+<a href="news.html">news</a><br>
 papers: <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">arxiv</a> |
 <a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Scholar</a> |
 <a href="research.html">by topic</a></p>
-<p><img src="../assets/img/timm-ncsu.jpg" width="180" style="border-radius: 12px;" alt="Tim Menzies"></p>
-<p class="f"><a href="mailto:timm@ieee.org">timm@ieee.org</a>,
-+1-304-376-2859,
-<a href="https://calendar.app.google/D1Pm35W7kd66pDUw5">appointment</a></p>
+<h2>Home</h2>
+<p class="f"><a href="mailto:timm@ieee.org">timm@ieee.org</a><br>
++1-304-376-2859<br>
+<a class="cta" href="https://calendar.app.google/D1Pm35W7kd66pDUw5">make appointment</a><br>
+<a class="cta" href="https://forms.gle/yQuFkgrP3Kkq68Dk6">join reading group</a></p>
+</div>
+</div>
+<hr>
 </center>
 
 <p><b>About</b><br>
@@ -78,16 +86,14 @@ TSE, <a href="drr.html">the DRR effect</a>.
 <a href="https://github.com/txt/seai26spr/blob/main/README.md">SE+AI subject</a> (Fall'26),
 <a href="https://forms.gle/yQuFkgrP3Kkq68Dk6">reading group</a> (Fall'26)</span></p>
 
-<center class="f">
-<p><a href="https://www.csc.ncsu.edu/"><img src="../ncsu_brick.png" height="36" alt="NC State" style="border-radius: 4px;"></a></p>
-<p><a href="https://github.com/timm" title="GitHub"><i class="fa-brands fa-github"></i></a> &nbsp;
-<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="arxiv pre-prints"><i class="fa-solid fa-scroll"></i></a> &nbsp;
-<a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a> &nbsp;
-<a href="mailto:timm@ieee.org" title="email"><i class="fa-solid fa-envelope"></i></a></p>
-<p>Copyright &copy; 2026 Tim Menzies. MIT License.<br>
-Comments to <a href="mailto:timm@ieee.org">timm@ieee.org</a>.<br>
-Styled after <a href="https://9p.io/plan9/">Plan 9 from Bell Labs</a>.<br>
-<a href="../index.html">Fancy version</a>.</p>
+
+<center class="f" style="text-align: center;">
+<img src="badges/construction.gif" width="88" height="31" alt="under construction">
+<img src="badges/best_ns.gif" width="88" height="31" alt="best viewed with netscape navigator 3">
+<img src="badges/geocities-official.gif" width="88" height="31" alt="geocities official">
+<br>
+visitors: <span style="background: black; color: #33ff33; padding: 1px 5px; letter-spacing: 2px;">000042</span><br>
+<a href="https://wholeearth.info/">&ldquo;We can&rsquo;t put it together. It is together.&rdquo;</a>
 </center>
 
 </body>

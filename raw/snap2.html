@@ -6,46 +6,63 @@
 <meta name="description" content="Classical-then-LLM beats LLM-first for SE optimization: same ingredients, opposite order, eleven points better, half the cost. New preprint on SNAP2.">
 <title>better together, in the right order | Tim Menzies</title>
 <link rel="icon" type="image/png" href="../favicon.png">
-<meta name="theme-color" content="#d6d2ca" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1f1e1c" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-html { background: #d6d2ca; }
-body { max-width: 65ch; margin: 2em auto; padding: 0 1em; font-size: 14px; line-height: 1.45; color: #222; font-family: "Ubuntu Mono", "Courier New", monospace; }
+html { background: white; }
+body { max-width: 600px; margin: 10px auto; padding: 10px; font-size: 13px; line-height: 1.4; color: black; font-family: "Ubuntu Mono", "Courier New", monospace; }
 h1,h2,h3 { margin: 0.9em 0 0.3em; }
+center h2 { margin: 0.3em 0; }
+h2   { font-size: 22px; }
+center.top { background: #cc0000; color: white; padding: 3px 10px; margin-bottom: 5px; }
+center.top a { color: white; }
 a    { color: #cc0000; text-decoration: none; }
 a:hover { text-decoration: underline; }
-pre  { background: #e5e1d8; border-radius: 8px; padding: 0.6em 0.8em; overflow-x: auto; }
-img  { max-width: 100%; border-radius: 8px; }
-hr   { border: 0; border-top: 1px solid #b8b4ac; margin: 1.5em 0; }
+p.card { padding: 0.5em 0.8em; background: whitesmoke; }
+pre  { background: whitesmoke; padding: 0.6em 0.8em; overflow-x: auto; }
+img  { max-width: 100%; }
+hr   { display: none; }
 .f   { font-size: small; }
-@media (prefers-color-scheme: dark) {
-  html { background: #1f1e1c; }
-  body { color: #c8c4bc; }
-  body > p, pre, table { background: #2b2a27; }
-  a { color: #e06a5a; }
-  hr { border-top-color: #4a4844; }
-  img { opacity: 0.9; }
+center { text-align: left; }
+.hd  { display: flex; justify-content: space-between; gap: 10px; }
+.rhs { display: flex; flex-direction: column; justify-content: space-between; text-align: right; }
+.hd p { text-align: right; }
+a.cta { background: #cc0000; color: white; padding: 3px 10px; display: inline-block; margin-top: 2px; }
+@media (max-width: 480px) {
+  .hd { flex-direction: column; }
+  .hd p, .rhs { text-align: left; }
 }
 </style>
 </head>
 <body>
 
+<center class="f top"><span style="float: right;"><a href="index.html">home</a></span>Tim Menzies &middot; prof &middot; <a href="https://www.csc.ncsu.edu/">cs</a> &middot; <a href="https://www.ncsu.edu/">NC State</a></center>
+
 <center>
-<p class="f"><a href="index.html">home</a> |
-<a href="research.html">research</a> |
+<div class="hd">
+<p><img src="timm.png" width="240" alt="Tim Menzies"></p>
+<div class="rhs">
+<p class="f"><a href="research.html">research</a> |
 <a href="teach.html">teach</a> |
 <b><a href="blog.html">blog</a></b> |
-<a href="news.html">news</a> |
-<a href="irl.html">lab</a> |
-<a href="../tools/index.html">tools</a></p>
+<a href="news.html">news</a><br>
+papers: <a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies">arxiv</a> |
+<a href="https://scholar.google.com/citations?user=7htTUTgmLtUC">Scholar</a> |
+<a href="research.html">by topic</a></p>
+<h2>better together, in the right order</h2>
+<p class="f"><a href="mailto:timm@ieee.org">timm@ieee.org</a><br>
++1-304-376-2859<br>
+<a class="cta" href="https://calendar.app.google/D1Pm35W7kd66pDUw5">make appointment</a><br>
+<a class="cta" href="https://forms.gle/yQuFkgrP3Kkq68Dk6">join reading group</a></p>
+</div>
+</div>
+<hr>
 </center>
 
+<p class="card"><b>Summary</b><br>
+Classical-then-LLM beats LLM-first for SE optimization: same ingredients, opposite order, eleven points better, half the cost. New preprint on SNAP2.</p>
+
 <!-- Copyright (c) 2026 Tim Menzies, MIT License -->
-<h1 id="better-together-in-the-right-order">better together, in the right order</h1>
-<p>Tim Menzies <a href="mailto:timm@ieee.org">timm@ieee.org</a> · <a
-href="http://timm.fyi">timm.fyi</a> · 2026-07-14 · <a
+<p class="f">2026-07-14 · <a
 href="https://arxiv.org/pdf/2607.02583">paper (arXiv preprint)</a></p>
 <p>New preprint: &ldquo;Better Together, in the Right Order:
 Classical-then-LLM Optimization for SE&rdquo; (Srinath Srinivasan &amp;
@@ -84,15 +101,14 @@ row-ranking baselines on 105 tasks from the MOOT repository (config
 tuning, process models, effort/defect/health prediction), scored by
 distance-to-heaven with Cliff&rsquo;s delta + Kolmogorov-Smirnov at 95%.
 LLM: gpt-oss-120b.</p>
-<hr>
-<center class="f">
-<p><a href="https://www.csc.ncsu.edu/"><img src="../ncsu_brick.png" height="36" alt="NC State" style="border-radius: 4px;"></a></p>
-<p><a href="https://github.com/timm" title="GitHub"><i class="fa-brands fa-github"></i></a> &nbsp;
-<a href="https://arxiv.org/search/?searchtype=all&amp;query=tim+menzies" title="arxiv pre-prints"><i class="fa-solid fa-scroll"></i></a> &nbsp;
-<a href="https://scholar.google.com/citations?user=7htTUTgmLtUC" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a> &nbsp;
-<a href="mailto:timm@ieee.org" title="email"><i class="fa-solid fa-envelope"></i></a></p>
-<p>Copyright &copy; 2026 Tim Menzies. MIT License.<br>
-<a href="../snap2.html">Fancy version</a>.</p>
+
+<center class="f" style="text-align: center;">
+<img src="badges/construction.gif" width="88" height="31" alt="under construction">
+<img src="badges/best_ns.gif" width="88" height="31" alt="best viewed with netscape navigator 3">
+<img src="badges/geocities-official.gif" width="88" height="31" alt="geocities official">
+<br>
+visitors: <span style="background: black; color: #33ff33; padding: 1px 5px; letter-spacing: 2px;">000042</span><br>
+<a href="https://wholeearth.info/">&ldquo;We can&rsquo;t put it together. It is together.&rdquo;</a>
 </center>
 
 </body>
